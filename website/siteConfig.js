@@ -41,6 +41,8 @@ const siteConfig = {
     {doc: 'doc1', label: 'Docs'},
   ],
 
+  cname: 'docs.iotex.me',
+
   // If you have users set above, you add it here:
   users,
 
