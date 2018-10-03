@@ -2,13 +2,6 @@ version: 2
 
 jobs:
   build:
-    machine: true
-    branches:
-      ignore: gh-pages
-    steps:
-    - run: echo "Skipping tests on gh-pages branch"
-
-  deploy-website:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11.1
