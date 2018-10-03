@@ -1,11 +1,8 @@
-# If you only want circle to run on direct commits to master, you can uncomment this out
-# and uncomment the filters: *filter-only-master down below too
-#
 aliases:
-  - &filter-only-master
-    branches:
-      only:
-        - master
+- &filter-only-master
+  branches:
+    only:
+    - master
 
 version: 2
 jobs:
@@ -19,10 +16,10 @@ jobs:
     - run:
         name: Deploying to GitHub Pages
         command: |
-          git config --global user.email "puncsky@users.noreply.github.com"
-          git config --global user.name "puncsky"
-          echo "machine github.com login puncsky password $GITHUB_TOKEN" > ~/.netrc
-          cd website && yarn install && GIT_USER=puncsky yarn run publish-gh-pages
+          git config --global user.email "<GITHUB_USERNAME>@users.noreply.github.com"
+          git config --global user.name "<YOUR_NAME>"
+          echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
+          cd website && yarn install && GIT_USER=<GIT_USER> yarn run publish-gh-pages
 
 workflows:
   version: 2
@@ -30,4 +27,3 @@ workflows:
     jobs:
     - deploy-website:
       filters: *filter-only-master
-
