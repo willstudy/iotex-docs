@@ -14,3 +14,21 @@
 
 @media only screen and (min-width: 1500px) {
 }
+
+.fixedHeaderContainer {
+    height: 60px;
+    padding: 12px 0;
+}
+
+.fixedHeaderContainer header .headerTitleWithLogo {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+article span {
+    font-size: 14px;
+}
+
+body {
+    font-family: $myFont;
+}
