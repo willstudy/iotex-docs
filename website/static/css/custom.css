@@ -32,3 +32,12 @@ article span {
 body {
     font-family: $myFont;
 }
+
+article h2::before {
+    content: '';
+    width: 5rem;
+    height: 0.3125rem;
+    display: block;
+    background-color: #00b4a0;
+    margin: 3rem 0 1rem;
+}

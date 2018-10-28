@@ -52,8 +52,8 @@ const SplashContainer = props => (
 );
 
 const Logo = props => (
-  <div className="projectLogo">
-    <img src={props.img_src} alt="Project Logo" />
+  <div >
+    <img style={{height: '80px'}} src={props.img_src} alt="Project Logo" />
   </div>
 );
 
@@ -77,13 +77,14 @@ class HomeSplash extends React.Component {
     const language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('docusaurus.svg')} />
+        <Logo img_src={imgUrl('logo.svg')} />
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button href={docUrl('guides.html', language)}>Overview</Button>
+            <Button href={docUrl('doc1.html', language)}>Create an Account</Button>
+            <Button href={docUrl('doc2.html', language)}>Transfer Tokens</Button>
+            <Button href={docUrl('doc2.html', language)}>Run Smart Contracts</Button>
           </PromoSection>
         </div>
       </SplashContainer>

@@ -1,10 +1,24 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Getting Started": [
+      "sdk-overview"
+    ],
+    "JS SDK (iotex-client-js)": [
+      "sdk-account",
+      "sdk-methods",
+      "sdk-transfer",
+      "sdk-vote",
+      "sdk-smart-contract"
+    ],
+    "Reference": [
+      "iotex-client-js",
+      "iotex-core-json-rpc"
+    ]
   },
   "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "First Category": [
+      "doc4",
+      "doc5"
+    ]
   }
 }

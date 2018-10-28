@@ -21,8 +21,8 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Test Document', // Title for your website.
-  tagline: 'iotex.io documents',
+  title: 'IoTeX Documentations', // Title for your website.
+  tagline: 'IoTeX is a Decentralized Network for Internet of Things Powered by a Privacy-Centric Blockchain.',
   url: 'http://docs.iotex.me/', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -38,7 +38,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
+    {doc: 'guides', label: 'Guides'},
+    {doc: 'sdk-overview', label: 'SDK'},
+    {doc: 'products', label: 'Products'},
   ],
 
   cname: 'docs.iotex.me',

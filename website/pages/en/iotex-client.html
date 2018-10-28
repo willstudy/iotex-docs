@@ -1,0 +1,5862 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>iotex-client 0.0.6 | Documentation</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+    <link href='assets/style.css' type='text/css' rel='stylesheet' />
+    <link href='assets/github.css' type='text/css' rel='stylesheet' />
+    <link href='assets/split.css' type='text/css' rel='stylesheet' />
+    <meta name='description' content='IoTeX Client'>
+
+
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Docusaurus">
+    <meta name="description" content="id: doc1">
+    <meta name="docsearch:language" content="en">
+    <meta property="og:title" content="Latin-ish · Test Document">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://docs.iotex.me//index.html">
+    <meta property="og:description" content="id: doc1">
+    <meta property="og:image" content="http://docs.iotex.me/img/docusaurus.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="http://docs.iotex.me/img/docusaurus.png">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class='documentation m0'>
+
+
+<div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+        <header><a href="/"><img class="logo" src="//iotex.io/logo.svg" alt="Test Document">
+            <h2 class="headerTitleWithLogo">Test Document</h2></a>
+            <div class="navigationWrapper navigationSlider">
+                <nav class="slidingNav">
+                    <ul class="nav-site nav-site-internal">
+                        <li class=""><a href="/docs/doc1" target="_self">Docs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+</div>
+
+
+
+<div class='flex' style="position: relative; top: 60px;">
+    <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+            <h3 class='mb0 no-anchor'>iotex-client</h3>
+            <div class='mb1'><code>0.0.6</code></div>
+            <input
+                    placeholder='Filter'
+                    id='filter-input'
+                    class='col12 block input'
+                    type='text' />
+            <div id='toc'>
+                <ul class='list-reset h5 py1-ul'>
+
+
+                    <li><a
+                            href='#accounts'
+                            class=" toggle-sibling">
+                        Accounts
+                        <span class='icon'>▸</span>
+                    </a>
+
+                        <div class='toggle-target display-none'>
+
+
+                            <ul class='list-reset py1-ul pl1'>
+                                <li class='h5'><span>Instance members</span></li>
+
+                                <li><a
+                                        href='#accountscreate'
+                                        class='regular pre-open'>
+                                    #create
+                                </a></li>
+
+                                <li><a
+                                        href='#accountsprivatekeytoaccount'
+                                        class='regular pre-open'>
+                                    #privateKeyToAccount
+                                </a></li>
+
+                                <li><a
+                                        href='#accountsadd'
+                                        class='regular pre-open'>
+                                    #add
+                                </a></li>
+
+                                <li><a
+                                        href='#accountssigntransfer'
+                                        class='regular pre-open'>
+                                    #signTransfer
+                                </a></li>
+
+                                <li><a
+                                        href='#accountssignsmartcontract'
+                                        class='regular pre-open'>
+                                    #signSmartContract
+                                </a></li>
+
+                            </ul>
+
+
+
+                        </div>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tcontractopts'
+                            class="">
+                        TContractOpts
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tsignedtransaction'
+                            class="">
+                        TSignedTransaction
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#contract'
+                            class=" toggle-sibling">
+                        Contract
+                        <span class='icon'>▸</span>
+                    </a>
+
+                        <div class='toggle-target display-none'>
+
+
+                            <ul class='list-reset py1-ul pl1'>
+                                <li class='h5'><span>Instance members</span></li>
+
+                                <li><a
+                                        href='#contractmethods'
+                                        class='regular pre-open'>
+                                    #methods
+                                </a></li>
+
+                                <li><a
+                                        href='#contractdeploy'
+                                        class='regular pre-open'>
+                                    #deploy
+                                </a></li>
+
+                            </ul>
+
+
+
+                        </div>
+
+                    </li>
+
+
+                    <li><a
+                            href='#iotx'
+                            class=" toggle-sibling">
+                        Iotx
+                        <span class='icon'>▸</span>
+                    </a>
+
+                        <div class='toggle-target display-none'>
+
+
+                            <ul class='list-reset py1-ul pl1'>
+                                <li class='h5'><span>Instance members</span></li>
+
+                                <li><a
+                                        href='#iotxsendtransfer'
+                                        class='regular pre-open'>
+                                    #sendTransfer
+                                </a></li>
+
+                            </ul>
+
+
+
+                        </div>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tcoinstatistic'
+                            class="">
+                        TCoinStatistic
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tblockgenerator'
+                            class="">
+                        TBlockGenerator
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tblock'
+                            class="">
+                        TBlock
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#ttransfer'
+                            class="">
+                        TTransfer
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#texecution'
+                            class="">
+                        TExecution
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tlog'
+                            class="">
+                        TLog
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#treceipt'
+                            class="">
+                        TReceipt
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tvote'
+                            class="">
+                        TVote
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#taddressdetails'
+                            class="">
+                        TAddressDetails
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tcandidate'
+                            class="">
+                        TCandidate
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tcandidatemetrics'
+                            class="">
+                        TCandidateMetrics
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tconsensusmetrics'
+                            class="">
+                        TConsensusMetrics
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tsendtransferrequest'
+                            class="">
+                        TSendTransferRequest
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tsendtransferresponse'
+                            class="">
+                        TSendTransferResponse
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tsendvoterequest'
+                            class="">
+                        TSendVoteRequest
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tsendvoteresponse'
+                            class="">
+                        TSendVoteResponse
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tnode'
+                            class="">
+                        TNode
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tgetpeersresponse'
+                            class="">
+                        TGetPeersResponse
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#tsendsmartcontractresponse'
+                            class="">
+                        TSendSmartContractResponse
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#methods'
+                            class=" toggle-sibling">
+                        Methods
+                        <span class='icon'>▸</span>
+                    </a>
+
+                        <div class='toggle-target display-none'>
+
+
+                            <ul class='list-reset py1-ul pl1'>
+                                <li class='h5'><span>Instance members</span></li>
+
+                                <li><a
+                                        href='#methodsgetblockchainheight'
+                                        class='regular pre-open'>
+                                    #getBlockchainHeight
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetaddressbalance'
+                                        class='regular pre-open'>
+                                    #getAddressBalance
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetaddressdetails'
+                                        class='regular pre-open'>
+                                    #getAddressDetails
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetlasttransfersbyrange'
+                                        class='regular pre-open'>
+                                    #getLastTransfersByRange
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgettransferbyid'
+                                        class='regular pre-open'>
+                                    #getTransferByID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgettransfersbyaddress'
+                                        class='regular pre-open'>
+                                    #getTransfersByAddress
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetunconfirmedtransfersbyaddress'
+                                        class='regular pre-open'>
+                                    #getUnconfirmedTransfersByAddress
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgettransfersbyblockid'
+                                        class='regular pre-open'>
+                                    #getTransfersByBlockID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetlastvotesbyrange'
+                                        class='regular pre-open'>
+                                    #getLastVotesByRange
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetvotebyid'
+                                        class='regular pre-open'>
+                                    #getVoteByID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetvotesbyaddress'
+                                        class='regular pre-open'>
+                                    #getVotesByAddress
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetunconfirmedvotesbyaddress'
+                                        class='regular pre-open'>
+                                    #getUnconfirmedVotesByAddress
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetvotesbyblockid'
+                                        class='regular pre-open'>
+                                    #getVotesByBlockID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetlastexecutionsbyrange'
+                                        class='regular pre-open'>
+                                    #getLastExecutionsByRange
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetexecutionbyid'
+                                        class='regular pre-open'>
+                                    #getExecutionByID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetexecutionsbyaddress'
+                                        class='regular pre-open'>
+                                    #getExecutionsByAddress
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetunconfirmedexecutionsbyaddress'
+                                        class='regular pre-open'>
+                                    #getUnconfirmedExecutionsByAddress
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetexecutionsbyblockid'
+                                        class='regular pre-open'>
+                                    #getExecutionsByBlockID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetlastblocksbyrange'
+                                        class='regular pre-open'>
+                                    #getLastBlocksByRange
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetblockbyid'
+                                        class='regular pre-open'>
+                                    #getBlockByID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetcoinstatistic'
+                                        class='regular pre-open'>
+                                    #getCoinStatistic
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetconsensusmetrics'
+                                        class='regular pre-open'>
+                                    #getConsensusMetrics
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetcandidatemetrics'
+                                        class='regular pre-open'>
+                                    #getCandidateMetrics
+                                </a></li>
+
+                                <li><a
+                                        href='#methodssendtransfer'
+                                        class='regular pre-open'>
+                                    #sendTransfer
+                                </a></li>
+
+                                <li><a
+                                        href='#methodssendvote'
+                                        class='regular pre-open'>
+                                    #sendVote
+                                </a></li>
+
+                                <li><a
+                                        href='#methodssendsmartcontract'
+                                        class='regular pre-open'>
+                                    #sendSmartContract
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetpeers'
+                                        class='regular pre-open'>
+                                    #getPeers
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsgetreceiptbyexecutionid'
+                                        class='regular pre-open'>
+                                    #getReceiptByExecutionID
+                                </a></li>
+
+                                <li><a
+                                        href='#methodsreadexecutionstate'
+                                        class='regular pre-open'>
+                                    #readExecutionState
+                                </a></li>
+
+                            </ul>
+
+
+
+                        </div>
+
+                    </li>
+
+
+                    <li><a
+                            href='#request'
+                            class="">
+                        Request
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#response'
+                            class="">
+                        Response
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#provider'
+                            class="">
+                        Provider
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            href='#httpprovider'
+                            class=" toggle-sibling">
+                        HttpProvider
+                        <span class='icon'>▸</span>
+                    </a>
+
+                        <div class='toggle-target display-none'>
+
+
+                            <ul class='list-reset py1-ul pl1'>
+                                <li class='h5'><span>Instance members</span></li>
+
+                                <li><a
+                                        href='#httpprovidersend'
+                                        class='regular pre-open'>
+                                    #send
+                                </a></li>
+
+                            </ul>
+
+
+
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+            <div class='mt1 h6 quiet'>
+                <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+            </div>
+        </div>
+    </div>
+    <div id='split-right' class='relative overflow-auto height-viewport-100'>
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='accounts'>
+                    Accounts
+                </h3>
+
+
+            </div>
+
+
+            <p>Accounts contains functions to generate Iotex accounts and sign transactions and data.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>new Accounts(methods: <a href="#methods">Methods</a>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+            <div class='prose'>
+
+                <div class='space-bottom0'>
+                    <div>
+                        <span class='code bold'>methods</span> <code class='quiet'>(<a href="#methods">Methods</a>)</code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+            <div class="clearfix">
+
+                <div class='border-bottom' id='accountscreate'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>create()</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>create generates a wallet and add it to local wallets.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>create(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;Wallet></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;Wallet></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='accountsprivatekeytoaccount'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>privateKeyToAccount(privateKey)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>privateKeyToAccount gets the whole wallet from private key.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>privateKeyToAccount(privateKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;Wallet></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>privateKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;Wallet></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='accountsadd'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>add(privateKey)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>privateKeyToAccount gets the whole wallet from private key and save it to local wallets.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>add(privateKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;Wallet></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>privateKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;Wallet></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='accountssigntransfer'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>signTransfer(unsignedTransfer, wallet)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>signTransfer signs a transfer with the wallet.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>signTransfer(unsignedTransfer: UnsignedTransfer, wallet: Wallet)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>unsignedTransfer</span> <code class='quiet'>(UnsignedTransfer)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>wallet</span> <code class='quiet'>(Wallet)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='accountssignsmartcontract'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>signSmartContract(wallet, exec)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>signSmartContract signs an execution with the wallet.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>signSmartContract(wallet: Wallet, exec: UnsignedExecution): any</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>wallet</span> <code class='quiet'>(Wallet)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>exec</span> <code class='quiet'>(UnsignedExecution)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code>any</code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tcontractopts'>
+                    TContractOpts
+                </h3>
+
+
+            </div>
+
+
+            <p>TContractOpts are the settings to create the contract object with.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TContractOpts</div>
+
+
+            <p>
+                Type:
+                {provider: <a href="#provider">Provider</a>, abi: any, contractAddress: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, methods: <a href="#methods">Methods</a>, gasLimit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, accounts: <a href="#accounts">Accounts</a>, wallet: {publicKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, privateKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, rawAddress: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>provider</span> <code class='quiet'>(<a href="#provider">Provider</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>abi</span> <code class='quiet'>(any)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>contractAddress</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>methods</span> <code class='quiet'>(<a href="#methods">Methods</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>gasLimit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>accounts</span> <code class='quiet'>(<a href="#accounts">Accounts</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>wallet</span> <code class='quiet'>({publicKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, privateKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, rawAddress: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>})</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>wallet.publicKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>wallet.privateKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>wallet.rawAddress</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tsignedtransaction'>
+                    TSignedTransaction
+                </h3>
+
+
+            </div>
+
+
+            <p>TSignedTransaction is the raw transaction to be signed.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TSignedTransaction</div>
+
+
+            <p>
+                Type:
+                {version: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, nonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, signature: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, executor: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, contract: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, executorPubKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, gas: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, gasPrice: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, ID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, amount: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, blockID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isPending: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, timestamp: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>nonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>signature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>executor</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>contract</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>executorPubKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>gas</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>gasPrice</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>ID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>amount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>blockID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isPending</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>timestamp</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='contract'>
+                    Contract
+                </h3>
+
+
+            </div>
+
+
+            <p>Contract makes it easy to interact with smart contracts on the iotex blockchain. When you create a new contract
+                object you give it the json interface of the respective smart contract and it will auto converts all calls into
+                low level ABI calls over RPC for you.</p>
+            <p>This allows you to interact with smart contracts as if they were JavaScript objects.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>new Contract(opts: <a href="#tcontractopts">TContractOpts</a>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+            <div class='prose'>
+
+                <div class='space-bottom0'>
+                    <div>
+                        <span class='code bold'>opts</span> <code class='quiet'>(<a href="#tcontractopts">TContractOpts</a>)</code>
+                        ContractOpts are the settings to create the contract object with.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+            <div class="clearfix">
+
+                <div class='border-bottom' id='contractmethods'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>methods</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>methods are the ABI's methods of the smart contract the user can call.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>methods</div>
+
+
+                            <p>
+                                Type:
+                                {}
+                            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='contractdeploy'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>deploy(exec)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>deploy signs an execution and then send it to the iotex blockchain.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>deploy(exec: UnsignedExecution): any</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>exec</span> <code class='quiet'>(UnsignedExecution)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code>any</code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='iotx'>
+                    Iotx
+                </h3>
+
+
+            </div>
+
+
+            <p>Iotx is the client to interact with iotex-core and iotex-wallet.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>new Iotx(provider: <a href="#provider">Provider</a>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+            <div class='prose'>
+
+                <div class='space-bottom0'>
+                    <div>
+                        <span class='code bold'>provider</span> <code class='quiet'>(<a href="#provider">Provider</a>)</code>
+                        is the network provider/endpoint this client will interact with.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+            <div class="clearfix">
+
+                <div class='border-bottom' id='iotxsendtransfer'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>sendTransfer(transfer)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>sendTransfer signs, send, and get receipt of the transfer.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>sendTransfer(transfer: UnsignedTransfer): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#ttransfer">TTransfer</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>transfer</span> <code class='quiet'>(UnsignedTransfer)</code>
+                                        : the transfer to be sent.
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#ttransfer">TTransfer</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tcoinstatistic'>
+                    TCoinStatistic
+                </h3>
+
+
+            </div>
+
+
+            <p>TCoinStatistic is the type of stats of the iotx coin.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TCoinStatistic</div>
+
+
+            <p>
+                Type:
+                {height: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, supply: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, transfers: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, votes: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, executions: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, aps: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>height</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>supply</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>transfers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>votes</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>executions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>aps</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tblockgenerator'>
+                    TBlockGenerator
+                </h3>
+
+
+            </div>
+
+
+            <p>TBlockGenerator is the type that identifies the generator of the block.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TBlockGenerator</div>
+
+
+            <p>
+                Type:
+                {name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tblock'>
+                    TBlock
+                </h3>
+
+
+            </div>
+
+
+            <p>TBlock is the type of the meta data of the block.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TBlock</div>
+
+
+            <p>
+                Type:
+                {ID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, height: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, timestamp: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, transfers: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, votes: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, executions: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, generateBy: <a href="#tblockgenerator">TBlockGenerator</a>, amount: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, forged: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, size: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>ID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>height</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>timestamp</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>transfers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>votes</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>executions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>generateBy</span> <code class='quiet'>(<a href="#tblockgenerator">TBlockGenerator</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>amount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>forged</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>size</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='ttransfer'>
+                    TTransfer
+                </h3>
+
+
+            </div>
+
+
+            <p>TTransfer is the type of the transfer.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TTransfer</div>
+
+
+            <p>
+                Type:
+                {version: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, ID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, nonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, sender: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, recipient: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, amount: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, senderPubKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, payload: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isCoinbase: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, fee: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, timestamp: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, blockID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isPending: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, signature: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>ID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>nonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>sender</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>recipient</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>amount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>senderPubKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>payload</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isCoinbase</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>fee</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>timestamp</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>blockID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isPending</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>signature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='texecution'>
+                    TExecution
+                </h3>
+
+
+            </div>
+
+
+            <p>TExecution is the type of the execution to be sent to the iotex blockchain.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TExecution</div>
+
+
+            <p>
+                Type:
+                {version: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, ID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, nonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, executor: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, contract: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, amount: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, executorPubKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, signature: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, gasLimit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, gasPrice: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, timestamp: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, blockID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isPending: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>ID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>nonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>executor</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>contract</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>amount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>executorPubKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>signature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>gasLimit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>gasPrice</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>timestamp</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>blockID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isPending</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tlog'>
+                    TLog
+                </h3>
+
+
+            </div>
+
+
+            <p>TLog is the type of the log in the smart contract log.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TLog</div>
+
+
+            <p>
+                Type:
+                {address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, topics: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>, data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, blockNumber: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, txnHash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, blockHash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, index: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>topics</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>blockNumber</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>txnHash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>blockHash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>index</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='treceipt'>
+                    TReceipt
+                </h3>
+
+
+            </div>
+
+
+            <p>TReceipt is the type of the receipt.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TReceipt</div>
+
+
+            <p>
+                Type:
+                {returnValue: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, status: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, gasConsumed: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, contractAddress: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, logs: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tlog">TLog</a>>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>returnValue</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>status</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>gasConsumed</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>contractAddress</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>logs</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tlog">TLog</a>>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tvote'>
+                    TVote
+                </h3>
+
+
+            </div>
+
+
+            <p>TVote is the type of the vote.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TVote</div>
+
+
+            <p>
+                Type:
+                {version: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, ID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, nonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, timestamp: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, voter: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, votee: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, voterPubKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, signature: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, blockID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isPending: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>ID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>nonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>timestamp</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>voter</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>votee</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>voterPubKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>signature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>blockID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isPending</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='taddressdetails'>
+                    TAddressDetails
+                </h3>
+
+
+            </div>
+
+
+            <p>TAddressDetails is the type of the address' account detail.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TAddressDetails</div>
+
+
+            <p>
+                Type:
+                {address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, totalBalance: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, nonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, pendingNonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, isCandidate: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>totalBalance</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>nonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>pendingNonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isCandidate</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tcandidate'>
+                    TCandidate
+                </h3>
+
+
+            </div>
+
+
+            <p>TCandidate is the type of the candidate.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TCandidate</div>
+
+
+            <p>
+                Type:
+                {address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, totalVote: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, creationHeight: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, lastUpdateHeight: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, isDelegate: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, isProducer: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>totalVote</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>creationHeight</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>lastUpdateHeight</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isDelegate</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isProducer</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tcandidatemetrics'>
+                    TCandidateMetrics
+                </h3>
+
+
+            </div>
+
+
+            <p>TCandidateMetrics is the type of the candidate metrics.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TCandidateMetrics</div>
+
+
+            <p>
+                Type:
+                {candidates: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tcandidate">TCandidate</a>>, latestEpoch: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, latestHeight: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>candidates</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tcandidate">TCandidate</a>>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>latestEpoch</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>latestHeight</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tconsensusmetrics'>
+                    TConsensusMetrics
+                </h3>
+
+
+            </div>
+
+
+            <p>TConsensusMetrics is the type of the consensus metrics.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TConsensusMetrics</div>
+
+
+            <p>
+                Type:
+                {latestEpoch: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, latestDelegates: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>, latestBlockProducer: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, candidates: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>latestEpoch</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>latestDelegates</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>latestBlockProducer</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>candidates</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tsendtransferrequest'>
+                    TSendTransferRequest
+                </h3>
+
+
+            </div>
+
+
+            <p>TSendTransferRequest is the type of the transfer request.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TSendTransferRequest</div>
+
+
+            <p>
+                Type:
+                {version: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, nonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, sender: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, recipient: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, amount: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, senderPubKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, signature: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, payload: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, isCoinbase: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>nonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>sender</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>recipient</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>amount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>senderPubKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>signature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>payload</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>isCoinbase</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tsendtransferresponse'>
+                    TSendTransferResponse
+                </h3>
+
+
+            </div>
+
+
+            <p>TSendTransferResponse is the type of the response of the sendTransfer.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TSendTransferResponse</div>
+
+
+            <p>
+                Type:
+                {hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tsendvoterequest'>
+                    TSendVoteRequest
+                </h3>
+
+
+            </div>
+
+
+            <p>TSendVoteRequest is the type of the request of the sendVote.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TSendVoteRequest</div>
+
+
+            <p>
+                Type:
+                {version: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, nonce: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, voter: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, votee: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, voterPubKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, signature: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>nonce</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>voter</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>votee</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>voterPubKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>signature</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tsendvoteresponse'>
+                    TSendVoteResponse
+                </h3>
+
+
+            </div>
+
+
+            <p>TSendVoteResponse is the type of the response of the sendVote.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TSendVoteResponse</div>
+
+
+            <p>
+                Type:
+                {hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tnode'>
+                    TNode
+                </h3>
+
+
+            </div>
+
+
+            <p>TNode is the type of the node.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TNode</div>
+
+
+            <p>
+                Type:
+                {address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tgetpeersresponse'>
+                    TGetPeersResponse
+                </h3>
+
+
+            </div>
+
+
+            <p>TGetPeersResponse is the type of the response of the getPeers.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TGetPeersResponse</div>
+
+
+            <p>
+                Type:
+                {Self: <a href="#tnode">TNode</a>, Peers: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tnode">TNode</a>>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>Self</span> <code class='quiet'>(<a href="#tnode">TNode</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>Peers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tnode">TNode</a>>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tsendsmartcontractresponse'>
+                    TSendSmartContractResponse
+                </h3>
+
+
+            </div>
+
+
+            <p>TSendSmartContractResponse is the type of the response of sendSmartContract.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>TSendSmartContractResponse</div>
+
+
+            <p>
+                Type:
+                {hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='methods'>
+                    Methods
+                </h3>
+
+
+            </div>
+
+
+            <p>Methods is the API remote methods to call iotex blockchain.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>new Methods(provider: <a href="#provider">Provider</a>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+            <div class='prose'>
+
+                <div class='space-bottom0'>
+                    <div>
+                        <span class='code bold'>provider</span> <code class='quiet'>(<a href="#provider">Provider</a>)</code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+            <div class="clearfix">
+
+                <div class='border-bottom' id='methodsgetblockchainheight'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getBlockchainHeight()</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get the blockchain tip height</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getBlockchainHeight(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetaddressbalance'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getAddressBalance(address)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get the balance of an address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getAddressBalance(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetaddressdetails'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getAddressDetails(address)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get the address detail of an iotex address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getAddressDetails(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#taddressdetails">TAddressDetails</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#taddressdetails">TAddressDetails</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetlasttransfersbyrange'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getLastTransfersByRange(startBlockHeight, offset, limit, showCoinBase)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of transfers by start block height, transfer offset and limit</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getLastTransfersByRange(startBlockHeight: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, showCoinBase: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>startBlockHeight</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>showCoinBase</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgettransferbyid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getTransferByID(transferID)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get transfers from transaction id</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getTransferByID(transferID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#ttransfer">TTransfer</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>transferID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#ttransfer">TTransfer</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgettransfersbyaddress'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getTransfersByAddress(address, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of transfers belonging to an address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getTransfersByAddress(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetunconfirmedtransfersbyaddress'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getUnconfirmedTransfersByAddress(address, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of unconfirmed transfers in actpool belonging to an address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getUnconfirmedTransfersByAddress(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgettransfersbyblockid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getTransfersByBlockID(blkID, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get all transfers in a block</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getTransfersByBlockID(blkID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>blkID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#ttransfer">TTransfer</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetlastvotesbyrange'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getLastVotesByRange(startBlockHeight, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of votes by start block height, vote offset and limit</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getLastVotesByRange(startBlockHeight: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>startBlockHeight</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetvotebyid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getVoteByID(voteID)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get vote from vote id</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getVoteByID(voteID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tvote">TVote</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>voteID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tvote">TVote</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetvotesbyaddress'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getVotesByAddress(address, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of votes belonging to an address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getVotesByAddress(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetunconfirmedvotesbyaddress'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getUnconfirmedVotesByAddress(address, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of unconfirmed votes in actpool belonging to an address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getUnconfirmedVotesByAddress(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetvotesbyblockid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getVotesByBlockID(blkID, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get all votes in a block</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getVotesByBlockID(blkID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>blkID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tvote">TVote</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetlastexecutionsbyrange'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getLastExecutionsByRange(startBlockHeight, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of executions by start block height, execution offset and limit</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getLastExecutionsByRange(startBlockHeight: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>startBlockHeight</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetexecutionbyid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getExecutionByID(executionID)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get execution from execution id</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getExecutionByID(executionID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#texecution">TExecution</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>executionID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#texecution">TExecution</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetexecutionsbyaddress'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getExecutionsByAddress(address, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of executions belonging to an address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getExecutionsByAddress(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetunconfirmedexecutionsbyaddress'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getUnconfirmedExecutionsByAddress(address, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of unconfirmed executions in actpool belonging to an address</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getUnconfirmedExecutionsByAddress(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetexecutionsbyblockid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getExecutionsByBlockID(blkID, offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get all executions in a block</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getExecutionsByBlockID(blkID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>blkID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#texecution">TExecution</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetlastblocksbyrange'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getLastBlocksByRange(offset, limit)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of blocks by block id offset and limit</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getLastBlocksByRange(offset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, limit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tblock">TBlock</a>>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>offset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#tblock">TBlock</a>>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetblockbyid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getBlockByID(blkID)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get block by block id</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getBlockByID(blkID: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tblock">TBlock</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>blkID</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tblock">TBlock</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetcoinstatistic'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getCoinStatistic()</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get statistic of iotx</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getCoinStatistic(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tcoinstatistic">TCoinStatistic</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tcoinstatistic">TCoinStatistic</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetconsensusmetrics'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getConsensusMetrics()</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get consensus metrics</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getConsensusMetrics(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tconsensusmetrics">TConsensusMetrics</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tconsensusmetrics">TConsensusMetrics</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetcandidatemetrics'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getCandidateMetrics()</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get candidates metrics</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getCandidateMetrics(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tcandidatemetrics">TCandidateMetrics</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tcandidatemetrics">TCandidateMetrics</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodssendtransfer'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>sendTransfer(request)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>send transfer</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>sendTransfer(request: <a href="#tsendtransferrequest">TSendTransferRequest</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tsendtransferresponse">TSendTransferResponse</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>request</span> <code class='quiet'>(<a href="#tsendtransferrequest">TSendTransferRequest</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tsendtransferresponse">TSendTransferResponse</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodssendvote'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>sendVote(request)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>send vote</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>sendVote(request: <a href="#tsendvoterequest">TSendVoteRequest</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tsendvoteresponse">TSendVoteResponse</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>request</span> <code class='quiet'>(<a href="#tsendvoterequest">TSendVoteRequest</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tsendvoteresponse">TSendVoteResponse</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodssendsmartcontract'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>sendSmartContract(request)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>sendSmartContract</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>sendSmartContract(request: <a href="#texecution">TExecution</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tsendsmartcontractresponse">TSendSmartContractResponse</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>request</span> <code class='quiet'>(<a href="#texecution">TExecution</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tsendsmartcontractresponse">TSendSmartContractResponse</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetpeers'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getPeers()</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get list of peers</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getPeers(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tgetpeersresponse">TGetPeersResponse</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#tgetpeersresponse">TGetPeersResponse</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsgetreceiptbyexecutionid'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>getReceiptByExecutionID(id)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>get receipt by execution id</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>getReceiptByExecutionID(id: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#treceipt">TReceipt</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#treceipt">TReceipt</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class='border-bottom' id='methodsreadexecutionstate'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>readExecutionState(request)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>read execution state</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>readExecutionState(request: <a href="#texecution">TExecution</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>request</span> <code class='quiet'>(<a href="#texecution">TExecution</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='request'>
+                    Request
+                </h3>
+
+
+            </div>
+
+
+            <p>Request is the type of the request sent from the Provider.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>Request</div>
+
+
+            <p>
+                Type:
+                {method: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>method</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>params</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='response'>
+                    Response
+                </h3>
+
+
+            </div>
+
+
+            <p>Response is the response type received by the Provider.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>Response</div>
+
+
+            <p>
+                Type:
+                {result: any, error: {code: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, message: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}}
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>result</span> <code class='quiet'>(any)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>error</span> <code class='quiet'>({code: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, message: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>})</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>error.code</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>error.message</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='provider'>
+                    Provider
+                </h3>
+
+
+            </div>
+
+
+            <p>Provider is the network provider interface of iotex backend.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>Provider</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Properties</div>
+            <div>
+
+                <div class='space-bottom0'>
+                    <span class='code bold'>send</span> <code class='quiet'>(function (request: <a href="#request">Request</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>>)</code>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='httpprovider'>
+                    HttpProvider
+                </h3>
+
+
+            </div>
+
+
+            <p>Provider is the network provider of iotex backend that is implemented in HTTP.</p>
+
+
+
+            <div class='pre p1 fill-light mt0'>new HttpProvider(url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, timeout: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+            <div class='prose'>
+
+                <div class='space-bottom0'>
+                    <div>
+                        <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+
+                    </div>
+
+                </div>
+
+                <div class='space-bottom0'>
+                    <div>
+                        <span class='code bold'>timeout</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+            <div class="clearfix">
+
+                <div class='border-bottom' id='httpprovidersend'>
+                    <div class="clearfix small pointer toggle-sibling">
+                        <div class="py1 contain">
+                            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+                            <span class='code strong strong truncate'>send(request)</span>
+                        </div>
+                    </div>
+                    <div class="clearfix display-none toggle-target">
+                        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+
+                            <p>send makes an xhr call to the url.</p>
+
+
+
+                            <div class='pre p1 fill-light mt0'>send(request: <a href="#request">Request</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Parameters</div>
+                            <div class='prose'>
+
+                                <div class='space-bottom0'>
+                                    <div>
+                                        <span class='code bold'>request</span> <code class='quiet'>(<a href="#request">Request</a>)</code>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class='py1 quiet mt1 prose-big'>Returns</div>
+                            <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#response">Response</a>></code>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </section>
+
+
+    </div>
+</div>
+<script src='assets/anchor.js'></script>
+<script src='assets/split.js'></script>
+<script src='assets/site.js'></script>
+</body>
+</html>
