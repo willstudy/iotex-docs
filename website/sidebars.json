@@ -7,7 +7,6 @@
       "sdk-account",
       "sdk-methods",
       "sdk-transfer",
-      "sdk-vote",
       "sdk-smart-contract"
     ],
     "Reference": [

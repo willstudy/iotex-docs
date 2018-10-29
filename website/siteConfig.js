@@ -40,7 +40,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'guides', label: 'Guides'},
     {doc: 'sdk-overview', label: 'SDK'},
-    {doc: 'products', label: 'Products'},
+    { href: "https://github.com/iotexproject/", label: "GitHub", external: true },
   ],
 
   cname: 'docs.iotex.me',
