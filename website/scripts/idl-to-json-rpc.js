@@ -56,8 +56,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"${item.name}.${f.name}","params"
 }
 
 console.log(`---
-id: iotex-core-json-rpc
-title: JSON RPC for iotex-core
+id: json-rpc
+title: JSON RPC
 ---
 
 ${idlToJsonRpc()}

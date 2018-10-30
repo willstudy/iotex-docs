@@ -3,15 +3,15 @@
     "Getting Started": [
       "sdk-overview"
     ],
-    "JS SDK (iotex-client-js)": [
+    "JS Quick Start": [
       "sdk-account",
-      "sdk-methods",
+      "sdk-rpc-methods",
       "sdk-transfer",
       "sdk-smart-contract"
     ],
     "Reference": [
       "iotex-client-js",
-      "iotex-core-json-rpc"
+      "json-rpc"
     ]
   },
   "docs-other": {

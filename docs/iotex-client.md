@@ -7,136 +7,190 @@ title: iotex-client-js v0.0.7
 
 ### Table of Contents
 
--   [Accounts][1]
-    -   [Parameters][2]
-    -   [Examples][3]
-    -   [create][4]
-    -   [privateKeyToAccount][5]
-        -   [Parameters][6]
-    -   [add][7]
-        -   [Parameters][8]
-    -   [signTransfer][9]
-        -   [Parameters][10]
-    -   [signSmartContract][11]
+-   [TWallet][1]
+    -   [Properties][2]
+-   [TUnsignedTransfer][3]
+    -   [Properties][4]
+-   [TUnsignedExecution][5]
+    -   [Properties][6]
+-   [Accounts][7]
+    -   [Parameters][8]
+    -   [Examples][9]
+    -   [create][10]
+    -   [privateKeyToAccount][11]
         -   [Parameters][12]
--   [TContractOpts][13]
-    -   [Properties][14]
--   [TSignedTransaction][15]
-    -   [Properties][16]
--   [Contract][17]
-    -   [Parameters][18]
-    -   [methods][19]
-    -   [deploy][20]
-        -   [Parameters][21]
--   [Iotx][22]
-    -   [Parameters][23]
-    -   [Examples][24]
-    -   [sendTransfer][25]
-        -   [Parameters][26]
--   [TCoinStatistic][27]
-    -   [Properties][28]
--   [TBlockGenerator][29]
-    -   [Properties][30]
--   [TBlock][31]
-    -   [Properties][32]
--   [TTransfer][33]
-    -   [Properties][34]
--   [TExecution][35]
+    -   [add][13]
+        -   [Parameters][14]
+    -   [signTransfer][15]
+        -   [Parameters][16]
+    -   [signSmartContract][17]
+        -   [Parameters][18]
+-   [TContractOpts][19]
+    -   [Properties][20]
+-   [TMethodsOpts][21]
+    -   [Properties][22]
+-   [Contract][23]
+    -   [Parameters][24]
+    -   [methods][25]
+    -   [deploy][26]
+        -   [Parameters][27]
+    -   [prepareMethods][28]
+        -   [Parameters][29]
+-   [Iotx][30]
+    -   [Parameters][31]
+    -   [Examples][32]
+    -   [sendTransfer][33]
+        -   [Parameters][34]
+-   [Request][35]
     -   [Properties][36]
--   [TLog][37]
+-   [Response][37]
     -   [Properties][38]
--   [TReceipt][39]
+-   [Provider][39]
     -   [Properties][40]
--   [TVote][41]
-    -   [Properties][42]
--   [TAddressDetails][43]
-    -   [Properties][44]
--   [TCandidate][45]
+-   [HttpProvider][41]
+    -   [Parameters][42]
+    -   [send][43]
+        -   [Parameters][44]
+-   [TCoinStatistic][45]
     -   [Properties][46]
--   [TCandidateMetrics][47]
+-   [TBlockGenerator][47]
     -   [Properties][48]
--   [TConsensusMetrics][49]
+-   [TBlock][49]
     -   [Properties][50]
--   [TSendTransferRequest][51]
+-   [TTransfer][51]
     -   [Properties][52]
--   [TSendTransferResponse][53]
+-   [TExecution][53]
     -   [Properties][54]
--   [TSendVoteRequest][55]
+-   [TLog][55]
     -   [Properties][56]
--   [TSendVoteResponse][57]
+-   [TReceipt][57]
     -   [Properties][58]
--   [TNode][59]
+-   [TVote][59]
     -   [Properties][60]
--   [TGetPeersResponse][61]
+-   [TAddressDetails][61]
     -   [Properties][62]
--   [TSendSmartContractResponse][63]
+-   [TCandidate][63]
     -   [Properties][64]
--   [Methods][65]
-    -   [Parameters][66]
-    -   [Examples][67]
-    -   [getBlockchainHeight][68]
-    -   [getAddressBalance][69]
-        -   [Parameters][70]
-    -   [getAddressDetails][71]
-        -   [Parameters][72]
-    -   [getLastTransfersByRange][73]
-        -   [Parameters][74]
-    -   [getTransferByID][75]
-        -   [Parameters][76]
-    -   [getTransfersByAddress][77]
-        -   [Parameters][78]
-    -   [getUnconfirmedTransfersByAddress][79]
-        -   [Parameters][80]
-    -   [getTransfersByBlockID][81]
-        -   [Parameters][82]
-    -   [getLastVotesByRange][83]
-        -   [Parameters][84]
-    -   [getVoteByID][85]
-        -   [Parameters][86]
-    -   [getVotesByAddress][87]
+-   [TCandidateMetrics][65]
+    -   [Properties][66]
+-   [TConsensusMetrics][67]
+    -   [Properties][68]
+-   [TSendTransferRequest][69]
+    -   [Properties][70]
+-   [TSendTransferResponse][71]
+    -   [Properties][72]
+-   [TSendVoteRequest][73]
+    -   [Properties][74]
+-   [TSendVoteResponse][75]
+    -   [Properties][76]
+-   [TNode][77]
+    -   [Properties][78]
+-   [TGetPeersResponse][79]
+    -   [Properties][80]
+-   [TSendSmartContractResponse][81]
+    -   [Properties][82]
+-   [RpcMethods][83]
+    -   [Parameters][84]
+    -   [Examples][85]
+    -   [getBlockchainHeight][86]
+    -   [getAddressBalance][87]
         -   [Parameters][88]
-    -   [getUnconfirmedVotesByAddress][89]
+    -   [getAddressDetails][89]
         -   [Parameters][90]
-    -   [getVotesByBlockID][91]
+    -   [getLastTransfersByRange][91]
         -   [Parameters][92]
-    -   [getLastExecutionsByRange][93]
+    -   [getTransferByID][93]
         -   [Parameters][94]
-    -   [getExecutionByID][95]
+    -   [getTransfersByAddress][95]
         -   [Parameters][96]
-    -   [getExecutionsByAddress][97]
+    -   [getUnconfirmedTransfersByAddress][97]
         -   [Parameters][98]
-    -   [getUnconfirmedExecutionsByAddress][99]
+    -   [getTransfersByBlockID][99]
         -   [Parameters][100]
-    -   [getExecutionsByBlockID][101]
+    -   [getLastVotesByRange][101]
         -   [Parameters][102]
-    -   [getLastBlocksByRange][103]
+    -   [getVoteByID][103]
         -   [Parameters][104]
-    -   [getBlockByID][105]
+    -   [getVotesByAddress][105]
         -   [Parameters][106]
-    -   [getCoinStatistic][107]
-    -   [getConsensusMetrics][108]
-    -   [getCandidateMetrics][109]
-    -   [sendTransfer][110]
-        -   [Parameters][111]
-    -   [sendVote][112]
-        -   [Parameters][113]
-    -   [sendSmartContract][114]
-        -   [Parameters][115]
-    -   [getPeers][116]
-    -   [getReceiptByExecutionID][117]
+    -   [getUnconfirmedVotesByAddress][107]
+        -   [Parameters][108]
+    -   [getVotesByBlockID][109]
+        -   [Parameters][110]
+    -   [getLastExecutionsByRange][111]
+        -   [Parameters][112]
+    -   [getExecutionByID][113]
+        -   [Parameters][114]
+    -   [getExecutionsByAddress][115]
+        -   [Parameters][116]
+    -   [getUnconfirmedExecutionsByAddress][117]
         -   [Parameters][118]
-    -   [readExecutionState][119]
+    -   [getExecutionsByBlockID][119]
         -   [Parameters][120]
--   [Request][121]
-    -   [Properties][122]
--   [Response][123]
-    -   [Properties][124]
--   [Provider][125]
-    -   [Properties][126]
--   [HttpProvider][127]
-    -   [Parameters][128]
-    -   [send][129]
-        -   [Parameters][130]
+    -   [getLastBlocksByRange][121]
+        -   [Parameters][122]
+    -   [getBlockByID][123]
+        -   [Parameters][124]
+    -   [getCoinStatistic][125]
+    -   [getConsensusMetrics][126]
+    -   [getCandidateMetrics][127]
+    -   [sendTransfer][128]
+        -   [Parameters][129]
+    -   [sendVote][130]
+        -   [Parameters][131]
+    -   [sendSmartContract][132]
+        -   [Parameters][133]
+    -   [getPeers][134]
+    -   [getReceiptByExecutionID][135]
+        -   [Parameters][136]
+    -   [readExecutionState][137]
+        -   [Parameters][138]
+
+## TWallet
+
+TWallet type contains the private key, public key, and raw address.
+
+Type: {privateKey: [string][139], publicKey: [string][139], rawAddress: [string][139]}
+
+### Properties
+
+-   `privateKey` **[string][139]**
+-   `publicKey` **[string][139]**
+-   `rawAddress` **[string][139]**
+
+## TUnsignedTransfer
+
+TUnsignedTransfer is the type of unsigned transfer to be signed.
+
+Type: {version: [number][140], nonce: [number][140], amount: [number][140], sender: [string][139], recipient: [string][139], payload: [string][139], isCoinbase: [boolean][141], senderPubKey: [string][139], gasLimit: [number][140], gasPrice: [string][139]}
+
+### Properties
+
+-   `version` **[number][140]**
+-   `nonce` **[number][140]**
+-   `amount` **[number][140]**
+-   `sender` **[string][139]**
+-   `recipient` **[string][139]**
+-   `payload` **[string][139]**
+-   `isCoinbase` **[boolean][141]**
+-   `senderPubKey` **[string][139]**
+-   `gasLimit` **[number][140]**
+-   `gasPrice` **[string][139]**
+
+## TUnsignedExecution
+
+UnsignedExecution is the type of the unsigned execution to be signed.
+
+Type: {byteCode: [string][139], nonce: [number][140]?, gasLimit: [number][140], version: [number][140], contract: [string][139]?, amount: [string][139]}
+
+### Properties
+
+-   `byteCode` **[string][139]**
+-   `nonce` **[number][140]?**
+-   `gasLimit` **[number][140]**
+-   `version` **[number][140]**
+-   `contract` **[string][139]?**
+-   `amount` **[string][139]**
 
 ## Accounts
 
@@ -144,7 +198,7 @@ Accounts contains functions to generate Iotex accounts and sign transactions and
 
 ### Parameters
 
--   `methods` **[Methods][131]**
+-   `rpcMethods` **[RpcMethods][142]**
 
 ### Examples
 
@@ -177,7 +231,7 @@ accounts.wallets[unlockedWallet.publicKey];
 
 create generates a wallet and add it to local wallets.
 
-Returns **[Promise][132]&lt;Wallet>**
+Returns **[Promise][143]&lt;[TWallet][144]>**
 
 ### privateKeyToAccount
 
@@ -185,9 +239,9 @@ privateKeyToAccount gets the whole wallet from private key.
 
 #### Parameters
 
--   `privateKey` **[string][133]**
+-   `privateKey` **[string][139]**
 
-Returns **[Promise][132]&lt;Wallet>**
+Returns **[Promise][143]&lt;[TWallet][144]>**
 
 ### add
 
@@ -195,9 +249,9 @@ privateKeyToAccount gets the whole wallet from private key and save it to local 
 
 #### Parameters
 
--   `privateKey` **[string][133]**
+-   `privateKey` **[string][139]**
 
-Returns **[Promise][132]&lt;Wallet>**
+Returns **[Promise][143]&lt;[TWallet][144]>**
 
 ### signTransfer
 
@@ -205,8 +259,8 @@ signTransfer signs a transfer with the wallet.
 
 #### Parameters
 
--   `unsignedTransfer` **UnsignedTransfer**
--   `wallet` **Wallet**
+-   `unsignedTransfer` **[TUnsignedTransfer][145]**
+-   `wallet` **[TWallet][144]**
 
 ### signSmartContract
 
@@ -214,8 +268,8 @@ signSmartContract signs an execution with the wallet.
 
 #### Parameters
 
--   `wallet` **Wallet**
--   `exec` **UnsignedExecution**
+-   `wallet` **[TWallet][144]**
+-   `exec` **[TUnsignedExecution][146]**
 
 Returns **any**
 
@@ -223,43 +277,34 @@ Returns **any**
 
 TContractOpts are the settings to create the contract object with.
 
-Type: {provider: [Provider][134], abi: any, contractAddress: [string][133], methods: [Methods][131], gasLimit: [number][135], accounts: [Accounts][136], wallet: {publicKey: [string][133], privateKey: [string][133], rawAddress: [string][133]}}
+Type: {provider: [Provider][147], abi: any, contractAddress: [string][139], rpcMethods: [RpcMethods][142], accounts: [Accounts][148], wallet: {publicKey: [string][139], privateKey: [string][139], rawAddress: [string][139]}}
 
 ### Properties
 
--   `provider` **[Provider][134]**
+-   `provider` **[Provider][147]**
 -   `abi` **any**
--   `contractAddress` **[string][133]**
--   `methods` **[Methods][131]**
--   `gasLimit` **[number][135]**
--   `accounts` **[Accounts][136]**
--   `wallet` **{publicKey: [string][133], privateKey: [string][133], rawAddress: [string][133]}**
--   `wallet.publicKey` **[string][133]**
--   `wallet.privateKey` **[string][133]**
--   `wallet.rawAddress` **[string][133]**
+-   `contractAddress` **[string][139]**
+-   `rpcMethods` **[RpcMethods][142]**
+-   `accounts` **[Accounts][148]**
+-   `wallet` **{publicKey: [string][139], privateKey: [string][139], rawAddress: [string][139]}**
+-   `wallet.publicKey` **[string][139]**
+-   `wallet.privateKey` **[string][139]**
+-   `wallet.rawAddress` **[string][139]**
 
-## TSignedTransaction
+## TMethodsOpts
 
-TSignedTransaction is the raw transaction to be signed.
+TMethodsOpts are settings to call smart contract methods with.
 
-Type: {version: [number][135], nonce: [number][135], signature: [string][133], executor: [string][133], contract: [string][133], executorPubKey: [string][133], gas: [number][135], gasPrice: [number][135], data: [string][133], ID: [string][133], amount: [number][135], blockID: [string][133], isPending: [boolean][137], timestamp: [number][135]}
+Type: {contractAddress: [string][139], nonce: [number][140], gasLimit: [number][140], gasPrice: [string][139], version: [number][140], amount: [string][139]}
 
 ### Properties
 
--   `version` **[number][135]**
--   `nonce` **[number][135]**
--   `signature` **[string][133]**
--   `executor` **[string][133]**
--   `contract` **[string][133]**
--   `executorPubKey` **[string][133]**
--   `gas` **[number][135]**
--   `gasPrice` **[number][135]**
--   `data` **[string][133]**
--   `ID` **[string][133]**
--   `amount` **[number][135]**
--   `blockID` **[string][133]**
--   `isPending` **[boolean][137]**
--   `timestamp` **[number][135]**
+-   `contractAddress` **[string][139]**
+-   `nonce` **[number][140]**
+-   `gasLimit` **[number][140]**
+-   `gasPrice` **[string][139]**
+-   `version` **[number][140]**
+-   `amount` **[string][139]**
 
 ## Contract
 
@@ -271,7 +316,7 @@ This allows you to interact with smart contracts as if they were JavaScript obje
 
 ### Parameters
 
--   `opts` **[TContractOpts][138]** ContractOpts are the settings to create the contract object with.
+-   `opts` **[TContractOpts][149]** ContractOpts are the settings to create the contract object with.
 
 ### methods
 
@@ -285,9 +330,17 @@ deploy signs an execution and then send it to the iotex blockchain.
 
 #### Parameters
 
--   `exec` **UnsignedExecution**
+-   `exec` **[TUnsignedExecution][146]**
 
-Returns **any**
+Returns **[Promise][143]&lt;[TExecution][150]>**
+
+### prepareMethods
+
+prepareMethods prepares calls of smart contract with method options.
+
+#### Parameters
+
+-   `opts` **[TMethodsOpts][151]** are the settings to call methods with.
 
 ## Iotx
 
@@ -295,7 +348,7 @@ Iotx is the client to interact with iotex-core and iotex-wallet.
 
 ### Parameters
 
--   `provider` **[Provider][134]** is the network provider/endpoint this client will interact with.
+-   `provider` **[Provider][147]** is the network provider/endpoint this client will interact with.
 
 ### Examples
 
@@ -336,28 +389,64 @@ const receipt = await iotx.sendTransfer({
 });
 
 
-// run smart contracts from solidity file
-import solc from 'solc';
-import fs from 'fs';
+// compile and deploy a contract
+const solidityFileString = `
+pragma solidity ^0.4.0;
 
-const solFile = `${__dirname}/RollDice.sol`;
-const contractName = ':RollDice';
-const input = fs.readFileSync(solFile);
-const output = solc.compile(input.toString(), 1);
+contract SimpleStorage {
+   uint storedData;
+
+   function set(uint x) public {
+       storedData = x;
+   }
+
+   function get() public view returns (uint) {
+       return storedData;
+   }
+}
+`;
+const contractName = ':SimpleStorage';
+const output = solc.compile(solidityFileString, 1);
 const abi = JSON.parse(output.contracts[contractName].interface);
+const provider = new HttpProvider('http://localhost:14004/');
 const iotx = new Iotx(provider);
-const wallet = await iotx.accounts.add('62d8dd889f14f4058b8926041d095c4230f973fe60c8e54c35e5fb57c3a5596225488101');
-const contract = new iotx.Contract({
-   abi,
-   contractName: ':RollDice',
-   contractAddress: 'io1qyqsyqcy8zn8qths2qajddca0p0umhtfhgj0uqfgfwzvk0',
-   gasLimit: 1,
-   wallet,
- });
+const wallet = await iotx.accounts.add('c5364b1a2d99d127439be22edfd657889981e9ba4d6d18fe8eca489d48485371efcb2400');
 const bytecode = output.contracts[contractName].bytecode;
+const contract = new iotx.Contract({abi, contractName, wallet});
+const exec = await contract.deploy({
+   byteCode: bytecode,
+   gasLimit: 100000,
+   gasPrice: '0',
+   version: 1,
+   contract: '',
+   amount: '1',
+ });
 
-const deployedHash = await contract.deploy({byteCode: bytecode, gasLimit: 1, gasPrice: '1', version: 1, contract: '', amount: '1'});
-const calledHash = await contract.methods.rollAward('id', wallet.rawAddress);
+const timeout = time => new Promise(resolve => window.setTimeout(resolve, time));
+await timeout(5000);
+
+const receipt = await iotx.rpcMethods.getReceiptByExecutionID(exec.ID);
+
+// call methods in the smart contract deployed
+await contract
+.prepareMethods({
+     contractAddress: receipt.contractAddress,
+     gasLimit: 100000,
+     gasPrice: '0',
+     version: 1,
+     amount: '0',
+   })
+.set(666);
+
+const value = await contract
+.prepareMethods({
+     contractAddress: receipt.contractAddress,
+     gasLimit: 100000,
+     gasPrice: '0',
+     version: 1,
+     amount: '0',
+   })
+.get();
 ```
 
 ### sendTransfer
@@ -366,303 +455,353 @@ sendTransfer signs, send, and get receipt of the transfer.
 
 #### Parameters
 
--   `transfer` **UnsignedTransfer** : the transfer to be sent.
+-   `transfer` **[TUnsignedTransfer][145]** : the transfer to be sent.
 
-Returns **[Promise][132]&lt;[TTransfer][139]>**
+Returns **[Promise][143]&lt;[TTransfer][152]>**
+
+## Request
+
+Request is the type of the request sent from the Provider.
+
+Type: {method: [string][139], params: [Array][153]&lt;any>}
+
+### Properties
+
+-   `method` **[string][139]**
+-   `params` **[Array][153]&lt;any>**
+
+## Response
+
+Response is the response type received by the Provider.
+
+Type: {result: any, error: {code: [number][140], message: [string][139]}}
+
+### Properties
+
+-   `result` **any**
+-   `error` **{code: [number][140], message: [string][139]}**
+-   `error.code` **[number][140]**
+-   `error.message` **[string][139]**
+
+## Provider
+
+Provider is the network provider interface of iotex backend.
+
+### Properties
+
+-   `send` **function (request: [Request][154]): [Promise][143]&lt;[Response][155]>**
+
+## HttpProvider
+
+Provider is the network provider of iotex backend that is implemented in HTTP.
+
+### Parameters
+
+-   `url` **[string][139]**
+-   `timeout` **[number][140]?**
+
+### send
+
+send makes an xhr call to the url.
+
+#### Parameters
+
+-   `request` **[Request][154]**
+
+Returns **[Promise][143]&lt;[Response][155]>**
 
 ## TCoinStatistic
 
 TCoinStatistic is the type of stats of the iotx coin.
 
-Type: {height: [number][135], supply: [number][135], transfers: [number][135], votes: [number][135], executions: [number][135], aps: [number][135]}
+Type: {height: [number][140], supply: [number][140], transfers: [number][140], votes: [number][140], executions: [number][140], aps: [number][140]}
 
 ### Properties
 
--   `height` **[number][135]**
--   `supply` **[number][135]**
--   `transfers` **[number][135]**
--   `votes` **[number][135]**
--   `executions` **[number][135]**
--   `aps` **[number][135]**
+-   `height` **[number][140]**
+-   `supply` **[number][140]**
+-   `transfers` **[number][140]**
+-   `votes` **[number][140]**
+-   `executions` **[number][140]**
+-   `aps` **[number][140]**
 
 ## TBlockGenerator
 
 TBlockGenerator is the type that identifies the generator of the block.
 
-Type: {name: [string][133], address: [string][133]}
+Type: {name: [string][139], address: [string][139]}
 
 ### Properties
 
--   `name` **[string][133]**
--   `address` **[string][133]**
+-   `name` **[string][139]**
+-   `address` **[string][139]**
 
 ## TBlock
 
 TBlock is the type of the meta data of the block.
 
-Type: {ID: [string][133], height: [number][135], timestamp: [number][135], transfers: [number][135], votes: [number][135], executions: [number][135], generateBy: [TBlockGenerator][140], amount: [number][135], forged: [number][135], size: [number][135]}
+Type: {ID: [string][139], height: [number][140], timestamp: [number][140], transfers: [number][140], votes: [number][140], executions: [number][140], generateBy: [TBlockGenerator][156], amount: [number][140], forged: [number][140], size: [number][140]}
 
 ### Properties
 
--   `ID` **[string][133]**
--   `height` **[number][135]**
--   `timestamp` **[number][135]**
--   `transfers` **[number][135]**
--   `votes` **[number][135]**
--   `executions` **[number][135]**
--   `generateBy` **[TBlockGenerator][140]**
--   `amount` **[number][135]**
--   `forged` **[number][135]**
--   `size` **[number][135]**
+-   `ID` **[string][139]**
+-   `height` **[number][140]**
+-   `timestamp` **[number][140]**
+-   `transfers` **[number][140]**
+-   `votes` **[number][140]**
+-   `executions` **[number][140]**
+-   `generateBy` **[TBlockGenerator][156]**
+-   `amount` **[number][140]**
+-   `forged` **[number][140]**
+-   `size` **[number][140]**
 
 ## TTransfer
 
 TTransfer is the type of the transfer.
 
-Type: {version: [number][135], ID: [string][133], nonce: [number][135], sender: [string][133], recipient: [string][133], amount: [number][135], senderPubKey: [string][133], payload: [string][133], isCoinbase: [boolean][137], fee: [number][135], timestamp: [number][135], blockID: [string][133], isPending: [boolean][137], signature: [string][133]?}
+Type: {version: [number][140], ID: [string][139], nonce: [number][140], sender: [string][139], recipient: [string][139], amount: [number][140], senderPubKey: [string][139], payload: [string][139], isCoinbase: [boolean][141], fee: [number][140], timestamp: [number][140], blockID: [string][139], isPending: [boolean][141], signature: [string][139]?}
 
 ### Properties
 
--   `version` **[number][135]**
--   `ID` **[string][133]**
--   `nonce` **[number][135]**
--   `sender` **[string][133]**
--   `recipient` **[string][133]**
--   `amount` **[number][135]**
--   `senderPubKey` **[string][133]**
--   `payload` **[string][133]**
--   `isCoinbase` **[boolean][137]**
--   `fee` **[number][135]**
--   `timestamp` **[number][135]**
--   `blockID` **[string][133]**
--   `isPending` **[boolean][137]**
--   `signature` **[string][133]?**
+-   `version` **[number][140]**
+-   `ID` **[string][139]**
+-   `nonce` **[number][140]**
+-   `sender` **[string][139]**
+-   `recipient` **[string][139]**
+-   `amount` **[number][140]**
+-   `senderPubKey` **[string][139]**
+-   `payload` **[string][139]**
+-   `isCoinbase` **[boolean][141]**
+-   `fee` **[number][140]**
+-   `timestamp` **[number][140]**
+-   `blockID` **[string][139]**
+-   `isPending` **[boolean][141]**
+-   `signature` **[string][139]?**
 
 ## TExecution
 
 TExecution is the type of the execution to be sent to the iotex blockchain.
 
-Type: {version: [number][135], ID: [string][133], nonce: [number][135], executor: [string][133], contract: [string][133], amount: [string][133], executorPubKey: [string][133], signature: [string][133], gasLimit: [number][135], gasPrice: [string][133], timestamp: [number][135], data: [string][133], blockID: [string][133], isPending: [boolean][137]}
+Type: {version: [number][140], ID: [string][139], nonce: [number][140], executor: [string][139], contract: [string][139], amount: [string][139], executorPubKey: [string][139], signature: [string][139], gasLimit: [number][140], gasPrice: [string][139], timestamp: [number][140], data: [string][139], blockID: [string][139], isPending: [boolean][141]}
 
 ### Properties
 
--   `version` **[number][135]**
--   `ID` **[string][133]**
--   `nonce` **[number][135]**
--   `executor` **[string][133]**
--   `contract` **[string][133]**
--   `amount` **[string][133]**
--   `executorPubKey` **[string][133]**
--   `signature` **[string][133]**
--   `gasLimit` **[number][135]**
--   `gasPrice` **[string][133]**
--   `timestamp` **[number][135]**
--   `data` **[string][133]**
--   `blockID` **[string][133]**
--   `isPending` **[boolean][137]**
+-   `version` **[number][140]**
+-   `ID` **[string][139]**
+-   `nonce` **[number][140]**
+-   `executor` **[string][139]**
+-   `contract` **[string][139]**
+-   `amount` **[string][139]**
+-   `executorPubKey` **[string][139]**
+-   `signature` **[string][139]**
+-   `gasLimit` **[number][140]**
+-   `gasPrice` **[string][139]**
+-   `timestamp` **[number][140]**
+-   `data` **[string][139]**
+-   `blockID` **[string][139]**
+-   `isPending` **[boolean][141]**
 
 ## TLog
 
 TLog is the type of the log in the smart contract log.
 
-Type: {address: [string][133], topics: [Array][141]&lt;[string][133]>, data: [string][133], blockNumber: [number][135], txnHash: [string][133], blockHash: [string][133], index: [number][135]}
+Type: {address: [string][139], topics: [Array][153]&lt;[string][139]>, data: [string][139], blockNumber: [number][140], txnHash: [string][139], blockHash: [string][139], index: [number][140]}
 
 ### Properties
 
--   `address` **[string][133]**
--   `topics` **[Array][141]&lt;[string][133]>**
--   `data` **[string][133]**
--   `blockNumber` **[number][135]**
--   `txnHash` **[string][133]**
--   `blockHash` **[string][133]**
--   `index` **[number][135]**
+-   `address` **[string][139]**
+-   `topics` **[Array][153]&lt;[string][139]>**
+-   `data` **[string][139]**
+-   `blockNumber` **[number][140]**
+-   `txnHash` **[string][139]**
+-   `blockHash` **[string][139]**
+-   `index` **[number][140]**
 
 ## TReceipt
 
 TReceipt is the type of the receipt.
 
-Type: {returnValue: [string][133], status: [number][135], hash: [string][133], gasConsumed: [number][135], contractAddress: [string][133], logs: [Array][141]&lt;[TLog][142]>}
+Type: {returnValue: [string][139], status: [number][140], hash: [string][139], gasConsumed: [number][140], contractAddress: [string][139], logs: [Array][153]&lt;[TLog][157]>}
 
 ### Properties
 
--   `returnValue` **[string][133]**
--   `status` **[number][135]**
--   `hash` **[string][133]**
--   `gasConsumed` **[number][135]**
--   `contractAddress` **[string][133]**
--   `logs` **[Array][141]&lt;[TLog][142]>**
+-   `returnValue` **[string][139]**
+-   `status` **[number][140]**
+-   `hash` **[string][139]**
+-   `gasConsumed` **[number][140]**
+-   `contractAddress` **[string][139]**
+-   `logs` **[Array][153]&lt;[TLog][157]>**
 
 ## TVote
 
 TVote is the type of the vote.
 
-Type: {version: [number][135], ID: [string][133], nonce: [number][135], timestamp: [number][135], voter: [string][133], votee: [string][133], voterPubKey: [string][133], signature: [string][133], blockID: [string][133], isPending: [boolean][137]}
+Type: {version: [number][140], ID: [string][139], nonce: [number][140], timestamp: [number][140], voter: [string][139], votee: [string][139], voterPubKey: [string][139], signature: [string][139], blockID: [string][139], isPending: [boolean][141]}
 
 ### Properties
 
--   `version` **[number][135]**
--   `ID` **[string][133]**
--   `nonce` **[number][135]**
--   `timestamp` **[number][135]**
--   `voter` **[string][133]**
--   `votee` **[string][133]**
--   `voterPubKey` **[string][133]**
--   `signature` **[string][133]**
--   `blockID` **[string][133]**
--   `isPending` **[boolean][137]**
+-   `version` **[number][140]**
+-   `ID` **[string][139]**
+-   `nonce` **[number][140]**
+-   `timestamp` **[number][140]**
+-   `voter` **[string][139]**
+-   `votee` **[string][139]**
+-   `voterPubKey` **[string][139]**
+-   `signature` **[string][139]**
+-   `blockID` **[string][139]**
+-   `isPending` **[boolean][141]**
 
 ## TAddressDetails
 
 TAddressDetails is the type of the address' account detail.
 
-Type: {address: [string][133], totalBalance: [number][135], nonce: [number][135], pendingNonce: [number][135], isCandidate: [boolean][137]}
+Type: {address: [string][139], totalBalance: [number][140], nonce: [number][140], pendingNonce: [number][140], isCandidate: [boolean][141]}
 
 ### Properties
 
--   `address` **[string][133]**
--   `totalBalance` **[number][135]**
--   `nonce` **[number][135]**
--   `pendingNonce` **[number][135]**
--   `isCandidate` **[boolean][137]**
+-   `address` **[string][139]**
+-   `totalBalance` **[number][140]**
+-   `nonce` **[number][140]**
+-   `pendingNonce` **[number][140]**
+-   `isCandidate` **[boolean][141]**
 
 ## TCandidate
 
 TCandidate is the type of the candidate.
 
-Type: {address: [string][133], totalVote: [number][135], creationHeight: [number][135], lastUpdateHeight: [number][135], isDelegate: [boolean][137], isProducer: [boolean][137]}
+Type: {address: [string][139], totalVote: [number][140], creationHeight: [number][140], lastUpdateHeight: [number][140], isDelegate: [boolean][141], isProducer: [boolean][141]}
 
 ### Properties
 
--   `address` **[string][133]**
--   `totalVote` **[number][135]**
--   `creationHeight` **[number][135]**
--   `lastUpdateHeight` **[number][135]**
--   `isDelegate` **[boolean][137]**
--   `isProducer` **[boolean][137]**
+-   `address` **[string][139]**
+-   `totalVote` **[number][140]**
+-   `creationHeight` **[number][140]**
+-   `lastUpdateHeight` **[number][140]**
+-   `isDelegate` **[boolean][141]**
+-   `isProducer` **[boolean][141]**
 
 ## TCandidateMetrics
 
 TCandidateMetrics is the type of the candidate metrics.
 
-Type: {candidates: [Array][141]&lt;[TCandidate][143]>, latestEpoch: [number][135], latestHeight: [number][135]}
+Type: {candidates: [Array][153]&lt;[TCandidate][158]>, latestEpoch: [number][140], latestHeight: [number][140]}
 
 ### Properties
 
--   `candidates` **[Array][141]&lt;[TCandidate][143]>**
--   `latestEpoch` **[number][135]**
--   `latestHeight` **[number][135]**
+-   `candidates` **[Array][153]&lt;[TCandidate][158]>**
+-   `latestEpoch` **[number][140]**
+-   `latestHeight` **[number][140]**
 
 ## TConsensusMetrics
 
 TConsensusMetrics is the type of the consensus metrics.
 
-Type: {latestEpoch: [number][135], latestDelegates: [Array][141]&lt;[string][133]>, latestBlockProducer: [string][133], candidates: [Array][141]&lt;[string][133]>}
+Type: {latestEpoch: [number][140], latestDelegates: [Array][153]&lt;[string][139]>, latestBlockProducer: [string][139], candidates: [Array][153]&lt;[string][139]>}
 
 ### Properties
 
--   `latestEpoch` **[number][135]**
--   `latestDelegates` **[Array][141]&lt;[string][133]>**
--   `latestBlockProducer` **[string][133]**
--   `candidates` **[Array][141]&lt;[string][133]>**
+-   `latestEpoch` **[number][140]**
+-   `latestDelegates` **[Array][153]&lt;[string][139]>**
+-   `latestBlockProducer` **[string][139]**
+-   `candidates` **[Array][153]&lt;[string][139]>**
 
 ## TSendTransferRequest
 
 TSendTransferRequest is the type of the transfer request.
 
-Type: {version: [number][135], nonce: [number][135], sender: [string][133], recipient: [string][133], amount: [number][135], senderPubKey: [string][133], signature: [string][133], payload: [string][133], isCoinbase: [boolean][137]}
+Type: {version: [number][140], nonce: [number][140], sender: [string][139], recipient: [string][139], amount: [number][140], senderPubKey: [string][139], signature: [string][139], payload: [string][139], isCoinbase: [boolean][141]}
 
 ### Properties
 
--   `version` **[number][135]**
--   `nonce` **[number][135]**
--   `sender` **[string][133]**
--   `recipient` **[string][133]**
--   `amount` **[number][135]**
--   `senderPubKey` **[string][133]**
--   `signature` **[string][133]**
--   `payload` **[string][133]**
--   `isCoinbase` **[boolean][137]**
+-   `version` **[number][140]**
+-   `nonce` **[number][140]**
+-   `sender` **[string][139]**
+-   `recipient` **[string][139]**
+-   `amount` **[number][140]**
+-   `senderPubKey` **[string][139]**
+-   `signature` **[string][139]**
+-   `payload` **[string][139]**
+-   `isCoinbase` **[boolean][141]**
 
 ## TSendTransferResponse
 
 TSendTransferResponse is the type of the response of the sendTransfer.
 
-Type: {hash: [string][133]}
+Type: {hash: [string][139]}
 
 ### Properties
 
--   `hash` **[string][133]**
+-   `hash` **[string][139]**
 
 ## TSendVoteRequest
 
 TSendVoteRequest is the type of the request of the sendVote.
 
-Type: {version: [number][135], nonce: [number][135], voter: [string][133], votee: [string][133], voterPubKey: [string][133], signature: [string][133]}
+Type: {version: [number][140], nonce: [number][140], voter: [string][139], votee: [string][139], voterPubKey: [string][139], signature: [string][139]}
 
 ### Properties
 
--   `version` **[number][135]**
--   `nonce` **[number][135]**
--   `voter` **[string][133]**
--   `votee` **[string][133]**
--   `voterPubKey` **[string][133]**
--   `signature` **[string][133]**
+-   `version` **[number][140]**
+-   `nonce` **[number][140]**
+-   `voter` **[string][139]**
+-   `votee` **[string][139]**
+-   `voterPubKey` **[string][139]**
+-   `signature` **[string][139]**
 
 ## TSendVoteResponse
 
 TSendVoteResponse is the type of the response of the sendVote.
 
-Type: {hash: [string][133]}
+Type: {hash: [string][139]}
 
 ### Properties
 
--   `hash` **[string][133]**
+-   `hash` **[string][139]**
 
 ## TNode
 
 TNode is the type of the node.
 
-Type: {address: [string][133]}
+Type: {address: [string][139]}
 
 ### Properties
 
--   `address` **[string][133]**
+-   `address` **[string][139]**
 
 ## TGetPeersResponse
 
 TGetPeersResponse is the type of the response of the getPeers.
 
-Type: {Self: [TNode][144], Peers: [Array][141]&lt;[TNode][144]>}
+Type: {Self: [TNode][159], Peers: [Array][153]&lt;[TNode][159]>}
 
 ### Properties
 
--   `Self` **[TNode][144]**
--   `Peers` **[Array][141]&lt;[TNode][144]>**
+-   `Self` **[TNode][159]**
+-   `Peers` **[Array][153]&lt;[TNode][159]>**
 
 ## TSendSmartContractResponse
 
 TSendSmartContractResponse is the type of the response of sendSmartContract.
 
-Type: {hash: [string][133]}
+Type: {hash: [string][139]}
 
 ### Properties
 
--   `hash` **[string][133]**
+-   `hash` **[string][139]**
 
-## Methods
+## RpcMethods
 
-Methods is the API remote methods to call iotex blockchain.
+RpcMethods are the API remote methods to call iotex blockchain.
 
 ### Parameters
 
--   `provider` **[Provider][134]**
+-   `provider` **[Provider][147]**
 
 ### Examples
 
 ```javascript
-import {Methods} from 'iotex-client';
-import {HttpProvider} from 'iotex-client';
-const methods = new Methods(new HttpProvider('http://127.0.0.1:14004'));
+import {RpcMethods, HttpProvider} from 'iotex-client-js';
+const methods = new RpcMethods(new HttpProvider('http://127.0.0.1:14004'));
 const height = await methods.getBlockchainHeight();
 const bal = await methods.getAddressBalance('io1qyqsyqcyae8h2l4w7yr9pw9qdy26rm27jwzrzqtmqqnmt3');
 ```
@@ -671,7 +810,7 @@ const bal = await methods.getAddressBalance('io1qyqsyqcyae8h2l4w7yr9pw9qdy26rm27
 
 get the blockchain tip height
 
-Returns **[Promise][132]&lt;[number][135]>**
+Returns **[Promise][143]&lt;[number][140]>**
 
 ### getAddressBalance
 
@@ -679,9 +818,9 @@ get the balance of an address
 
 #### Parameters
 
--   `address` **[string][133]**
+-   `address` **[string][139]**
 
-Returns **[Promise][132]&lt;[number][135]>**
+Returns **[Promise][143]&lt;[number][140]>**
 
 ### getAddressDetails
 
@@ -689,9 +828,9 @@ get the address detail of an iotex address
 
 #### Parameters
 
--   `address` **[string][133]**
+-   `address` **[string][139]**
 
-Returns **[Promise][132]&lt;[TAddressDetails][145]>**
+Returns **[Promise][143]&lt;[TAddressDetails][160]>**
 
 ### getLastTransfersByRange
 
@@ -699,12 +838,12 @@ get list of transfers by start block height, transfer offset and limit
 
 #### Parameters
 
--   `startBlockHeight` **[number][135]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
--   `showCoinBase` **[boolean][137]**
+-   `startBlockHeight` **[number][140]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
+-   `showCoinBase` **[boolean][141]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TTransfer][139]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TTransfer][152]>>**
 
 ### getTransferByID
 
@@ -712,9 +851,9 @@ get transfers from transaction id
 
 #### Parameters
 
--   `transferID` **[string][133]**
+-   `transferID` **[string][139]**
 
-Returns **[Promise][132]&lt;[TTransfer][139]>**
+Returns **[Promise][143]&lt;[TTransfer][152]>**
 
 ### getTransfersByAddress
 
@@ -722,11 +861,11 @@ get list of transfers belonging to an address
 
 #### Parameters
 
--   `address` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `address` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TTransfer][139]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TTransfer][152]>>**
 
 ### getUnconfirmedTransfersByAddress
 
@@ -734,11 +873,11 @@ get list of unconfirmed transfers in actpool belonging to an address
 
 #### Parameters
 
--   `address` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `address` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TTransfer][139]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TTransfer][152]>>**
 
 ### getTransfersByBlockID
 
@@ -746,11 +885,11 @@ get all transfers in a block
 
 #### Parameters
 
--   `blkID` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `blkID` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TTransfer][139]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TTransfer][152]>>**
 
 ### getLastVotesByRange
 
@@ -758,11 +897,11 @@ get list of votes by start block height, vote offset and limit
 
 #### Parameters
 
--   `startBlockHeight` **[number][135]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `startBlockHeight` **[number][140]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TVote][146]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TVote][161]>>**
 
 ### getVoteByID
 
@@ -770,9 +909,9 @@ get vote from vote id
 
 #### Parameters
 
--   `voteID` **[string][133]**
+-   `voteID` **[string][139]**
 
-Returns **[Promise][132]&lt;[TVote][146]>**
+Returns **[Promise][143]&lt;[TVote][161]>**
 
 ### getVotesByAddress
 
@@ -780,11 +919,11 @@ get list of votes belonging to an address
 
 #### Parameters
 
--   `address` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `address` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TVote][146]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TVote][161]>>**
 
 ### getUnconfirmedVotesByAddress
 
@@ -792,11 +931,11 @@ get list of unconfirmed votes in actpool belonging to an address
 
 #### Parameters
 
--   `address` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `address` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TVote][146]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TVote][161]>>**
 
 ### getVotesByBlockID
 
@@ -804,11 +943,11 @@ get all votes in a block
 
 #### Parameters
 
--   `blkID` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `blkID` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TVote][146]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TVote][161]>>**
 
 ### getLastExecutionsByRange
 
@@ -816,11 +955,11 @@ get list of executions by start block height, execution offset and limit
 
 #### Parameters
 
--   `startBlockHeight` **[number][135]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `startBlockHeight` **[number][140]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TExecution][147]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TExecution][150]>>**
 
 ### getExecutionByID
 
@@ -828,9 +967,9 @@ get execution from execution id
 
 #### Parameters
 
--   `executionID` **[string][133]**
+-   `executionID` **[string][139]**
 
-Returns **[Promise][132]&lt;[TExecution][147]>**
+Returns **[Promise][143]&lt;[TExecution][150]>**
 
 ### getExecutionsByAddress
 
@@ -838,11 +977,11 @@ get list of executions belonging to an address
 
 #### Parameters
 
--   `address` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `address` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TExecution][147]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TExecution][150]>>**
 
 ### getUnconfirmedExecutionsByAddress
 
@@ -850,11 +989,11 @@ get list of unconfirmed executions in actpool belonging to an address
 
 #### Parameters
 
--   `address` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `address` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TExecution][147]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TExecution][150]>>**
 
 ### getExecutionsByBlockID
 
@@ -862,11 +1001,11 @@ get all executions in a block
 
 #### Parameters
 
--   `blkID` **[string][133]**
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `blkID` **[string][139]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TExecution][147]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TExecution][150]>>**
 
 ### getLastBlocksByRange
 
@@ -874,10 +1013,10 @@ get list of blocks by block id offset and limit
 
 #### Parameters
 
--   `offset` **[number][135]**
--   `limit` **[number][135]**
+-   `offset` **[number][140]**
+-   `limit` **[number][140]**
 
-Returns **[Promise][132]&lt;[Array][141]&lt;[TBlock][148]>>**
+Returns **[Promise][143]&lt;[Array][153]&lt;[TBlock][162]>>**
 
 ### getBlockByID
 
@@ -885,27 +1024,27 @@ get block by block id
 
 #### Parameters
 
--   `blkID` **[string][133]**
+-   `blkID` **[string][139]**
 
-Returns **[Promise][132]&lt;[TBlock][148]>**
+Returns **[Promise][143]&lt;[TBlock][162]>**
 
 ### getCoinStatistic
 
 get statistic of iotx
 
-Returns **[Promise][132]&lt;[TCoinStatistic][149]>**
+Returns **[Promise][143]&lt;[TCoinStatistic][163]>**
 
 ### getConsensusMetrics
 
 get consensus metrics
 
-Returns **[Promise][132]&lt;[TConsensusMetrics][150]>**
+Returns **[Promise][143]&lt;[TConsensusMetrics][164]>**
 
 ### getCandidateMetrics
 
 get candidates metrics
 
-Returns **[Promise][132]&lt;[TCandidateMetrics][151]>**
+Returns **[Promise][143]&lt;[TCandidateMetrics][165]>**
 
 ### sendTransfer
 
@@ -913,9 +1052,9 @@ send transfer
 
 #### Parameters
 
--   `request` **[TSendTransferRequest][152]**
+-   `request` **[TSendTransferRequest][166]**
 
-Returns **[Promise][132]&lt;[TSendTransferResponse][153]>**
+Returns **[Promise][143]&lt;[TSendTransferResponse][167]>**
 
 ### sendVote
 
@@ -923,9 +1062,9 @@ send vote
 
 #### Parameters
 
--   `request` **[TSendVoteRequest][154]**
+-   `request` **[TSendVoteRequest][168]**
 
-Returns **[Promise][132]&lt;[TSendVoteResponse][155]>**
+Returns **[Promise][143]&lt;[TSendVoteResponse][169]>**
 
 ### sendSmartContract
 
@@ -933,15 +1072,15 @@ sendSmartContract
 
 #### Parameters
 
--   `request` **[TExecution][147]**
+-   `request` **[TExecution][150]**
 
-Returns **[Promise][132]&lt;[TSendSmartContractResponse][156]>**
+Returns **[Promise][143]&lt;[TSendSmartContractResponse][170]>**
 
 ### getPeers
 
 get list of peers
 
-Returns **[Promise][132]&lt;[TGetPeersResponse][157]>**
+Returns **[Promise][143]&lt;[TGetPeersResponse][171]>**
 
 ### getReceiptByExecutionID
 
@@ -949,9 +1088,9 @@ get receipt by execution id
 
 #### Parameters
 
--   `id` **[string][133]**
+-   `id` **[string][139]**
 
-Returns **[Promise][132]&lt;[TReceipt][158]>**
+Returns **[Promise][143]&lt;[TReceipt][172]>**
 
 ### readExecutionState
 
@@ -959,377 +1098,350 @@ read execution state
 
 #### Parameters
 
--   `request` **[TExecution][147]**
+-   `request` **[TExecution][150]**
 
-Returns **[Promise][132]&lt;[string][133]>**
+Returns **[Promise][143]&lt;[string][139]>**
 
-## Request
+[1]: #twallet
 
-Request is the type of the request sent from the Provider.
+[2]: #properties
 
-Type: {method: [string][133], params: [Array][141]&lt;any>}
+[3]: #tunsignedtransfer
 
-### Properties
+[4]: #properties-1
 
--   `method` **[string][133]**
--   `params` **[Array][141]&lt;any>**
+[5]: #tunsignedexecution
 
-## Response
+[6]: #properties-2
 
-Response is the response type received by the Provider.
+[7]: #accounts
 
-Type: {result: any, error: {code: [number][135], message: [string][133]}}
+[8]: #parameters
 
-### Properties
+[9]: #examples
 
--   `result` **any**
--   `error` **{code: [number][135], message: [string][133]}**
--   `error.code` **[number][135]**
--   `error.message` **[string][133]**
+[10]: #create
 
-## Provider
+[11]: #privatekeytoaccount
 
-Provider is the network provider interface of iotex backend.
+[12]: #parameters-1
 
-### Properties
+[13]: #add
 
--   `send` **function (request: [Request][159]): [Promise][132]&lt;[Response][160]>**
+[14]: #parameters-2
 
-## HttpProvider
+[15]: #signtransfer
 
-Provider is the network provider of iotex backend that is implemented in HTTP.
+[16]: #parameters-3
 
-### Parameters
+[17]: #signsmartcontract
 
--   `url` **[string][133]**
--   `timeout` **[number][135]?**
+[18]: #parameters-4
 
-### send
+[19]: #tcontractopts
 
-send makes an xhr call to the url.
+[20]: #properties-3
 
-#### Parameters
+[21]: #tmethodsopts
 
--   `request` **[Request][159]**
+[22]: #properties-4
 
-Returns **[Promise][132]&lt;[Response][160]>**
+[23]: #contract
 
-[1]: #accounts
+[24]: #parameters-5
 
-[2]: #parameters
+[25]: #methods
 
-[3]: #examples
+[26]: #deploy
 
-[4]: #create
+[27]: #parameters-6
 
-[5]: #privatekeytoaccount
+[28]: #preparemethods
 
-[6]: #parameters-1
+[29]: #parameters-7
 
-[7]: #add
+[30]: #iotx
 
-[8]: #parameters-2
+[31]: #parameters-8
 
-[9]: #signtransfer
+[32]: #examples-1
 
-[10]: #parameters-3
+[33]: #sendtransfer
 
-[11]: #signsmartcontract
+[34]: #parameters-9
 
-[12]: #parameters-4
+[35]: #request
 
-[13]: #tcontractopts
+[36]: #properties-5
 
-[14]: #properties
+[37]: #response
 
-[15]: #tsignedtransaction
+[38]: #properties-6
 
-[16]: #properties-1
+[39]: #provider
 
-[17]: #contract
+[40]: #properties-7
 
-[18]: #parameters-5
+[41]: #httpprovider
 
-[19]: #methods
+[42]: #parameters-10
 
-[20]: #deploy
+[43]: #send
 
-[21]: #parameters-6
+[44]: #parameters-11
 
-[22]: #iotx
+[45]: #tcoinstatistic
 
-[23]: #parameters-7
+[46]: #properties-8
 
-[24]: #examples-1
+[47]: #tblockgenerator
 
-[25]: #sendtransfer
+[48]: #properties-9
 
-[26]: #parameters-8
+[49]: #tblock
 
-[27]: #tcoinstatistic
+[50]: #properties-10
 
-[28]: #properties-2
+[51]: #ttransfer
 
-[29]: #tblockgenerator
+[52]: #properties-11
 
-[30]: #properties-3
+[53]: #texecution
 
-[31]: #tblock
+[54]: #properties-12
 
-[32]: #properties-4
+[55]: #tlog
 
-[33]: #ttransfer
+[56]: #properties-13
 
-[34]: #properties-5
+[57]: #treceipt
 
-[35]: #texecution
+[58]: #properties-14
 
-[36]: #properties-6
+[59]: #tvote
 
-[37]: #tlog
+[60]: #properties-15
 
-[38]: #properties-7
+[61]: #taddressdetails
 
-[39]: #treceipt
+[62]: #properties-16
 
-[40]: #properties-8
+[63]: #tcandidate
 
-[41]: #tvote
+[64]: #properties-17
 
-[42]: #properties-9
+[65]: #tcandidatemetrics
 
-[43]: #taddressdetails
+[66]: #properties-18
 
-[44]: #properties-10
+[67]: #tconsensusmetrics
 
-[45]: #tcandidate
+[68]: #properties-19
 
-[46]: #properties-11
+[69]: #tsendtransferrequest
 
-[47]: #tcandidatemetrics
+[70]: #properties-20
 
-[48]: #properties-12
+[71]: #tsendtransferresponse
 
-[49]: #tconsensusmetrics
+[72]: #properties-21
 
-[50]: #properties-13
+[73]: #tsendvoterequest
 
-[51]: #tsendtransferrequest
+[74]: #properties-22
 
-[52]: #properties-14
+[75]: #tsendvoteresponse
 
-[53]: #tsendtransferresponse
+[76]: #properties-23
 
-[54]: #properties-15
+[77]: #tnode
 
-[55]: #tsendvoterequest
+[78]: #properties-24
 
-[56]: #properties-16
+[79]: #tgetpeersresponse
 
-[57]: #tsendvoteresponse
+[80]: #properties-25
 
-[58]: #properties-17
+[81]: #tsendsmartcontractresponse
 
-[59]: #tnode
+[82]: #properties-26
 
-[60]: #properties-18
+[83]: #rpcmethods
 
-[61]: #tgetpeersresponse
+[84]: #parameters-12
 
-[62]: #properties-19
+[85]: #examples-2
 
-[63]: #tsendsmartcontractresponse
+[86]: #getblockchainheight
 
-[64]: #properties-20
+[87]: #getaddressbalance
 
-[65]: #methods-1
+[88]: #parameters-13
 
-[66]: #parameters-9
+[89]: #getaddressdetails
 
-[67]: #examples-2
+[90]: #parameters-14
 
-[68]: #getblockchainheight
+[91]: #getlasttransfersbyrange
 
-[69]: #getaddressbalance
+[92]: #parameters-15
 
-[70]: #parameters-10
+[93]: #gettransferbyid
 
-[71]: #getaddressdetails
+[94]: #parameters-16
 
-[72]: #parameters-11
+[95]: #gettransfersbyaddress
 
-[73]: #getlasttransfersbyrange
+[96]: #parameters-17
 
-[74]: #parameters-12
+[97]: #getunconfirmedtransfersbyaddress
 
-[75]: #gettransferbyid
+[98]: #parameters-18
 
-[76]: #parameters-13
+[99]: #gettransfersbyblockid
 
-[77]: #gettransfersbyaddress
+[100]: #parameters-19
 
-[78]: #parameters-14
+[101]: #getlastvotesbyrange
 
-[79]: #getunconfirmedtransfersbyaddress
+[102]: #parameters-20
 
-[80]: #parameters-15
+[103]: #getvotebyid
 
-[81]: #gettransfersbyblockid
+[104]: #parameters-21
 
-[82]: #parameters-16
+[105]: #getvotesbyaddress
 
-[83]: #getlastvotesbyrange
+[106]: #parameters-22
 
-[84]: #parameters-17
+[107]: #getunconfirmedvotesbyaddress
 
-[85]: #getvotebyid
+[108]: #parameters-23
 
-[86]: #parameters-18
+[109]: #getvotesbyblockid
 
-[87]: #getvotesbyaddress
+[110]: #parameters-24
 
-[88]: #parameters-19
+[111]: #getlastexecutionsbyrange
 
-[89]: #getunconfirmedvotesbyaddress
+[112]: #parameters-25
 
-[90]: #parameters-20
+[113]: #getexecutionbyid
 
-[91]: #getvotesbyblockid
+[114]: #parameters-26
 
-[92]: #parameters-21
+[115]: #getexecutionsbyaddress
 
-[93]: #getlastexecutionsbyrange
+[116]: #parameters-27
 
-[94]: #parameters-22
+[117]: #getunconfirmedexecutionsbyaddress
 
-[95]: #getexecutionbyid
+[118]: #parameters-28
 
-[96]: #parameters-23
+[119]: #getexecutionsbyblockid
 
-[97]: #getexecutionsbyaddress
+[120]: #parameters-29
 
-[98]: #parameters-24
+[121]: #getlastblocksbyrange
 
-[99]: #getunconfirmedexecutionsbyaddress
+[122]: #parameters-30
 
-[100]: #parameters-25
+[123]: #getblockbyid
 
-[101]: #getexecutionsbyblockid
+[124]: #parameters-31
 
-[102]: #parameters-26
+[125]: #getcoinstatistic
 
-[103]: #getlastblocksbyrange
+[126]: #getconsensusmetrics
 
-[104]: #parameters-27
+[127]: #getcandidatemetrics
 
-[105]: #getblockbyid
+[128]: #sendtransfer-1
 
-[106]: #parameters-28
+[129]: #parameters-32
 
-[107]: #getcoinstatistic
+[130]: #sendvote
 
-[108]: #getconsensusmetrics
+[131]: #parameters-33
 
-[109]: #getcandidatemetrics
+[132]: #sendsmartcontract
 
-[110]: #sendtransfer-1
+[133]: #parameters-34
 
-[111]: #parameters-29
+[134]: #getpeers
 
-[112]: #sendvote
+[135]: #getreceiptbyexecutionid
 
-[113]: #parameters-30
+[136]: #parameters-35
 
-[114]: #sendsmartcontract
+[137]: #readexecutionstate
 
-[115]: #parameters-31
+[138]: #parameters-36
 
-[116]: #getpeers
+[139]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[117]: #getreceiptbyexecutionid
+[140]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[118]: #parameters-32
+[141]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[119]: #readexecutionstate
+[142]: #rpcmethods
 
-[120]: #parameters-33
+[143]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-[121]: #request
+[144]: #twallet
 
-[122]: #properties-21
+[145]: #tunsignedtransfer
 
-[123]: #response
+[146]: #tunsignedexecution
 
-[124]: #properties-22
+[147]: #provider
 
-[125]: #provider
+[148]: #accounts
 
-[126]: #properties-23
+[149]: #tcontractopts
 
-[127]: #httpprovider
+[150]: #texecution
 
-[128]: #parameters-34
+[151]: #tmethodsopts
 
-[129]: #send
+[152]: #ttransfer
 
-[130]: #parameters-35
+[153]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[131]: #methods
+[154]: #request
 
-[132]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[155]: #response
 
-[133]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[156]: #tblockgenerator
 
-[134]: #provider
+[157]: #tlog
 
-[135]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[158]: #tcandidate
 
-[136]: #accounts
+[159]: #tnode
 
-[137]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[160]: #taddressdetails
 
-[138]: #tcontractopts
+[161]: #tvote
 
-[139]: #ttransfer
+[162]: #tblock
 
-[140]: #tblockgenerator
+[163]: #tcoinstatistic
 
-[141]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[164]: #tconsensusmetrics
 
-[142]: #tlog
+[165]: #tcandidatemetrics
 
-[143]: #tcandidate
+[166]: #tsendtransferrequest
 
-[144]: #tnode
+[167]: #tsendtransferresponse
 
-[145]: #taddressdetails
+[168]: #tsendvoterequest
 
-[146]: #tvote
+[169]: #tsendvoteresponse
 
-[147]: #texecution
+[170]: #tsendsmartcontractresponse
 
-[148]: #tblock
+[171]: #tgetpeersresponse
 
-[149]: #tcoinstatistic
-
-[150]: #tconsensusmetrics
-
-[151]: #tcandidatemetrics
-
-[152]: #tsendtransferrequest
-
-[153]: #tsendtransferresponse
-
-[154]: #tsendvoterequest
-
-[155]: #tsendvoteresponse
-
-[156]: #tsendsmartcontractresponse
-
-[157]: #tgetpeersresponse
-
-[158]: #treceipt
-
-[159]: #request
-
-[160]: #response
+[172]: #treceipt

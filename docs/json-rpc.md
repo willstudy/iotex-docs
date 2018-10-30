@@ -1,6 +1,6 @@
 ---
-id: iotex-core-json-rpc
-title: JSON RPC for iotex-core
+id: json-rpc
+title: JSON RPC
 ---
 
 

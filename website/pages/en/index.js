@@ -82,9 +82,9 @@ class HomeSplash extends React.Component {
           <ProjectTitle />
           <PromoSection>
             <Button href={docUrl('guides.html', language)}>Overview</Button>
-            <Button href={docUrl('doc1.html', language)}>Create an Account</Button>
-            <Button href={docUrl('doc2.html', language)}>Transfer Tokens</Button>
-            <Button href={docUrl('doc2.html', language)}>Run Smart Contracts</Button>
+            <Button href={docUrl('sdk-account', language)}>Create an Account</Button>
+            <Button href={docUrl('sdk-transfer', language)}>Transfer Tokens</Button>
+            <Button href={docUrl('sdk-smart-contract', language)}>Run Smart Contracts</Button>
           </PromoSection>
         </div>
       </SplashContainer>
