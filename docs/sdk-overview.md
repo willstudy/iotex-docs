@@ -27,8 +27,6 @@ Using JS SDK
 4. [make RPC calls](/docs/sdk-rpc-methods)
 5. [check the complete API references](/docs/iotex-client-js)
 
-[Using Searchable iotex-client-js References](/iotex-client)
-
 [Using JSON RPC endpoints](/docs/json-rpc)
 
 
