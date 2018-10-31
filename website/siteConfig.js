@@ -97,11 +97,16 @@ const siteConfig = {
   algolia: {
     apiKey: '6aa2095b9d76e63ea2af3f3bc6fb2c1a',
     indexName: 'iotex-docs',
+    appId: '8VEJ3VOJR5',
     algoliaOptions: {
     } // Optional, if provided by Algolia
   },
 
-  editUrl: 'https://github.com/iotexproject/iotex-docs/edit/master/docs/'
+  editUrl: 'https://github.com/iotexproject/iotex-docs/edit/master/docs/',
+  gaTrackingId: 'UA-111756489-6',
+  enableUpdateTime: true,
+  scrollToTop: true,
+  wrapPagesHTML: true
 };
 
 module.exports = siteConfig;
