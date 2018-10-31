@@ -3,7 +3,7 @@ id: sdk-smart-contract
 title: Smart Contract
 ---
 
-The `iotx.Contract` class makes it easy to interact with smart contracts on the iotex blockchain. When you create a new contract object you give it the json interface of the respective smart contract and it will auto converts all calls into low level ABI calls over RPC for you.
+The `iotx.Contract` class makes it easy to interact with smart contracts on the iotex blockchain. When you create a new contract object, you give it the json interface of the respective smart contract, and it will auto converts all calls into low-level ABI calls over RPC for you.
 
 This allows you to interact with smart contracts as if they were JavaScript objects.
 
@@ -48,67 +48,69 @@ Once you get the abi and bytecode from the above step, then you can deploy it by
 ```js
 import {Iotx, HttpProvider} from 'iotex-client-js';
 
-const contractName = ':SimpleStorage';
-const abi = [
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "x",
-        "type": "uint256"
-      }
-    ],
-    "name": "set",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "get",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  }
-]
-const bytecode = "608060405234801561001057600080fd5b5060bf8061001f6000396000f30060806040526004361060485763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166360fe47b18114604d5780636d4ce63c146064575b600080fd5b348015605857600080fd5b5060626004356088565b005b348015606f57600080fd5b506076608d565b60408051918252519081900360200190f35b600055565b600054905600a165627a7a723058208236d8b2917002adfa862bbd8ea837cd90c6d76c5f0d7e1a0a7549faece1559f0029"
+(async () => {
+  const contractName = ':SimpleStorage';
+  const abi = [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "uint256"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+  const bytecode = "608060405234801561001057600080fd5b5060bf8061001f6000396000f30060806040526004361060485763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166360fe47b18114604d5780636d4ce63c146064575b600080fd5b348015605857600080fd5b5060626004356088565b005b348015606f57600080fd5b506076608d565b60408051918252519081900360200190f35b600055565b600054905600a165627a7a723058208236d8b2917002adfa862bbd8ea837cd90c6d76c5f0d7e1a0a7549faece1559f0029"
 
-const provider = new HttpProvider('http://localhost:14004/');
-const iotx = new Iotx(provider);
-const wallet = await iotx.accounts.add('c5364b1a2d99d127439be22edfd657889981e9ba4d6d18fe8eca489d48485371efcb2400');
-const contract = new iotx.Contract({abi, contractName, wallet});
-const exec = await contract.deploy({
-  byteCode: bytecode,
-  gasLimit: 100000,
-  gasPrice: '0',
-  version: 1,
-  contract: '',
-  amount: '1',
-});
-// exec return value => {
-//   "version": 0,
-//   "ID": "a8d0217421a626b6f0670f7e020fd88d9aab984d179621182fa5b8a3870c41e2",
-//   "nonce": 23,
-//   "executor": "io1qyqsqqqq26zujam2gt5cut0ggu8pa4d5q7hnrvsvace4x6",
-//   "contract": "",
-//   "amount": "1",
-//   "executorPubKey": "",
-//   "signature": "",
-//   "gasLimit": 100000,
-//   "gasPrice": "0",
-//   "timestamp": 0,
-//   "data": "",
-//   "blockID": "",
-//   "isPending": true
-// }
+  const provider = new HttpProvider('http://localhost:14004/');
+  const iotx = new Iotx(provider);
+  const wallet = await iotx.accounts.add('c5364b1a2d99d127439be22edfd657889981e9ba4d6d18fe8eca489d48485371efcb2400');
+  const contract = new iotx.Contract({abi, contractName, wallet});
+  const exec = await contract.deploy({
+    byteCode: bytecode,
+    gasLimit: 100000,
+    gasPrice: '0',
+    version: 1,
+    contract: '',
+    amount: '1',
+  });
+  // exec return value => {
+  //   "version": 0,
+  //   "ID": "a8d0217421a626b6f0670f7e020fd88d9aab984d179621182fa5b8a3870c41e2",
+  //   "nonce": 23,
+  //   "executor": "io1qyqsqqqq26zujam2gt5cut0ggu8pa4d5q7hnrvsvace4x6",
+  //   "contract": "",
+  //   "amount": "1",
+  //   "executorPubKey": "",
+  //   "signature": "",
+  //   "gasLimit": 100000,
+  //   "gasPrice": "0",
+  //   "timestamp": 0,
+  //   "data": "",
+  //   "blockID": "",
+  //   "isPending": true
+  // }
+})()
 ```
 
 And then you can query its receipt.

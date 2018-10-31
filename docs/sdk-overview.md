@@ -7,7 +7,7 @@ title: SDK Overview
 
 ![SDK Architecture](/img/sdk-architecture.png)
 
-> WARNING Red components above should be deprecated in the future. Now we are expose a public endpoint in explorer for the wallet.
+> WARNING Red components above will be deprecated in the future. Now we are exposing a public endpoint in explorer for the wallet.
 
 ## Installation
 
