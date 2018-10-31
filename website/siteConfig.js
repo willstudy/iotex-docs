@@ -99,7 +99,9 @@ const siteConfig = {
     indexName: 'iotex-docs',
     algoliaOptions: {
     } // Optional, if provided by Algolia
-  }
+  },
+
+  editUrl: 'https://github.com/iotexproject/iotex-docs/edit/master/docs/'
 };
 
 module.exports = siteConfig;
