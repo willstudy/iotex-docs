@@ -3,4 +3,8 @@ id: guides
 title: IoTeX Development Guides
 ---
 
-Another one
+# Introduction
+IoTeX is the auto-scalable and privacy-centric blockchain infrastructure for the Internet of Things (IoT).
+
+
+# Glossary
