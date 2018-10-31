@@ -93,7 +93,13 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/iotexproject/iotex-docs',
+  algolia: {
+    apiKey: '6aa2095b9d76e63ea2af3f3bc6fb2c1a',
+    indexName: 'iotex-docs',
+    algoliaOptions: {
+    } // Optional, if provided by Algolia
+  }
 };
 
 module.exports = siteConfig;

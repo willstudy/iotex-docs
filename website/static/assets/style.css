@@ -82,11 +82,6 @@ h4:hover .anchorjs-link {
   }
 }
 
-.pre, pre, code, .code {
-  font-family: Source Code Pro,Menlo,Consolas,Liberation Mono,monospace;
-  font-size: 14px;
-}
-
 .fill-light {
   background: #F9F9F9;
 }

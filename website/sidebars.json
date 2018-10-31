@@ -5,9 +5,9 @@
     ],
     "JS Quick Start": [
       "sdk-account",
-      "sdk-rpc-methods",
       "sdk-transfer",
-      "sdk-smart-contract"
+      "sdk-smart-contract",
+      "sdk-rpc-methods"
     ],
     "Reference": [
       "iotex-client-js",

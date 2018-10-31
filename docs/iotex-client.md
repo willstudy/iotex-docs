@@ -356,6 +356,8 @@ Iotx is the client to interact with iotex-core and iotex-wallet.
 import {Iotx, HttpProvider} from 'iotex-client-js';
 
 const iotx = new Iotx(new HttpProvider('http://localhost:14004/'));
+
+// create a new wallet which contains a public key, a private key, and a raw address.
 const wallet = await iotx.accounts.create();
 // => {
 //   "publicKey": "...",
@@ -363,7 +365,7 @@ const wallet = await iotx.accounts.create();
 //   "rawAddress": "..."
 // }
 
-// recover from private key
+// recover the whole wallet from a single private key
 const unlockedWallet = await iotx.accounts.add('...iotx private key...');
 // => {
 //   "publicKey": "...",

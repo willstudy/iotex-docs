@@ -93,7 +93,7 @@ const exec = await contract.deploy({
   contract: '',
   amount: '1',
 });
-// => {
+// exec return value => {
 //   "version": 0,
 //   "ID": "a8d0217421a626b6f0670f7e020fd88d9aab984d179621182fa5b8a3870c41e2",
 //   "nonce": 23,
@@ -115,7 +115,7 @@ And then you can query its receipt.
 
 ```js
 const receipt = await iotx.rpcMethods.getReceiptByExecutionID(exec.ID);
-// => {
+// receipt return value => {
 //   returnValue: '',
 //   status: 1,
 //   hash: '7eb31c95ae0066c17699f6ca7d30b2e3f654794c7c30d9af06118f4f459f56ae',
@@ -151,5 +151,6 @@ const value = await contract
      amount: '0',
    })
 .get();
+// value => 666
 ```
 Need more detailed API references? Please visit [iotx.Contract](/docs/iotex-client-js#contract)

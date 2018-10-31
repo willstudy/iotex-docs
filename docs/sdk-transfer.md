@@ -18,7 +18,7 @@ const receipt = await iotx.sendTransfer({
   gasPrice: '1',
   gasLimit: 10000,
 });
-// => {
+// receipt return value => {
 //   "version": 0,
 //   "ID": "1b0252bd7addfa0920f61b222887743e42eacf9b607de45fa18a59e769cf674b",
 //   "nonce": 20,
