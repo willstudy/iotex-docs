@@ -65,6 +65,10 @@ const siteConfig = {
       "Noto Sans",
       "Arial"
     ],
+    shareText: [
+      "Share Tech",
+      "Noto Sans"
+    ],
     /*myOtherFont: [
       "-apple-system",
       "system-ui"

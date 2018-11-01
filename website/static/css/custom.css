@@ -15,6 +15,14 @@
 @media only screen and (min-width: 1500px) {
 }
 
+/* latin */
+@font-face {
+  font-family: 'Share Tech';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Tech'), local('ShareTech'), url(../fonts/ShareTech-Regular.ttf) format('truetype');
+}
+
 .fixedHeaderContainer {
     height: 60px;
     padding: 12px 0;
@@ -31,6 +39,10 @@ article,p,code {
 
 body {
     font-family: $myFont;
+}
+
+footer,header {
+  font-family: $shareText;
 }
 
 article h2::before {
