@@ -4,63 +4,6 @@ title: JSON RPC
 ---
 
 
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
 ## Explorer.getBlockchainHeight
 
 get the blockchain tip height
@@ -84,7 +27,7 @@ get the blockchain tip height
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getBlockchainHeight","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getBlockchainHeight","params":[],"id":"1"}'
 ```
 
 
@@ -120,7 +63,7 @@ get the balance of an address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getAddressBalance","params":["address: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getAddressBalance","params":["address: string"],"id":"1"}'
 ```
 
 
@@ -156,7 +99,7 @@ get the address detail of an iotex address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getAddressDetails","params":["address: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getAddressDetails","params":["address: string"],"id":"1"}'
 ```
 
 
@@ -207,7 +150,7 @@ get list of transfers by start block height, transfer offset and limit
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastTransfersByRange","params":["startBlockHeight: int", "offset: int", "limit: int", "showCoinBase: bool"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastTransfersByRange","params":["startBlockHeight: int", "offset: int", "limit: int", "showCoinBase: bool"],"id":"1"}'
 ```
 
 
@@ -243,7 +186,7 @@ get transfers from transaction id
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getTransferByID","params":["transferID: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getTransferByID","params":["transferID: string"],"id":"1"}'
 ```
 
 
@@ -289,7 +232,7 @@ get list of transfers belonging to an address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getTransfersByAddress","params":["address: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getTransfersByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -335,7 +278,7 @@ get list of unconfirmed transfers in actpool belonging to an address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getUnconfirmedTransfersByAddress","params":["address: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getUnconfirmedTransfersByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -381,7 +324,7 @@ get all transfers in a block
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getTransfersByBlockID","params":["blkID: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getTransfersByBlockID","params":["blkID: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -427,7 +370,7 @@ get list of votes by start block height, vote offset and limit
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastVotesByRange","params":["startBlockHeight: int", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastVotesByRange","params":["startBlockHeight: int", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -463,7 +406,7 @@ get vote from vote id
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getVoteByID","params":["voteID: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getVoteByID","params":["voteID: string"],"id":"1"}'
 ```
 
 
@@ -509,7 +452,7 @@ get list of votes belonging to an address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getVotesByAddress","params":["address: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getVotesByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -555,7 +498,7 @@ get list of unconfirmed votes in actpool belonging to an address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getUnconfirmedVotesByAddress","params":["address: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getUnconfirmedVotesByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -601,7 +544,7 @@ get all votes in a block
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getVotesByBlockID","params":["blkID: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getVotesByBlockID","params":["blkID: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -647,7 +590,7 @@ get list of executions by start block height, execution offset and limit
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastExecutionsByRange","params":["startBlockHeight: int", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastExecutionsByRange","params":["startBlockHeight: int", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -683,7 +626,7 @@ get execution from execution id
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getExecutionByID","params":["executionID: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getExecutionByID","params":["executionID: string"],"id":"1"}'
 ```
 
 
@@ -729,7 +672,7 @@ get list of executions belonging to an address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getExecutionsByAddress","params":["address: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getExecutionsByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -775,7 +718,7 @@ get list of unconfirmed executions in actpool belonging to an address
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getUnconfirmedExecutionsByAddress","params":["address: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getUnconfirmedExecutionsByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -821,7 +764,7 @@ get all executions in a block
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getExecutionsByBlockID","params":["blkID: string", "offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getExecutionsByBlockID","params":["blkID: string", "offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -862,7 +805,7 @@ get list of blocks by block id offset and limit
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastBlocksByRange","params":["offset: int", "limit: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getLastBlocksByRange","params":["offset: int", "limit: int"],"id":"1"}'
 ```
 
 
@@ -898,7 +841,7 @@ get block by block id
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getBlockByID","params":["blkID: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getBlockByID","params":["blkID: string"],"id":"1"}'
 ```
 
 
@@ -928,7 +871,7 @@ get statistic of iotx
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCoinStatistic","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCoinStatistic","params":[],"id":"1"}'
 ```
 
 
@@ -958,7 +901,7 @@ get consensus metrics
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getConsensusMetrics","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getConsensusMetrics","params":[],"id":"1"}'
 ```
 
 
@@ -988,7 +931,7 @@ get candidates metrics
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCandidateMetrics","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCandidateMetrics","params":[],"id":"1"}'
 ```
 
 
@@ -1024,7 +967,7 @@ get candidates metrics at given height
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCandidateMetricsByHeight","params":["h: int"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCandidateMetricsByHeight","params":["h: int"],"id":"1"}'
 ```
 
 
@@ -1060,7 +1003,7 @@ send transfer
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.sendTransfer","params":["request: SendTransferRequest"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.sendTransfer","params":["request: SendTransferRequest"],"id":"1"}'
 ```
 
 
@@ -1096,7 +1039,7 @@ send vote
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.sendVote","params":["request: SendVoteRequest"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.sendVote","params":["request: SendVoteRequest"],"id":"1"}'
 ```
 
 
@@ -1132,7 +1075,7 @@ sendSmartContract
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.sendSmartContract","params":["request: Execution"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.sendSmartContract","params":["request: Execution"],"id":"1"}'
 ```
 
 
@@ -1168,7 +1111,7 @@ putSubChainBlock
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.putSubChainBlock","params":["request: PutSubChainBlockRequest"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.putSubChainBlock","params":["request: PutSubChainBlockRequest"],"id":"1"}'
 ```
 
 
@@ -1198,7 +1141,7 @@ get list of peers
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getPeers","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getPeers","params":[],"id":"1"}'
 ```
 
 
@@ -1234,7 +1177,7 @@ get receipt by execution id
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getReceiptByExecutionID","params":["id: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getReceiptByExecutionID","params":["id: string"],"id":"1"}'
 ```
 
 
@@ -1270,7 +1213,7 @@ read execution state
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.readExecutionState","params":["request: Execution"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.readExecutionState","params":["request: Execution"],"id":"1"}'
 ```
 
 
@@ -1306,11 +1249,8 @@ get block or action by a hash
 ### Example
 
 ```
-curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getBlockOrActionByHash","params":["hashStr: string"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getBlockOrActionByHash","params":["hashStr: string"],"id":"1"}'
 ```
 
 
-              
-
-              
 

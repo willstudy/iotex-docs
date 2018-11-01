@@ -1,11 +1,7 @@
 const idl = require('./explorer.json');
 
 function idlToJsonRpc() {
-  return idl.map(en => {
-    return `
-${getMethod(en)}
-              `
-  }).join('');
+  return idl.map(en => getMethod(en)).join('');
 }
 
 function getMethod(item) {
@@ -44,7 +40,7 @@ ${JSON.stringify(f.returns, null, 2)}
 ### Example
 
 \`\`\`
-curl -X POST --data '{"jsonrpc":"2.0","method":"${item.name}.${f.name}","params":[${f.params.map(p => (`"${p.name}: ${p.type}"`)).join(', ')}],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"${item.name}.${f.name}","params":[${f.params.map(p => (`"${p.name}: ${p.type}"`)).join(', ')}],"id":"1"}'
 \`\`\`
 
 `
