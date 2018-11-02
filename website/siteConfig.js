@@ -20,6 +20,97 @@ const users = [
   },
 ];
 
+const references = {
+  roadmap: {
+    href: 'https://iotex.io/#roadmap',
+    name: 'ROADMAP',
+  },
+  explorer: {
+    href: 'https://iotexscan.io/ ',
+    name: 'EXPLORER',
+  },
+  partnership: {
+    href: 'https://iotex.io/partnership',
+    name: 'PARTNERSHIP',
+  },
+  team: {
+    href: 'https://iotex.io/#team ',
+    name: 'TEAM',
+  },
+  career: {
+    href: 'https://hire.withgoogle.com/public/jobs/iotexio ',
+    name: 'CAREER',
+  },
+  faq: {
+    href: 'https://iotex.io/FAQ ',
+    name: 'FAQ',
+  },
+  gettingStarted: {
+    href: 'sdk-overview',
+    name: 'GETTING STARTED',
+  },
+  guides: {
+    href: 'guides',
+    name: 'GUIDES',
+  },
+  github: {
+    href: 'https://github.com/iotexproject',
+    name: 'GITHUB',
+  },
+  apiReference: {
+    href: 'sdk-rpc-methods',
+    name: 'API REFERENCE',
+  },
+  contribute: {
+    href: 'https://iotex.io',
+    name: 'CONTRIBUTE',
+  },
+  getHelp: {
+    href: 'https://iotex.io',
+    name: 'GET HELP',
+  },
+  binance: {
+    href: 'https://support.binance.com/hc/en-us/articles/360004401292-Binance-Lists-IoTeX-IOTX-',
+    name: 'BINANCE',
+  },
+  gate_io: {
+    href: 'https://gateio.io/article/16457',
+    name: 'GATE.IO',
+  },
+  kucoin: {
+    href: 'https://news.kucoin.com/en/iotex-iotx-gets-listed-on-kucoin-world-premiere/',
+    name: 'KUCOIN',
+  },
+  wallet: {
+    href: 'https://iotexscan.io/wallet',
+    name: 'WALLET(TESTNET)',
+  },
+  telegram: {
+    href: 'https://t.me/IoTeXGroup',
+    name: 'TELEGRAM',
+  },
+  twitter: {
+    href: 'https://twitter.com/iotex_io',
+    name: 'TWITTER',
+  },
+  reddit: {
+    href: 'https://www.reddit.com/r/IoTeX/',
+    name: 'REDDIT',
+  },
+  medium: {
+    href: 'https://medium.com/@iotex',
+    name: 'MEDIUM',
+  },
+  linkedin: {
+    href: 'https://www.linkedin.com/company/iotex/',
+    name: 'LINKEDIN',
+  },
+  forum: {
+    href: 'http://forum.iotex.io/',
+    name: 'FORUM',
+  }
+};
+
 const siteConfig = {
   title: 'IoTeX Documentations', // Title for your website.
   tagline: 'IoTeX is a Decentralized Network for Internet of Things Powered by a Privacy-Centric Blockchain.',
@@ -65,6 +156,10 @@ const siteConfig = {
       "Noto Sans",
       "Arial"
     ],
+    shareText: [
+      "Share Tech",
+      "Noto Sans"
+    ],
     /*myOtherFont: [
       "-apple-system",
       "system-ui"
@@ -72,7 +167,7 @@ const siteConfig = {
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} iotex.io`,
+  copyright: `Copyright © ${new Date().getFullYear()} IoTeX`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -106,7 +201,44 @@ const siteConfig = {
   gaTrackingId: 'UA-111756489-6',
   enableUpdateTime: true,
   scrollToTop: true,
-  wrapPagesHTML: true
+  wrapPagesHTML: true,
+  footerLinks: [
+    {
+      name: 'LEARN',
+      links: [references.roadmap,
+        references.explorer,
+        references.partnership,
+        references.team,
+        references.career,
+        references.faq]
+    },
+    {
+      name: 'DEVELOP',
+      links: [references.gettingStarted,
+        references.guides,
+        references.github,
+        references.apiReference,
+        references.contribute,
+        references.getHelp]
+    },
+    {
+      name: 'INVEST',
+      links: [references.binance,
+        references.gate_io,
+        references.kucoin,
+        references.wallet]
+    },
+    {
+      name: 'CONNECT',
+      links: [references.telegram,
+        references.twitter,
+        references.reddit,
+        references.medium,
+        references.linkedin,
+        references.forum
+      ]
+    }
+  ]
 };
 
 module.exports = siteConfig;
