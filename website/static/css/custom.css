@@ -82,10 +82,13 @@ footer span{
 }
 
 .subscribleForm button{
-  background-color: #f7c543;
+  background-color: #00b4a0;
   color: white;
 }
 
+.subscribleForm button:hover{
+  background: #00a492;
+}
 article h2::before {
     content: '';
     width: 100%;

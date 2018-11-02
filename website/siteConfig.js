@@ -46,11 +46,11 @@ const references = {
     name: 'FAQ',
   },
   gettingStarted: {
-    href: 'https://iotex.io/#roadmap',
+    href: 'sdk-overview',
     name: 'GETTING STARTED',
   },
   guides: {
-    href: 'https://iotex.io/#roadmap',
+    href: 'guides',
     name: 'GUIDES',
   },
   github: {
@@ -58,15 +58,15 @@ const references = {
     name: 'GITHUB',
   },
   apiReference: {
-    href: 'https://iotex.io/#roadmap',
+    href: 'sdk-rpc-methods',
     name: 'API REFERENCE',
   },
   contribute: {
-    href: 'https://iotex.io/#roadmap',
+    href: 'https://iotex.io',
     name: 'CONTRIBUTE',
   },
   getHelp: {
-    href: 'https://iotex.io/#roadmap',
+    href: 'https://iotex.io',
     name: 'GET HELP',
   },
   binance: {
@@ -167,7 +167,7 @@ const siteConfig = {
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} iotex.io`,
+  copyright: `Copyright © ${new Date().getFullYear()} IoTeX`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -229,7 +229,7 @@ const siteConfig = {
         references.wallet]
     },
     {
-      name: 'COMMUNITY',
+      name: 'CONNECT',
       links: [references.telegram,
         references.twitter,
         references.reddit,
