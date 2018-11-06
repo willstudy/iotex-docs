@@ -2,26 +2,27 @@
 
 @media only screen and (max-width: 360px) {
   .subscribleForm {
-    margin-right: 5%;
+    padding-right: 5%;
   }
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
   .subscribleForm {
-    margin-right: 40%;
+    margin-right: 50%;
   }
 }
 
 @media only screen and (min-device-width: 737px) and (max-device-width: 1080px) {
   .subscribleForm {
-    margin-right: 3%;
-    margin-left: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
   }
 }
 
 @media only screen and (min-width: 1080px) {
   .subscribleForm {
-    margin-right: 20%;
+    margin-right: 5%;
+    margin-left: 5%;
   }
 }
 
@@ -72,13 +73,17 @@ footer span{
   color: rgba(255, 255, 255, 0.6);
 }
 
+.subscribleForm input:focus{
+  border: 1px solid #1B6DE0;
+}
+
 .subscribleForm input, button{
   outline: none;
   padding: 3px !important;
   border: 1px solid transparent;
   line-height: 20px !important;
   margin-top: 5px;
-  width: 100%;
+  width: 95%;
 }
 
 .subscribleForm button{
