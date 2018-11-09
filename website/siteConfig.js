@@ -69,6 +69,10 @@ const references = {
     href: 'https://iotex.io',
     name: 'GET HELP',
   },
+  invest: {
+    href: 'https://support.binance.com/hc/en-us/articles/360004401292-Binance-Lists-IoTeX-IOTX-',
+    name: 'INVEST',
+  },
   binance: {
     href: 'https://support.binance.com/hc/en-us/articles/360004401292-Binance-Lists-IoTeX-IOTX-',
     name: 'BINANCE',
@@ -84,6 +88,7 @@ const references = {
   wallet: {
     href: 'https://iotexscan.io/wallet',
     name: 'WALLET(TESTNET)',
+    label: 'WALLET',
   },
   telegram: {
     href: 'https://t.me/IoTeXGroup',
@@ -119,7 +124,7 @@ const siteConfig = {
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
-
+  version:'Testnet Beta(Epik) has been released on 8/29/2018',
   // Used for publishing and more
   projectName: 'iotex-docs',
   organizationName: 'iotexproject',
@@ -128,10 +133,13 @@ const siteConfig = {
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [
-    {doc: 'guides', label: 'Guides'},
-    {doc: 'sdk-overview', label: 'SDK'},
-    { href: "https://github.com/iotexproject/", label: "GitHub", external: true },
+  headerLinks: [],
+  overwritedHeaderLinks: [
+    { href: references.github.href, label: references.github.name, external: true },
+    { href: references.explorer.href, label: references.explorer.name, external: true },
+    { href: references.wallet.href, label: references.wallet.label, external: true },
+    { href: references.forum.href, label: references.forum.name, external: true },
+    { href: references.invest.href, label: references.invest.name, external: true },
   ],
 
   cname: 'docs.iotex.me',
@@ -174,6 +182,7 @@ const siteConfig = {
     theme: 'default',
   },
 
+  disableHeaderTitle: true,
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js'],
 

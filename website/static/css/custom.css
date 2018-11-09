@@ -72,6 +72,21 @@ footer h3{
 footer span{
   color: rgba(255, 255, 255, 0.6);
 }
+.fixedHeaderContainer{
+  visibility: hidden;
+}
+
+.overwriteHeader .fixedHeaderContainer{
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00dbb5;
+}
+
+.menuItem{
+  color: white!important;
+}
 
 .subscribleForm input:focus{
   border: 1px solid #1B6DE0;
