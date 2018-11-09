@@ -92,6 +92,10 @@ footer span{
   border: 1px solid #1B6DE0;
 }
 
+.subscribleForm input:focus{
+  border: 1px solid #1B6DE0;
+}
+
 .subscribleForm input, button{
   outline: none;
   padding: 3px !important;
