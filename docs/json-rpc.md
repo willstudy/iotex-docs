@@ -1118,6 +1118,42 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.putSubChainBlock","para
 
 
 
+## Explorer.sendAction
+
+sendAction
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "SendActionRequest",
+    "name": "request"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "SendActionResponse"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.sendAction","params":["request: SendActionRequest"],"id":"1"}'
+```
+
+
+
+
+
 ## Explorer.getPeers
 
 get list of peers
@@ -1250,6 +1286,124 @@ get block or action by a hash
 
 ```
 curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getBlockOrActionByHash","params":["hashStr: string"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.createDeposit
+
+deposit balance from main-chain to sub-chain
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "CreateDepositRequest",
+    "name": "request"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "CreateDepositResponse"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.createDeposit","params":["request: CreateDepositRequest"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.getDeposits
+
+get deposits on a sub-chain
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "subChainID"
+  },
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "offset"
+  },
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "limit"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": true,
+  "type": "Deposit"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getDeposits","params":["subChainID: int", "offset: int", "limit: int"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.settleDeposit
+
+settle deposit on sub-chain. This is a sub-chain API
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "SettleDepositRequest",
+    "name": "request"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "SettleDepositResponse"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.settleDeposit","params":["request: SettleDepositRequest"],"id":"1"}'
 ```
 
 

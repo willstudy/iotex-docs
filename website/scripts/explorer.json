@@ -1068,6 +1068,36 @@
     "comment": "",
     "extends": "",
     "type": "struct",
+    "name": "SendActionRequest",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "payload"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "SendActionResponse",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "payload"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
     "name": "Node",
     "fields": [
       {
@@ -1149,6 +1179,214 @@
         "is_array": false,
         "type": "Execution",
         "name": "execution"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "CreateDepositRequest",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "version"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "nonce"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "sender"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "senderPubKey"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "recipient"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "amount"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "signature"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "gasLimit"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "gasPrice"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "CreateDepositResponse",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "hash"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "Deposit",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "amount"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "address"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "bool",
+        "name": "confirmed"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "SettleDepositRequest",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "version"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "nonce"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "sender"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "senderPubKey"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "recipient"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "amount"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "index"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "signature"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "gasLimit"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "gasPrice"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "SettleDepositResponse",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "hash"
       }
     ]
   },
@@ -1710,6 +1948,22 @@
         "name": "putSubChainBlock"
       },
       {
+        "comment": "sendAction",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "SendActionResponse"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "SendActionRequest",
+            "name": "request"
+          }
+        ],
+        "name": "sendAction"
+      },
+      {
         "comment": "get list of peers",
         "returns": {
           "optional": false,
@@ -1766,6 +2020,64 @@
           }
         ],
         "name": "getBlockOrActionByHash"
+      },
+      {
+        "comment": "deposit balance from main-chain to sub-chain",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "CreateDepositResponse"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "CreateDepositRequest",
+            "name": "request"
+          }
+        ],
+        "name": "createDeposit"
+      },
+      {
+        "comment": "get deposits on a sub-chain",
+        "returns": {
+          "optional": false,
+          "is_array": true,
+          "type": "Deposit"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "subChainID"
+          },
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "offset"
+          },
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "limit"
+          }
+        ],
+        "name": "getDeposits"
+      },
+      {
+        "comment": "settle deposit on sub-chain. This is a sub-chain API",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "SettleDepositResponse"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "SettleDepositRequest",
+            "name": "request"
+          }
+        ],
+        "name": "settleDeposit"
       }
     ],
     "type": "interface",
@@ -1774,7 +2086,7 @@
   {
     "barrister_version": "0.1.6",
     "type": "meta",
-    "date_generated": 1540708284952,
-    "checksum": "b31208a5095f3df5b87062e21a5f1283"
+    "date_generated": 1541654499536,
+    "checksum": "9e4a35322fdadd0f77586f8ba530a00e"
   }
 ]
