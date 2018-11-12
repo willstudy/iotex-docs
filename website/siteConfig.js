@@ -134,7 +134,7 @@ const siteConfig = {
     { href: "https://github.com/iotexproject/", label: "GitHub", external: true },
   ],
 
-  cname: 'docs.iotex.me',
+  cname: 'docs.iotex.io',
 
   // If you have users set above, you add it here:
   users,
