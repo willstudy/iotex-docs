@@ -308,6 +308,33 @@ header .buttonWrapper .button:hover{
   border: 1px solid #0c0f1b;
 }
 
+.ContentSection{
+  background-color: #151A1F;
+  color: white;
+}
+
+.ContentSection h2 p{
+   opacity: 1;
+   font-size: 22px;
+ }
+
+.ContentSection h2{
+  margin-top: 0;
+}
+
+.ContentSection p{
+  text-align: justify;
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+.ContentSection h1{
+  color: #00FFDF;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  margin-top: 0;
+}
+
 .promoSection {
   z-index: 1;
 }

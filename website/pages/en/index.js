@@ -157,7 +157,9 @@ const Block = props => (
   <Container
     padding={['bottom', 'top']}
     id={props.id}
+    className={props.className}
     background={props.background}>
+    <h1 className={"sectionHeader"}>{props.sectionHeader}</h1>
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
 );
@@ -191,13 +193,21 @@ const FeatureCallout = () => (
 );
 
 const LearnHow = () => (
-  <Block background="light">
+  <Block className="LearnHow ContentSection" sectionHeader={'Connection the Physical World Block by Block'}>
     {[
       {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Despite its rapid evolution,' +
+        'IoT is still far from reaching mass adoption and lacks ' +
+        '“killer applications” that would draw new users to the ecosystem due to issues such as low scalability,' +
+        ' high operating cost, privacy concerns and lack of functional values.\n' +
+        '</br></br>' +
+        'IoTeX is tackling this problem by introducing token economy into IoT spaces as we strongly believe that crypto ' +
+        'incentives as well as the community effort are the two key forces to propel innovations in IoT space. ' +
+        'In short, IoTeX is the next generation IoT-oriented blockchain platform with strong scalability, privacy, ' +
+        'isolatability and developability for incubating new IoT applications and ecosystems.',
+        image: imgUrl('about-iotex.png'),
         imageAlign: 'right',
-        title: 'Learn How',
+        title: 'Powered by a Privacy-Centric Blockchain',
       },
     ]}
   </Block>
@@ -261,10 +271,10 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSection language={language}/>
-        <div className="mainContainer">
+        <div>
+          <LearnHow />
           <Features />
           <FeatureCallout />
-          <LearnHow />
           <TryOut />
           <Description />
           <Showcase language={language} />
