@@ -215,7 +215,11 @@ footer span{
   min-width: 19vh;
 }
 
-.menuItem, .homeContainer a,.homeContainer span,.projectTitle,.homeContainer .subscribleForm input{
+.menuItem,
+.homeContainer a,
+.homeContainer span,
+.projectTitle,
+.homeContainer .subscribleForm input{
   color: white!important;
 }
 
@@ -224,9 +228,27 @@ footer span{
   margin-left: 0px;
 }
 
-.homeContainer .subscribleForm button,.homeContainer .subscribleForm input{
+.homeContainer .subscribleForm button,
+.homeContainer .subscribleForm input,
+.SubscribeSection .subscribleForm button,
+.SubscribeSection .subscribleForm input{
   background-color: transparent!important;
   border-radius: 5px;
+  line-height: 30px !important;
+}
+
+.SubscribeSection .subscribleForm button,
+.SubscribeSection .subscribleForm input{
+  padding: 11px!important;
+  margin-top: 16px;
+}
+
+.SubscribeSection .subscribleForm button {
+  border: 1px solid #00a492;
+}
+
+.SubscribeSection .subscribleForm input{
+  background-color: rgba(60,112,178,0.10) !important;
   line-height: 30px !important;
 }
 
@@ -242,7 +264,7 @@ footer span{
   color: #00a492;
 }
 
-.homeContainer button:hover{
+.homeContainer button:hover,.SubscribeSection .subscribleForm button:hover{
   background-color: #00a492!important;
 }
 
@@ -334,8 +356,12 @@ header .buttonWrapper .button:hover{
   margin-top: 0;
 }
 
-.LearnHow, .Architecture, .Invest{
+.LearnHow, .Architecture, .Invest, .SubscribeSection{
   background-color: #151A1F;
+}
+
+.Invest{
+  background-color: #151501;
 }
 
 .Innovations, .Roadmap{
@@ -351,6 +377,12 @@ header .buttonWrapper .button:hover{
   width: auto;
   margin: 0 8vh;
 }
+
+.SubscribeSection .wrapper{
+  max-width: 360px;
+  padding: 20px;
+}
+
 
 .promoSection {
   z-index: 1;

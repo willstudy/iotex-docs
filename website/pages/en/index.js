@@ -237,7 +237,7 @@ const Architecture = () => (
 );
 
 const Roadmap = () => (
-  <ImageBlock className="Roadmap ContentSection" sectionHeader={'IoTeX.Architecture\n'} image={imgUrl('roadmap1.png')} />
+  <ImageBlock className="Roadmap ContentSection" sectionHeader={'IoTeX.Roadmap\n'} image={imgUrl('roadmap1.png')} />
 );
 
 const Invest = () => (
@@ -261,6 +261,19 @@ const Invest = () => (
           <img className="iconSection" src={imgUrl('kucoin.jpg')}/>
         </a>
       </div>
+    </div>
+  </Container>
+);
+
+const SubscribeSection = () => (
+  <Container
+    padding={['bottom', 'top']}
+    className="SubscribeSection ContentSection">
+    <div className="blockElement alignCenter">
+      <Subscribe
+        header={'STAY UPDATED'}
+        title={'With our latest progress and events.'}
+      />
     </div>
   </Container>
 );
@@ -330,6 +343,7 @@ class Index extends React.Component {
           <Architecture />
           <Roadmap />
           <Invest />
+          <SubscribeSection />
         </div>
       </div>
     );
