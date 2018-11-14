@@ -118,8 +118,9 @@ const references = {
     name: 'GET HELP',
   },
   invest: {
-    href: 'https://support.binance.com/hc/en-us/articles/360004401292-Binance-Lists-IoTeX-IOTX-',
+    href: '#invest',
     name: 'INVEST',
+    elementId: 'invest'
   },
   binance: {
     href: 'https://support.binance.com/hc/en-us/articles/360004401292-Binance-Lists-IoTeX-IOTX-',
@@ -191,7 +192,7 @@ const siteConfig = {
     { href: references.invest.href, label: references.invest.name, external: true },
   ],
   cname: 'docs.iotex.io',
-  youtubeUrl: '//www.youtube.com/embed/10BXKdpofWs',
+  youtubeUrl: '//www.youtube.com/embed/gIVskvgzG9M',
   // If you have users set above, you add it here:
   users,
   references,

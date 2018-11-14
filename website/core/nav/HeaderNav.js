@@ -231,7 +231,9 @@ class HeaderNav extends React.Component {
     const subLink = link.links&&link.links.length>0;
 
     const normalItem = href?
-      (<a className={'menuItem'} href={href} target={link.external ? '_blank' : '_self'}>
+      (<a className={'menuItem'}
+          href={href}
+          target={href.startsWith('//')||href.startsWith('http') ? '_blank' : '_self'}>
         {idx(i18n, ['localized-strings', 'links', link.label]) || link.label}
       </a>):
       (<a className={'menuItem headerItem'}>
@@ -265,9 +267,6 @@ class HeaderNav extends React.Component {
         languages = true;
       }
     });
-    if (!languages) {
-      // headerLinks.push({languages: true});
-    }
     let search = false;
     headerLinks.forEach(link => {
       if (
@@ -298,9 +297,6 @@ class HeaderNav extends React.Component {
         search = true;
       }
     });
-    if (!search && this.props.config.algolia) {
-      // headerLinks.push({search: true});
-    }
     return (
       <div className="navigationWrapper navigationSlider">
         <nav className="slidingNav">

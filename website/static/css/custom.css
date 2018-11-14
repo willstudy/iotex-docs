@@ -334,7 +334,7 @@ header .buttonWrapper .button:hover{
   margin-top: 0;
 }
 
-.LearnHow, .Architecture{
+.LearnHow, .Architecture, .Invest{
   background-color: #151A1F;
 }
 
@@ -344,6 +344,12 @@ header .buttonWrapper .button:hover{
 
 .ImageBlock{
   margin: 0 auto;
+}
+
+.iconSection{
+  height: 80px;
+  width: auto;
+  margin: 0 8vh;
 }
 
 .promoSection {

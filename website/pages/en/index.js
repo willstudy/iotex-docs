@@ -240,6 +240,31 @@ const Roadmap = () => (
   <ImageBlock className="Roadmap ContentSection" sectionHeader={'IoTeX.Architecture\n'} image={imgUrl('roadmap1.png')} />
 );
 
+const Invest = () => (
+  <Container
+    id={siteConfig.references.invest.elementId}
+    padding={['bottom', 'top']}
+    className="Invest ContentSection">
+    <h1 className={"sectionHeader"}>IoTeX.Invest</h1>
+    <div className="blockElement alignCenter">
+      <div className="blockImage ImageBlock">
+        <a href={siteConfig.references.binance.href}
+          target="_blank">
+          <img className="iconSection" src={imgUrl('binance.jpg')}/>
+        </a>
+        <a href={siteConfig.references.gate_io.href}
+           target="_blank">
+          <img className="iconSection" src={imgUrl('gateio.jpg')}/>
+        </a>
+        <a href={siteConfig.references.kucoin.href}
+           target="_blank">
+          <img className="iconSection" src={imgUrl('kucoin.jpg')}/>
+        </a>
+      </div>
+    </div>
+  </Container>
+);
+
 
 const TryOut = () => (
   <Block id="try">
@@ -304,6 +329,7 @@ class Index extends React.Component {
           <Innovations />
           <Architecture />
           <Roadmap />
+          <Invest />
         </div>
       </div>
     );
