@@ -8,6 +8,8 @@
 const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
+const Button = require(`${process.cwd()}/core/Button.js`);
+const Subscribe = require(`${process.cwd()}/core/Subscribe.js`);
 
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
@@ -27,27 +29,41 @@ function pageUrl(page, language) {
   return siteConfig.baseUrl + (language ? `${language}/` : '') + page;
 }
 
-class Button extends React.Component {
-  render() {
-    return (
-      <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={this.props.href} target={this.props.target}>
-          {this.props.children}
-        </a>
-      </div>
-    );
-  }
+function externalUrl(page, language) {
+  return page + (language ? `?locale=${language}` : '');
 }
-
-Button.defaultProps = {
-  target: '_self',
-};
 
 const SplashContainer = props => (
   <div className="homeContainer">
+    <div className="youtubePlayerButton"><img src={imgUrl('ic_play.jpg')} id={'youtubePlayer'}></img></div>
     <div className="homeSplashFade">
       <div className="wrapper homeWrapper">{props.children}</div>
     </div>
+  </div>
+);
+
+const Modal = ({ show, children }) => {
+  const showHideClassName = show ? 'toggle-sibling modal display-block' : 'modal display-none';
+
+  return (
+    <div id={'youtubePlayerContainer'} className={showHideClassName}>
+      <section className='modal-main'>
+        {children}
+      </section>
+    </div>
+  );
+};
+
+const YouTube = () => (
+  <div className="container">
+    <iframe id="youtube_player"
+            width="640"
+            height="390"
+            src={siteConfig.youtubeUrl+'?enablejsapi=1&rel=0'}
+            frameBorder="0"
+            allowFullScreen
+            allowscriptaccess="always" >
+    </iframe>
   </div>
 );
 
@@ -59,7 +75,6 @@ const Logo = props => (
 
 const ProjectTitle = () => (
   <h2 className="projectTitle">
-    {siteConfig.title}
     <small>{siteConfig.tagline}</small>
   </h2>
 );
@@ -87,6 +102,52 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('sdk-smart-contract', language)}>Run Smart Contracts</Button>
           </PromoSection>
         </div>
+      </SplashContainer>
+    );
+  }
+}
+
+
+
+class HomeSection extends React.Component {
+
+  render() {
+    const language = this.props.language || '';
+    return (
+      <SplashContainer>
+        <div className="inner">
+          <ProjectTitle />
+          <PromoSection>
+            <Button href={externalUrl(siteConfig.references.roadmap.href, language)}>{siteConfig.references.roadmap.name}</Button>
+            <Button href={externalUrl(siteConfig.references.whitePaper.href, language)}>{siteConfig.references.whitePaper.name}</Button>
+          </PromoSection>
+          <Subscribe title={'Start the journey with us'}
+                     hint={'your email address'}
+          />
+        </div>
+        <Modal show={false} >
+          <YouTube />
+        </Modal>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            var toggleYoutube = function() {
+              const stepSibling = document.getElementById('youtubePlayerContainer');
+              const klass = 'display-none';
+              console.log("youtube clicked");
+              if (stepSibling.classList.contains(klass)) {
+                stepSibling.classList.remove(klass);
+                stepSibling.classList.add('display-block');
+              } else {
+                stepSibling.classList.remove('display-block');
+                stepSibling.classList.add(klass);
+                document.getElementById('youtube_player').contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+              }
+            };
+            document.getElementById('youtubePlayerContainer').addEventListener('click', toggleYoutube);
+            document.getElementById('youtubePlayer').addEventListener('click', toggleYoutube);`,
+          }}
+        />
       </SplashContainer>
     );
   }
@@ -199,7 +260,7 @@ class Index extends React.Component {
 
     return (
       <div>
-        <HomeSplash language={language} />
+        <HomeSection language={language}/>
         <div className="mainContainer">
           <Features />
           <FeatureCallout />

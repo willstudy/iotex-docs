@@ -12,21 +12,40 @@
   }
 }
 
-@media only screen and (min-device-width: 737px) and (max-device-width: 1080px) {
+@media only screen and (min-device-width: 737px) and (max-device-width: 1024px) {
   .subscribleForm {
     padding-right: 3%;
     padding-left: 3%;
   }
 }
 
-@media only screen and (min-width: 1080px) {
+@media only screen and (min-width: 1024px) {
   .subscribleForm {
     margin-right: 5%;
     margin-left: 5%;
   }
+  .headerItem{
+    padding: 6px 10px!important
+  }
+  .navPusher {
+    min-height: calc(100vh - 150px);
+    padding-top: 150px;
+  }
+  .homeContainer{
+    -webkit-background-size: contain!important;
+    -moz-background-size: contain!important;
+    -o-background-size: contain!important;
+    background-size: contain!important;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
+  .homeContainer{
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -44,8 +63,9 @@
 }
 
 .fixedHeaderContainer {
-    height: 60px;
-    padding: 12px 0;
+  height: 50px;
+  padding: 7px 0;
+  z-index: 9;
 }
 
 .fixedHeaderContainer header .headerTitleWithLogo {
@@ -72,9 +92,167 @@ footer h3{
 footer span{
   color: rgba(255, 255, 255, 0.6);
 }
+.fixedHeaderContainer{
+  visibility: hidden;
+}
+
+.overwriteHeader .fixedHeaderContainer{
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00dbb5;
+}
+
+.primaryMenuBarContainer.fixedHeaderContainer{
+  visibility: visible;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  height: 100px;
+  background: #0c0f1b;
+}
+
+.subMenuContainer, .homeContainer{
+  background: #0c0f1b;
+
+}
+
+.slidingNav a{
+  display: table!important;
+}
+
+.primaryMenuBarContainer header{
+  height: 50%;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.modal-main {
+  position: fixed;
+  background: #0c0f1b;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none,.displayNone {
+  display: none;
+}
+
+#youtubePlayer{
+  height: 50px;
+  width: auto;
+}
+.youtubePlayerButton{
+  position: relative;
+  float: right;
+  margin-right: 24.5%;
+  margin-top: 15.5%;
+}
+
+.container iframe{
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+.liMenu:hover div { display: block;!important; }
+
+.primaryMenuBarContainer .headerWrapper{
+  position: relative;
+  height: 100%;
+}
+
+.overwriteHeader span{
+  margin: auto 0;
+}
+
+.fixedHeaderContainer .slidingNav ul li a:focus,
+.fixedHeaderContainer .slidingNav ul li a:hover,
+.fixedHeaderContainer .slidingNav ul li.siteNavItemActive a,
+.fixedHeaderContainer .slidingNav ul li.siteNavGroupActive a {
+  background: transparent;
+  color: #eaf1ea!important;
+}
+
+.primaryMenuBarContainer .slidingNav ul li a:focus,
+.primaryMenuBarContainer .slidingNav ul li a:hover,
+.primaryMenuBarContainer .slidingNav ul li.siteNavItemActive a,
+.primaryMenuBarContainer .slidingNav ul li.siteNavGroupActive a{
+  background: transparent;
+  color: #00c9c9!important;
+}
+
+.primaryMenuBarContainer .navigationSlider .slidingNav ul li {
+  min-width: 19vh;
+}
+
+.menuItem, .homeContainer a,.homeContainer span,.projectTitle,.homeContainer .subscribleForm input{
+  color: white!important;
+}
+
+.homeContainer .subscribleForm{
+  margin-top: 20vh;
+  margin-left: 0px;
+}
+
+.homeContainer .subscribleForm button,.homeContainer .subscribleForm input{
+  background-color: transparent!important;
+  border-radius: 5px;
+  line-height: 30px !important;
+}
+
+.homeContainer input{
+  width: 60%!important;
+  border: 1px solid #c7c7c7!important;
+}
+
+.homeContainer button{
+  width: 25%;
+  border: 1px solid #00a492;
+  margin-left: 7%;
+  color: #00a492;
+}
+
+.homeContainer button:hover{
+  background-color: #00a492!important;
+}
+
+.homeContainer{
+  background: url("../img/bg_iotex.png") no-repeat center center fixed;
+  min-height: calc(100vh - 150px);
+}
 
 .subscribleForm input:focus{
-  border: 1px solid #1B6DE0;
+  border: 1px solid #1B6DE0!important;
 }
 
 .subscribleForm input, button{
@@ -86,6 +264,11 @@ footer span{
   width: 95%;
 }
 
+.smallIcon{
+  margin: 10px;
+  font-size: larger;
+}
+
 .subscribleForm button{
   background-color: #00b4a0;
   color: white;
@@ -94,6 +277,44 @@ footer span{
 .subscribleForm button:hover{
   background: #00a492;
 }
+
+.button {
+  background-color: #00c9c9;
+}
+
+.projectTitle > small {
+  font-size: 72%;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.homeSplashFade{
+  width: 48%;
+  text-align: left;
+  padding: 0 8vh;
+}
+.promoSection .promoRow .pluginRowBlock {
+  justify-content: left!important;
+}
+
+header .buttonWrapper .button{
+  border: 1px solid #fff;
+  margin-left: 3vh;
+  background-color: transparent;
+}
+
+header .buttonWrapper .button:hover{
+  background-color: #0c0f1b;
+  border: 1px solid #0c0f1b;
+}
+
+.promoSection {
+  z-index: 1;
+}
+.hidden{
+  visibility: hidden;
+}
+
 article h2::before {
     content: '';
     width: 100%;
