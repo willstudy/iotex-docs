@@ -237,10 +237,21 @@ footer span{
   line-height: 30px !important;
 }
 
+.socialReference,
 .SubscribeSection .subscribleForm button,
 .SubscribeSection .subscribleForm input{
   padding: 11px!important;
   margin-top: 16px;
+}
+
+.socialReference .fab,.fas{
+  color: #00c9c9;
+  font-size: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.socialReference .fab:hover,.fas:hover{
+  color: #00b7b7;
 }
 
 .SubscribeSection .subscribleForm button {
@@ -366,6 +377,9 @@ header .buttonWrapper .button:hover{
 
 .Innovations, .Roadmap{
   background-color: #11161B;
+}
+.SubscribeSection .socialReference{
+  display: block!important;
 }
 
 .ImageBlock{

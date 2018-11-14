@@ -130,6 +130,10 @@ class HeaderNav extends React.Component {
     return `${baseUrl}docs/${language ? `${language}/` : ''}${doc}`;
   }
 
+  pageUrl(page, language) {
+    return siteConfig.baseUrl + (language ? `${language}/` : '') + page;
+  }
+
   // function to generate each header link, used with each object in siteConfig.headerLinks
   makeLinks(link) {
     let href;
@@ -243,9 +247,9 @@ class HeaderNav extends React.Component {
 
     var subMenu = subLink&&(<div className={'subMenuContainer displayNone'}>
       {link.links.map((aLink,index)=>{
-      let href = (aLink.href.startsWith('http')||aLink.href.startsWith('//'))?
+      let href = (aLink.href.startsWith('http')||aLink.href.startsWith('//')||aLink.href.startsWith('#'))?
         aLink.href:
-        this.docUrl(aLink.href, this.props.language);
+        (aLink.href.endsWith('html')?this.pageUrl(aLink.href):this.docUrl(aLink.href, this.props.language));
       return <a href={href}
                 key={'reference_'+index}
                 target={href.startsWith('//')||href.startsWith('http') ? '_blank' : '_self'} >{aLink.name}

@@ -25,7 +25,7 @@ class Footer extends React.Component {
       (column, index) => {
         let renderedLinks = column.links.map(
           (link,index)=>{
-            let href = (link.href.startsWith('http')||link.href.startsWith('//'))?
+            let href = (link.href.startsWith('http')||link.href.startsWith('//')||link.href.startsWith('#'))?
               link.href:
               this.docUrl(link.href, this.props.language);
             return <a href={href} key={'reference_'+index}>{link.name}</a>;

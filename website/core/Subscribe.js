@@ -35,6 +35,14 @@ class Subscribe extends React.Component {
           />
           <input type='hidden' name='b_2f676e23e08fa3633f66ebc89_b7930ab8b9' tabIndex='-1' value=''/>
           <button>SUBSCRIBE</button>
+          <div className="socialReference displayNone">
+            <a href="/telegram"><i className="fab fa-telegram"></i></a>
+            <a href="https://twitter.com/iotex_io"><i className="fab fa-twitter"></i></a>
+            <a href="https://medium.com/iotex"><i className="fab fa-medium"></i></a>
+            <a href="https://www.linkedin.com/company/13617896/"><i className="fab fa-linkedin"></i></a>
+            <a href="https://redd.it/7lzeym"><i className="fab fa-reddit"></i></a>
+            <a href="mailto:support@iotex.io"><i className="fas fa-envelope"></i></a>
+          </div>
         </form>
       </div>
     );

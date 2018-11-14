@@ -237,7 +237,11 @@ const Architecture = () => (
 );
 
 const Roadmap = () => (
-  <ImageBlock className="Roadmap ContentSection" sectionHeader={'IoTeX.Roadmap\n'} image={imgUrl('roadmap1.png')} />
+  <ImageBlock
+    id={siteConfig.references.roadmap.elementId}
+    className="Roadmap ContentSection"
+    sectionHeader={'IoTeX.Roadmap\n'}
+    image={imgUrl('roadmap1.png')} />
 );
 
 const Invest = () => (

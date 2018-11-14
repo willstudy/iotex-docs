@@ -46,8 +46,9 @@ const references = {
     name: 'Learn More',
   },
   roadmap: {
-    href: 'https://iotex.io/#roadmap',
+    href: '#roadmap',
     name: 'ROADMAP',
+    elementId: 'roadmap'
   },
   whitePaper:{
     href: 'https://iotex.io/academics',
@@ -66,7 +67,7 @@ const references = {
     name: 'DOCUMENT',
   },
   ourCompany :{
-    href: 'our-company',
+    href: 'our-company.html',
     name: 'OUR COMPANY',
   },
   charityProgram :{
