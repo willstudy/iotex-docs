@@ -244,13 +244,13 @@ footer span{
   margin-top: 16px;
 }
 
-.socialReference .fab,.fas{
+.socialReference .fab,.socialReference .fas{
   color: #00c9c9;
   font-size: 24px;
   margin-left: 8px;
   margin-right: 8px;
 }
-.socialReference .fab:hover,.fas:hover{
+.socialReference .fab:hover,.socialReference .fas:hover{
   color: #00b7b7;
 }
 
