@@ -247,7 +247,7 @@ footer span{
 }
 
 .homeContainer{
-  background: url("../img/bg_iotex.png") no-repeat center center fixed;
+  background: url("../img/bg_iotex.png") no-repeat #0c0f1b center center fixed;
   min-height: calc(100vh - 150px);
 }
 
@@ -309,7 +309,6 @@ header .buttonWrapper .button:hover{
 }
 
 .ContentSection{
-  background-color: #151A1F;
   color: white;
 }
 
@@ -333,6 +332,18 @@ header .buttonWrapper .button:hover{
   text-align: center;
   margin-bottom: 2.5rem;
   margin-top: 0;
+}
+
+.LearnHow, .Architecture{
+  background-color: #151A1F;
+}
+
+.Innovations, .Roadmap{
+  background-color: #11161B;
+}
+
+.ImageBlock{
+  margin: 0 auto;
 }
 
 .promoSection {

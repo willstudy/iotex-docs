@@ -164,6 +164,21 @@ const Block = props => (
   </Container>
 );
 
+const ImageBlock = props => (
+  <Container
+    padding={['bottom', 'top']}
+    id={props.id}
+    className={props.className}
+    background={props.background}>
+    <h1 className={"sectionHeader"}>{props.sectionHeader}</h1>
+    <div className="blockElement alignCenter">
+      <div className="blockImage ImageBlock">
+        <img src={props.image}/>
+      </div>
+    </div>
+  </Container>
+);
+
 const Features = () => (
   <Block layout="fourColumn">
     {[
@@ -212,6 +227,19 @@ const LearnHow = () => (
     ]}
   </Block>
 );
+
+const Innovations = () => (
+  <ImageBlock className="Innovations ContentSection" sectionHeader={'IoTeX.Innovations\n'} image={imgUrl('our-inno.png')} />
+);
+
+const Architecture = () => (
+  <ImageBlock className="Architecture ContentSection" sectionHeader={'IoTeX.Architecture\n'} image={imgUrl('arch.png')} />
+);
+
+const Roadmap = () => (
+  <ImageBlock className="Roadmap ContentSection" sectionHeader={'IoTeX.Architecture\n'} image={imgUrl('roadmap1.png')} />
+);
+
 
 const TryOut = () => (
   <Block id="try">
@@ -273,11 +301,9 @@ class Index extends React.Component {
         <HomeSection language={language}/>
         <div>
           <LearnHow />
-          <Features />
-          <FeatureCallout />
-          <TryOut />
-          <Description />
-          <Showcase language={language} />
+          <Innovations />
+          <Architecture />
+          <Roadmap />
         </div>
       </div>
     );
