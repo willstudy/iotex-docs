@@ -61,7 +61,7 @@ body {
     font-family: $myFont;
 }
 
-footer,header {
+footer,header a {
   font-family: $shareText;
 }
 
