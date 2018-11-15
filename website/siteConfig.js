@@ -190,9 +190,8 @@ const siteConfig = {
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/iotexproject/iotex-docs',
   algolia: {
-    apiKey: '6aa2095b9d76e63ea2af3f3bc6fb2c1a',
-    indexName: 'iotex-docs',
-    appId: '8VEJ3VOJR5',
+    apiKey: '9a96e72018d66972847bcead65ec3d59',
+    indexName: 'iotex',
     algoliaOptions: {
     } // Optional, if provided by Algolia
   },
