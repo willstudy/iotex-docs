@@ -31,10 +31,10 @@ Download the config file config_fullnode.yaml, open it in an editor, change the 
 
 Second, upon joining a p2p network you’ll need to know an initial peer to contact to, this is called the bootstrap node. Change 127.0.0.1:4689 in the below line to 104.198.10.31:30555 (which is one node on our Testnet)
 
-`
+```
 bootstrapNodes:
         - "127.0.0.1:4689"
-`
+```
 
 # Run the full node
 
