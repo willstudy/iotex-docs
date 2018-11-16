@@ -112,7 +112,7 @@ const references = {
 };
 
 const siteConfig = {
-  title: 'IoTeX Documentations', // Title for your website.
+  title: 'Documentations', // Title for your website.
   tagline: 'IoTeX is a Decentralized Network for Internet of Things Powered by a Privacy-Centric Blockchain.',
   url: 'http://docs.iotex.me/', // Your website URL
   baseUrl: '/', // Base URL for your project */
