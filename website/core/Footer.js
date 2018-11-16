@@ -64,6 +64,7 @@ class Footer extends React.Component {
           </div>
           {references}
         </section>
+        <section className='copyright'>Icons made by <a className='copyright' target='_blank' href='https://www.flaticon.com/authors/smalllikeart' rel='noopener noreferrer'>smalllikeart</a> from www.flaticon.com</section>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );

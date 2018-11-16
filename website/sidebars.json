@@ -16,7 +16,8 @@
   },
   "docs-other": {
     "Guides": [
-      "guides"
+      "guides",
+      "open-testnet"
     ]
   }
 }
