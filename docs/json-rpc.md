@@ -771,6 +771,170 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getExecutionsByBlockID"
 
 
 
+## Explorer.getCreateDeposit
+
+get create deposit from id
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "string",
+    "name": "createDepositID"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "CreateDeposit"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCreateDeposit","params":["createDepositID: string"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.getCreateDepositsByAddress
+
+get list of create deposits belonging to an address
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "string",
+    "name": "address"
+  },
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "offset"
+  },
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "limit"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": true,
+  "type": "CreateDeposit"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getCreateDepositsByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.getSettleDeposit
+
+get settle deposit from id
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "string",
+    "name": "settleDepositID"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "SettleDeposit"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getSettleDeposit","params":["settleDepositID: string"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.getSettleDepositsByAddress
+
+get list of settle deposits belonging to an address
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "string",
+    "name": "address"
+  },
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "offset"
+  },
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "limit"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": true,
+  "type": "SettleDeposit"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getSettleDepositsByAddress","params":["address: string", "offset: int", "limit: int"],"id":"1"}'
+```
+
+
+
+
+
 ## Explorer.getLastBlocksByRange
 
 get list of blocks by block id offset and limit
@@ -1404,6 +1568,138 @@ settle deposit on sub-chain. This is a sub-chain API
 
 ```
 curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.settleDeposit","params":["request: SettleDepositRequest"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.suggestGasPrice
+
+suggest gas price
+
+### Parameters
+
+```
+[]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "int"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.suggestGasPrice","params":[],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.estimateGasForTransfer
+
+estimate gas for transfer
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "SendTransferRequest",
+    "name": "request"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "int"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.estimateGasForTransfer","params":["request: SendTransferRequest"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.estimateGasForVote
+
+estimate gas for vote
+
+### Parameters
+
+```
+[]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "int"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.estimateGasForVote","params":[],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.estimateGasForSmartContract
+
+estimate gas for smart contract
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "Execution",
+    "name": "request"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "int"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.estimateGasForSmartContract","params":["request: Execution"],"id":"1"}'
 ```
 
 

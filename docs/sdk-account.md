@@ -12,7 +12,7 @@ The `iotx.accounts` contains functions to generate Iotex accounts and sign trans
 import {Iotx, HttpProvider} from 'iotex-client-js';
 
 (async () => {
-  const iotx = new Iotx(new HttpProvider('http://localhost:14004/'));
+  const iotx = new Iotx(new HttpProvider('http://localhost:14004/'), {walletProvider: new HttpProvider('http://localhost:4004/api/wallet-core/')});
 
   // create a new wallet which contains a public key, a private key, and a raw address.
   const wallet = await iotx.accounts.create();
@@ -23,14 +23,8 @@ import {Iotx, HttpProvider} from 'iotex-client-js';
   // }
 
   // recover the whole wallet from a single private key
-  const unlockedWallet = await iotx.accounts.add('...iotx private key...');
+  const unlockedWallet = await iotx.accounts.add('c5364b1a2d99d127439be22edfd657889981e9ba4d6d18fe8eca489d48485371efcb2400');
   // unlockedWallet return value => {
-  //   "publicKey": "...",
-  //   "privateKey": "...",
-  //   "rawAddress": "..."
-  // }
-  accounts.wallets[unlockedWallet.publicKey];
-  // return value => {
   //   "publicKey": "...",
   //   "privateKey": "...",
   //   "rawAddress": "..."

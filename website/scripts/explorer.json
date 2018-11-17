@@ -1392,6 +1392,225 @@
   },
   {
     "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "CreateDeposit",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "version"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "ID"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "nonce"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "sender"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "recipient"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "amount"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "senderPubKey"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "signature"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "gasLimit"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "gasPrice"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "fee"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "timestamp"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "blockID"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "bool",
+        "name": "isPending"
+      }
+    ]
+  },
+  {
+    "comment": "",
+    "extends": "",
+    "type": "struct",
+    "name": "SettleDeposit",
+    "fields": [
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "version"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "ID"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "nonce"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "sender"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "recipient"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "amount"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "index"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "senderPubKey"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "signature"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "gasLimit"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "gasPrice"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "fee"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "int",
+        "name": "timestamp"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "blockID"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "bool",
+        "name": "isPending"
+      }
+    ]
+  },
+  {
+    "comment": "",
     "functions": [
       {
         "comment": "get the blockchain tip height",
@@ -1801,6 +2020,90 @@
         "name": "getExecutionsByBlockID"
       },
       {
+        "comment": "get create deposit from id",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "CreateDeposit"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "string",
+            "name": "createDepositID"
+          }
+        ],
+        "name": "getCreateDeposit"
+      },
+      {
+        "comment": "get list of create deposits belonging to an address",
+        "returns": {
+          "optional": false,
+          "is_array": true,
+          "type": "CreateDeposit"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "string",
+            "name": "address"
+          },
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "offset"
+          },
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "limit"
+          }
+        ],
+        "name": "getCreateDepositsByAddress"
+      },
+      {
+        "comment": "get settle deposit from id",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "SettleDeposit"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "string",
+            "name": "settleDepositID"
+          }
+        ],
+        "name": "getSettleDeposit"
+      },
+      {
+        "comment": "get list of settle deposits belonging to an address",
+        "returns": {
+          "optional": false,
+          "is_array": true,
+          "type": "SettleDeposit"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "string",
+            "name": "address"
+          },
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "offset"
+          },
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "limit"
+          }
+        ],
+        "name": "getSettleDepositsByAddress"
+      },
+      {
         "comment": "get list of blocks by block id offset and limit",
         "returns": {
           "optional": false,
@@ -2078,6 +2381,58 @@
           }
         ],
         "name": "settleDeposit"
+      },
+      {
+        "comment": "suggest gas price",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "int"
+        },
+        "params": [],
+        "name": "suggestGasPrice"
+      },
+      {
+        "comment": "estimate gas for transfer",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "int"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "SendTransferRequest",
+            "name": "request"
+          }
+        ],
+        "name": "estimateGasForTransfer"
+      },
+      {
+        "comment": "estimate gas for vote",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "int"
+        },
+        "params": [],
+        "name": "estimateGasForVote"
+      },
+      {
+        "comment": "estimate gas for smart contract",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "int"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "Execution",
+            "name": "request"
+          }
+        ],
+        "name": "estimateGasForSmartContract"
       }
     ],
     "type": "interface",
@@ -2086,7 +2441,7 @@
   {
     "barrister_version": "0.1.6",
     "type": "meta",
-    "date_generated": 1541654499536,
-    "checksum": "9e4a35322fdadd0f77586f8ba530a00e"
+    "date_generated": 1542435956793,
+    "checksum": "06a39b831ced3f5278b1e3d233c20b7a"
   }
 ]

@@ -6,13 +6,13 @@ title: Transfer
 `iotx.sendTransfer` create, sign, and send a transaction of transfer to iotex blockchain network.
 
 ```js
-import {Iotx, HttpProvider} from 'iotex-client-js';
+import {Iotx, HttpProvider, utils} from 'iotex-client-js';
 
 (async () => {
-  const iotx = new Iotx(new HttpProvider('http://127.0.0.1:14004'));
-  const unlockedWallet = await iotx.accounts.add('c5364b1a2d99d127439be22edfd657889981e9ba4d6d18fe8eca489d48485371efcb2400');
+  const iotx = new Iotx(new HttpProvider('http://localhost:14004/'), {walletProvider: new HttpProvider('http://localhost:4004/api/wallet-core/')});
+  const unlockedWallet = await iotx.accounts.add('04356946f13e5c51a42158fdd29f6ee81e1c59af9f267cde16d5852ef5b32146d18e2f00');
   const receipt = await iotx.sendTransfer({
-    amount: '1',
+    amount: utils.toRau('1', 'Iotx'),
     sender: unlockedWallet.rawAddress,
     senderPubKey: unlockedWallet.publicKey,
     recipient: 'io1qyqsqqqqcz8twkf0v55y04jr8cwmfk7q3lgjycyzjq0tx4',
@@ -20,12 +20,13 @@ import {Iotx, HttpProvider} from 'iotex-client-js';
     gasLimit: 10000,
   });
   // receipt return value => {
+  // {
   //   "version": 0,
-  //   "ID": "1b0252bd7addfa0920f61b222887743e42eacf9b607de45fa18a59e769cf674b",
-  //   "nonce": 20,
-  //   "sender": "io1qyqsqqqq26zujam2gt5cut0ggu8pa4d5q7hnrvsvace4x6",
+  //   "ID": "6951fe24280a457c596cc39f163ab5681d8754295918d7c334780dbdb4347e06",
+  //   "nonce": 5,
+  //   "sender": "io1qyqsqqqq4p5v65gg0hvqjcktqejmz0mqwqek5vnrhrkhg0",
   //   "recipient": "io1qyqsqqqqcz8twkf0v55y04jr8cwmfk7q3lgjycyzjq0tx4",
-  //   "amount": "1",
+  //   "amount": "1000000000000000000",
   //   "senderPubKey": "",
   //   "signature": "",
   //   "payload": "",

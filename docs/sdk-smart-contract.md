@@ -83,7 +83,7 @@ import {Iotx, HttpProvider} from 'iotex-client-js';
   const bytecode = "608060405234801561001057600080fd5b5060bf8061001f6000396000f30060806040526004361060485763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166360fe47b18114604d5780636d4ce63c146064575b600080fd5b348015605857600080fd5b5060626004356088565b005b348015606f57600080fd5b506076608d565b60408051918252519081900360200190f35b600055565b600054905600a165627a7a723058208236d8b2917002adfa862bbd8ea837cd90c6d76c5f0d7e1a0a7549faece1559f0029"
 
   const provider = new HttpProvider('http://localhost:14004/');
-  const iotx = new Iotx(provider);
+  const iotx = new Iotx(provider, {walletProvider: new HttpProvider('http://localhost:4004/api/wallet-core/')});
   const wallet = await iotx.accounts.add('c5364b1a2d99d127439be22edfd657889981e9ba4d6d18fe8eca489d48485371efcb2400');
   const contract = new iotx.Contract({abi, contractName, wallet});
   const exec = await contract.deploy({
