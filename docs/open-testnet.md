@@ -25,10 +25,10 @@ The Testnet is basically a p2p network where nodes communicate to each other by 
 
 Download the config file config_fullnode.yaml, open it in an editor, change the 127.0.0.1 after 'host:' to your external IP address. For instance, if your external IP is 30.30.30.30
 
-`
+```
 # replace with your external IP address
 host: "30.30.30.30"
-`
+```
 
 > Note: If your computer is on a LAN with internal IP address like 192.168.1.100, still put the external IP address in the config file. You’ll need to enable port-forwarding on the router/switch to forward both ingress and egress traffic on port 30555 to the internal address of your computer.
 
