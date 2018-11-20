@@ -23,24 +23,29 @@ Install docker on your host machine at https://docs.docker.com/install/. Once do
 
 The Testnet is basically a p2p network where nodes communicate to each other by relaying messages and blocks they receive on the network. To connect to and join the IoTeX Testnet, you’ll need to first set your IP address in the config file — without publishing your IP address other nodes won't know your existence and hence cannot send data to you.
 
-Download the config file config_fullnode.yaml, open it in an editor, change the 127.0.0.1 in the below line to your external IP address
+Download the config file config_fullnode.yaml, open it in an editor, change the 127.0.0.1 after 'host:' to your external IP address. For instance, if your external IP is 30.30.30.30
 
-`host: "127.0.0.1"`
+`
+# replace with your external IP address
+host: "30.30.30.30"
+`
 
 > Note: If your computer is on a LAN with internal IP address like 192.168.1.100, still put the external IP address in the config file. You’ll need to enable port-forwarding on the router/switch to forward both ingress and egress traffic on port 30555 to the internal address of your computer.
 
-Second, upon joining a p2p network you’ll need to know an initial peer to contact to, this is called the bootstrap node. Change 127.0.0.1:4689 in the below line to 104.198.10.31:30555 (which is one node on our Testnet)
+Second, upon joining a p2p network you’ll need to know an initial peer to contact to, this is called the bootstrap node. This has already been properly configured in the file, bootnode.iotexconnect.io links to one node on our Testnet. You don't need to do any change here.
 
 ```
 bootstrapNodes:
-        - "127.0.0.1:4689"
+        - "bootnode.iotexconnect.io:30555"
 ```
 
 # Run the full node
 
 Now we are ready to run the full node at the stroke of one command line:
 
+```
 docker run -p 30555:30555 --mount type=bind,source=/path-to-config_fullnode.yaml/config_fullnode.yaml,target=/etc/iotex/config_local_fullnode.yaml iotex/iotex-core:testnet
+```
 
 -p 30555:30555 forward the port 30555 from your host computer to the running process in the docker container
 
