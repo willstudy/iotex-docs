@@ -58,15 +58,15 @@ const references = {
     name: 'GITHUB',
   },
   apiReference: {
-    href: 'sdk-rpc-methods',
+    href: 'iotex-client-js',
     name: 'API REFERENCE',
   },
   contribute: {
-    href: 'https://iotex.io',
+    href: 'https://github.com/iotexproject/iotex-core/wiki/Developers\'-Guide',
     name: 'CONTRIBUTE',
   },
   getHelp: {
-    href: 'https://iotex.io',
+    href: 'https://gitter.im/iotex-dev-community/Lobby',
     name: 'GET HELP',
   },
   binance: {
