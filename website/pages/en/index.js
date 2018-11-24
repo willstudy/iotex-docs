@@ -153,7 +153,7 @@ const Features = () => (
 const Questions = props => {
   return (
     <div className="productShowcaseSection paddingBottom">
-      <h2>Having Questions?</h2>
+      <h2>Have Questions?</h2>
       <div className="logos">
         <img src={imgUrl('faq.svg')} />
       </div>
