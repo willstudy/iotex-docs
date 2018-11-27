@@ -138,6 +138,7 @@ const Features = () => (
 
 <a class="github-button" href="https://github.com/iotexproject/iotex-client-js" data-show-count="true" aria-label="Star iotexproject/iotex-client-js on GitHub">iotex-client-js</a>
 
+<a class="github-button" href="https://github.com/iotexproject/iotex-wallet" data-show-count="true" aria-label="Star iotexproject/iotex-client-js on GitHub">iotex-wallet</a>
 
 
 
