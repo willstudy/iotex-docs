@@ -44,22 +44,21 @@ bootstrapNodes:
 Now we are ready to run the full node at the stroke of one command line:
 
 ```
-docker run -p 30555:30555 --mount type=bind,source=/path-to-config_fullnode.yaml/config_fullnode.yaml,target=/etc/iotex/config_local_fullnode.yaml iotex/iotex-core:testnet
+sudo docker run -d -p 30555:30555 -p 30100:14004 --mount type=bind,source=/path-to-config_fullnode.yaml/config_fullnode.yaml,target=/etc/iotex/config_local_fullnode.yaml iotex/iotex-core:testnet
 ```
-
--p 30555:30555 forward the port 30555 from your host computer to the running process in the docker container
-
 --mount phrase use the config file with adjusted network setting above to override the default config in the docker container
 
-You'll first see this message. It shows the full node has started and committed the genesis block (height = 0, hash = 05389a6d3550c24552b80fe0557e9dbf5fd1fece92a9f83c053903891e12fab3)
-
+-d flag makes docker run in the background, you can now use standard docker commands to check the status. For instance, type in `sudo docker container ls` you will see something like
+```
+CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS                                                NAMES
+b3554e412b00        iotex/iotex-core:testnet   "iotex-server -confi…"   About an hour ago   Up About an hour    0.0.0.0:30555->30555/tcp, 0.0.0.0:30100->14004/tcp   sad_lehmann
+```
+If you pull the log by `sudo docker logs b3554e412b00`, at the beginning of the log you can find the genesis block creation message (height = 0, hash = 05389a6d3550c24552b80fe0557e9dbf5fd1fece92a9f83c053903891e12fab3)
 `
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","height":0,"
 hash":"05389a6d3550c24552b80fe0557e9dbf5fd1fece92a9f83c053903891e12fab3","time":"2018-11-16T01:16:38Z","message":"commit a block"}
 `
-
-After a while, you will see more message like below, showing the full node kept receiving and committing more blocks
-
+And more message like below, showing the full node kept receiving and committing more blocks
 `
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","height":1,"hash":"2379d84c7dab2d1b7b0938b899083b3551c1fe0abe4aabca2a81f9e56ce6323c","time":"2018-11-16T01:18:11Z","message":"commit a block"}
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","recvHeight":1,"confirmedHeight":0,"source":"blockBuffer","syncedHeight":1,"time":"2018-11-16T01:18:11Z","message":"Successfully committed block."}
@@ -67,5 +66,4 @@ After a while, you will see more message like below, showing the full node kept 
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","recvHeight":2,"confirmedHeight":1,"source":"blockBuffer","syncedHeight":2,"time":"2018-11-16T01:18:11Z","message":"Successfully committed block."}
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","height":3,"hash":"fb55c007f30297e454b1633d74dfa7b8003006e29df8c5fe19af767daeabdcb3","time":"2018-11-16T01:18:11Z","message":"commit a block"}
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","recvHeight":3,"confirmedHeight":2,"source":"blockBuffer","syncedHeight":3,"time":"2018-11-16T01:18:11Z","message":"Successfully committed block."}
-{"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","height":4,"hash":"ab264081c077ea15a885ce8665151906986a648d57261f374340ea98ec7b7e6b","time":"2018-11-16T01:18:12Z","message":"commit a block"}
 `
