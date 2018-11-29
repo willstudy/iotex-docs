@@ -23,7 +23,7 @@ Install docker on your host machine at https://docs.docker.com/install/. Once do
 
 The Testnet is basically a p2p network where nodes communicate to each other by relaying messages and blocks they receive on the network. To connect to and join the IoTeX Testnet, you’ll need to first set your IP address in the config file — without publishing your IP address other nodes won't know your existence and hence cannot send data to you.
 
-Download the config file config_fullnode.yaml, open it in an editor, change the 127.0.0.1 after 'host:' to your external IP address. For instance, if your external IP is 30.30.30.30
+Download the config file <a href="/config_fullnode.yaml" download>config_fullnode.yaml</a>, open it in an editor, change the 127.0.0.1 after 'host:' to your external IP address. For instance, if your external IP is 30.30.30.30
 
 ```
 # replace with your external IP address
