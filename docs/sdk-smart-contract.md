@@ -94,26 +94,10 @@ import {Iotx, HttpProvider} from 'iotex-client-js';
     contract: '',
     amount: '1',
   });
-  // exec return value => {
-  //   "version": 0,
-  //   "ID": "a8d0217421a626b6f0670f7e020fd88d9aab984d179621182fa5b8a3870c41e2",
-  //   "nonce": 23,
-  //   "executor": "io1qyqsqqqq26zujam2gt5cut0ggu8pa4d5q7hnrvsvace4x6",
-  //   "contract": "",
-  //   "amount": "1",
-  //   "executorPubKey": "",
-  //   "signature": "",
-  //   "gasLimit": 100000,
-  //   "gasPrice": "0",
-  //   "timestamp": 0,
-  //   "data": "",
-  //   "blockID": "",
-  //   "isPending": true
-  // }
 })()
 ```
 
-And then you can query its receipt.
+The exec's type is [TExecution](https://docs.iotex.io/docs/iotex-client-js#texecution). And then you can query its receipt.
 
 ```js
 const receipt = await iotx.rpcMethods.getReceiptByExecutionID(exec.ID);
@@ -125,7 +109,6 @@ const receipt = await iotx.rpcMethods.getReceiptByExecutionID(exec.ID);
 //   contractAddress: 'io1qyqsqqqqgh345g9zle6qg7txkumkshluqd2p0yj0n7e50m',
 //   logs: []
 // }
-
 ```
 
 ## Interacting with Smart Contract
@@ -153,6 +136,5 @@ const value = await contract
      amount: '0',
    })
 .get();
-// value => 666
 ```
-Need more detailed API references? Please visit [iotx.Contract](/docs/iotex-client-js#contract)
+The value above is a dynamic type depending on what you defined in the solidity. Need more detailed API references? Please visit [iotx.Contract](/docs/iotex-client-js#contract)
