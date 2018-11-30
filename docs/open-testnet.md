@@ -5,9 +5,15 @@ title: Open Testnet
 
 The IoTeX Testnet is now fully open for community and developers! Join our Testnet as a full node and use our SDK to interact with IoTeX blockchain.
 
-We are working on functionality that will allow you to join as a delegate and participate in generating blocks on the IoTeX Testnet Blockchain.
+This is the phase I of the Open Testnet launch, which focuses on running a full node. The following guide covers that in 3 parts:
 
-# Set up full node
+1. Set up full node
+2. Run the full node
+3. Explore the full node
+
+p.s. We are working on functionality that will allow you to join as a delegate and participate in generating blocks on the IoTeX Testnet Blockchain. That will be launched in phase II in near future.
+
+# Set up the full node
 Our complete software is packaged in the form of a docker image plus a config file for the convenience of set-up and deployment. You can easily set up and run a full node in 3 steps.
 
 First, install docker and download our docker image. Second, download the config file and adjust certain networking settings. And finally, run the full node in one command!
