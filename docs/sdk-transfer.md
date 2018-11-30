@@ -19,26 +19,7 @@ import {Iotx, HttpProvider, utils} from 'iotex-client-js';
     gasPrice: '0',
     gasLimit: 1000000,
   });
-  // receipt return value => {
-  // {
-  //   "version": 0,
-  //   "ID": "6951fe24280a457c596cc39f163ab5681d8754295918d7c334780dbdb4347e06",
-  //   "nonce": 5,
-  //   "sender": "io1qyqsqqqq4p5v65gg0hvqjcktqejmz0mqwqek5vnrhrkhg0",
-  //   "recipient": "io1qyqsqqqqcz8twkf0v55y04jr8cwmfk7q3lgjycyzjq0tx4",
-  //   "amount": "1000000000000000000",
-  //   "senderPubKey": "",
-  //   "signature": "",
-  //   "payload": "",
-  //   "gasLimit": 1000000,
-  //   "gasPrice": "0",
-  //   "isCoinbase": false,
-  //   "fee": "",
-  //   "timestamp": 0,
-  //   "blockID": "",
-  //   "isPending": true
-  // }
 })()
 ```
 
-Need more detailed API references? Please visit [iotx.sendTransfer](/docs/iotex-client-js#sendtransfer)
+The receipt's type is [TReceipt](https://docs.iotex.io/docs/iotex-client-js#treceipt). Need more detailed API references? Please visit [iotx.sendTransfer](/docs/iotex-client-js#sendtransfer)
