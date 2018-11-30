@@ -16,8 +16,8 @@ import {Iotx, HttpProvider, utils} from 'iotex-client-js';
     sender: unlockedWallet.rawAddress,
     senderPubKey: unlockedWallet.publicKey,
     recipient: 'io1qyqsqqqqcz8twkf0v55y04jr8cwmfk7q3lgjycyzjq0tx4',
-    gasPrice: '1',
-    gasLimit: 10000,
+    gasPrice: '0',
+    gasLimit: 1000000,
   });
   // receipt return value => {
   // {
@@ -30,8 +30,8 @@ import {Iotx, HttpProvider, utils} from 'iotex-client-js';
   //   "senderPubKey": "",
   //   "signature": "",
   //   "payload": "",
-  //   "gasLimit": 10000,
-  //   "gasPrice": "1",
+  //   "gasLimit": 1000000,
+  //   "gasPrice": "0",
   //   "isCoinbase": false,
   //   "fee": "",
   //   "timestamp": 0,
