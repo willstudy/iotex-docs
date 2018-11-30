@@ -82,6 +82,8 @@ With the correct URL in hand, let’s set up your own Explorer. Click on the but
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
+You will see a page like below:
+
 <img src="https://docs.iotex.io/img/heroku-deploy.png" alt="App deploy" style="width: 70%; height: 70%;">
 
 Enter a name you like in App name and click the Deploy app button, it takes about 3~4 minutes to build and deploy. Wait until you see green tick and “Your app was successfully deployed”, as shown below
@@ -92,10 +94,17 @@ Click on Manage app. On the coming page, click on Settings tab, and Reveal Confi
 
 <img src="https://docs.iotex.io/img/heroku-setting.png" alt="App setting" style="width: 70%; height: 70%;">
 
-We’ll need to config these 5 parameters for the Explorer app to working correctly.
+We’ll need to add these 5 parameters for the Explorer app to working correctly:
 
-You’ll end up like the figure below, with http://yourIP:30100 replaced by the Explorer URL mentioned earlier.
+| KEY | VALUE |
+| --- | --- |
+| CHAINS | [{"id":1,"name":"mainchain","url":"http://iotexscan.io/","gatewayUrl":"https://iotexscan.com/"},{"id":2,"name":"subchain","url":"http://subchain.iotexscan.io/","gatewayUrl":"https://subchain.iotexscan.io/"}] |
+| IOTEX_CORE_URL | type in **Explorer URL** mentioned earlier |
+| IOTEX_WALLET_URL | 159.89.223.147:42124 |
+| NODE_ENV | production |
+
+You’ll end up like the figure below, with `http://yourIP:30100` replaced by the Explorer URL mentioned earlier.
 
 <img src="https://docs.iotex.io/img/heroku-config.png" alt="App config" style="width: 70%; height: 70%;">
 
-Now you are ready to launch your own IoTeX explorer. Click on Open app in the top right of the page, or go to http://appname.herokuapp.com, you will see your own IoTeX explorer live in action!
+Now you are ready to launch your own IoTeX explorer. Click on Open app in the top right of the page, or go to `http://appname.herokuapp.com`, you will see your own IoTeX explorer live in action!
