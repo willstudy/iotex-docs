@@ -64,3 +64,12 @@ And more message like below, showing the full node kept receiving and committing
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","height":3,"hash":"fb55c007f30297e454b1633d74dfa7b8003006e29df8c5fe19af767daeabdcb3","time":"2018-11-16T01:18:11Z","message":"commit a block"}
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","recvHeight":3,"confirmedHeight":2,"source":"blockBuffer","syncedHeight":3,"time":"2018-11-16T01:18:11Z","message":"Successfully committed block."}
 ```
+
+# Explore the full node
+The IoTeX docker image is embedded with a service in the backend called Explorer. It connects to the blockchain on the full node and provides API to access and query data on the blockchain through JSON RPC. In this part of the guide we’ll show you how to quickly deploy your own IoTeX blockchain explorer.
+
+In the docker command there is a flag `-p 30100:14004`, this will expose the Explorer service to port 30100 on your host machine (14004 is the internal port inside the docker container). Your Explorer URL is hence the external IP : 30100. For example, with an IP 30.30.30.30 the Explorer URL is http://30.30.30.30:30100
+
+With the correct URL in hand, let’s set up your own Explorer. Click on the link below. <a target="_blank" href="https://heroku.com/deploy?template=https://github.com/iotexproject/iotex-explorer">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
