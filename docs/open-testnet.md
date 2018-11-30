@@ -84,15 +84,15 @@ With the correct URL in hand, let’s set up your own Explorer. Click on the but
 
 You will see a page like below:
 
-<img src="https://docs.iotex.io/img/heroku-deploy.png" alt="App deploy" style="width: 70%; height: 70%;">
+<img src="https://docs.iotex.io/img/heroku-deploy.png" alt="App deploy" style="width: 75%; height: 75%;">
 
 Enter a name you like in App name and click the Deploy app button, it takes about 3~4 minutes to build and deploy. Wait until you see green tick and “Your app was successfully deployed”, as shown below
 
-<img src="https://docs.iotex.io/img/heroku-finish.png" alt="App finish" style="width: 70%; height: 70%;">
+<img src="https://docs.iotex.io/img/heroku-finish.png" alt="App finish" style="width: 75%; height: 75%;">
 
 Click on Manage app. On the coming page, click on Settings tab, and Reveal Config Vars.
 
-<img src="https://docs.iotex.io/img/heroku-setting.png" alt="App setting" style="width: 70%; height: 70%;">
+<img src="https://docs.iotex.io/img/heroku-setting.png" alt="App setting" style="width: 75%; height: 75%;">
 
 We’ll need to add these 5 parameters for the Explorer app to working correctly:
 
@@ -105,6 +105,6 @@ We’ll need to add these 5 parameters for the Explorer app to working correctly
 
 You’ll end up like the figure below, with the 3rd item `http://yourIP:30100` replaced by the Explorer URL mentioned earlier.
 
-<img src="https://docs.iotex.io/img/heroku-config.png" alt="App config" style="width: 70%; height: 70%;">
+<img src="https://docs.iotex.io/img/heroku-config.png" alt="App config" style="width: 75%; height: 75%;">
 
 Now you are ready to launch your own IoTeX explorer. Click on Open app in the top right of the page, or go to `http://appname.herokuapp.com`, you will see your own IoTeX explorer live in action!
