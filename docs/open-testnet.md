@@ -70,6 +70,15 @@ The IoTeX docker image is embedded with a service in the backend called Explorer
 
 In the docker command there is a flag `-p 30100:14004`, this will expose the Explorer service to port 30100 on your host machine (14004 is the internal port inside the docker container). Your Explorer URL is hence the external IP : 30100. For example, with an IP 30.30.30.30 the Explorer URL is http://30.30.30.30:30100
 
-With the correct URL in hand, let’s set up your own Explorer. Click on the link below. <a target="_blank" href="https://heroku.com/deploy?template=https://github.com/iotexproject/iotex-explorer">
+With the correct URL in hand, let’s set up your own Explorer. Click on the link below. Please sign up a free Heroku account if you don't have one yet.
+<a target="_blank" href="https://heroku.com/deploy?template=https://github.com/iotexproject/iotex-explorer">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
+
+Enter a name you like in App name and click the Deploy app button, it takes about 3~4 minutes to build and deploy. Wait until you see green tick and “Your app was successfully deployed”, click on Manage app, as shown below 
+
+Then click on Settings tab, and Reveal Config Vars. We’ll need to config these 5 parameters for the Explorer app to working correctly. 
+
+You’ll end up like the figure below, with http://yourIP:30100 replaced by the Explorer URL mentioned earlier. 
+
+Now you are ready to launch your own IoTeX explorer. Click on Open app in the top right of the page, or go to http://appname.herokuapp.com, you will see your own IoTeX explorer live in action!
