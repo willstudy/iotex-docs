@@ -103,7 +103,7 @@ We’ll need to add these 5 parameters for the Explorer app to working correctly
 | IOTEX_WALLET_URL | 159.89.223.147:42124 |
 | NODE_ENV | production |
 
-You’ll end up like the figure below, with `http://yourIP:30100` replaced by the Explorer URL mentioned earlier.
+You’ll end up like the figure below, with the 3rd item `http://yourIP:30100` replaced by the Explorer URL mentioned earlier.
 
 <img src="https://docs.iotex.io/img/heroku-config.png" alt="App config" style="width: 70%; height: 70%;">
 
