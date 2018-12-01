@@ -94,7 +94,7 @@ Click on Manage app. On the coming page, click on Settings tab, and Reveal Confi
 
 <img src="https://docs.iotex.io/img/heroku-setting.png" alt="App setting" style="width: 75%; height: 75%;">
 
-We’ll need to add these 5 parameters for the Explorer app to working correctly:
+We’ll need to add these 4 parameters for the Explorer app to working correctly:
 
 | KEY | VALUE |
 | --- | --- |
@@ -103,8 +103,8 @@ We’ll need to add these 5 parameters for the Explorer app to working correctly
 | IOTEX_WALLET_URL | 159.89.223.147:42124 |
 | NODE_ENV | production |
 
-You’ll end up like the figure below, with the 3rd item `http://yourIP:30100` replaced by the Explorer URL mentioned earlier.
+You’ll end up like the figure below, be sure to replace the 2nd item `http://yourIP:30100` by the Explorer URL mentioned earlier.
 
 <img src="https://docs.iotex.io/img/heroku-config.png" alt="App config" style="width: 75%; height: 75%;">
 
-Now you are ready to launch your own IoTeX explorer. Click on Open app in the top right of the page, or go to `http://appname.herokuapp.com`, you will see your own IoTeX explorer live in action!
+Now you are ready to launch your own IoTeX explorer. Click on Open app in the top right of the page, or go to `http://appname.herokuapp.com` (appname is the name you entered at first step), you will see your own IoTeX explorer live in action!
