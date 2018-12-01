@@ -100,7 +100,7 @@ We’ll need to add these 4 parameters for the Explorer app to working correctly
 | --- | --- |
 | CHAINS | [{"id":1,"name":"mainchain","url":"http://iotexscan.io/","gatewayUrl":"https://iotexscan.com/"},{"id":2,"name":"subchain","url":"http://subchain.iotexscan.io/","gatewayUrl":"https://subchain.iotexscan.io/"}] |
 | IOTEX_CORE_URL | type in **Explorer URL** mentioned earlier |
-| IOTEX_WALLET_URL | 159.89.223.147:42124 |
+| IOTEX_WALLET_URL | 35.247.78.183:30500 |
 | NODE_ENV | production |
 
 You’ll end up like the figure below, be sure to replace the 2nd item `http://yourIP:30100` by the Explorer URL mentioned earlier.
