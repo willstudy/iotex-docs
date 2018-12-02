@@ -37,7 +37,7 @@ Open the file and change the 127.0.0.1 after 'host:' to your external IP address
 host: "30.30.30.30"
 ```
 
-> Note: If your computer is on a LAN with internal IP address like 192.168.1.100, still put the external IP address in the config file. You’ll need to enable port-forwarding on the router/switch to forward both ingress and egress traffic on port 30555 to the internal address of your computer.
+> Note: If your computer is on a LAN with internal IP address like 192.168.1.100, still put the external IP address in the config file. You’ll need to enable port-forwarding on the router/switch to forward both ingress and egress traffic on port **30555 and 30100** to the internal address of your computer.
 
 Second, upon joining a p2p network you’ll need to know an initial peer to contact to, this is called the bootstrap node. This has already been properly configured in the file, bootnode.iotexconnect.io links to one node on our Testnet. You don't need to do any change here.
 
