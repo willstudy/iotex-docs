@@ -13,17 +13,17 @@ This is the phase I of the Open Testnet launch, which focuses on running a full 
 
 p.s. We are working on functionality that will allow you to join as a delegate and participate in generating blocks on the IoTeX Testnet Blockchain. That will be launched in phase II in near future.
 
-# Set up the full node
+## Set up the full node
 Our complete software is packaged in the form of a docker image plus a config file for the convenience of set-up and deployment. You can easily set up and run a full node in 3 steps.
 
 First, install docker and download our docker image. Second, download the config file and adjust certain networking settings. And finally, run the full node in one command!
 
-## Install the IoTeX docker image
+### Install the IoTeX docker image
 Install docker on your host machine at https://docs.docker.com/install/. Once docker is properly installed and started, download the IoTeX docker image:
 
 `docker pull iotex/iotex-core:testnet`
 
-## Config your network setting
+### Config your network setting
 The Testnet is basically a p2p network where nodes communicate to each other by relaying messages and blocks they receive on the network. To connect to and join the IoTeX Testnet, you’ll need to first set your IP address in the config file — without publishing your IP address other nodes won't know your existence and hence cannot send data to you.
 
 Download the config file <a href="/config_fullnode.yaml" download>config_fullnode.yaml</a>, on Linux/MacOS this can be easily done by the following command
@@ -46,7 +46,7 @@ bootstrapNodes:
         - "bootnode.iotexconnect.io:30555"
 ```
 
-# Run the full node
+## Run the full node
 Now we are ready to run the full node at the stroke of one command line:
 
 ```
@@ -71,7 +71,7 @@ And more message like below, showing the full node kept receiving and committing
 {"level":"info","iotxAddr":"io1qyqsqqqq8uhx9jtdc2xp5wx7nxyq3xf4c3jmxknzj23d2m","networkAddress":"35.230.101.152:30555","nodeType":"full_node","recvHeight":3,"confirmedHeight":2,"source":"blockBuffer","syncedHeight":3,"time":"2018-11-16T01:18:11Z","message":"Successfully committed block."}
 ```
 
-# Explore the full node
+## Explore the full node
 The IoTeX docker image is embedded with a service in the backend called Explorer. It connects to the blockchain on the full node and provides API to access and query data on the blockchain through JSON RPC. In this part of the guide we’ll show you how to quickly deploy your own IoTeX blockchain explorer.
 
 In the docker command there is a flag `-p 30100:14004`, this will expose the Explorer service to port 30100 on your host machine (14004 is the internal port inside the docker container). Your Explorer URL is hence the external IP : 30100. For example, with an IP 30.30.30.30 the Explorer URL is http://30.30.30.30:30100
