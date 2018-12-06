@@ -1,5 +1,4 @@
 const React = require('react');
-// const window =  require('global/window');
 
 class CookieConsentContainer extends React.Component {
 
