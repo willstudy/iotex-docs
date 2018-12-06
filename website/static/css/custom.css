@@ -6,6 +6,12 @@
   }
 }
 
+@media only screen and (max-width: 510px) {
+  .CookieConsentContentStyle {
+    flex-direction: column!important;;
+  }
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
   .subscribleForm {
     margin-right: 50%;
@@ -105,4 +111,71 @@ article h2::before {
 
 pre code {
     font-size: 90%!important;
+}
+
+.AcceptButtonWrapStyle  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+}
+
+.CookieConsentFlexStyle {
+  position: fixed;
+  left: 0px;
+  bottom: 4px;
+  width: 100%;
+  z-index: 71;
+  padding-left: 6.6vw;
+  padding-right: 6.6vw;
+  display: none;
+}
+
+.CookieConsentContentStyle {
+  padding: 8px;
+  font-size: 13px!important;
+  background-color: #11161B;
+  opacity: 0.97;
+  width: 100%;
+  display: flex;
+  color: #ffffff;
+  border: 1px #00bfbf45 solid;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ConsentTextStyle {
+  margin: 0;
+}
+
+
+.SampleButtonStyle {
+  cursor: pointer;
+  -webkit-transition: background 0.3s, border-color 0.3s;
+  -moz-transition: background 0.3s, border-color 0.3s;
+  transition: background 0.3s, border-color 0.3s;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 5px !important;
+  line-height: 22px;
+  letter-spacing: unset;
+  padding: 7px 10px!important;
+  min-width: 140px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  padding-right: 24px;
+  padding-reft: 24px;
+  background: #00b4a0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.SampleButtonStyle:hover{
+  background: #00a492;
 }
