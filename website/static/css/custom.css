@@ -1,9 +1,6 @@
 /* your custom css */
 
 @media only screen and (max-width: 360px) {
-  .subscribleForm {
-    padding-right: 5%;
-  }
 }
 
 @media only screen and (max-width: 510px) {
@@ -13,24 +10,22 @@
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (max-width: 736px) {
   .subscribleForm {
-    margin-right: 50%;
+    width: 30vw;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
 }
 
 @media only screen and (min-device-width: 737px) and (max-device-width: 1080px) {
-  .subscribleForm {
-    padding-right: 3%;
-    padding-left: 3%;
-  }
 }
 
 @media only screen and (min-width: 1080px) {
-  .subscribleForm {
-    margin-right: 5%;
-    margin-left: 5%;
-  }
 }
+
 
 @media only screen and (max-width: 1023px) {
 }
@@ -77,6 +72,12 @@ footer h3{
 
 footer span{
   color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribleForm{
+  margin-right: 3vw;
+  margin-left: 3vw;
+  min-width: 180px;
 }
 
 .subscribleForm input:focus{
