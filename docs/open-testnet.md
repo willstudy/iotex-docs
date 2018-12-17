@@ -98,7 +98,7 @@ We’ll need to add these 4 parameters for the Explorer app to working correctly
 
 | KEY | VALUE |
 | --- | --- |
-| CHAINS | [{"id":1,"name":"mainchain","url":"http://iotexscan.io/","gatewayUrl":"https://iotexscan.com/"},{"id":2,"name":"subchain","url":"http://subchain.iotexscan.io/","gatewayUrl":"https://subchain.iotexscan.io/"}] |
+| CHAINS | [{"id":1,"name":"mainchain","url":"http://iotexscan.io/","gatewayUrl":"https://iotexscan.io/"},{"id":2,"name":"subchain","url":"http://subchain.iotexscan.io/","gatewayUrl":"https://subchain.iotexscan.io/"}] |
 | IOTEX_CORE_URL | type in **Explorer URL** mentioned earlier |
 | IOTEX_WALLET_URL | 35.247.78.183:30500 |
 | NODE_ENV | production |
