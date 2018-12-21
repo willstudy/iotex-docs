@@ -1,0 +1,23 @@
+{
+  "version-0.1.6-docs": {
+    "Getting Started": [
+      "version-0.1.6-sdk-overview"
+    ],
+    "JS Quick Start": [
+      "version-0.1.6-sdk-account",
+      "version-0.1.6-sdk-transfer",
+      "version-0.1.6-sdk-smart-contract",
+      "version-0.1.6-sdk-rpc-methods"
+    ],
+    "Reference": [
+      "version-0.1.6-iotex-client-js",
+      "version-0.1.6-json-rpc"
+    ]
+  },
+  "version-0.1.6-docs-other": {
+    "Guides": [
+      "version-0.1.6-guides",
+      "version-0.1.6-open-testnet"
+    ]
+  }
+}
