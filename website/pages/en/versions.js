@@ -64,12 +64,13 @@ function Versions() {
           <table className="versions">
             <tbody>
               {versions.map(
-                version =>
+                (version, index) =>
                   version !== latestVersion && (
-                    <tr>
+                    <tr key={index}>
                       <th>{version}</th>
                       <td>
-                        <a href="">Documentation</a>
+                        <a href={`/docs/${version}/guides`}>
+                          Documentation</a>
                       </td>
                       <td>
                         <a href="">Release Notes</a>
