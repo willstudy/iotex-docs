@@ -1,50 +1,34 @@
 ---
-id: open-testnet
-title: Open Testnet
+id: stand-alone
+title: Stand-alone Mode
 ---
 
-The IoTeX Testnet is now fully open for community and developers! Join our Testnet as a full node and use our SDK to interact with IoTeX blockchain.
+This guide explains what the stand-alone mode is, and how to set up and run a node in such mode.
 
-We are working on functionality that will allow you to join as a delegate and participate in generating blocks on the IoTeX Testnet Blockchain.
+# Stand-alone Mode
+The IoTeX software package comes with a special stand-alone mode: where a single node comprises the entire blockchain by itself. It generates new block, validates the block, and adds the block to the blockchain. This lightweight special mode allows user to quickly launch and test a blockchain with a single computer/node, without bothering upper layer like consensue, network and hardware resources.
 
-# Set up full node
-Our complete software is packaged in the form of a docker image plus a config file for the convenience of set-up and deployment. You can easily set up and run a full node in 3 steps.
-
-First, install docker and download our docker image. Second, download the config file and adjust certain networking settings. And finally, run the full node in one command!
+You can easily set up and run a node in stand-alone mode in 2 steps. First, install docker and download our docker image. Second, download the config file and adjust certain settings as you need. And finally, run the stand-alone node in one command!
 
 ## Install the IoTeX docker image
 Install docker on your host machine at https://docs.docker.com/install/. Once docker is properly installed and started, download the IoTeX docker image:
 
-`docker pull iotex/iotex-core:testnet`
+`docker pull iotex/iotex-core:r0.4`
 
-## Config your network setting
-The Testnet is basically a p2p network where nodes communicate to each other by relaying messages and blocks they receive on the network. To connect to and join the IoTeX Testnet, you’ll need to first set your IP address in the config file — without publishing your IP address other nodes won't know your existence and hence cannot send data to you.
-
-Download the config file <a href="/config_fullnode.yaml" download>config_fullnode.yaml</a>, on Linux/MacOS this can be easily done by the following command
+## Config setting for your stand-alone node
+Download the config file <a href="/config_delegate.yaml" download>config_delegate.yaml</a>, on Linux/MacOS this can be easily done by the following command
 ```
-curl https://docs.iotex.io/config_fullnode.yaml > config_fullnode.yaml
+curl https://docs.iotex.io/config_delegate.yaml > config_delegate.yaml
 ```
-Open the file and change the 127.0.0.1 after 'host:' to your external IP address. For example, if your external IP is 30.30.30.30
-
-```
-# replace with your external IP address
-host: "30.30.30.30"
-```
+Open the file and change certain parameters of the stand-alone node as you need. For instance, blockCreationInterval specifies the amount of time it takes (in seconds) to produce next block. Change it to a larger value if you want block producing at a slower pace.
 
 > Note: If your computer is on a LAN with internal IP address like 192.168.1.100, still put the external IP address in the config file. You’ll need to enable port-forwarding on the router/switch to forward both ingress and egress traffic on port 30555 to the internal address of your computer.
 
-Second, upon joining a p2p network you’ll need to know an initial peer to contact to, this is called the bootstrap node. This has already been properly configured in the file, bootnode.iotexconnect.io links to one node on our Testnet. You don't need to do any change here.
+# Run the stand-alone node
+Now we are ready to run the stand-alone node at the stroke of one command line:
 
 ```
-bootstrapNodes:
-        - "bootnode.iotexconnect.io:30555"
-```
-
-# Run the full node
-Now we are ready to run the full node at the stroke of one command line:
-
-```
-sudo docker run -d -p 30555:30555 -p 30100:14004 --mount type=bind,source=/path-to-config_fullnode.yaml/config_fullnode.yaml,target=/etc/iotex/config_local_fullnode.yaml iotex/iotex-core:testnet
+sudo docker run -d -p 30555:30555 -p 30100:14004 --mount type=bind,source=$PWD/config_delegate.yaml,target=/etc/iotex/config_local_delegate.yaml iotex/iotex-core:testnet iotex-server -config-path=/etc/iotex/config_local_delegate.yaml
 ```
 You can now use standard docker commands to check the status. For instance, type `sudo docker container ls` you will see something like
 ```
