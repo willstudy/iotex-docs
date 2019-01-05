@@ -17,7 +17,8 @@
   "version-0.1.6-docs-other": {
     "Guides": [
       "version-0.1.6-guides",
-      "version-0.1.6-open-testnet"
+      "version-0.1.6-open-testnet",
+      "version-0.1.6-stand-alone"
     ]
   }
 }
