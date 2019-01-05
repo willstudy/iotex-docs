@@ -19,10 +19,10 @@ chain:
 
 consensus:
   scheme: "STANDALONE"
-  blockCreationInterval: 2s
+  blockCreationInterval: 10s
 
 blockSync:
-  interval: 1s
+  interval: 10s
 
 system:
   httpProfilingPort: 6060
