@@ -17,7 +17,8 @@
   "docs-other": {
     "Guides": [
       "guides",
-      "open-testnet"
+      "open-testnet",
+      "stand-alone"
     ]
   }
 }
