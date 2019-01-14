@@ -1384,6 +1384,42 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getReceiptByExecutionID
 
 
 
+## Explorer.getReceiptByActionID
+
+get receipt by action id
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "string",
+    "name": "id"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "Receipt"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getReceiptByActionID","params":["id: string"],"id":"1"}'
+```
+
+
+
+
+
 ## Explorer.readExecutionState
 
 read execution state
@@ -1700,6 +1736,42 @@ estimate gas for smart contract
 
 ```
 curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.estimateGasForSmartContract","params":["request: Execution"],"id":"1"}'
+```
+
+
+
+
+
+## Explorer.getStateRootHash
+
+get the state root hash of a given block height
+
+### Parameters
+
+```
+[
+  {
+    "is_array": false,
+    "type": "int",
+    "name": "blockHeight"
+  }
+]
+```
+
+### Returns
+
+```
+{
+  "optional": false,
+  "is_array": false,
+  "type": "string"
+}
+```
+
+### Example
+
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"Explorer.getStateRootHash","params":["blockHeight: int"],"id":"1"}'
 ```
 
 

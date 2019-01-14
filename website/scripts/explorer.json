@@ -162,6 +162,20 @@
         "is_array": false,
         "type": "int",
         "name": "size"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "txRoot"
+      },
+      {
+        "comment": "",
+        "optional": false,
+        "is_array": false,
+        "type": "string",
+        "name": "stateRoot"
       }
     ]
   },
@@ -2293,6 +2307,22 @@
         "name": "getReceiptByExecutionID"
       },
       {
+        "comment": "get receipt by action id",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "Receipt"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "string",
+            "name": "id"
+          }
+        ],
+        "name": "getReceiptByActionID"
+      },
+      {
         "comment": "read execution state",
         "returns": {
           "optional": false,
@@ -2433,6 +2463,22 @@
           }
         ],
         "name": "estimateGasForSmartContract"
+      },
+      {
+        "comment": "get the state root hash of a given block height",
+        "returns": {
+          "optional": false,
+          "is_array": false,
+          "type": "string"
+        },
+        "params": [
+          {
+            "is_array": false,
+            "type": "int",
+            "name": "blockHeight"
+          }
+        ],
+        "name": "getStateRootHash"
       }
     ],
     "type": "interface",
@@ -2441,7 +2487,7 @@
   {
     "barrister_version": "0.1.6",
     "type": "meta",
-    "date_generated": 1542435956793,
-    "checksum": "06a39b831ced3f5278b1e3d233c20b7a"
+    "date_generated": 1547435445377,
+    "checksum": "930ad8ed4154e09b1263a8f435f6934d"
   }
 ]
