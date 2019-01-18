@@ -1,4 +1,5 @@
 const idl = require('./explorer.json');
+const arrayToTable = require('./array2table');
 
 function idlToJsonRpc() {
   return idl.map(en => getMethod(en)).join('');
@@ -27,15 +28,11 @@ ${f.comment}
 
 ### Parameters
 
-\`\`\`
-${JSON.stringify(f.params, null, 2)}
-\`\`\`
+${arrayToTable(f.params, null)}
 
 ### Returns
 
-\`\`\`
-${JSON.stringify(f.returns, null, 2)}
-\`\`\`
+${arrayToTable([f.returns], null)}
 
 ### Example
 
