@@ -10,19 +10,14 @@ get the blockchain tip height
 
 ### Parameters
 
-```
-[]
-```
+<code>[]</code>
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "int"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">int</span> | false | false
+
 
 ### Example
 
@@ -40,25 +35,17 @@ get the balance of an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "string"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">string</span> | false | false
+
 
 ### Example
 
@@ -76,25 +63,17 @@ get the address detail of an iotex address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "AddressDetails"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">AddressDetails</span> | false | false
+
 
 ### Example
 
@@ -112,40 +91,20 @@ get list of transfers by start block height, transfer offset and limit
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "startBlockHeight"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  },
-  {
-    "is_array": false,
-    "type": "bool",
-    "name": "showCoinBase"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>startBlockHeight</code> | <span style="color: #ed225d">int</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+<code>showCoinBase</code> | <span style="color: #ed225d">bool</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Transfer"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Transfer</span> | true | false
+
 
 ### Example
 
@@ -163,25 +122,17 @@ get transfers from transaction id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "transferID"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>transferID</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "Transfer"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Transfer</span> | false | false
+
 
 ### Example
 
@@ -199,35 +150,19 @@ get list of transfers belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Transfer"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Transfer</span> | true | false
+
 
 ### Example
 
@@ -245,35 +180,19 @@ get list of unconfirmed transfers in actpool belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Transfer"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Transfer</span> | true | false
+
 
 ### Example
 
@@ -291,35 +210,19 @@ get all transfers in a block
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "blkID"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>blkID</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Transfer"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Transfer</span> | true | false
+
 
 ### Example
 
@@ -337,35 +240,19 @@ get list of votes by start block height, vote offset and limit
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "startBlockHeight"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>startBlockHeight</code> | <span style="color: #ed225d">int</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Vote"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Vote</span> | true | false
+
 
 ### Example
 
@@ -383,25 +270,17 @@ get vote from vote id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "voteID"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>voteID</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "Vote"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Vote</span> | false | false
+
 
 ### Example
 
@@ -419,35 +298,19 @@ get list of votes belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Vote"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Vote</span> | true | false
+
 
 ### Example
 
@@ -465,35 +328,19 @@ get list of unconfirmed votes in actpool belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Vote"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Vote</span> | true | false
+
 
 ### Example
 
@@ -511,35 +358,19 @@ get all votes in a block
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "blkID"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>blkID</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Vote"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Vote</span> | true | false
+
 
 ### Example
 
@@ -557,35 +388,19 @@ get list of executions by start block height, execution offset and limit
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "startBlockHeight"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>startBlockHeight</code> | <span style="color: #ed225d">int</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Execution"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Execution</span> | true | false
+
 
 ### Example
 
@@ -603,25 +418,17 @@ get execution from execution id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "executionID"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>executionID</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "Execution"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Execution</span> | false | false
+
 
 ### Example
 
@@ -639,35 +446,19 @@ get list of executions belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Execution"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Execution</span> | true | false
+
 
 ### Example
 
@@ -685,35 +476,19 @@ get list of unconfirmed executions in actpool belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Execution"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Execution</span> | true | false
+
 
 ### Example
 
@@ -731,35 +506,19 @@ get all executions in a block
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "blkID"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>blkID</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Execution"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Execution</span> | true | false
+
 
 ### Example
 
@@ -777,25 +536,17 @@ get create deposit from id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "createDepositID"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>createDepositID</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "CreateDeposit"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">CreateDeposit</span> | false | false
+
 
 ### Example
 
@@ -813,35 +564,19 @@ get list of create deposits belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "CreateDeposit"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">CreateDeposit</span> | true | false
+
 
 ### Example
 
@@ -859,25 +594,17 @@ get settle deposit from id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "settleDepositID"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>settleDepositID</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "SettleDeposit"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">SettleDeposit</span> | false | false
+
 
 ### Example
 
@@ -895,35 +622,19 @@ get list of settle deposits belonging to an address
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "address"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>address</code> | <span style="color: #ed225d">string</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "SettleDeposit"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">SettleDeposit</span> | true | false
+
 
 ### Example
 
@@ -941,30 +652,18 @@ get list of blocks by block id offset and limit
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Block"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Block</span> | true | false
+
 
 ### Example
 
@@ -982,25 +681,17 @@ get block by block id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "blkID"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>blkID</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "Block"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Block</span> | false | false
+
 
 ### Example
 
@@ -1018,19 +709,14 @@ get statistic of iotx
 
 ### Parameters
 
-```
-[]
-```
+<code>[]</code>
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "CoinStatistic"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">CoinStatistic</span> | false | false
+
 
 ### Example
 
@@ -1048,19 +734,14 @@ get consensus metrics
 
 ### Parameters
 
-```
-[]
-```
+<code>[]</code>
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "ConsensusMetrics"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">ConsensusMetrics</span> | false | false
+
 
 ### Example
 
@@ -1078,19 +759,14 @@ get candidates metrics
 
 ### Parameters
 
-```
-[]
-```
+<code>[]</code>
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "CandidateMetrics"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">CandidateMetrics</span> | false | false
+
 
 ### Example
 
@@ -1108,25 +784,17 @@ get candidates metrics at given height
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "h"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>h</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "CandidateMetrics"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">CandidateMetrics</span> | false | false
+
 
 ### Example
 
@@ -1144,25 +812,17 @@ send transfer
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "SendTransferRequest",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">SendTransferRequest</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "SendTransferResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">SendTransferResponse</span> | false | false
+
 
 ### Example
 
@@ -1180,25 +840,17 @@ send vote
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "SendVoteRequest",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">SendVoteRequest</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "SendVoteResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">SendVoteResponse</span> | false | false
+
 
 ### Example
 
@@ -1216,25 +868,17 @@ sendSmartContract
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "Execution",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">Execution</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "SendSmartContractResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">SendSmartContractResponse</span> | false | false
+
 
 ### Example
 
@@ -1252,25 +896,17 @@ putSubChainBlock
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "PutSubChainBlockRequest",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">PutSubChainBlockRequest</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "PutSubChainBlockResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">PutSubChainBlockResponse</span> | false | false
+
 
 ### Example
 
@@ -1288,25 +924,17 @@ sendAction
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "SendActionRequest",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">SendActionRequest</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "SendActionResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">SendActionResponse</span> | false | false
+
 
 ### Example
 
@@ -1324,19 +952,14 @@ get list of peers
 
 ### Parameters
 
-```
-[]
-```
+<code>[]</code>
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "GetPeersResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">GetPeersResponse</span> | false | false
+
 
 ### Example
 
@@ -1354,25 +977,17 @@ get receipt by execution id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "id"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>id</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "Receipt"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Receipt</span> | false | false
+
 
 ### Example
 
@@ -1390,25 +1005,17 @@ get receipt by action id
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "id"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>id</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "Receipt"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Receipt</span> | false | false
+
 
 ### Example
 
@@ -1426,25 +1033,17 @@ read execution state
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "Execution",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">Execution</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "string"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">string</span> | false | false
+
 
 ### Example
 
@@ -1462,25 +1061,17 @@ get block or action by a hash
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "string",
-    "name": "hashStr"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>hashStr</code> | <span style="color: #ed225d">string</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "GetBlkOrActResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">GetBlkOrActResponse</span> | false | false
+
 
 ### Example
 
@@ -1498,25 +1089,17 @@ deposit balance from main-chain to sub-chain
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "CreateDepositRequest",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">CreateDepositRequest</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "CreateDepositResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">CreateDepositResponse</span> | false | false
+
 
 ### Example
 
@@ -1534,35 +1117,19 @@ get deposits on a sub-chain
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "subChainID"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "offset"
-  },
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "limit"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>subChainID</code> | <span style="color: #ed225d">int</span> | false
+<code>offset</code> | <span style="color: #ed225d">int</span> | false
+<code>limit</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": true,
-  "type": "Deposit"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">Deposit</span> | true | false
+
 
 ### Example
 
@@ -1580,25 +1147,17 @@ settle deposit on sub-chain. This is a sub-chain API
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "SettleDepositRequest",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">SettleDepositRequest</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "SettleDepositResponse"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">SettleDepositResponse</span> | false | false
+
 
 ### Example
 
@@ -1616,19 +1175,14 @@ suggest gas price
 
 ### Parameters
 
-```
-[]
-```
+<code>[]</code>
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "int"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">int</span> | false | false
+
 
 ### Example
 
@@ -1646,25 +1200,17 @@ estimate gas for transfer
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "SendTransferRequest",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">SendTransferRequest</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "int"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">int</span> | false | false
+
 
 ### Example
 
@@ -1682,19 +1228,14 @@ estimate gas for vote
 
 ### Parameters
 
-```
-[]
-```
+<code>[]</code>
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "int"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">int</span> | false | false
+
 
 ### Example
 
@@ -1712,25 +1253,17 @@ estimate gas for smart contract
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "Execution",
-    "name": "request"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>request</code> | <span style="color: #ed225d">Execution</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "int"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">int</span> | false | false
+
 
 ### Example
 
@@ -1748,25 +1281,17 @@ get the state root hash of a given block height
 
 ### Parameters
 
-```
-[
-  {
-    "is_array": false,
-    "type": "int",
-    "name": "blockHeight"
-  }
-]
-```
+name | type | is_array
+--- | --- | ---
+<code>blockHeight</code> | <span style="color: #ed225d">int</span> | false
+
 
 ### Returns
 
-```
-{
-  "optional": false,
-  "is_array": false,
-  "type": "string"
-}
-```
+type | is_array | optional
+--- | --- | ---
+<span style="color: #ed225d">string</span> | false | false
+
 
 ### Example
 
