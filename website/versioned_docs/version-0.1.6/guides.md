@@ -17,7 +17,7 @@ IoTeX blockchain:
 
 - Uses Byzantine fault tolerance alogrithm for consensus, so that the transactions could be immediately finalized once their block are committed.
 
-- Supports Ethereum virtual machine (EVM) and smart contracts written in Sodility. Developers could seamlessly port existing DApps in Sodility onto it.
+- Supports Ethereum virtual machine (EVM) and smart contracts written in Solidity. Developers could seamlessly port existing DApps in Solidity onto it.
 
 IoTeX team are continuously working hard to bring the community more cool features.
 
@@ -31,6 +31,6 @@ IoTeX team are continuously working hard to bring the community more cool featur
 
 - Delegate: the blockchain node which is elected to propose or validate new block.
 
-- [Sodility](https://en.wikipedia.org/wiki/Solidity): the contract oriented programming language.
+- [Solidity](https://en.wikipedia.org/wiki/Solidity): the contract oriented programming language.
 
 - Transaction: the atomic operation unit to interact with the blockchain data. It has multiple sub-types (e.g., transfer, vote, execution) in IoTeX blockchain.
