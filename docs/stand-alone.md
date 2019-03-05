@@ -6,7 +6,7 @@ title: Stand-alone Mode
 This guide explains what the stand-alone mode is, and how to set up and run a node in such mode.
 
 # Stand-alone Mode
-The IoTeX software package comes with a special stand-alone mode: where a single node comprises the entire blockchain by itself. It generates new block, validates the block, and adds the block to the blockchain. This lightweight special mode allows user to quickly launch and test a blockchain with a single computer/node, without bothering upper layer like consensue, network and hardware resources.
+The IoTeX software package comes with a special stand-alone mode for testing purposes: where a single node comprises the entire blockchain by itself. It generates new block, validates the block, and adds the block to the blockchain. This lightweight special mode allows user to quickly launch and test a blockchain with a single computer/node, without bothering upper layer like consensue, network and hardware resources.
 
 You can easily set up and run a node in stand-alone mode in 2 steps. First, install docker and download our docker image. Second, download the config file and adjust certain settings as you need. And finally, run the stand-alone node in one command!
 
