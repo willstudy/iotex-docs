@@ -1,9 +1,15 @@
 {
   "docs": {
-    "Getting Started": [
-      "sdk-overview"
+    "Get Started": [
+      "guides",
+      "stand-alone",
+      "interact-bc",
+      "open-testnet",
+      "contract-dev",
+      "glossary"
     ],
-    "JS Quick Start": [
+    "Libraries and Tools": [
+      "sdk-overview",
       "sdk-account",
       "sdk-transfer",
       "sdk-smart-contract",
@@ -12,13 +18,10 @@
     "Reference": [
       "iotex-client-js",
       "json-rpc"
-    ]
-  },
-  "docs-other": {
-    "Guides": [
-      "guides",
-      "open-testnet",
-      "stand-alone"
+    ],
+    "Misc": [
+      "contributing",
+      "faq"
     ]
   }
 }
