@@ -24,6 +24,11 @@ Flags:
   -h, --help   help for ioctl
 ```
 
+### Install
+```
+curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh
+```
+
 ### Create an account
 
 ```
