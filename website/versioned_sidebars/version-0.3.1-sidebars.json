@@ -1,0 +1,27 @@
+{
+  "version-0.3.1-docs": {
+    "Get Started": [
+      "version-0.3.1-guides",
+      "version-0.3.1-stand-alone",
+      "version-0.3.1-interact-bc",
+      "version-0.3.1-open-testnet",
+      "version-0.3.1-contract-dev",
+      "version-0.3.1-glossary"
+    ],
+    "Libraries and Tools": [
+      "version-0.3.1-sdk-overview",
+      "version-0.3.1-sdk-account",
+      "version-0.3.1-sdk-transfer",
+      "version-0.3.1-sdk-smart-contract",
+      "version-0.3.1-sdk-rpc-methods"
+    ],
+    "Reference": [
+      "version-0.3.1-iotex-client-js",
+      "version-0.3.1-json-rpc"
+    ],
+    "Misc": [
+      "version-0.3.1-contributing",
+      "version-0.3.1-faq"
+    ]
+  }
+}
