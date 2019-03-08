@@ -67,6 +67,9 @@ signature: 1a4576b728c8b5cb2aa669502c6fd1d843e96bd70d6a3cf7dfa207bb1450b0c96bced
 ```
 
 ## Explorer 2.0
+Work-in-progress
+
+## API 2.0
 ### GetAccount
 ```
 Usage:
