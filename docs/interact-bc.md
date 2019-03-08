@@ -68,3 +68,183 @@ signature: 1a4576b728c8b5cb2aa669502c6fd1d843e96bd70d6a3cf7dfa207bb1450b0c96bced
 
 ## Explorer 2.0
 Work-in-progress
+
+## API 2.0
+### GetAccount
+```
+Usage:
+  Get Account Details
+Request:
+  Address: Account Encoded Address
+Response:
+  AccountMeta: Account Metadata
+```  
+
+### GetActions
+```
+Usage:
+  Get Actions By Index
+Request:
+  Start: Start Index of Actions
+  Count: Number of Actions
+Response:
+  Actions: List of Actions
+```
+
+### GetActions
+```
+Usage:
+  Get Action By Action Hash
+Request:
+  Action Hash: Hash of Action
+Response:
+  Actions: Action
+```  
+
+### GetActions
+```
+Usage:
+  Get Actions By Address
+Request:
+  Address: Encoded Address
+  Start: Start Index of Actions
+  Count: Number of Actions
+Resposne:
+  Actions: List of Actions
+```
+
+### GetActions
+```
+Usage:
+  Get Unconfirmed Actions By Address
+Request:
+  Address: Encoded Address
+  Start: Start Index of Unconfirmed Actions
+  Count: Number of Unconfirmed Actions
+Resposne:
+  Actions: List of Actions
+```
+
+### GetActions
+```
+Usage:
+  Get Actions By Block
+Request:
+  BlkHash: Block Hash
+  Start: Start Index of Actions
+  Count: Number of Actions
+Resposne:
+  Actions: List of Actions
+```
+
+### GetBlockMetas
+```
+Usage:
+  Get Block Metadatas By Index
+Request:
+  Start: Start Index of Blocks
+  Count: Number of Blocks
+Response:
+  BlkMetas: List of Block Metadatas
+```  
+    
+### GetBlockMetas
+```
+Usage:
+  Get Block Metadata By Block Hash
+Request:
+  BlkHash: Block Hash
+Response:
+  BlkMetas: Block Metadata
+```
+
+### GetChainMeta
+```
+Usage:
+  Get Blockchain
+Request:
+  N/A
+Response:
+  ChainMeta: Blockchain Metadata
+```
+
+### SendAction
+```
+Usage:
+  Send Action
+Request:
+  Action: Action
+Response:
+  N/A
+```
+### GetReceiptByAction
+```
+Usage:
+  Get Action Receipt By Action Hash
+Request:
+  ActionHash: Action Hash
+Response:
+  Receipt: Action Receipt
+```
+
+### ReadContract
+```
+Usage:
+  Read Contract State
+Request:
+  Action: Action (Must Be An Execution)
+Response:
+  Data: Return Value in Execution Receipt
+```
+
+### ReadState
+```
+Usage:
+  Read State on Blockchain
+Request:
+  ProtocolID: Protocol ID
+  MethodName: Method To Be Invoked To Read State
+  Arguments: List of Method Arguments
+Response:
+  Data: State Result
+```
+
+### SuggestGasPrice
+```
+Usage:
+  Get Suggested Gas Price
+Request:
+  N/A
+Response:
+  GasPrice: Gas Price
+```
+
+### EstimateGasForAction
+```
+Usage:
+  Get Estimated Gas For Action
+Request:
+  Action: Action
+Response:
+  Gas: Gas
+```
+
+### GetProductivity
+```
+Usage:
+  Get Block Producers' Productivity Given Epoch Number
+Request:
+  EpochNumber: Epoch Number
+Response:
+  TotalBlks: Number of Total Blocks
+  BlksPerDelegate: Number of blocks Produced By Each Delegate
+```  
+  
+  
+  
+  
+
+
+
+
+   
