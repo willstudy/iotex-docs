@@ -13,6 +13,12 @@ jobs:
 
     steps:
     - checkout
+    - restore_cache:
+      keys:
+      - v1-dependencies-{{ checksum "package.json" }}
+      # fallback to using the latest cache if no exact match is found
+      - v1-dependencies-
+    - run: npm install
     - run:
         name: Deploying to GitHub Pages
         command: |
@@ -20,6 +26,11 @@ jobs:
           git config --global user.name "puncsky"
           echo "machine github.com login puncsky password $GITHUB_TOKEN" > ~/.netrc
           sh ./deploy.sh
+    - save_cache:
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
+
 
 workflows:
   version: 2
