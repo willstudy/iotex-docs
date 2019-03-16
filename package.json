@@ -1,0 +1,31 @@
+{
+  "name": "iotex-docs",
+  "version": "0.2.0",
+  "description": "iotex documentation",
+  "main": "index.js",
+  "scripts": {
+    "start": "vuepress dev",
+    "build": "vuepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iotexproject/iotex-docs.git"
+  },
+  "keywords": [],
+  "author": "Tian Pan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iotexproject/iotex-docs/issues"
+  },
+  "dependencies": {
+    "vuepress": "^0.14.10"
+  },
+  "resolutions": {
+    "webpack-dev-middleware": "3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
