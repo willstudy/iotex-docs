@@ -80,9 +80,14 @@ Flags:
   -h, --help   help for ioctl
 ```
 
-#### Install
+#### Install Release Build
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh
+```
+
+#### Install Latest/unstable Build
+```
+curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh -s "unstable"
 ```
 
 #### Examples
