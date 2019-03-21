@@ -320,7 +320,7 @@ Resposne:
 Usage:
   Get Block Metadatas By Index
 Request:
-  Start: Start Index of Blocks
+  Start: Start Block Height
   Count: Number of Blocks
 Response:
   BlkMetas: List of Block Metadatas
