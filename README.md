@@ -77,12 +77,12 @@ Flags:
 
 ### Install Release Build
 ```
-curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sudo -E sh
+curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh
 ```
 
 ### Install Latest/unstable Build
 ```
-curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sudo -E sh -s "unstable"
+curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh -s "unstable"
 ```
 
 ### Usage
