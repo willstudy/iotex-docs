@@ -56,12 +56,7 @@ The simplest way to get started with  IoTeX software package is to run it in sta
 3. ```sudo docker run -d -p 30100:14004 --mount type=bind,source=$PWD/config_delegate.yaml,target=/etc/iotex/config_local_delegate.yaml iotex/iotex-core:testnet iotex-server -config-path=/etc/iotex/config_local_delegate.yaml```
 
 
-## Interact with Root Chain
-
-There are two ways to interact with IoTeX root chain -- using CLI (command-line interface) and using
-explorer 2.0. Both of which are built upon the APIs defined [here](https://github.com/iotexproject/iotex-core/blob/master/api/api.go).
-
-### CLI (command-line interface)
+## CLI (command-line interface)
 ioctl is a command-line interface for interacting with IoTeX blockchains.
 ```
 Usage:
@@ -80,90 +75,126 @@ Flags:
   -h, --help   help for ioctl
 ```
 
-#### Install Release Build
+### Install Release Build
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh
 ```
 
-#### Install Latest/unstable Build
+### Install Latest/unstable Build
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh -s "unstable"
 ```
 
-#### Examples
-##### Version
+### Usage
+#### Set Endpoint
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl version
-v0.1
-```
-##### Set Endpoint
-```
-➜  ioctl git:(ioctl) ✗ ./ioctl config set endpoint 35.230.103.170:10000
-endpoint is set to 35.230.103.170:10000
-```
-##### Get Wallet Directory
-```
-➜  ioctl git:(ioctl) ✗ ./ioctl config get wallet
-/Users/frank/.config/ioctl/default
+➜  ioctl config set endpoint api.testnet.iotex.one:80
+endpoint is set to api.testnet.iotex.one:80
 ```
 
-##### Create An Account
+#### Get Wallet Directory
 ```
-➜ ioctl git:(ioctl) ✗ ./ioctl account create
-{"Address": "io180ls3vq360mw9q6m7nxudh0hl44cv9qr27rjhj", "PrivateKey": "3e7f689e1f270c97aef283bc621114fbef19076f25a0873a5cfb94fc4dc75c93", "PublicKey": "04e4db1786a5fe130f48c6128907e86084fa6a33a2f428423b502ced24f3addae56711d025fc28f5a75fd5efb7ce8aea6685b337d07770c3ce08bce4cd03169b83"}
+➜  ioctl config get wallet
+/Users/IoTeX/.config/ioctl/default
 ```
 
-##### Create An Account Into Wallet
+#### Version
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl account createadd frank
-#frank: Set password
-#frank: Enter password again
-New account "frank" is created.
+➜  ioctl version
+Client Version:
+packageVersion:"snapshot-v0.6.0-51-gfa4d41ae" packageCommitID:"fa4d41ae35bb38ac4ef15157eeff0a04c0b4ab38" gitStatus:"dirty" goVersion:"go version go1.11.5 darwin/amd64" buidTime:"2019-03-21-PDT/19:03:41"
+Server Version:
+packageVersion:"v0.5.0-rc5-hotfix1" packageCommitID:"b24ba5a2478dfce54d0c72135a0093a8138efa5b" gitStatus:"clean" goVersion:"go version go1.11.5 linux/amd64" buidTime:"2019-03-21-UTC/17:58:03"
+```
+
+#### Create Accounts
+```
+➜  ioctl account create
+{"Address": "io1tuc78c48hgezh5fxvszlp87qpuglndz7qu0hr2", "PrivateKey": "dc372db0fd7c667723b516a7efd85ec62b9e15a05541df861ff234ebc719bb70", "PublicKey": "0413c22f20043de0a4d8a6bf8359b7c08f15318766a65eb8910a6fb01dd83294ea280e4a0c36f106d0919417a372244392766dd94a1885318591f9e3e6d88482e5"}
+```
+```
+➜  ioctl account create -n 3
+{"Address": "io1nktp9dcn87rvvzge586hyf565q9j2hl0ah53t7", "PrivateKey": "8a29f18c5e4da05ab422b8eea4c0e15a74ea7dc83c652514986fdda511c0d116", "PublicKey": "04884f0fb25ed015655571ed73780a7e05c15a88a54184d8c70b719e731b89af00be43ae7a39c45ecd53eb0768d080a311d6fa59675b376b240fad17d082472ac4"}
+{"Address": "io1a0rlvjxplghfkepadm6hs7jpurvwr3x0z6ypz2", "PrivateKey": "5723d52ac1066a5b3f9a33d646c94a4897a1c9ef0a062a0049382e95e95e4cf1", "PublicKey": "043cb6e513efb473ddc0ed749ce91f709a955efadfad474bcdd0efdbcfd74b0d01c7f3c3288c36c59fb6fbd9288c5fb7d5c1d2353be6614c7975ba9cbfc4a699d2"}
+{"Address": "io1rscvduyau59mvnxjjuywez3dyju3wqgcgqendt", "PrivateKey": "75d54d4fb01cf02161429dbced5446a5334167b32bb31dd90c161cb7a74b5160", "PublicKey": "04eeff41a73c0ae9073b8e3f03118fca822516ec5fdd7a9f0cd469e3e26b539a2bf772be9284d1acf9de7e6895bb7bc4060255fd960883a5af10cda133eb63b115"}
+```
+
+#### Create An Account Into Wallet
+```
+➜  ioctl account createadd IOsenser
+#IOsenser: Set password
+#IOsenser: Enter password again
+New account "IOsenser" is created.
 Please Keep your password, or your will lose your private key.
 ```
 
-##### List Accounts
+#### Import An Account With Private Key
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl account list
-name: a, address:io1znka733xefxjjw2wqddegplwtefun0mfdmz7dw
-name: boss, address:io1ed52svvdun2qv8sf2m0xnynuxfaulv6jlww7ur
-name: frank, address:io18jaldgzc8wlyfnzamgas62yu3kg5nw527czg37
-```
-##### Query Balance
-```
-➜  ioctl git:(ioctl) ✗ ./ioctl account balance io18jaldgzc8wlyfnzamgas62yu3kg5nw527czg37
-io18jaldgzc8wlyfnzamgas62yu3kg5nw527czg37: 0.0 IOTX
-```
-```
-➜  ioctl git:(ioctl) ✗ ./ioctl account balance boss
-io1ed52svvdun2qv8sf2m0xnynuxfaulv6jlww7ur: 100000000.0 IOTX
-```
-##### Transfer Coins
-```
-➜ ioctl git:(ioctl) ✗ ./ioctl action transfer fake 123132123 ILILILILLIL -s boss -l 40000 -p 765
-Enter password #boss:
-Action has been sent to blockchain.
-Wait for several seconds and query this action by hash:
-6aa1a7c0c33e003f2354e99e9836337e718bd4d99306108bc47bd993b1d713bc
+➜  ioctl account import whale
+#whale: Enter your private key, which will not be exposed on the screen.
+#whale: Set password
+#whale: Enter password again
+New account #whale is created. Keep your password, or your will lose your private key.
 ```
 
-##### Deploy Contract
+#### List Accounts
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl action deploy  -b 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582009e6d7025fff5ff3ba4cf7ba6b842526416df976e012a516f37e397607c1f2360029 -l 50000 -p 1 -s boss
-Enter password #boss:
+➜  ioctl account list
+io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt - IOsenser
+io17laykjt9qgafuxj58fuspuxzlv6y4qgxf82vnm - frank
+io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
+```
 
-senderAddress: io1ed52svvdun2qv8sf2m0xnynuxfaulv6jlww7ur
-version: 1
-nonce: 1
-gasLimit: 50000
-gasPrice: 1000000000000
-execution: <
-  contract: 
-  amount: 0
-  data: 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582009e6d7025fff5ff3ba4cf7ba6b842526416df976e012a516f37e397607c1f2360029
+#### Alias Address
+```
+➜  ioctl alias set test io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
+```
+
+#### Remove Alias
+```
+➜  ioctl alias remove frank
+frank is removed
+```
+
+#### List Alias
+```
+➜  ioctl alias list
+io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt - IOsenser
+io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg - test
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
+```
+
+#### Query Balance
+```
+➜  ioctl account balance IOsenser
+io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt: 0.721 IOTX
+```
+```
+➜  ioctl account balance io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
+io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg: 100000000 IOTX
+```
+
+#### Query Nonce
+```
+➜  ioctl account nonce IOsenser
+io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt:
+Nonce: 0, Pending Nonce: 1
+```
+
+#### Transfer Tokens
+```
+➜  ioctl action transfer IOsenser 7 pad#3212 -s whale -l 20000 -p 1
+Enter password #whale:
+
+senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
+transfer: <
+  recipient: io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt (IOsenser)
+  amount: 7000000000000000000
+  payload: pad#3212
 >
-senderPubKey: 04b3fe4456876ca4c904c52dc3203e06651924d6cbd5e9f545ce990ea1289f3b8ddaff3b7e104803187f87b1e375076285e7137052260b14f2f33229a671a39a0c
-signature: f8c53be5247e2f42bfc8055a82ce52f9cf210405e3051463bbabb1396cbba18c5566cd1d6413f41630f34505afaec54bc5d32b2f3ae4c263c86fbc9750bb358f01
+senderPubKey: 04f591bf3d3e233f6705c8a78823e9ea4a9a73365ca4dd1e60e5567558135778fde8b79dc883b04a98ab68a0fe9e3b7ce984fceca0466c03f93f40d32915bf1d88
+signature: 64f9dc75b3406a009692cde669d3186bc29844ba70520e16fdafc14487d8d6be184c4a43f5f7e1f688d759c985a268d1a4b73b34b9e98d1db61adcb549a37d0101
 
 Please confirm your action.
 Type 'YES' to continue, quit for anything else.
@@ -171,12 +202,68 @@ yes
 
 Action has been sent to blockchain.
 Wait for several seconds and query this action by hash:
-0dd1a84dbae83d1c2d33f72c0c91127c1bbc65ef8a316a438f5ab0efaaf44f27
+aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c9411c33
 ```
 
-##### Invoke Contract
+#### Query Action
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl action invoke io1vqzcl56vlfspyaadyxhqy07jrmalx73vdaklzn 122 -s boss -b 60fe47b10000000000000000000000000000000000000000000000000000000000000001 -l 90000 -p 3
+➜  ioctl action hash aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c9411c33
+senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
+transfer: <
+  recipient: io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt (IOsenser)
+  amount: 7000000000000000000
+  payload: pad#3212
+>
+senderPubKey: 04f591bf3d3e233f6705c8a78823e9ea4a9a73365ca4dd1e60e5567558135778fde8b79dc883b04a98ab68a0fe9e3b7ce984fceca0466c03f93f40d32915bf1d88
+signature: 64f9dc75b3406a009692cde669d3186bc29844ba70520e16fdafc14487d8d6be184c4a43f5f7e1f688d759c985a268d1a4b73b34b9e98d1db61adcb549a37d0101
+
+senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
+transfer: <
+  recipient: io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt (IOsenser)
+  amount: 7000000000000000000
+  payload: pad#3212
+>
+senderPubKey: 04f591bf3d3e233f6705c8a78823e9ea4a9a73365ca4dd1e60e5567558135778fde8b79dc883b04a98ab68a0fe9e3b7ce984fceca0466c03f93f40d32915bf1d88
+signature: 64f9dc75b3406a009692cde669d3186bc29844ba70520e16fdafc14487d8d6be184c4a43f5f7e1f688d759c985a268d1a4b73b34b9e98d1db61adcb549a37d0101
+
+#This action has been written on blockchain
+returnValue:
+status: 1 (Success)
+actHash: aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c9411c33
+gasConsumed: 10800
+contractAddress:
+```
+
+#### Deploy Contract
+```
+➜  ioctl action deploy -b 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582009e6d7025fff5ff3ba4cf7ba6b842526416df976e012a516f37e397607c1f2360029 -l 50000 -p 1 -s whale
+Enter password #whale:
+
+senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
+version: 1
+nonce: 3
+gasLimit: 50000
+gasPrice: 1000000000000
+execution: <
+  contract:
+  amount: 0
+  data: 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582009e6d7025fff5ff3ba4cf7ba6b842526416df976e012a516f37e397607c1f2360029
+>
+senderPubKey: 04f591bf3d3e233f6705c8a78823e9ea4a9a73365ca4dd1e60e5567558135778fde8b79dc883b04a98ab68a0fe9e3b7ce984fceca0466c03f93f40d32915bf1d88
+signature: a0cbb205184c3153217bdd7e1d251a70bf8d9222b7ab9b8015254e5961f21602694477ea5bed2005fe21f47724130af173b7abe2b5f9304b09f188749c88c2f001
+
+Please confirm your action.
+Type 'YES' to continue, quit for anything else.
+yes
+
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:
+b49e5860c5b4154fdb6bcb808a60fbf8de2ac7807d99551ec5357d83ad2612e5
+```
+
+#### Invoke Contract
+```
+➜  ioctl action invoke io1vqzcl56vlfspyaadyxhqy07jrmalx73vdaklzn 122 -s boss -b 60fe47b10000000000000000000000000000000000000000000000000000000000000001 -l 90000 -p 3
 Enter password #boss:
 
 senderAddress: io1ed52svvdun2qv8sf2m0xnynuxfaulv6jlww7ur
@@ -201,54 +288,119 @@ Wait for several seconds and query this action by hash:
 58fc6465bd3b7e33b1508064b0342dc786247b4e18859be72fea57c993dc4950
 ```
 
-##### Query Action
+#### Claim Reward
 ```
-➜ ioctl git:(ioctl) ✗ ./ioctl action hash 6aa1a7c0c33e003f2354e99e9836337e718bd4d99306108bc47bd993b1d713bc
-senderAddress: io1llupp3n8q5x8usnr5w08j6hc6hn55x64l46rr7
+➜  ioctl action claim 321 happy -s whale -l 30000 -p 1
+Enter password #whale:
+
+senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
 version: 1
-nonce: 1
-gasLimit: 40000
-gasPrice: "765"
-transfer: <
-amount: "123132123"
-recipient: "io1xje007qlk8apvg3y5ps4lr3y7ke8zy5vrpgsgf"
-payload: "ILILILILLIL"
+nonce: 6
+gasLimit: 30000
+gasPrice: "1000000000000"
+claimFromRewardingFund: <
+  amount: "321000000000000000000"
+  data: "happy"
+>
+senderPubKey: 04f591bf3d3e233f6705c8a78823e9ea4a9a73365ca4dd1e60e5567558135778fde8b79dc883b04a98ab68a0fe9e3b7ce984fceca0466c03f93f40d32915bf1d88
+signature: 6b4022afc93901b7de420f84829e9f3e2f531a83c4c0f3a935df3694dbe09e7f068733a294207e9ee39e0d83b4fc206e9f7059592e648b8d92a0bb1eed489f4000
 
-senderPubKey: 04bc3a3123a0d72e1e622ec1a51087ef3b15a9d6db0f924c0fd8b4958653ff7608194321d1fd90c0c949b05b6b911d8d7e9aaadbe497e696367c19780a016ce440
-signature: 1a4576b728c8b5cb2aa669502c6fd1d843e96bd70d6a3cf7dfa207bb1450b0c96bceded48b4a78a469731eae92d53dbc1ae05dca246983ec3235c844633798d500
+Please confirm your action.
+Type 'YES' to continue, quit for anything else.
+yes
+
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:
+59a73e24a41385005519d1d1e7f164b36b98717f2c5649785b43c2588245502d
 ```
 
-##### Query Blockchain Height
+#### Query Blockchain Height
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl bc height
+➜  ioctl bc height
 9051
 ```
 
-##### Query Delegates
+#### Query Block
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl node delegate
-blockProducers: "io10zzw958qc6e8lxm5ptv0upxmg4ud65gyfj4xc0"
-blockProducers: "io1qy6r2hlx0vj6z88ks6wnev82caqkp7r79kgvz2"
-...
+➜  ioctl bc block
+Transactions: 1
+Height: 122
+Total Amount: 0
+Timestamp: 1553238923
+Producer Public Key: io1urumju6laya40h25rx2cdseql9xm2gm8auepac
+Transactions Root: 8a4e41d5a183a4e12784872da4d76c32ac8d1cf11ed1543859e98000dbdf2620
+Receipt Root: e8e28a529d99a70b7dab8dd6d491bdb0c20818defac307780c919a610e552d6a
+Delta State Digest: 82286c69c59aaff815bb888b876eed7228ea51065027dc07ac1c04e5e082ea6b
+Hash: 87f73c3a6e3312075a9aae70660656a9209bb11fb4d5fb1a2f21e020e20d3365
+```
+```
+➜  ioctl bc block 101
+Transactions: 1
+Height: 101
+Total Amount: 0
+Timestamp: 1553238713
+Producer Public Key: io1urumju6laya40h25rx2cdseql9xm2gm8auepac
+Transactions Root: 8a4e41d5a183a4e12784872da4d76c32ac8d1cf11ed1543859e98000dbdf2620
+Receipt Root: e8e28a529d99a70b7dab8dd6d491bdb0c20818defac307780c919a610e552d6a
+Delta State Digest: 999003ad9f4ea85f45a8a3ebafcb8ad03c43852fbe8cce14aaf86bed9aed8895
+Hash: c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
+```
+```
+➜  ioctl bc block c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
+Transactions: 1
+Height: 101
+Total Amount: 0
+Timestamp: 1553238713
+Producer Public Key: io1urumju6laya40h25rx2cdseql9xm2gm8auepac
+Transactions Root: 8a4e41d5a183a4e12784872da4d76c32ac8d1cf11ed1543859e98000dbdf2620
+Receipt Root: e8e28a529d99a70b7dab8dd6d491bdb0c20818defac307780c919a610e552d6a
+Delta State Digest: 999003ad9f4ea85f45a8a3ebafcb8ad03c43852fbe8cce14aaf86bed9aed8895
+Hash: c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
 ```
 
-##### Query Productivity
+#### Query Delegates
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl node productivity
-io1959ykdhkene09at5nfl42a7xjwf5wgplpg7eh9: 7 (produced) / 167 (total of epoch 26)
-io1m8rge0h4xvmfzkc4yup766slcvn5cwymqeenpe: 7 (produced) / 167 (total of epoch 26)
+➜  ioctl node delegate
+Epoch: 4, Total blocks: 22
+
+Address                                    Alias  Blocks
+io1ns7y0pxmklk8ceattty6n7makpw76u770u5avy         0
+io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg  test   0
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd  whale  0
+io1urumju6laya40h25rx2cdseql9xm2gm8auepac         22
+io1skmqp33qme8knyw0fzgt9takwrc2nvz4sevk5c         0
 ...
 ```
 ```
-➜  ioctl git:(ioctl) ✗ ./ioctl node productivity io1j07xpufsj03sc0dg020jahacx2pnt6m8cdl6qt -e 25
-io1j07xpufsj03sc0dg020jahacx2pnt6m8cdl6qt: 15 (produced) / 360 (total of epoch 25)
+➜  ioctl node delegate whale
+Epoch: 4, Total blocks: 34
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd  whale  0
+```
+```
+➜  ioctl node delegate whale -e 1
+Epoch: 1, Total blocks: 48
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd  whale  0
 ```
 
-### Explorer 2.0
+#### Query Reward
+```
+➜  ioctl node reward whale
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd: 45819 IOTX
+```
+
+#### Update Ioctl
+```
+➜  ioctl update
+Downloading the latest stable version ...
+Password:
+ioctl is up-to-date now.
+```
+
+## Explorer 2.0
 Work-in-progress
 
-### API 2.0
-#### GetAccount
+## API 2.0
+### GetAccount
 ```
 Usage:
   Get Account Details
@@ -258,7 +410,7 @@ Response:
   AccountMeta: Account Metadata
 ```  
 
-#### GetActions
+### GetActions
 ```
 Usage:
   Get Actions By Index
@@ -269,7 +421,7 @@ Response:
   Actions: List of Actions
 ```
 
-#### GetActions
+### GetActions
 ```
 Usage:
   Get Action By Action Hash
@@ -279,7 +431,7 @@ Response:
   Actions: Action
 ```  
 
-#### GetActions
+### GetActions
 ```
 Usage:
   Get Actions By Address
@@ -291,7 +443,7 @@ Resposne:
   Actions: List of Actions
 ```
 
-#### GetActions
+### GetActions
 ```
 Usage:
   Get Unconfirmed Actions By Address
@@ -303,7 +455,7 @@ Resposne:
   Actions: List of Actions
 ```
 
-#### GetActions
+### GetActions
 ```
 Usage:
   Get Actions By Block
@@ -315,7 +467,7 @@ Resposne:
   Actions: List of Actions
 ```
 
-#### GetBlockMetas
+### GetBlockMetas
 ```
 Usage:
   Get Block Metadatas By Index
@@ -326,7 +478,7 @@ Response:
   BlkMetas: List of Block Metadatas
 ```  
     
-#### GetBlockMetas
+### GetBlockMetas
 ```
 Usage:
   Get Block Metadata By Block Hash
@@ -336,7 +488,7 @@ Response:
   BlkMetas: Block Metadata
 ```
 
-#### GetChainMeta
+### GetChainMeta
 ```
 Usage:
   Get Blockchain
@@ -346,7 +498,7 @@ Response:
   ChainMeta: Blockchain Metadata
 ```
 
-#### SendAction
+### SendAction
 ```
 Usage:
   Send Action
@@ -355,7 +507,7 @@ Request:
 Response:
   N/A
 ```
-#### GetReceiptByAction
+### GetReceiptByAction
 ```
 Usage:
   Get Action Receipt By Action Hash
@@ -365,7 +517,7 @@ Response:
   Receipt: Action Receipt
 ```
 
-#### ReadContract
+### ReadContract
 ```
 Usage:
   Read Contract State
@@ -375,7 +527,7 @@ Response:
   Data: Return Value in Execution Receipt
 ```
 
-#### ReadState
+### ReadState
 ```
 Usage:
   Read State on Blockchain
@@ -387,7 +539,7 @@ Response:
   Data: State Result
 ```
 
-#### SuggestGasPrice
+### SuggestGasPrice
 ```
 Usage:
   Get Suggested Gas Price
@@ -397,7 +549,7 @@ Response:
   GasPrice: Gas Price
 ```
 
-#### EstimateGasForAction
+### EstimateGasForAction
 ```
 Usage:
   Get Estimated Gas For Action
@@ -407,7 +559,7 @@ Response:
   Gas: Gas
 ```
 
-#### GetProductivity
+### GetProductivity
 ```
 Usage:
   Get Block Producers' Productivity Given Epoch Number
