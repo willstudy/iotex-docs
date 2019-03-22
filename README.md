@@ -396,6 +396,12 @@ Downloading the latest stable version ...
 Password:
 ioctl is up-to-date now.
 ```
+```
+➜  ioctl update -t unstable
+Downloading the latest unstable version ...
+Password:
+ioctl is up-to-date now.
+```
 
 ## Explorer 2.0
 Work-in-progress
