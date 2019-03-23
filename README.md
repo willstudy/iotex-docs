@@ -100,11 +100,12 @@ endpoint is set to api.testnet.iotex.one:80
 
 #### Version
 ```
-➜  ioctl version
-Client Version:
-packageVersion:"snapshot-v0.6.0-51-gfa4d41ae" packageCommitID:"fa4d41ae35bb38ac4ef15157eeff0a04c0b4ab38" gitStatus:"dirty" goVersion:"go version go1.11.5 darwin/amd64" buidTime:"2019-03-21-PDT/19:03:41"
-Server Version:
-packageVersion:"v0.5.0-rc5-hotfix1" packageCommitID:"b24ba5a2478dfce54d0c72135a0093a8138efa5b" gitStatus:"clean" goVersion:"go version go1.11.5 linux/amd64" buidTime:"2019-03-21-UTC/17:58:03"
+→  ioctl version
+Client:
+packageVersion:"snapshot-v0.6.0-71-gaec09136" packageCommitID:"aec091362222f3d552c546528c4fb61f075506d3" gitStatus:"clean" goVersion:"go version go1.11.5 darwin/amd64" buidTime:"2019-03-23-PDT/16:04:18"
+
+Server: api.testnet.iotex.one:80
+packageVersion:"v0.5.0-rc5-hotfix2" packageCommitID:"8f8f8b5a69a0e3897c34d591cd225ce31c946a9a" gitStatus:"clean" goVersion:"go version go1.11.5 linux/amd64" buidTime:"2019-03-22-UTC/22:16:52"
 ```
 
 #### Create Accounts
