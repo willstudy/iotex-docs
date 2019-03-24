@@ -208,31 +208,26 @@ aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c9411c33
 
 #### Query Action
 ```
-➜  ioctl action hash aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c9411c33
-senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
-transfer: <
-  recipient: io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt (IOsenser)
-  amount: 7000000000000000000
-  payload: pad#3212
->
-senderPubKey: 04f591bf3d3e233f6705c8a78823e9ea4a9a73365ca4dd1e60e5567558135778fde8b79dc883b04a98ab68a0fe9e3b7ce984fceca0466c03f93f40d32915bf1d88
-signature: 64f9dc75b3406a009692cde669d3186bc29844ba70520e16fdafc14487d8d6be184c4a43f5f7e1f688d759c985a268d1a4b73b34b9e98d1db61adcb549a37d0101
+→  ioctl action hash 690fb07fbb5ba3b762a7a16edea35ff1c3b02b43a6331aef88c4daa1bc933ad4
 
-senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
+version: 1  nonce: 7  gasLimit: 122222  gasPrice: 2000000000000 Rau
+senderAddress: io1znka733xefxjjw2wqddegplwtefun0mfdmz7dw (whale)
 transfer: <
-  recipient: io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt (IOsenser)
-  amount: 7000000000000000000
-  payload: pad#3212
+  recipient: io18jaldgzc8wlyfnzamgas62yu3kg5nw527czg37 (nani)
+  amount: 123000000000000000000 Rau
+  payload:
 >
-senderPubKey: 04f591bf3d3e233f6705c8a78823e9ea4a9a73365ca4dd1e60e5567558135778fde8b79dc883b04a98ab68a0fe9e3b7ce984fceca0466c03f93f40d32915bf1d88
-signature: 64f9dc75b3406a009692cde669d3186bc29844ba70520e16fdafc14487d8d6be184c4a43f5f7e1f688d759c985a268d1a4b73b34b9e98d1db61adcb549a37d0101
+senderPubKey: 04d0fade363080b9061844ed6b1009f35595515b31295e37e870106d3201a638856db2c3f870dbbcafc559af54574f3487dbea0d318588608d7aca8e77e4ce5ade
+signature: 2e10f265fdc5944fab11afaebd258292afe8f9076157fbaca6bfdd3ece9047483fb3aa10ce187fe55d2d9c591e5eda430833b744f825a6ae34c9b34461d3940f01
 
 #This action has been written on blockchain
 returnValue:
 status: 1 (Success)
-actHash: aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c9411c33
-gasConsumed: 10800
+actHash: 690fb07fbb5ba3b762a7a16edea35ff1c3b02b43a6331aef88c4daa1bc933ad4
+gasConsumed: 10000
 contractAddress:
+logs:
+[]
 ```
 
 #### Deploy Contract
