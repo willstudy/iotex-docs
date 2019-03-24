@@ -150,6 +150,7 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
 #### Alias Address
 ```
 ➜  ioctl alias set test io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
+set
 ```
 
 #### Remove Alias
@@ -388,6 +389,12 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd: 45819 IOTX
 ```
 ➜  ioctl update
 Downloading the latest stable version ...
+Password:
+ioctl is up-to-date now.
+```
+```
+➜  ioctl update -t unstable
+Downloading the latest unstable version ...
 Password:
 ioctl is up-to-date now.
 ```
