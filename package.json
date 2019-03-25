@@ -18,7 +18,8 @@
     "url": "https://github.com/iotexproject/iotex-docs/issues"
   },
   "dependencies": {
-    "vuepress": "^0.14.10"
+    "vuepress": "^0.14.10",
+    "webpack-dev-middleware": "3.6.0"
   },
   "resolutions": {
     "webpack-dev-middleware": "3.6.0"
