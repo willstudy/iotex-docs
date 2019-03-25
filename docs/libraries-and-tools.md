@@ -9,7 +9,9 @@ title: Libraries and Tools
 
 `iotex-client-js` is a collection of JavaScript libraries which allow you to interact with a local or remote iotex blockchain node, using an HTTP connection.
 
-> WARNING Red components above will be deprecated in the future. Now we are exposing a public endpoint in explorer for the wallet.
+::: warning
+Red components above will be deprecated in the future. Now we are exposing a public endpoint in explorer for the wallet.
+:::
 
 ### Installation
 
@@ -39,7 +41,9 @@ Having questions? Ask in [our gitter chat room](https://gitter.im/iotex-dev-comm
 
 The `iotx.accounts` contains functions to generate Iotex accounts and sign transactions and data.
 
-> WARNING: We are currently using remote RPC calls to implement the account functionality. In future versions,
+::: warning
+We are currently using remote RPC calls to implement the account functionality. In future versions,
+::: 
 > this remote implementation will be migrated to a local one. This package has NOT been audited and might potentially be unsafe.
 
 ```js
