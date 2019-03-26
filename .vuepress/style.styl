@@ -4,6 +4,10 @@ body
 .navbar
   background rgb(1,22,39)
   color white
+  height 4rem
+  .site-name
+    margin-left 1rem
+    font-size 1rem
   .search-box
     input
       background-color rgb(5,27,45)
@@ -15,12 +19,12 @@ body
 
 .sidebar
   width 14rem
-  background transparent
-  margin-left 2rem  
+  background rgb(250,250,250)
+  padding-left 2rem  
   .sidebar-group-items
     >li>a.sidebar-link
       padding 1rem 0
-      size 8rem
+      font-size 1rem
       font-weight bold
       color rgb(153,153,153)
       border none
@@ -37,6 +41,9 @@ body
       line-height 3em
       display inline
       border-bottom 2px solid transparent
+      &:hover
+        font-weight 600
+        color rgb(153,153,153)
       &.active
         padding-bottom .2rem
         border-bottom 3px solid rgb(0,180,160)
@@ -61,6 +68,8 @@ body
     li
       margin-left 1.5rem
       color rgb(102,102,102)
+    code
+      word-break break-word
     pre
       code 
         color rgb(41,41,41)
@@ -73,18 +82,19 @@ body
       color unset
   .page-nav
     padding-bottom 1rem 
-    .inner
-      display flex
-      justify-content space-between
     .next,.prev
       background #00b4a0
-      padding .6rem .8rem
+      padding 0 .8rem
+      height 3rem
+      line-height 3rem
       border-radius 4px
       color #fff
       font-weight bold
       a
         font-weight bold
         color white
+    .prev
+      display inline-block
 
 
 div[class*="language-"] pre, div[class*="language-"] pre[class*="language-"]

@@ -2,7 +2,7 @@ module.exports = {
 	locales: {
 		'/': {
 			lang: 'en-US',
-			title: 'IoTeX Documentation',
+			title: 'Documentation',
 			description: 'by the community for the community'
 		}
 	},
