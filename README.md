@@ -494,7 +494,7 @@ Response:
 ### GetChainMeta
 ```
 Usage:
-  Get Blockchain
+  Get Blockchain Metadata
 Request:
   N/A
 Response:
@@ -562,15 +562,16 @@ Response:
   Gas: Gas
 ```
 
-### GetProductivity
+### GetEpochMeta
 ```
 Usage:
-  Get Block Producers' Productivity Given Epoch Number
+  Get Epoch Metadata Given an Epoch Number
 Request:
   EpochNumber: Epoch Number
 Response:
-  TotalBlks: Number of Total Blocks
-  BlksPerDelegate: Number of blocks Produced By Each Delegate
+  EpochData: Basic Epoch Information
+  TotalBlocks: Number of Blocks in the Epoch
+  BlockProducersInfo: List of Block Producer Information
 ```  
   
   
