@@ -85,20 +85,26 @@ curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cl
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh -s "unstable"
 ```
 
-### Usage
-#### Set Endpoint
+### Usage and Examples
+#### Set Config
+`Usage:
+  ioctl config set VARIABLE VALUE`
 ```
 ➜  ioctl config set endpoint api.testnet.iotex.one:80
 endpoint is set to api.testnet.iotex.one:80
 ```
 
-#### Get Wallet Directory
+#### Get Config
+`Usage:
+  ioctl config get VARIABLE`
 ```
 ➜  ioctl config get wallet
 /Users/IoTeX/.config/ioctl/default
 ```
 
 #### Version
+`Usage:
+  ioctl version`
 ```
 →  ioctl version
 Client:
@@ -108,19 +114,47 @@ Server: api.testnet.iotex.one:80
 packageVersion:"v0.5.0-rc5-hotfix2" packageCommitID:"8f8f8b5a69a0e3897c34d591cd225ce31c946a9a" gitStatus:"clean" goVersion:"go version go1.11.5 linux/amd64" buidTime:"2019-03-22-UTC/22:16:52"
 ```
 
-#### Create Accounts
+#### Create Account(s)
+`Usage:
+  ioctl account create`
 ```
 ➜  ioctl account create
-{"Address": "io1tuc78c48hgezh5fxvszlp87qpuglndz7qu0hr2", "PrivateKey": "dc372db0fd7c667723b516a7efd85ec62b9e15a05541df861ff234ebc719bb70", "PublicKey": "0413c22f20043de0a4d8a6bf8359b7c08f15318766a65eb8910a6fb01dd83294ea280e4a0c36f106d0919417a372244392766dd94a1885318591f9e3e6d88482e5"}
+{
+  "accounts": [
+    {
+      "address": "io12ly97a3sk94ne06qjz2vv6clv3za7mk2z2sra9",
+      "privateKey": "bb59a2a2c21242831906e0c8d188c642fdc1324d27ac4ae0d8cbea373b22147b",
+      "publicKey": "040780ba149d24ee5418084ee193a6be8b3b7cf5329d160fc8902270b342c4fed4b646cdd5fdaf52932eecb957297a9bf6dbb24f7faa9287a27df6b5e83781c74b"
+    }
+  ]
+}
 ```
 ```
 ➜  ioctl account create -n 3
-{"Address": "io1nktp9dcn87rvvzge586hyf565q9j2hl0ah53t7", "PrivateKey": "8a29f18c5e4da05ab422b8eea4c0e15a74ea7dc83c652514986fdda511c0d116", "PublicKey": "04884f0fb25ed015655571ed73780a7e05c15a88a54184d8c70b719e731b89af00be43ae7a39c45ecd53eb0768d080a311d6fa59675b376b240fad17d082472ac4"}
-{"Address": "io1a0rlvjxplghfkepadm6hs7jpurvwr3x0z6ypz2", "PrivateKey": "5723d52ac1066a5b3f9a33d646c94a4897a1c9ef0a062a0049382e95e95e4cf1", "PublicKey": "043cb6e513efb473ddc0ed749ce91f709a955efadfad474bcdd0efdbcfd74b0d01c7f3c3288c36c59fb6fbd9288c5fb7d5c1d2353be6614c7975ba9cbfc4a699d2"}
-{"Address": "io1rscvduyau59mvnxjjuywez3dyju3wqgcgqendt", "PrivateKey": "75d54d4fb01cf02161429dbced5446a5334167b32bb31dd90c161cb7a74b5160", "PublicKey": "04eeff41a73c0ae9073b8e3f03118fca822516ec5fdd7a9f0cd469e3e26b539a2bf772be9284d1acf9de7e6895bb7bc4060255fd960883a5af10cda133eb63b115"}
+{
+  "accounts": [
+    {
+      "address": "io1dcx2490vk2sg0f7ujv9d3gu67rpvyk5rjp854s",
+      "privateKey": "a40ffd19150b4f3cbb1ca779862fc63b15d432c0be9bba81c56856d00e370b91",
+      "publicKey": "04483333bf900b59a412c26a8cf287e122be5d2882d66263ce330a2c84e426fcf48dca4e189dbef15dc3511b049b7708c1e3a49e4904a6286ffcc6019bb27a4ca9"
+    },
+    {
+      "address": "io19sypnkmj6agqqgusht07m35lvlhz4ruehetagk",
+      "privateKey": "fd49783f8687379e3eb6e5778977044cc7e464dd16df8444b8643d3d636f7ebc",
+      "publicKey": "04bcae59b817ec2924adef52088e9295bb040d1a34fe49e64b41ca56e2cbb3be115256975d2c1472b0a3b47bea720810de092ef4d209924ce09fa896b29588a90d"
+    },
+    {
+      "address": "io1ehlhw6kedp5x8y04ddr7fl0cs68ns32hdxuvdl",
+      "privateKey": "2c1bdc74c7ff03f08f2e2d3b65af9a54dc5addc42613670bd4bb1f0440cd9468",
+      "publicKey": "04cd1ff13e20cbe83bc8759ce21404edc2a9b78c57f8d2ffc648f2213dfee98b61d9ebaffe03f32e7a13fbe319b1958c99ed701c3fa1046790f6af12f32262309b"
+    }
+  ]
+}
 ```
 
 #### Create An Account Into Wallet
+`Usage:
+  ioctl account createadd ALIAS`
 ```
 ➜  ioctl account createadd IOsenser
 #IOsenser: Set password
@@ -130,6 +164,8 @@ Please Keep your password, or your will lose your private key.
 ```
 
 #### Import An Account With Private Key
+`Usage:
+  ioctl account import ALIAS`
 ```
 ➜  ioctl account import whale
 #whale: Enter your private key, which will not be exposed on the screen.
@@ -138,36 +174,42 @@ Please Keep your password, or your will lose your private key.
 New account #whale is created. Keep your password, or your will lose your private key.
 ```
 
+#### Export Private Key From An Account
+`Usage:
+  ioctl account export (ALIAS|ADDRESS)`
+```
+➜  ioctl account export whale
+Enter password #whale:
+89eaedc49ba24c26debdeb2765b7343aa449e19812fcd77953a5d237d60463cb
+```
+
+#### Delete An Account
+`Usage:
+  ioctl account delete (ALIAS|ADDRESS)`
+```
+➜  ioctl account delete whale
+** This is an irreversible action!
+Once an account is deleted, all the assets under this account may be lost!
+Type 'YES' to continue, quit for anything else.
+yes
+Enter password #io1t54nfdnpldaxkpm35f2gzh3rx6cakypmp5xfz5:
+Account #io1t54nfdnpldaxkpm35f2gzh3rx6cakypmp5xfz5 has been deleted.
+```
+
 #### List Accounts
+`Usage:
+  ioctl account list`
 ```
 ➜  ioctl account list
 io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt - IOsenser
 io17laykjt9qgafuxj58fuspuxzlv6y4qgxf82vnm - frank
 io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
-io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
-```
-
-#### Alias Address
-```
-➜  ioctl alias set test io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
-set
-```
-
-#### Remove Alias
-```
-➜  ioctl alias remove frank
-frank is removed
-```
-
-#### List Alias
-```
-➜  ioctl alias list
-io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt - IOsenser
-io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg - test
-io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 007
 ```
 
 #### Query Balance
+`Usage:
+  ioctl account balance (ALIAS|ADDRESS)`
 ```
 ➜  ioctl account balance IOsenser
 io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt: 0.721 IOTX
@@ -178,13 +220,55 @@ io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg: 100000000 IOTX
 ```
 
 #### Query Nonce
+`Usage:
+  ioctl account nonce (ALIAS|ADDRESS)`
 ```
 ➜  ioctl account nonce IOsenser
 io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt:
 Nonce: 0, Pending Nonce: 1
 ```
 
+#### Update Password Of An Account
+`Usage:
+  ioctl account update (ALIAS|ADDRESS)`
+```
+➜  ioctl account update IOsenser
+#IOsenser: Enter current password
+#IOsenser: Enter new password
+#IOsenser: Enter new password again
+Account #IOsenser has been updated.
+```
+
+#### Set Alias
+`Usage:
+  ioctl alias set ALIAS ADDRESS`
+```
+➜  ioctl alias set test io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
+set
+```
+
+#### Remove Alias
+`Usage:
+  ioctl alias remove ALIAS`
+```
+➜  ioctl alias remove frank
+frank is removed
+```
+
+#### List Alias
+`Usage:
+  ioctl alias list`
+```
+➜  ioctl alias list
+io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt - IOsenser
+io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg - test
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
+```
+
+
 #### Transfer Tokens
+`Usage:
+  ioctl action transfer (ALIAS|RECIPIENT_ADDRESS) AMOUNT_IOTX [DATA] -l GAS_LIMIT -p GAS_PRICE -s SIGNER`
 ```
 ➜  ioctl action transfer IOsenser 7 pad#3212 -s whale -l 20000 -p 1
 Enter password #whale:
@@ -208,6 +292,8 @@ aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c9411c33
 ```
 
 #### Query Action
+`Usage:
+  ioctl action hash ACTION_HASH`
 ```
 →  ioctl action hash 690fb07fbb5ba3b762a7a16edea35ff1c3b02b43a6331aef88c4daa1bc933ad4
 
@@ -227,11 +313,12 @@ status: 1 (Success)
 actHash: 690fb07fbb5ba3b762a7a16edea35ff1c3b02b43a6331aef88c4daa1bc933ad4
 gasConsumed: 10000
 contractAddress:
-logs:
-[]
+logs:0
 ```
 
 #### Deploy Contract
+`Usage:
+  ioctl action deploy -l GAS_LIMIT -p GAS_PRICE -s SIGNER -b BYTE_CODE`
 ```
 ➜  ioctl action deploy -b 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582009e6d7025fff5ff3ba4cf7ba6b842526416df976e012a516f37e397607c1f2360029 -l 50000 -p 1 -s whale
 Enter password #whale:
@@ -259,6 +346,8 @@ b49e5860c5b4154fdb6bcb808a60fbf8de2ac7807d99551ec5357d83ad2612e5
 ```
 
 #### Invoke Contract
+`Usage:
+  ioctl action invoke (ALIAS|CONTRACT_ADDRESS) [AMOUNT_IOTX] -l GAS_LIMIT -p GAS_PRICE -s SIGNER -b BYTE_CODE`
 ```
 ➜  ioctl action invoke io1vqzcl56vlfspyaadyxhqy07jrmalx73vdaklzn 122 -s boss -b 60fe47b10000000000000000000000000000000000000000000000000000000000000001 -l 90000 -p 3
 Enter password #boss:
@@ -286,6 +375,8 @@ Wait for several seconds and query this action by hash:
 ```
 
 #### Claim Reward
+`Usage:
+  ioctl action claim AMOUNT_IOTX [DATA] -l GAS_LIMIT -p GASPRICE -s SIGNER`
 ```
 ➜  ioctl action claim 321 happy -s whale -l 30000 -p 1
 Enter password #whale:
@@ -311,13 +402,18 @@ Wait for several seconds and query this action by hash:
 59a73e24a41385005519d1d1e7f164b36b98717f2c5649785b43c2588245502d
 ```
 
-#### Query Blockchain Height
+#### Query Blockchain Information
+`Usage:
+  ioctl bc info`
 ```
-➜  ioctl bc height
-9051
+➜  ioctl bc info
+height:50268  numActions:50852  tps:0
+epochNum:140  epochStartHeight:50041  gravityChainStartHeight:7485100
 ```
 
 #### Query Block
+`Usage:
+  ioctl bc block [HEIGHT|HASH]`
 ```
 ➜  ioctl bc block
 Transactions: 1
@@ -356,36 +452,49 @@ Hash: c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
 ```
 
 #### Query Delegates
+`Usage:
+  ioctl node delegate [-e epoch-num|-n]`
 ```
 ➜  ioctl node delegate
-Epoch: 4, Total blocks: 22
+Epoch: 140,  Start block height: 50041,  Total blocks in epoch: 238
 
-Address                                    Alias  Blocks
-io1ns7y0pxmklk8ceattty6n7makpw76u770u5avy         0
-io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg  test   0
-io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd  whale  0
-io1urumju6laya40h25rx2cdseql9xm2gm8auepac         22
-io1skmqp33qme8knyw0fzgt9takwrc2nvz4sevk5c         0
+Address                                     Rank   Alias   Status   Blocks   Votes
+io1kr8c6krd7dhxaaqwdkr6erqgu4z0scug3drgja      1           active   10       55001936.845735597412152533
+io108h7sa5sap44e244hz649zyk5y4rqzsvnpzxh5      2                             48735653.694155983836182304
+io1f0rh94m3ctkwep3rlsswwq5vxwlntx4s574l3q      3                             46160987.404981007320038095
+io14u5d66rt465ykm7t2847qllj0reml27q30kr75      4                             45709929.504998607776485547
+io1wl83n3up9w8nedf30lnyxzple0gu5pme0dyrds      5           active   10       38555248.666748708397999935
+io1qqaswtu7rcevahucpfxc0zxx088pylwtxnkrrl      6                             32708257.835646444877501838
+io1nf0rvzgq3tqym6n3trttsrt7d4gqqsmqfzy0da      7                             29712098.816122003636349154
 ...
 ```
+
 ```
-➜  ioctl node delegate whale
-Epoch: 4, Total blocks: 34
-io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd  whale  0
-```
-```
-➜  ioctl node delegate whale -e 1
-Epoch: 1, Total blocks: 48
-io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd  whale  0
+➜  ioctl node delegate -e 96
+Epoch: 96,  Start block height: 34201,  Total blocks in epoch: 360
+
+Address                                     Rank   Alias   Status   Blocks   Votes
+io1kr8c6krd7dhxaaqwdkr6erqgu4z0scug3drgja      1           active   15       54541792.307642085450786008
+io108h7sa5sap44e244hz649zyk5y4rqzsvnpzxh5      2           active   15       48737756.399894630566687188
+io1f0rh94m3ctkwep3rlsswwq5vxwlntx4s574l3q      3           active   15       46190928.658730546519935761
+io14u5d66rt465ykm7t2847qllj0reml27q30kr75      4                             46085297.487903898159647528
+io1wl83n3up9w8nedf30lnyxzple0gu5pme0dyrds      5           active   15       38572640.296620127370097465
+io1qqaswtu7rcevahucpfxc0zxx088pylwtxnkrrl      6           active   16       32953849.701042695805874862
+io1nf0rvzgq3tqym6n3trttsrt7d4gqqsmqfzy0da      7           active   15       29482829.876487336517790368
+...
 ```
 
 #### Query Reward
+`Usage:
+  ioctl node reward (ALIAS|DELEGATE_ADDRESS)`
 ```
 ➜  ioctl node reward whale
-io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd: 45819 IOTX
+io1t54nfdnpldaxkpm35f2gzh3rx6cakypmp5xfz5: 45819 IOTX
 ```
 
-#### Update Ioctl
+#### Update IOCTL
+`Usage:
+  ioctl update [-t version-type]`
 ```
 ➜  ioctl update
 Downloading the latest stable version ...
