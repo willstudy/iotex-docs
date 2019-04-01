@@ -492,7 +492,7 @@ io1nf0rvzgq3tqym6n3trttsrt7d4gqqsmqfzy0da      7           active   15       294
 io1t54nfdnpldaxkpm35f2gzh3rx6cakypmp5xfz5: 45819 IOTX
 ```
 
-#### Update IOCTL
+#### Update ioctl
 `Usage:
   ioctl update [-t version-type]`
 ```
