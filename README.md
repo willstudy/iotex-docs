@@ -512,7 +512,7 @@ ioctl is up-to-date now.
 Actioninjector is a simulation tool to simulate action traffic by injecting random actions to gateway node.
 ```
 Usage:
-   actioninjectorv2 random [flags]
+   injector random [flags]
 
 Available Flags:
   --addr string       target ip:port for grpc connection (default "127.0.0.1:14004")
