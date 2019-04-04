@@ -508,6 +508,32 @@ Password:
 ioctl is up-to-date now.
 ```
 
+## Action Injector 2.0
+Actioninjector is a simulation tool to simulate action traffic by injecting random actions to gateway node.
+```
+Usage:
+   actioninjectorv2 random [flags]
+
+Available Flags:
+  --addr string       target ip:port for grpc connection (default "127.0.0.1:14004")
+  --aps int        actions to be injected per second (default 30)
+  --contract string   smart contract address (default "io1pmjhyksxmz2xpxn2qmz4gx9qq2kn2gdr8un4xq")
+  --duration duration   duration when the injection will run (default 60h0m0s)
+  --execution-amount int execution amount (default 50)
+  --execution-data string execution data (default "2885ad2c")
+  --execution-gas-limit uint      execution gas limit (default 20000)
+  --execution-gas-price int       execution gas price (default 1000000000000)
+  --injector-config-path string   path of config file of genesis transfer addresses (default "./tools/actioninjector.v2/gentsfaddrs.yaml")
+  --reset-interval duration       time interval to reset nonce counter (default 10s)
+  --retry-interval duration       sleep interval between two consecutive rpc retries (default 1s)
+  --retry-num uint                maximum number of rpc retries (default 5)
+  --transfer-gas-limit uint       transfer gas limit (default 20000)
+  --transfer-gas-price int        transfer gas price (default 1000000000000)
+  --transfer-payload string       transfer payload
+  --workers uint                  number of workers (default 10)
+  -h, --help                      help for random
+```
+
 ## Explorer 2.0
 Work-in-progress
 
