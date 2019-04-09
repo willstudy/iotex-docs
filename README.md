@@ -9,13 +9,18 @@ Founded as an open-source project in 2017, IoTeX is building the world's leading
 
 ### Grand Design
 
-Our long-term design employs Separation of Powers (a term coined by Charles-Louis de Secondat which states that political authority should be divided into legislative, executive and judicial powers).
+The overall design of IoTeX Network employs Separation of Powers,a term coined by Charles-Louis de Secondat which states that democratic political authority should be divided into legislative, executive and judicial powers. Generally speaking, IoTeX Network is a decentralized trust fabric consisting of multiple blockchains to connect humans, machines, applications, arranged hierarchically and serving different purposes. 
 ![IoTeX Rootchain Architecture](https://cdn-images-1.medium.com/max/2600/1*D6GiPlh9TdikW82c8j1jrA.png)
 
-* Governance layer, instantiated by the Gravity Chain is the layer that acts as a decentralized government for the IoTeX network. It uses a liveness-oriented consensus scheme (e.g., PoS variant) to facilitate tasks such as staking, voting, slashing, protocol-related proposals, and more. Will be launched in Q3/Q4 2019.
-* Orchestration layer, instantiated by the Root Chain, is the general manager and coordinator for all subchains. It is powered by our safety-oriented Roll-DPoS consensus mechanism and aims for high throughput and reliability. Will be launched in Q1 2019 (a.k.a, Mainnet Alpha).
-* Operational layer, instantiated by various subchains, is the concrete unit that handles business logic related to specific use cases/applications. In our design, subchains share the same pool of Delegates as the root chain, so anyone can spin up a subchain as effortlessly and securely as spinning up an EC2 instance on AWS Cloud. The first IoTeX subchain is expected to be launched in Q2/Q3 2019 focusing on privacy.
-* Execution layer, is an optional layer for specific subchains to offload concerete computation tasks to.
+* Governance layer, instantiated by the Gravity Chain is the layer that acts as a decentralized government for the IoTeX network. It exclusively focuses on decentralization and security, a liveness-oriented consensus scheme (e.g., PoS variant) to facilitate tasks such as staking, voting, slashing, protocol-related proposals, and more. Before the launch of the gravity chain Q3/Q4 2019, Ethereum mainnet will be used as the governance layer.
+* Orchestration layer, instantiated by the Root Chain, is the general manager and coordinator for all subchains. It is powered by our safety-oriented Roll-DPoS consensus mechanism and aims for reasonable throughput, reliability and transparency. It is being launched in April 2019 (a.k.a, Mainnet Alpha) as the first blockchain within IoTeX Network.
+* Operational layer, instantiated by various layer2 subchains, is the concrete unit that handles business logic related to specific use cases/applications. Different subchains can interoperate with each other via cross-chain communication. The first IoTeX subchain is expected to be launched in Q2/Q3 2019 focusing on trusted computing.
+* Execution layer, is an optional layer to which specific subchains can offload concrete computation/storage tasks. The segregation of verification & ordering of states from generation of states is extremely helpful to improve scalability, functionality and usability of a decentralized system.
+
+In our design, all blockchains share the same pool of delegate resource which produces consensus to secure the entire network and is the cornerstone of the collective trust. With the collective trusted being provided, one can easily spin up a subchain as effortlessly as spinning up an EC2 instance on AWS Cloud. Thanks to the abstraction of EDR, subchains running within IoTeX Network can have dramatically different state transition and execution layers as well as the underlying crypto economics.
+
+The reason why we separate duties across multiple blockchain layers we firmly believe in decentralized governance. Many DPoS blockchain manage governance tasks (i.e.,. staking/voting) on the core operational layer blockchain - IoTeX believes governance tasks should not be grouped with operational tasks on the same chain. For example, elected Delegates, as a vested interest group, may disregard staking/voting transactions in the block production process to mitigate being de-elected (i.e., conflict of interest). Furthermore, elected Delegates may enforce protocol upgrades (by upgrading their software without consent from other users) that are not favorable to the rest of the ecosystem.
+
 
 ### Root Chain
 
