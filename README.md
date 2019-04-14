@@ -558,8 +558,9 @@ Response:
 Usage:
   Get Actions By Index
 Request:
-  Start: Start Index of Actions
-  Count: Number of Actions
+  ByIndex: GetActionsByIndexRequest
+    -Start: Start Index of Actions
+    -Count: Number of Actions
 Response:
   Actions: List of Actions
 ```
@@ -569,7 +570,9 @@ Response:
 Usage:
   Get Action By Action Hash
 Request:
-  Action Hash: Hash of Action
+  ByHash: GetActionByHashRequest
+    -ActionHash: Hash of Action
+    -CheckPending: Wether To Check Pending Actions in Action Pool
 Response:
   Actions: Action
 ```  
@@ -579,9 +582,10 @@ Response:
 Usage:
   Get Actions By Address
 Request:
-  Address: Encoded Address
-  Start: Start Index of Actions
-  Count: Number of Actions
+  ByAddr: GetActionsByAddressRequest
+    -Address: Encoded Address
+    -Start: Start Index of Actions
+    -Count: Number of Actions
 Resposne:
   Actions: List of Actions
 ```
@@ -591,9 +595,10 @@ Resposne:
 Usage:
   Get Unconfirmed Actions By Address
 Request:
-  Address: Encoded Address
-  Start: Start Index of Unconfirmed Actions
-  Count: Number of Unconfirmed Actions
+  UnconfirmedByAddr: GetUnconfirmedActionsByAddressRequest
+    -Address: Encoded Address
+    -Start: Start Index of Unconfirmed Actions
+    -Count: Number of Unconfirmed Actions
 Resposne:
   Actions: List of Actions
 ```
@@ -603,9 +608,10 @@ Resposne:
 Usage:
   Get Actions By Block
 Request:
-  BlkHash: Block Hash
-  Start: Start Index of Actions
-  Count: Number of Actions
+  ByBlk: GetActionsByBlockRequest
+    -BlkHash: Block Hash
+    -Start: Start Index of Actions
+    -Count: Number of Actions
 Resposne:
   Actions: List of Actions
 ```
@@ -615,8 +621,9 @@ Resposne:
 Usage:
   Get Block Metadatas By Index
 Request:
-  Start: Start Block Height
-  Count: Number of Blocks
+  ByIndex: GetBlockMetasByIndexRequest
+    -Start: Start Block Height
+    -Count: Number of Blocks
 Response:
   BlkMetas: List of Block Metadatas
 ```  
@@ -626,7 +633,8 @@ Response:
 Usage:
   Get Block Metadata By Block Hash
 Request:
-  BlkHash: Block Hash
+  ByHash: GetBlockMetaByHashRequest
+    -BlkHash: Block Hash
 Response:
   BlkMetas: Block Metadata
 ```
