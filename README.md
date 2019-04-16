@@ -74,7 +74,6 @@ Available Commands:
   help        Help about any command
   node        Deal with nodes of IoTeX blockchain
   version     Print the version number of ioctl
-  wallet      Manage accounts of IoTeX blockchain
 
 Flags:
   -h, --help   help for ioctl
@@ -233,6 +232,22 @@ io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt:
 Nonce: 0, Pending Nonce: 1
 ```
 
+#### Translate Address
+`Usage:
+  ioctl account ethaddr (ALIAS|IOTEX_ADDRESS|ETH_ADDRESS)`
+```
+➜  ioctl account ethaddr io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
+```
+```
+➜  ioctl account ethaddr 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
+```
+```
+➜  ioctl account ethaddr 007
+io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
+```
+
 #### Update Password Of An Account
 `Usage:
   ioctl account update (ALIAS|ADDRESS)`
@@ -273,7 +288,7 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
 
 #### Transfer Tokens
 `Usage:
-  ioctl action transfer (ALIAS|RECIPIENT_ADDRESS) AMOUNT_IOTX [DATA] -l GAS_LIMIT -p GAS_PRICE -s SIGNER`
+  ioctl action transfer (ALIAS|RECIPIENT_ADDRESS) AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GAS_PRICE]`
 ```
 ➜  ioctl action transfer IOsenser 7 pad#3212 -s whale -l 20000 -p 1
 Enter password #whale:
@@ -323,7 +338,7 @@ logs:0
 
 #### Deploy Contract
 `Usage:
-  ioctl action deploy -l GAS_LIMIT -p GAS_PRICE -s SIGNER -b BYTE_CODE`
+  ioctl action deploy -s SIGNER -b BYTE_CODE -l GAS_LIMIT [-p GAS_PRICE]`
 ```
 ➜  ioctl action deploy -b 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582009e6d7025fff5ff3ba4cf7ba6b842526416df976e012a516f37e397607c1f2360029 -l 50000 -p 1 -s whale
 Enter password #whale:
@@ -352,7 +367,7 @@ b49e5860c5b4154fdb6bcb808a60fbf8de2ac7807d99551ec5357d83ad2612e5
 
 #### Invoke Contract
 `Usage:
-  ioctl action invoke (ALIAS|CONTRACT_ADDRESS) [AMOUNT_IOTX] -l GAS_LIMIT -p GAS_PRICE -s SIGNER -b BYTE_CODE`
+  ioctl action invoke (ALIAS|CONTRACT_ADDRESS) [AMOUNT_IOTX] -s SIGNER -b BYTE_CODE -l GAS_LIMIT [-p GAS_PRICE]`
 ```
 ➜  ioctl action invoke io1vqzcl56vlfspyaadyxhqy07jrmalx73vdaklzn 122 -s boss -b 60fe47b10000000000000000000000000000000000000000000000000000000000000001 -l 90000 -p 3
 Enter password #boss:
@@ -381,7 +396,7 @@ Wait for several seconds and query this action by hash:
 
 #### Claim Reward
 `Usage:
-  ioctl action claim AMOUNT_IOTX [DATA] -l GAS_LIMIT -p GASPRICE -s SIGNER`
+  ioctl action claim AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GASPRICE]`
 ```
 ➜  ioctl action claim 321 happy -s whale -l 30000 -p 1
 Enter password #whale:
