@@ -84,7 +84,7 @@ Flags:
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh
 ```
 
-### Install Latest/unstable Build
+### Install Latest/Unstable Build
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh -s "unstable"
 ```
@@ -554,6 +554,16 @@ Available Flags:
   -h, --help                      help for random
 ```
 
+## Install Release Build
+```
+curl --silent https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-injector.sh | sh
+```
+
+## Install Latest/Unstable Build
+```
+curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-injector.sh | sh -s "unstable"
+```
+
 ## Explorer 2.0
 Work-in-progress
 
@@ -577,7 +587,7 @@ Request:
     -Start: Start Index of Actions
     -Count: Number of Actions
 Response:
-  Actions: List of Actions
+  ActionInfo: List of Action Info
 ```
 
 ### GetActions
@@ -589,7 +599,7 @@ Request:
     -ActionHash: Hash of Action
     -CheckPending: Wether To Check Pending Actions in Action Pool
 Response:
-  Actions: Action
+  ActionInfo: Action Info
 ```  
 
 ### GetActions
@@ -602,7 +612,7 @@ Request:
     -Start: Start Index of Actions
     -Count: Number of Actions
 Resposne:
-  Actions: List of Actions
+  ActionInfo: List of Action Info
 ```
 
 ### GetActions
@@ -615,7 +625,7 @@ Request:
     -Start: Start Index of Unconfirmed Actions
     -Count: Number of Unconfirmed Actions
 Resposne:
-  Actions: List of Actions
+  ActionInfo: List of Action Info
 ```
 
 ### GetActions
@@ -628,19 +638,19 @@ Request:
     -Start: Start Index of Actions
     -Count: Number of Actions
 Resposne:
-  Actions: List of Actions
+  ActionInfo: List of ActionInfos
 ```
 
 ### GetBlockMetas
 ```
 Usage:
-  Get Block Metadatas By Index
+  Get Block Metadata By Index
 Request:
   ByIndex: GetBlockMetasByIndexRequest
     -Start: Start Block Height
     -Count: Number of Blocks
 Response:
-  BlkMetas: List of Block Metadatas
+  BlkMetas: List of Block Metadata
 ```  
     
 ### GetBlockMetas
@@ -671,7 +681,7 @@ Usage:
 Request:
   Action: Action
 Response:
-  N/A
+  ActionHash: Hash of Action
 ```
 ### GetReceiptByAction
 ```
