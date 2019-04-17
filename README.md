@@ -576,7 +576,33 @@ Request:
   Address: Account Encoded Address
 Response:
   AccountMeta: Account Metadata
-```  
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"address": "io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd"}' 127.0.0.1:14014 iotexapi.APIService.GetAccount
+
+Resolved method descriptor:
+rpc GetAccount ( .iotexapi.GetAccountRequest ) returns ( .iotexapi.GetAccountResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "accountMeta": {
+    "address": "io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd",
+    "balance": "100000000000000000000000000",
+    "pendingNonce": 1
+  }
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
+```
 
 ### GetActions
 ```
@@ -589,6 +615,61 @@ Request:
 Response:
   ActionInfo: List of Action Info
 ```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"byIndex": {"start": 0, "count": 2}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
+
+Resolved method descriptor:
+rpc GetActions ( .iotexapi.GetActionsRequest ) returns ( .iotexapi.GetActionsResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "actionInfo": [
+    {
+      "action": {
+        "core": {
+          "version": 1,
+          "gasPrice": "0",
+          "grantReward": {
+            "height": 1
+          }
+        },
+        "senderPubKey": "BGP1RCD6FmPHrgmDfKRMgCnTUXT0qp3Vc2lgtLgoYcR3n4bJmJFHv+WZNJqdcnJVH0jTp1rgN2675CIsNXmze7E=",
+        "signature": "5LqZitihGMQRLnW++DQ0d7/O3zGbjyKlXGm/i9f3/nx2Z3HHwHRgOCqNAIXDAePZmWlb8ktmn2cyET8WXhowVAE="
+      },
+      "actHash": "c6f41c716b5c328fc821bd388cb73717785af91abe91c593d821332a8192ff63",
+      "blkHash": "9631129b49d5894c738146a735f24982a59ba92bc03fbbf9b194bd51f2639cd2",
+      "timestamp": "2019-04-16T23:37:38.925432Z"
+    },
+    {
+      "action": {
+        "core": {
+          "version": 1,
+          "gasPrice": "0",
+          "grantReward": {
+            "height": 2
+          }
+        },
+        "senderPubKey": "BGP1RCD6FmPHrgmDfKRMgCnTUXT0qp3Vc2lgtLgoYcR3n4bJmJFHv+WZNJqdcnJVH0jTp1rgN2675CIsNXmze7E=",
+        "signature": "IJRc4zS1ZZy1HsKS05TRunN2zeeHNj3dlsQu5Vd8/ywGFulMXlwGzQgDfF3sVoLVFajx7IogzxVYSGdcSI6GFgE="
+      },
+      "actHash": "44807c4a778adb0ee063225e77d1a0c1f65b1acfb00c67f462d7cd6e1f50a22e",
+      "blkHash": "3ecddc0908f6762d8d6978594f5d75529eaac2ca6618524047b5c0b88c4b3124",
+      "timestamp": "2019-04-16T23:37:48.925676Z"
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
+```
 
 ### GetActions
 ```
@@ -600,7 +681,46 @@ Request:
     -CheckPending: Wether To Check Pending Actions in Action Pool
 Response:
   ActionInfo: Action Info
-```  
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"byHash": {"actionHash": "c6f41c716b5c328fc821bd388cb73717785af91abe91c593d821332a8192ff63", "checkPending": false}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
+
+Resolved method descriptor:
+rpc GetActions ( .iotexapi.GetActionsRequest ) returns ( .iotexapi.GetActionsResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "actionInfo": [
+    {
+      "action": {
+        "core": {
+          "version": 1,
+          "gasPrice": "0",
+          "grantReward": {
+            "height": 1
+          }
+        },
+        "senderPubKey": "BGP1RCD6FmPHrgmDfKRMgCnTUXT0qp3Vc2lgtLgoYcR3n4bJmJFHv+WZNJqdcnJVH0jTp1rgN2675CIsNXmze7E=",
+        "signature": "5LqZitihGMQRLnW++DQ0d7/O3zGbjyKlXGm/i9f3/nx2Z3HHwHRgOCqNAIXDAePZmWlb8ktmn2cyET8WXhowVAE="
+      },
+      "actHash": "c6f41c716b5c328fc821bd388cb73717785af91abe91c593d821332a8192ff63",
+      "blkHash": "9631129b49d5894c738146a735f24982a59ba92bc03fbbf9b194bd51f2639cd2",
+      "timestamp": "2019-04-16T23:37:38.925432Z"
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
+```
 
 ### GetActions
 ```
@@ -613,6 +733,48 @@ Request:
     -Count: Number of Actions
 Resposne:
   ActionInfo: List of Action Info
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"byAddr": {"address": "io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd", "start": 0, "count": 1}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
+
+Resolved method descriptor:
+rpc GetActions ( .iotexapi.GetActionsRequest ) returns ( .iotexapi.GetActionsResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "actionInfo": [
+    {
+      "action": {
+        "core": {
+          "version": 1,
+          "nonce": 1,
+          "gasLimit": 10000,
+          "gasPrice": "10000000000000",
+          "transfer": {
+            "amount": "1000000000000000000",
+            "recipient": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy"
+          }
+        },
+        "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=",
+        "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="
+      },
+      "actHash": "060a93a4784469f9e587da0c90ed20df58b0effb50d6b8ddcd9a4c65ad55fcbd",
+      "blkHash": "6344115bcd43b7315ffdf5338d0f97b26caed7734efea034a27208f64670f5e9",
+      "timestamp": "2019-04-17T00:10:30.468419Z"
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
 ```
 
 ### GetActions
@@ -627,6 +789,28 @@ Request:
 Resposne:
   ActionInfo: List of Action Info
 ```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"unconfirmedByAddr": {"address": "io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd", "start": 0, "count": 1}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
+
+Resolved method descriptor:
+rpc GetActions ( .iotexapi.GetActionsRequest ) returns ( .iotexapi.GetActionsResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
+```
 
 ### GetActions
 ```
@@ -638,7 +822,49 @@ Request:
     -Start: Start Index of Actions
     -Count: Number of Actions
 Resposne:
-  ActionInfo: List of ActionInfos
+  ActionInfo: List of ActionInfo
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"byBlk": {"blkHash": "6344115bcd43b7315ffdf5338d0f97b26caed7734efea034a27208f64670f5e9", "start": 0, "count": 1}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
+
+Resolved method descriptor:
+rpc GetActions ( .iotexapi.GetActionsRequest ) returns ( .iotexapi.GetActionsResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "actionInfo": [
+    {
+      "action": {
+        "core": {
+          "version": 1,
+          "nonce": 1,
+          "gasLimit": 10000,
+          "gasPrice": "10000000000000",
+          "transfer": {
+            "amount": "1000000000000000000",
+            "recipient": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy"
+          }
+        },
+        "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=",
+        "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="
+      },
+      "actHash": "060a93a4784469f9e587da0c90ed20df58b0effb50d6b8ddcd9a4c65ad55fcbd",
+      "blkHash": "6344115bcd43b7315ffdf5338d0f97b26caed7734efea034a27208f64670f5e9",
+      "timestamp": "2019-04-17T00:10:30.468419Z"
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
 ```
 
 ### GetBlockMetas
@@ -651,8 +877,53 @@ Request:
     -Count: Number of Blocks
 Response:
   BlkMetas: List of Block Metadata
-```  
-    
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"byIndex": {"start": 1, "count": 2}}' 127.0.0.1:14014 iotexapi.APIService.GetBlockMetas
+
+Resolved method descriptor:
+rpc GetBlockMetas ( .iotexapi.GetBlockMetasRequest ) returns ( .iotexapi.GetBlockMetasResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "blkMetas": [
+    {
+      "hash": "b7754977cae0f2a45a4ae2b7f0dfc20487e5acfa93594e5eaa1e93f5ec88800f",
+      "height": 1,
+      "timestamp": "2019-04-17T00:08:50.466089Z",
+      "numActions": 1,
+      "producerAddress": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy",
+      "transferAmount": "0",
+      "txRoot": "285ff4de28a16dafc49d8c46d24fa99433ac08f24be8962c7a01ade65068a34a",
+      "receiptRoot": "60d78681f8e531307e9ef1916f8ff8d387d922e47d0459e14d575f40ac042195",
+      "deltaStateDigest": "206c92297a78c59ff6fe3a6351e755fda8ae9bb40b25084e0588b0af43445ca7"
+    },
+    {
+      "hash": "47406baaee6af2775ef61c46373b6d0202b228f11e1a7a2f986f7d617f64f593",
+      "height": 2,
+      "timestamp": "2019-04-17T00:09:00.465902Z",
+      "numActions": 1,
+      "producerAddress": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy",
+      "transferAmount": "0",
+      "txRoot": "d63be4dc98821a28410f694a4fd71179e79db638496a9510c67e5b1a0fc0dac4",
+      "receiptRoot": "89cd1950dc9b51f8cf7078ffb38046d31e421c3add9c06abdd3cbcc99e5bf265",
+      "deltaStateDigest": "8a7d0cee0eb6b6010088e0b4a2996668a29eb595ea83533b9e33fdecc15bf758"
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
+```
+
 ### GetBlockMetas
 ```
 Usage:
@@ -662,6 +933,40 @@ Request:
     -BlkHash: Block Hash
 Response:
   BlkMetas: Block Metadata
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"byHash": {"blkHash": "b7754977cae0f2a45a4ae2b7f0dfc20487e5acfa93594e5eaa1e93f5ec88800f"}}' 127.0.0.1:14014 iotexapi.APIService.GetBlockMetas
+
+Resolved method descriptor:
+rpc GetBlockMetas ( .iotexapi.GetBlockMetasRequest ) returns ( .iotexapi.GetBlockMetasResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "blkMetas": [
+    {
+      "hash": "b7754977cae0f2a45a4ae2b7f0dfc20487e5acfa93594e5eaa1e93f5ec88800f",
+      "height": 1,
+      "timestamp": "2019-04-17T00:08:50.466089Z",
+      "numActions": 1,
+      "producerAddress": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy",
+      "transferAmount": "0",
+      "txRoot": "285ff4de28a16dafc49d8c46d24fa99433ac08f24be8962c7a01ade65068a34a",
+      "receiptRoot": "60d78681f8e531307e9ef1916f8ff8d387d922e47d0459e14d575f40ac042195",
+      "deltaStateDigest": "206c92297a78c59ff6fe3a6351e755fda8ae9bb40b25084e0588b0af43445ca7"
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
 ```
 
 ### GetChainMeta
@@ -673,6 +978,36 @@ Request:
 Response:
   ChainMeta: Blockchain Metadata
 ```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.GetChainMeta
+
+Resolved method descriptor:
+rpc GetChainMeta ( .iotexapi.GetChainMetaRequest ) returns ( .iotexapi.GetChainMetaResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "chainMeta": {
+    "height": 88,
+    "numActions": 90,
+    "epoch": {
+      "num": 2,
+      "height": 49,
+      "gravityChainStartHeight": 49
+    }
+  }
+}
+
+Response trailers received:
+(empty)
+Sent 0 requests and received 1 response
+```
 
 ### SendAction
 ```
@@ -683,6 +1018,26 @@ Request:
 Response:
   ActionHash: Hash of Action
 ```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "transfer": {"amount": "100", "recipient": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy"}}, "senderPubKey": "", "signature": ""}}' 127.0.0.1:14014 iotexapi.APIService.SendAction
+
+Resolved method descriptor:
+rpc SendAction ( .iotexapi.SendActionRequest ) returns ( .iotexapi.SendActionResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+(empty)
+
+Response trailers received:
+content-type: application/grpc
+Sent 1 request and received 0 responses
+ERROR:
+  Code: Unknown
+  Message: invalid secp256k1 public key
+```
 ### GetReceiptByAction
 ```
 Usage:
@@ -691,6 +1046,37 @@ Request:
   ActionHash: Action Hash
 Response:
   Receipt: Action Receipt
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"actionHash": "060a93a4784469f9e587da0c90ed20df58b0effb50d6b8ddcd9a4c65ad55fcbd"}' 127.0.0.1:14014 iotexapi.APIService.GetReceiptByAction
+
+Resolved method descriptor:
+rpc GetReceiptByAction ( .iotexapi.GetReceiptByActionRequest ) returns ( .iotexapi.GetReceiptByActionResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "receiptInfo": {
+    "receipt": {
+      "status": 1,
+      "blkHeight": 106,
+      "actHash": "BgqTpHhEafnlh9oMkO0g31iw7/tQ1rjdzZpMZa1V/L0=",
+      "gasConsumed": 10000,
+      "contractAddress": "io1enfa3p3aysdueq85vvprzzndjs4fp6z32hf7xs"
+    },
+    "blkHash": "c331e7610109ab2e799b0341a57f926fe130ed6361af320a59dd8520a838e2e1"
+  }
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
 ```
 
 ### ReadContract
@@ -702,6 +1088,26 @@ Request:
 Response:
   Data: Return Value in Execution Receipt
 ```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "", "signature": ""}}' 127.0.0.1:14014 iotexapi.APIService.ReadContract
+
+Resolved method descriptor:
+rpc ReadContract ( .iotexapi.ReadContractRequest ) returns ( .iotexapi.ReadContractResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+(empty)
+
+Response trailers received:
+content-type: application/grpc
+Sent 1 request and received 0 responses
+ERROR:
+  Code: InvalidArgument
+  Message: invalid secp256k1 public key
+```  
 
 ### ReadState
 ```
@@ -724,6 +1130,28 @@ Request:
 Response:
   GasPrice: Gas Price
 ```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.SuggestGasPrice
+
+Resolved method descriptor:
+rpc SuggestGasPrice ( .iotexapi.SuggestGasPriceRequest ) returns ( .iotexapi.SuggestGasPriceResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "gasPrice": 1
+}
+
+Response trailers received:
+(empty)
+Sent 0 requests and received 1 response
+```
 
 ### EstimateGasForAction
 ```
@@ -734,6 +1162,26 @@ Request:
 Response:
   Gas: Gas
 ```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "", "signature": ""}}' 127.0.0.1:14014 iotexapi.APIService.EstimateGasForAction
+
+Resolved method descriptor:
+rpc EstimateGasForAction ( .iotexapi.EstimateGasForActionRequest ) returns ( .iotexapi.EstimateGasForActionResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+(empty)
+
+Response trailers received:
+content-type: application/grpc
+Sent 1 request and received 0 responses
+ERROR:
+  Code: Internal
+  Message: invalid secp256k1 public key
+```  
 
 ### GetEpochMeta
 ```
@@ -746,10 +1194,182 @@ Response:
   TotalBlocks: Number of Blocks in the Epoch
   BlockProducersInfo: List of Block Producer Information
 ```  
-  
-  
-  
-  
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"epochNumber": 1}' api.iotex.one:80 iotexapi.APIService.GetEpochMeta
+
+Resolved method descriptor:
+rpc GetEpochMeta ( .iotexapi.GetEpochMetaRequest ) returns ( .iotexapi.GetEpochMetaResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+date: Wed, 17 Apr 2019 02:31:41 GMT
+server: envoy
+x-envoy-upstream-service-time: 15
+
+Response contents:
+{
+  "epochData": {
+    "num": 1,
+    "height": 1,
+    "gravityChainStartHeight": 7502300
+  },
+  "totalBlocks": 360,
+  "blockProducersInfo": [
+    {
+      "address": "io1gh7xfrsnj6p5uqgjpk9xq6jg9na28aewgp7a9v",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1scs89jur7qklzh5vfrmha3c40u8yajjx6kvzg9",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io159fv8mu9d5djk8u2t0flgw4yqmt6fg98uqjka8",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1cup9k8hl8fp40vrj29ex8djc346780dk223end",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1wv5m0xyermvr2n0wjx2cjsqwyk863drdl5qfyn",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1gf08snppu2a2wfd50pjas2j6q2kcxjzqph3pep",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1u5ff879gg2dw9vfpxr2tsmuaz07e2rea6gvl7s",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1ar5l5s268rtgzshltnqv88mua06ucm58dx678y",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1xsx5n94kg2zv64r7tm8vyz9mh86amfak9ka9xx",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1x9kjkr0qv2fa7j4t2as8lrj223xxsqt4tl7xp7",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1fks575kklxafq4fwjccmz5d3pmq5ynxk5h6h0v",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1vtm2zgn830pn6auc2cvnchgwdaefa9gr4z0s86",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io12yxdwewry70gr9fs6fphyfaky9c7gurmzk8f4f",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1c3r4th3zrk4uhv83a9gr4gvn3y6pzaj6mc84ea",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io15fqav3tugm96ge7anckx0k4gukz5m4mqf0jpv3",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io14vmhs9c75r2ptxdaqrtk0dz7skct30pxmt69d9",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1v0q5g2f8z6l3v25krl677chdx7g5pwt9kvqfpc",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1z7mjef7w528nasnsafan0rp6yuvkvq405l6r8j",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1xsdegzr2hdj5sv5ad4nr0yfgpsd98e40u6svem",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1nyjs526mnqcsx4twa7nptkg08eclsw5c2dywp4",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1du4eq4f88n4wyc026l3gamjwetlgsg4jz7j884",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io127ftn4ry6wgxdrw4hcd6gdwqlq70ujk98dvtw5",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 15
+    },
+    {
+      "address": "io1jafqlvntcxgyp6e0uxctt3tljzc3vyv5hg4ukh",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 16
+    },
+    {
+      "address": "io15npzu93ug8r3zdeysppnyrcdu2xssz0lcam9l9",
+      "votes": "10000000000000000000000000",
+      "active": true,
+      "production": 14
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
+```
 
 ## Testnet 2.0
 
