@@ -1020,7 +1020,7 @@ Response:
 ```
 Demo:
 ```
-➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "transfer": {"amount": "100", "recipient": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy"}}, "senderPubKey": "", "signature": ""}}' 127.0.0.1:14014 iotexapi.APIService.SendAction
+➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "transfer": {"amount": "100", "recipient": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy"}}, "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=", "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="}}' 127.0.0.1:14014 iotexapi.APIService.SendAction
 
 Resolved method descriptor:
 rpc SendAction ( .iotexapi.SendActionRequest ) returns ( .iotexapi.SendActionResponse );
@@ -1029,14 +1029,16 @@ Request metadata to send:
 (empty)
 
 Response headers received:
-(empty)
+content-type: application/grpc
+
+Response contents:
+{
+  "actionHash": "8890dca441898a3d942de05f7514f32c96afbcde1493ddd76aed1aaecb60af06"
+}
 
 Response trailers received:
-content-type: application/grpc
-Sent 1 request and received 0 responses
-ERROR:
-  Code: Unknown
-  Message: invalid secp256k1 public key
+(empty)
+Sent 1 request and received 1 response
 ```
 ### GetReceiptByAction
 ```
@@ -1090,7 +1092,7 @@ Response:
 ```
 Demo:
 ```
-➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "", "signature": ""}}' 127.0.0.1:14014 iotexapi.APIService.ReadContract
+➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=", "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="}}' 127.0.0.1:14014 iotexapi.APIService.ReadContract
 
 Resolved method descriptor:
 rpc ReadContract ( .iotexapi.ReadContractRequest ) returns ( .iotexapi.ReadContractResponse );
@@ -1099,14 +1101,22 @@ Request metadata to send:
 (empty)
 
 Response headers received:
-(empty)
+content-type: application/grpc
+
+Response contents:
+{
+  "receipt": {
+    "status": 1,
+    "blkHeight": 26,
+    "actHash": "2bAgDlDdF84K+XNCW95wdjMpmQqVP2b04ghyMXoN6J4=",
+    "gasConsumed": 10000,
+    "contractAddress": "io18vlvlj0v02yye70kpqtzhu4uek3qqz27zm7g42"
+  }
+}
 
 Response trailers received:
-content-type: application/grpc
-Sent 1 request and received 0 responses
-ERROR:
-  Code: InvalidArgument
-  Message: invalid secp256k1 public key
+(empty)
+Sent 1 request and received 1 response
 ```  
 
 ### ReadState
@@ -1119,6 +1129,28 @@ Request:
   Arguments: List of Method Arguments
 Response:
   Data: State Result
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"protocolID": "cmV3YXJkaW5n", "methodName": "VW5jbGFpbWVkQmFsYW5jZQ==", "arguments": "aW8xanV2eDVnMDYzZXU0dHM4MzJudWtwNHZnY3drMmduYzVjdTlheWQ="}' 127.0.0.1:14014 iotexapi.APIService.ReadState
+
+Resolved method descriptor:
+rpc ReadState ( .iotexapi.ReadStateRequest ) returns ( .iotexapi.ReadStateResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "data": "MA=="
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
 ```
 
 ### SuggestGasPrice
@@ -1164,7 +1196,7 @@ Response:
 ```
 Demo:
 ```
-➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "", "signature": ""}}' 127.0.0.1:14014 iotexapi.APIService.EstimateGasForAction
+➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=", "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="}}' 127.0.0.1:14014 iotexapi.APIService.EstimateGasForAction
 
 Resolved method descriptor:
 rpc EstimateGasForAction ( .iotexapi.EstimateGasForActionRequest ) returns ( .iotexapi.EstimateGasForActionResponse );
@@ -1173,14 +1205,16 @@ Request metadata to send:
 (empty)
 
 Response headers received:
-(empty)
+content-type: application/grpc
+
+Response contents:
+{
+  "gas": 10000
+}
 
 Response trailers received:
-content-type: application/grpc
-Sent 1 request and received 0 responses
-ERROR:
-  Code: Internal
-  Message: invalid secp256k1 public key
+(empty)
+Sent 1 request and received 1 response
 ```  
 
 ### GetEpochMeta
