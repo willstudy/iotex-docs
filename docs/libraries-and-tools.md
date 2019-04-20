@@ -22,10 +22,12 @@ Using JS SDK
 2. [transfer tokens](/docs/libraries-and-tools.html#transfer)
 3. [run smart contracts](/docs/libraries-and-tools.html#smart-contract)
 4. [make RPC calls](/docs/libraries-and-tools.html#rpc-methods)
-5. [check the complete API references](/docs/reference.html#iotex-client-js)
+5. [check the complete API references](/#api-2-0)
 
-[Using JSON RPC endpoints](/docs/reference.html#json-rpc)
+Using GraphQL
 
+1. [Documentation](https://iotexscan.io/doc/api-gateway/query.doc.html)
+2. [GraphQL Playground](https://iotexscan.io/api-gateway/)
 
 Having questions? Ask in [our gitter chat room](https://gitter.im/iotex-dev-community/Lobby).
 
@@ -45,7 +47,7 @@ import Antenna from "iotex-antenna";
   const wallet = antenna.iotx.accounts.create();
 
   // recover the whole wallet from a single private key
-  const unlockedWallet = antenna.iotx.accounts.privateKeyToAccount('69805ee813eadffa8fae53d0e6063e5fbf6a6e0fb9e90f6eaad7bc67f3d6c4bd');
+  const unlockedWallet = antenna.iotx.accounts.privateKeyToAccount("69805ee813eadffa8fae53d0e6063e5fbf6a6e0fb9e90f6eaad7bc67f3d6c4bd");
 })()
 ```
 
@@ -61,7 +63,7 @@ import {toRau} from "iotex-antenna/lib/account/utils";
 
 (async () => {
   const antenna = new Antenna("http://api.testnet.iotex.one:80");
-  const unlockedWallet = await antenna.iotx.accounts.privateKeyToAccount('73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426');
+  const unlockedWallet = await antenna.iotx.accounts.privateKeyToAccount("73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426");
   const newWallet = antenna.iotx.accounts.create("any entropy");
 
   const actionHash = await antenna.iotx.sendTransfer({
@@ -97,7 +99,7 @@ This allows you to interact with smart contracts as if they were JavaScript obje
 2. option 2: in Node.js, use [`solc@0.4.25`](https://www.npmjs.com/package/solc)
 
 ```js
-import solc from 'solc';
+import solc from "solc";
 
 const solidityFileString = `
 pragma solidity ^0.4.16;
@@ -114,7 +116,7 @@ contract SimpleStorage {
    }
 }
 `;
-const contractName = ':SimpleStorage';
+const contractName = ":SimpleStorage";
 const output = solc.compile(solidityFileString, 1);
 const abi = JSON.parse(output.contracts[contractName].interface);
 const bytecode = output.contracts[contractName].bytecode;
@@ -239,7 +241,7 @@ import Antenna from "iotex-antenna";
 Use this standalone package:
 
 ```js
-import RpcMethod from 'iotex-antenna/lib/rpc-method';
+import RpcMethod from "iotex-antenna/lib/rpc-method";
 
 (async () => {
   const provider = new RpcMethod("http://api.testnet.iotex.one:80");
