@@ -554,18 +554,23 @@ Available Flags:
   -h, --help                      help for random
 ```
 
-## Install Release Build
+### Install Release Build
 ```
 curl --silent https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-injector.sh | sh
 ```
 
-## Install Latest/Unstable Build
+### Install Latest/Unstable Build
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-injector.sh | sh -s "unstable"
 ```
 
-## Explorer 2.0
-Work-in-progress
+## Explorer
+
+* [Github Repository](https://github.com/iotexproject/iotex-explorer)
+* Demo Sites:
+  * [Mainnnet](https://iotexscan.io)
+  * [Testnet](https://testnet.iotexscan.io)
+
 
 ## API 2.0
 ### GetAccount
