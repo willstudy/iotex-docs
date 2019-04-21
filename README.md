@@ -528,7 +528,7 @@ Password:
 ioctl is up-to-date now.
 ```
 
-## Action Injector 2.0
+## Action Injector
 Actioninjector is a simulation tool to simulate action traffic by injecting random actions to gateway node.
 ```
 Usage:
@@ -572,7 +572,7 @@ curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-in
   * [Testnet](https://testnet.iotexscan.io)
 
 
-## API 2.0
+## API
 ### GetAccount
 ```
 Usage:
@@ -1410,7 +1410,7 @@ Response trailers received:
 Sent 1 request and received 1 response
 ```
 
-## Testnet 2.0
+## Testnet
 
 
 The IoTeX Testnet is now fully open for community and developers! Join our Testnet and interact with IoTeX network today!
