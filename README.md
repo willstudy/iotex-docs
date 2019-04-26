@@ -184,7 +184,7 @@ New account #whale is created. Keep your password, or your will lose your privat
 ```
 ➜  ioctl account export whale
 Enter password #whale:
-89eaedc49ba24c26debdeb2765b7343aa449e19812fcd77953a5d237d60463cb
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 #### Delete An Account
