@@ -94,8 +94,8 @@ curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cl
 `Usage:
   ioctl config set VARIABLE VALUE`
 ```
-➜  ioctl config set endpoint api.testnet.iotex.one:80
-endpoint is set to api.testnet.iotex.one:80
+➜  ioctl config set endpoint api.iotex.one:443
+endpoint is set to api.iotex.one:443
 ```
 
 #### Get Config
@@ -112,10 +112,10 @@ endpoint is set to api.testnet.iotex.one:80
 ```
 →  ioctl version
 Client:
-packageVersion:"snapshot-v0.6.0-71-gaec09136" packageCommitID:"aec091362222f3d552c546528c4fb61f075506d3" gitStatus:"clean" goVersion:"go version go1.11.5 darwin/amd64" buidTime:"2019-03-23-PDT/16:04:18"
+packageVersion:"v0.5.0" packageCommitID:"a4308fc82bea22cfaa45addef679a09f41f3a998" gitStatus:"clean" goVersion:"go version go1.11.5 darwin/amd64" buildTime:"2019-04-20-PDT/18:04:37"
 
-Server: api.testnet.iotex.one:80
-packageVersion:"v0.5.0-rc5-hotfix2" packageCommitID:"8f8f8b5a69a0e3897c34d591cd225ce31c946a9a" gitStatus:"clean" goVersion:"go version go1.11.5 linux/amd64" buidTime:"2019-03-22-UTC/22:16:52"
+Server: api.iotex.one:443
+packageVersion:"v0.5.0" packageCommitID:"a4308fc82bea22cfaa45addef679a09f41f3a998" gitStatus:"clean" goVersion:"go version go1.11.5 linux/amd64" buildTime:"2019-04-21-UTC/01:04:11"
 ```
 
 #### Create Account(s)
@@ -220,7 +220,7 @@ io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt: 0.721 IOTX
 ```
 ```
 ➜  ioctl account balance io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
-io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg: 100000000 IOTX
+io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg: 4689 IOTX
 ```
 
 #### Query Nonce
@@ -290,7 +290,7 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
 `Usage:
   ioctl action transfer (ALIAS|RECIPIENT_ADDRESS) AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GAS_PRICE]`
 ```
-➜  ioctl action transfer IOsenser 7 pad#3212 -s whale -l 20000 -p 1
+➜  ioctl action transfer IOsenser 7 pad#3212 -s whale
 Enter password #whale:
 
 senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
@@ -398,13 +398,13 @@ Wait for several seconds and query this action by hash:
 `Usage:
   ioctl action claim AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GASPRICE]`
 ```
-➜  ioctl action claim 321 happy -s whale -l 30000 -p 1
+➜  ioctl action claim 321 happy -s whale
 Enter password #whale:
 
 senderAddress: io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd (whale)
 version: 1
 nonce: 6
-gasLimit: 30000
+gasLimit: 15000
 gasPrice: "1000000000000"
 claimFromRewardingFund: <
   amount: "321000000000000000000"
@@ -488,7 +488,6 @@ io1qqaswtu7rcevahucpfxc0zxx088pylwtxnkrrl      6                             327
 io1nf0rvzgq3tqym6n3trttsrt7d4gqqsmqfzy0da      7                             29712098.816122003636349154
 ...
 ```
-
 ```
 ➜  ioctl node delegate -e 96
 Epoch: 96,  Start block height: 34201,  Total blocks in epoch: 360
