@@ -18,7 +18,9 @@
     "url": "https://github.com/iotexproject/iotex-docs/issues"
   },
   "dependencies": {
-    "vuepress": "^0.14.10",
+    "vue-tabs-component": "^1.5.0",
+    "vuepress": "^1.0.0-alpha.47",
+    "vuepress-plugin-tabs": "^0.2.2",
     "webpack-dev-middleware": "3.6.0"
   },
   "resolutions": {
