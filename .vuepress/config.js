@@ -26,14 +26,27 @@ module.exports = {
 					}
 				},
 				collapsable: false,
-				nav: [],
+				nav: [
+					{ text: 'Blockchain', link: '/' },
+					{ text: 'OneFx', link: '/onefx/get-started' },
+				],
 				sidebar: {
+					'/onefx': [
+						{
+							collapsable: false,
+							children: [
+								'onefx/get-started',
+								'onefx/guides',
+								'onefx/code-review-checklist'
+							]
+						}
+					],
 					'/': [
 						{
 							collapsable: false,
 							children: [ '', 'docs/libraries-and-tools', 'docs/misc' ]
 						}
-					]
+					],
 				}
 			}
 		}
