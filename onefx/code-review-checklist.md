@@ -75,6 +75,9 @@ async function submitForm(values) {
 }
 ```
 
+### Always check responsiveness
+
+Make sure it works on both mobile and desktop devices.
 
 ### Avoid super-long (>3) inheritance chain
 
