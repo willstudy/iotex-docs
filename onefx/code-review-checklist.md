@@ -79,6 +79,29 @@ async function submitForm(values) {
 
 Make sure it works on both mobile and desktop devices.
 
+### Prefer early exit over indentations
+
+❌ Bad
+
+```jsx harmony
+function someFunction(someCondition) {
+  if (someCondition) {
+      // Do Something
+  }
+}
+```
+
+✅ Good: Use short-circuit evaluation
+
+```jsx harmony
+function someFunction(someCondition) {
+  if (!someCondition) {
+      return;
+  }
+  // Do Something
+}
+```
+
 ### Avoid super-long (>3) inheritance chain
 
 ### Avoid circular dependency
@@ -197,7 +220,7 @@ function Greeting({username}) {
 // home.hello: !${username}, שלום
 ```
 
-### Prefer CSS-IN-JS over global CSS styles, unless they are truly global.
+### Prefer CSS-IN-JS over global CSS styles unless they are truly global.
 
 Local JS styles have better "deleteability".
 
@@ -252,9 +275,9 @@ The `index.js` should always export the main component. This file should also be
 
 ### adopt semantic version
 
-### never introduce breaking change to non major versions
+### never introduce breaking change to non-major versions
 
-two legged change
+two-legged change
 
 ## Avoid Bikeshedding
 
