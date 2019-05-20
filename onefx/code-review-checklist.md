@@ -91,7 +91,7 @@ function someFunction(someCondition) {
 }
 ```
 
-✅ Good: Use short-circuit evaluation
+✅ Good: Use early return
 
 ```jsx harmony
 function someFunction(someCondition) {
@@ -281,4 +281,11 @@ two-legged change
 
 ## Avoid Bikeshedding
 
-Let linters lint.
+Let styles be consistent. Let linters lint.
+
+### Prefer `px` over `pt`, `rem`.
+
+Use `px`.
+
+- Avoid using `pt`. 
+- Avoid using `rem`. In most cases, users want to see more contents instead of larger fonts with larger screens.
