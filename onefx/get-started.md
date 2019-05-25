@@ -2,6 +2,7 @@
 title: Get Started
 ---
 
+<img style="height: 300px;" src="https://res.cloudinary.com/dohtidfqh/image/upload/v1558777067/web-guiguio/building-website.svg" alt="building a website with onefx"/>
 
 # Getting Started
 
