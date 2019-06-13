@@ -73,6 +73,7 @@ Usage:
 Available Commands:
   account     Deal with accounts of IoTeX blockchain
   action      Deal with actions of IoTeX blockchain
+  xrc20       Deal with actions of Erc20 contract
   bc          Deal with block chain of IoTeX blockchain
   help        Help about any command
   node        Deal with nodes of IoTeX blockchain
@@ -426,6 +427,113 @@ yes
 Action has been sent to blockchain.
 Wait for several seconds and query this action by hash:
 59a73e24a41385005519d1d1e7f164b36b98717f2c5649785b43c2588245502d
+```
+
+#### Query Total Token Supply On Erc20 Contract
+`Usage:
+  ioctl xrc20 totalsupply -c ALIAS|CONTRACT_ADDRESS`
+```
+➜   ioctl xrc20 totalsupply -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
+Your read result is:
+000000000000000000000000000000000000000000ce6faeb8379f4021bfad2f
+Ouptut in decimal format: 249566124527934490560933167
+```
+
+#### Query Account Balance On Erc20 Contract
+`Usage:
+  ioctl xrc20 balanceof ALIAS|ACCOUNT_ADDRESS -c ALIAS|CONTRACT_ADDRESS`
+```
+➜   ioctl xrc20 balanceof io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
+Your read result is:
+000000000000000000000000000000000000000000000000b469471f8013fffc
+Ouptut in decimal format: 12999999999999999996
+```
+
+#### Transfer Token On Erc20 Contract
+`Usage:
+  ioctl xrc20 transfer ALIAS|TARGET_ADDRESS AMOUNT -c ALIAS|CONTRACT_ADDRESS -l GAS_LIMIT -s SIGNER [-p GAS_PRICE]`
+```
+➜   ioctl xrc20 transfer io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd 4 -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw -s ALIAS -l 50000
+Enter password #ALIAS:
+
+
+version: 1  nonce: 25  gasLimit: 50000  gasPrice: 1000000000000 Rau
+senderAddress: io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q (ALIAS)
+execution: <
+  contract: io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
+  data: a9059cbb00000000000000000000000097186a21fa8e7955c0f154f960d588c3aca44f140000000000000000000000000000000000000000000000000000000000000004
+>
+senderPubKey: 0420ec863f4572f6327409883d1a049e5890b7dcb36498271e19b6dcead03d515d968cb5aca91e07ca95a287275744215657802957ce6ac19ebc0c0c8aac37f8f5
+signature: 1b2af5f36ec97605981553b0f02698a1760ebbdc54249eab9f0527bf42626cb923f9b22bc592f47a8176b1842a4b198a028268435b3d9c0da8df45478aa0498b00
+
+Please confirm your action.
+Type 'YES' to continue, quit for anything else.
+yes
+
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:
+cadb6a3944cd1941b51e2e4b350295cdd3f669f3be791a8988b7ce5c24e70a22
+```
+
+#### Transfer Token From Another Address On Erc20 Contract
+`Usage:
+  ioctl xrc20 transferfrom ALIAS|OWNER_ADDRESS ALIAS|TARGET_ADDRESS AMOUNT -c ALIAS|CONTRACT_ADDRESS -l GAS_LIMIT -s SIGNER [-p GAS_PRICE]`
+```
+➜   ioctl xrc20 transferfrom io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd 4 -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw -s ALIAS -l 50000
+Enter password #ALIAS:
+
+
+version: 1  nonce: 26  gasLimit: 50000  gasPrice: 1000000000000 Rau
+senderAddress: io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q (ALIAS)
+execution: <
+  contract: io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
+  data: 23b872dd00000000000000000000000005733bddeb0d0200f750af07770cd1551450ec8400000000000000000000000097186a21fa8e7955c0f154f960d588c3aca44f140000000000000000000000000000000000000000000000000000000000000004
+>
+senderPubKey: 0420ec863f4572f6327409883d1a049e5890b7dcb36498271e19b6dcead03d515d968cb5aca91e07ca95a287275744215657802957ce6ac19ebc0c0c8aac37f8f5
+signature: f06725ac091df1c580c1f9d27c3e55d99c3d90d6e98bac8a9f7408ebc49fdc9d2abf90815dd1e68451cfeb08bb387db01ddea1ab91b3031582e8e6bd7a6fdde801
+
+Please confirm your action.
+Type 'YES' to continue, quit for anything else.
+yes
+
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:
+f3c414021df2058134f34e8c7f77d43fd67305db265f7943b4ebe13ca340aaff
+```
+
+#### Allow Spender Withdraw From Account With Limitation
+`Usage:
+  ioctl approve ALIAS|SPENDER_ADDRESS AMOUNT -c ALIAS|CONTRACT_ADDRESS -s SIGNER -l GAS_LIMIT `
+```
+➜   ioctl xrc20 approve io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd 4 -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw -s ALIAS -l 50000
+Enter password #ALIAS:
+
+
+version: 1  nonce: 27  gasLimit: 50000  gasPrice: 1000000000000 Rau
+senderAddress: io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q (ALIAS)
+execution: <
+  contract: io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
+  data: 095ea7b300000000000000000000000097186a21fa8e7955c0f154f960d588c3aca44f140000000000000000000000000000000000000000000000000000000000000004
+>
+senderPubKey: 0420ec863f4572f6327409883d1a049e5890b7dcb36498271e19b6dcead03d515d968cb5aca91e07ca95a287275744215657802957ce6ac19ebc0c0c8aac37f8f5
+signature: bee99dcee1bd2e7526452e41d0759eb50ac1536c72e1834eb6fb02e158ff5d884b3ecdfc192d2473ca018d54e3dd6c3363798a259200948895ab6d84bd6e600800
+
+Please confirm your action.
+Type 'YES' to continue, quit for anything else.
+yes
+
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:
+a3cc433341f7d417420478d9702b9dedd376c9b6a4a9e8d590fc10bb14133e24
+```
+
+#### Query Remaining Withdraw Amount For Spender
+`Usage:
+  ioctl allowance ALIAS|OWNER_ADDRESS ALIAS|SPENDER_ADDRESS -c ALIAS|CONTRACT_ADDRESS`
+```
+➜   ioctl xrc20 allowance io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
+Your read result is:
+0000000000000000000000000000000000000000000000000000000000000004
 ```
 
 #### Query Blockchain Information
