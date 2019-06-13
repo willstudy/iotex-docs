@@ -73,7 +73,7 @@ Usage:
 Available Commands:
   account     Deal with accounts of IoTeX blockchain
   action      Deal with actions of IoTeX blockchain
-  xrc20       Deal with actions of Erc20 contract
+  xrc20       Operate XRC20 Contracts
   bc          Deal with block chain of IoTeX blockchain
   help        Help about any command
   node        Deal with nodes of IoTeX blockchain
