@@ -1150,6 +1150,44 @@ Response trailers received:
 Sent 0 requests and received 1 response
 ```
 
+### GetServerMeta
+```
+Usage:
+  Get Server Metadata
+Request:
+  N/A
+Reponse:
+  ServerMeta: Server Metadata
+```
+Demo:
+```
+➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.GetServerMeta
+
+Resolved method descriptor:
+rpc GetServerMeta ( .iotexapi.GetServerMetaRequest ) returns ( .iotexapi.GetServerMetaResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "serverMeta": {
+    "packageVersion": "v0.7.0-35-g3baac429",
+    "packageCommitID": "3baac429420ae74a2d1e97a866f745ca796fc192",
+    "gitStatus": "clean",
+    "goVersion": "go version go1.12.5 darwin/amd64",
+    "buildTime": "2019-06-17-PDT/16:32:37"
+  }
+}
+
+Response trailers received:
+(empty)
+Sent 0 requests and received 1 response
+```
+
 ### SendAction
 ```
 Usage:
@@ -1544,6 +1582,194 @@ Response contents:
 Response trailers received:
 (empty)
 Sent 1 request and received 1 response
+```
+
+### GetRawBlocks
+```
+Usage:
+  Get A List of Raw Block Data
+Request:
+  StartHeight: Start Block Height
+  Count: Block Count
+  WithReceipts: Whether to Include Action Receipts in Each Returned Block
+Response:
+  Blocks: A List of Raw Block Data
+```  
+Demo:
+```
+➜  ~ grpcurl -v -plaintext -d '{"startHeight": 1, "count": 2, "withReceipts": true}' 127.0.0.1:14014 iotexapi.APIService.GetRawBlocks
+
+Resolved method descriptor:
+rpc GetRawBlocks ( .iotexapi.GetRawBlocksRequest ) returns ( .iotexapi.GetRawBlocksResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "blocks": [
+    {
+      "block": {
+        "header": {
+          "core": {
+            "version": 1,
+            "height": 1,
+            "timestamp": "2019-06-17T23:33:04.755448Z",
+            "prevBlockHash": "N9XWktUXQo60gwwqV17n5trTKkbUp/Ob6UY841g+AtA=",
+            "txRoot": "5Pn9BOMAgzj0LX9o6AD8O/FbDueiA5eS+9MUMzQ6QwY=",
+            "deltaStateDigest": "tE9Ywa/2MvNDO7F8scFh9/4ijrGXTClVunKbp5eeU8M=",
+            "receiptRoot": "EbGK2TCBJbVMEn04tBRy0PdceJ1O2N3IxnU7Fggjl2o="
+          },
+          "producerPubkey": "BB5cvAz6DM+BTzw9RADTmMqz0WPDofHDEGQ2kNl20p49+i0O2b5yH6Xc7EeqethWkyI8nw1BrrRleRkqfsHU9m8=",
+          "signature": "oZxrQvUteVeq+SMCxg6I+MwJ4IkKWFzDhFi3hIQ9j9IYL69RRWsRc+pxXAjdfRCiLuCXGnkaP+nUXnR3Atm8EwA="
+        },
+        "body": {
+          "actions": [
+            {
+              "core": {
+                "version": 1,
+                "gasPrice": "0",
+                "grantReward": {
+                  "height": 1
+                }
+              },
+              "senderPubKey": "BB5cvAz6DM+BTzw9RADTmMqz0WPDofHDEGQ2kNl20p49+i0O2b5yH6Xc7EeqethWkyI8nw1BrrRleRkqfsHU9m8=",
+              "signature": "gE9H+i0EZNTVHhoX7fq4xn6H8FqBrFKK0YyfcH16mrFT0rSvgVDb/ov2hAwgMh5kJVHaD8TG6UX7fayK5lpCXQA="
+            }
+          ]
+        },
+        "footer": {
+          "timestamp": "0001-01-01T00:00:00Z"
+        }
+      },
+      "receipts": [
+        {
+          "blkHeight": 1,
+          "actHash": "5Pn9BOMAgzj0LX9o6AD8O/FbDueiA5eS+9MUMzQ6QwY=",
+          "contractAddress": "io154mvzs09vkgn0hw6gg3ayzw5w39jzp47f8py9v"
+        }
+      ]
+    },
+    {
+      "block": {
+        "header": {
+          "core": {
+            "version": 1,
+            "height": 2,
+            "timestamp": "2019-06-17T23:33:14.756354Z",
+            "prevBlockHash": "7bI37oyjBvl+TTx5Fw089xCe8AJb7YneCsmqOLiJ88k=",
+            "txRoot": "qQZkW9iZ+xsl0SjVJmsIDDpQ9RcWyge/sBcvHOZFgKQ=",
+            "deltaStateDigest": "S7dJ9+p/BUNaiRFQLl6+Lc/u5B5s4jlJ5LldIFwof9c=",
+            "receiptRoot": "S2ZBa1FtEUSDmBqTbnS4w4RfhHfyyDJofaxL1U36+9I="
+          },
+          "producerPubkey": "BB5cvAz6DM+BTzw9RADTmMqz0WPDofHDEGQ2kNl20p49+i0O2b5yH6Xc7EeqethWkyI8nw1BrrRleRkqfsHU9m8=",
+          "signature": "s/JZHbuZaMKOqWACHsGbezciRBSS7XYU9QuY2w3BgM8pEYWtYXZYWVJiHU3r0Z1Z7PXFMKc1glpONXkLiXwReQA="
+        },
+        "body": {
+          "actions": [
+            {
+              "core": {
+                "version": 1,
+                "gasPrice": "0",
+                "grantReward": {
+                  "height": 2
+                }
+              },
+              "senderPubKey": "BB5cvAz6DM+BTzw9RADTmMqz0WPDofHDEGQ2kNl20p49+i0O2b5yH6Xc7EeqethWkyI8nw1BrrRleRkqfsHU9m8=",
+              "signature": "gMlB2v2RwSHnNuilZX89K+EOtCKDfmfouI97GO+DcU82VHm9LE4NG1TVgUQe6z94aOSHrEwyUKtINuv5QOmNIgA="
+            }
+          ]
+        },
+        "footer": {
+          "timestamp": "0001-01-01T00:00:00Z"
+        }
+      },
+      "receipts": [
+        {
+          "blkHeight": 2,
+          "actHash": "qQZkW9iZ+xsl0SjVJmsIDDpQ9RcWyge/sBcvHOZFgKQ=",
+          "contractAddress": "io154mvzs09vkgn0hw6gg3ayzw5w39jzp47f8py9v"
+        }
+      ]
+    }
+  ]
+}
+
+Response trailers received:
+(empty)
+Sent 1 request and received 1 response
+```
+
+### StreamBlocks
+```
+Usage:
+  Subscribe to Block Creations
+Request:
+  N/A
+Response:
+  Block: Newly Created Block Data
+```  
+Demo:
+```
+➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.StreamBlocks
+
+Resolved method descriptor:
+rpc StreamBlocks ( .iotexapi.StreamBlocksRequest ) returns ( stream .iotexapi.StreamBlocksResponse );
+
+Request metadata to send:
+(empty)
+
+Response headers received:
+content-type: application/grpc
+
+Response contents:
+{
+  "block": {
+    "block": {
+      "header": {
+        "core": {
+          "version": 1,
+          "height": 365,
+          "timestamp": "2019-06-18T00:36:41.655617Z",
+          "prevBlockHash": "p3qrdtYuIfan08r8ZB4JFdpjaYAWUMGLrsxxn/nGO6g=",
+          "txRoot": "F484nSOb8CVSNZiOETu1eEfgbwW9kGjX+zFv/OXaAvI=",
+          "deltaStateDigest": "z9zsiQmR7MZh6uEBPMgPGO5snxq1YJW9ESCoZun/fD4=",
+          "receiptRoot": "8Xb+12FYKrbN2mM4UiFd3htkyagI8U5xX8mtUJegmgY="
+        },
+        "producerPubkey": "BB5cvAz6DM+BTzw9RADTmMqz0WPDofHDEGQ2kNl20p49+i0O2b5yH6Xc7EeqethWkyI8nw1BrrRleRkqfsHU9m8=",
+        "signature": "7qJKGnbCDJsfSWxuE9NYsFiqwxr6Urgz6NNu6KUZuWhygPDrEpD6uC4qgqplwFXXF7Zhlclwh7UQlaEcL0i5ZAE="
+      },
+      "body": {
+        "actions": [
+          {
+            "core": {
+              "version": 1,
+              "gasPrice": "0",
+              "grantReward": {
+                "height": 365
+              }
+            },
+            "senderPubKey": "BB5cvAz6DM+BTzw9RADTmMqz0WPDofHDEGQ2kNl20p49+i0O2b5yH6Xc7EeqethWkyI8nw1BrrRleRkqfsHU9m8=",
+            "signature": "WWDGUs/EbG1mvTc2MAD06YSZ71bnXK9BBCzTezn2aQBKZCB2PiKbuzQM43dB7AZVmmY0Q7A/JOHqgq/TyZyi1wA="
+          }
+        ]
+      },
+      "footer": {
+        "timestamp": "0001-01-01T00:00:00Z"
+      }
+    },
+    "receipts": [
+      {
+        "blkHeight": 365,
+        "actHash": "F484nSOb8CVSNZiOETu1eEfgbwW9kGjX+zFv/OXaAvI=",
+        "contractAddress": "io154mvzs09vkgn0hw6gg3ayzw5w39jzp47f8py9v"
+      }
+    ]
+  }
+}
 ```
 
 ## Testnet
