@@ -2080,7 +2080,8 @@ Demo:
 ```
 Sample Request:
 
-chain{
+query{
+  chain{
     mostRecentEpoch
     mostRecentBlockHeight
     mostRecentTPS(blockWindow: 10)
@@ -2088,11 +2089,14 @@ chain{
       exist
       count
     }
+  }
 }
 
 Sample Response:
 
-"chain": {
+{
+  "data": {
+    "chain": {
       "mostRecentEpoch": 1383,
       "mostRecentBlockHeight": 497772,
       "mostRecentTPS": 0,
@@ -2100,7 +2104,9 @@ Sample Response:
         "exist": true,
         "count": 3622
       }
-}
+    }
+  }
+ } 
 ```
 
 ### Voting
@@ -2126,7 +2132,8 @@ Demo:
 ```
 Sample Request:
 
-voting(startEpoch: 1, epochCount: 3){
+query{
+  voting(startEpoch: 1, epochCount: 3){
     exist
     candidateMeta{
       epochNumber
@@ -2136,10 +2143,13 @@ voting(startEpoch: 1, epochCount: 3){
       votedTokens
     }
   }
+}
   
 Sample Response:
 
-"voting": {
+{
+  "data": {
+    "voting": {
       "exist": true,
       "candidateMeta": [
         {
@@ -2164,7 +2174,9 @@ Sample Response:
           "votedTokens": "776953490231717811810000000"
         }
       ]
-}
+    }
+  }
+}  
 ```
 
 ### Account
@@ -2210,7 +2222,8 @@ Demo:
 ```
 Sample Request:
 
-account{
+query{
+  account{
     activeAccounts(count: 5)
     operatorAddress(aliasName: "gamefantasy#"){
       exist
@@ -2220,11 +2233,14 @@ account{
       exist
       aliasName
     }
+  }
 }
 
 Sample Response:
 
-"account": {
+{
+  "data": {
+    "account": {
       "activeAccounts": [
         "io108h7sa5sap44e244hz649zyk5y4rqzsvnpzxh5",
         "io1jafqlvntcxgyp6e0uxctt3tljzc3vyv5hg4ukh",
@@ -2240,7 +2256,9 @@ Sample Response:
         "exist": true,
         "aliasName": "pubxpayments"
       }
-}
+    }
+  }
+}  
 ```
 
 ## Testnet
