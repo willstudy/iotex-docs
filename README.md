@@ -2106,7 +2106,7 @@ Sample Response:
       }
     }
   }
- } 
+} 
 ```
 
 ### Voting
