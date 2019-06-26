@@ -16,9 +16,9 @@ jobs:
     - checkout
     - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "package.json" }}
+        - v2-dependencies-{{ checksum "package.json" }}
         # fallback to using the latest cache if no exact match is found
-        - v1-dependencies-
+        - v2-dependencies-
     - run: npm install
     - run:
         name: Deploying to GitHub Pages
@@ -26,13 +26,11 @@ jobs:
           git config --global user.email "puncsky@users.noreply.github.com"
           git config --global user.name "puncsky"
           #echo "machine github.com login puncsky password $GITHUB_TOKEN" > ~/.netrc
-          rm -rf .vuepress/dist
-          npm run build
           sh ./deploy.sh
     - save_cache:
         paths:
           - node_modules
-        key: v1-dependencies-{{ checksum "package.json" }}
+        key: v2-dependencies-{{ checksum "package.json" }}
 
 
 workflows:
