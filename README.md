@@ -1772,6 +1772,477 @@ Response contents:
 }
 ```
 
+## Analytics
+Analytics is a GraphQL web interface for reading the analyzed blockchain data. You can try it [here](https://analytics.iotexscan.io).
+
+### Delegate
+#### Bookkeeping
+```
+Usage: 
+  Bookkeeping gives delegates an overview of the reward distributions to their voters within a range of epochs
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+  delegateName: delegate name
+  percentage: percentage of reward distribution
+  includeFoundationBonus: whether include foundation bonus as part of the reward distribution
+  Pagination:
+    skip: starting index of displaying reward distribution list
+    first: number of reward distributions to display
+    
+Response:
+  exist: whether the delegate has bookkeeping information within the specified epoch range
+  rewardDistribution: 
+    voterEthAddress: voter’s ERC20 address
+    voterIotexAddress: voter’s IoTeX address
+    amount: amount of reward distribution
+  count:  total number of reward distributions
+```
+
+#### Productivity
+```
+Usage:
+  Productivity gives block productivity of producers within a range of epochs
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+  delegateName: producer name
+
+Response:
+  exist: whether the delegate has productivity information within the specified epoch range
+  production: number of block productions
+  expectedProduction: number of expected block productions
+```
+
+#### Reward
+```
+Usage:
+  Rewards provides reward detail information for candidates within a range of epochs
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+  delegateName: candidate name
+
+Response:
+  exist: whether the delegate has reward information within the specified epoch range
+  blockReward: amount of block rewards
+  epochReward: amount of epoch rewards
+  foundationBonus: amount of foundation bonus
+```
+
+#### BucketInfo
+```
+Usage:
+  BucketInfo provides voting bucket detail information for candidates within a range of epochs
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+  delegateName: candidate name
+
+Response:
+  exist: whether the delegate has voting bucket information within the specified epoch range
+  epochNumber: epoch number
+  bucketInfoList:
+    voterEthAddress: voter’s ERC20 address
+    weightedVotes: voter’s weighted votes
+  count: total number of buckets in the given epoch for the given delegate
+```
+
+#### Staking
+```
+Usage:
+  Staking provides staking information for candidates within a range of epochs
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+  delegateName: candidate name
+
+Response:
+  exist: whether the delegate has staking information within the specified epoch range
+  stakingInfo:
+    epochNumber: epoch number
+    selfStaking: candidate’s self-staking amount
+    totalStaking: total staking amount
+```
+
+Demo:
+```
+Sample Request:
+
+query{
+  delegate(startEpoch: 1500, epochCount: 2, delegateName: "blackpool"){
+    bookkeeping(percentage: 90, includeFoundationBonus: true){
+      exist
+      rewardDistribution(pagination: {skip: 0, first: 2}){
+        voterEthAddress
+        amount
+      }
+      count
+    }
+    reward{
+      exist
+      blockReward
+      epochReward
+      foundationBonus
+    }
+    productivity{
+      exist
+      production
+      expectedProduction
+    }
+    bucketInfo{
+      exist
+      bucketInfoList{
+        epochNumber
+        bucketInfo{
+          voterEthAddress
+          weightedVotes
+        }
+        count
+      }
+    }
+    staking{
+      exist
+      stakingInfo{
+        epochNumber
+        selfStaking
+        totalStaking
+      }
+    }
+  }
+}
+
+Sample Response:
+
+{
+  "data": {
+    "delegate": {
+      "bookkeeping": {
+        "exist": true,
+        "rewardDistribution": [
+          {
+            "voterEthAddress": "0x2ed3767cfcbceb42ff5f3642d4df6f851b947073",
+            "amount": "249296733398649281"
+          },
+          {
+            "voterEthAddress": "0x6729cdc9172b00ac69f4ce3f98de2eb4d0686925",
+            "amount": "5264917870144216244"
+          }
+        ],
+        "count": 4
+      },
+      "reward": {
+        "exist": true,
+        "blockReward": "0",
+        "epochReward": "329819772195117893866",
+        "foundationBonus": "160000000000000000000"
+      },
+      "productivity": {
+        "exist": false,
+        "production": "",
+        "expectedProduction": ""
+      },
+      "bucketInfo": {
+        "exist": true,
+        "bucketInfoList": [
+          {
+            "epochNumber": 1500,
+            "bucketInfo": [
+              {
+                "voterEthAddress": "2ed3767cfcbceb42ff5f3642d4df6f851b947073",
+                "weightedVotes": "12050042619210072913916"
+              },
+              {
+                "voterEthAddress": "6729cdc9172b00ac69f4ce3f98de2eb4d0686925",
+                "weightedVotes": "254485824410815439561517"
+              },
+              {
+                "voterEthAddress": "d8e70e5029e5353e8d360365d5273ed329cc4918",
+                "weightedVotes": "3203226341724952466266885"
+              },
+              {
+                "voterEthAddress": "d8e70e5029e5353e8d360365d5273ed329cc4918",
+                "weightedVotes": "2838636602552620757933254"
+              },
+              {
+                "voterEthAddress": "fe7bcb3676aabe9a6b39cb23f3a5fa41eed7ad1b",
+                "weightedVotes": "15000000000000000000000000"
+              }
+            ],
+            "count": 5
+          },
+          {
+            "epochNumber": 1501,
+            "bucketInfo": [
+              {
+                "voterEthAddress": "2ed3767cfcbceb42ff5f3642d4df6f851b947073",
+                "weightedVotes": "12050042619210072913916"
+              },
+              {
+                "voterEthAddress": "6729cdc9172b00ac69f4ce3f98de2eb4d0686925",
+                "weightedVotes": "254485824410815439561517"
+              },
+              {
+                "voterEthAddress": "d8e70e5029e5353e8d360365d5273ed329cc4918",
+                "weightedVotes": "3203226341724952466266885"
+              },
+              {
+                "voterEthAddress": "d8e70e5029e5353e8d360365d5273ed329cc4918",
+                "weightedVotes": "2838636602552620757933254"
+              },
+              {
+                "voterEthAddress": "fe7bcb3676aabe9a6b39cb23f3a5fa41eed7ad1b",
+                "weightedVotes": "15000000000000000000000000"
+              }
+            ],
+            "count": 5
+          }
+        ]
+      },
+      "staking": {
+        "exist": true,
+        "stakingInfo": [
+          {
+            "epochNumber": 1500,
+            "selfStaking": "5039748000000000000000000",
+            "totalStaking": "21308398811307598736675572"
+          },
+          {
+            "epochNumber": 1501,
+            "selfStaking": "5039748000000000000000000",
+            "totalStaking": "21308398811307598736675572"
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+### Chain
+#### MostRecentEpoch
+```
+Usage: 
+  MostRecentEpoch gives the latest epoch number
+
+Request:
+  N/A
+  
+Response:
+  mostRecentEpoch: latest epoch number
+```
+
+#### MostRecentBlockHeight
+```
+Usage: 
+  MostRecentBlockHeight gives the latest block height
+
+Request:
+  N/A
+  
+Response:
+  mostRecentBlockHeight: latest block height
+```  
+
+#### MostRecentTPS
+```
+Usage: 
+  MostRecentTPS gives the latest transactions per second
+
+Request:
+  blockWindow: number of last blocks that are backtracked to compute TPS
+  
+Response:
+  mostRecentTPS: latest transactions per second
+```  
+
+#### NumberOfActions
+```
+Usage: 
+  NumberOfActions gives the number of actions
+
+Request:
+  pagination:
+    startEpoch: starting epoch number
+    epochCount: epoch count 
+  
+Response:
+  exist: whether the starting epoch number is less than the most recent epoch number
+  count: number of actions
+```
+
+Demo:
+```
+Sample Request:
+
+chain{
+    mostRecentEpoch
+    mostRecentBlockHeight
+    mostRecentTPS(blockWindow: 10)
+    numberOfActions(pagination: {startEpoch: 1, epochCount: 10}){
+      exist
+      count
+    }
+}
+
+Sample Response:
+
+"chain": {
+      "mostRecentEpoch": 1383,
+      "mostRecentBlockHeight": 497772,
+      "mostRecentTPS": 0,
+      "numberOfActions": {
+        "exist": true,
+        "count": 3622
+      }
+}
+```
+
+### Voting
+```
+Usage:
+  Voting provides metadata of voting results
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+
+Reponse:
+  exist: whether the starting epoch number is less than the most recent epoch number 
+  candidateMeta:
+    epochNumber:  epoch number
+    consensusDelegates: number of consensus delegates in the epoch
+    totalCandidates: number of total delegates in the epoch
+    totalWeightedVotes: candidate total weighted votes in the epoch
+    votedTokens: total voted tokens in the epoch
+```
+
+Demo:
+```
+Sample Request:
+
+voting(startEpoch: 1, epochCount: 3){
+    exist
+    candidateMeta{
+      epochNumber
+      consensusDelegates
+      totalCandidates
+      totalWeightedVotes
+      votedTokens
+    }
+  }
+  
+Sample Response:
+
+"voting": {
+      "exist": true,
+      "candidateMeta": [
+        {
+          "epochNumber": 1,
+          "consensusDelegates": 36,
+          "totalCandidates": 87,
+          "totalWeightedVotes": "907521920724956720472322956",
+          "votedTokens": "776946421831717811810000000"
+        },
+        {
+          "epochNumber": 2,
+          "consensusDelegates": 36,
+          "totalCandidates": 87,
+          "totalWeightedVotes": "907524412616270399722024013",
+          "votedTokens": "776948876231717811810000000"
+        },
+        {
+          "epochNumber": 3,
+          "consensusDelegates": 36,
+          "totalCandidates": 87,
+          "totalWeightedVotes": "907486769208330536874270055",
+          "votedTokens": "776953490231717811810000000"
+        }
+      ]
+}
+```
+
+### Account
+#### ActiveAccounts
+```
+Usage: 
+  ActiveAccounts lists most recently active accounts
+  
+Request:
+  count: number of account addresses to be queried for active accounts 
+
+Response:
+  activeAccounts: list of account addresses
+```
+
+#### OperatorAddress
+```
+Usage: 
+  OperatorAddress finds the delegate's operator address given the delegate's alias name
+  
+Request:
+  aliasName: delegate's alias name 
+
+Response:
+  exist: whether the alias name exists
+  operatorAddress:  operator address associated with the given alias name
+```
+
+#### Alias
+```
+Usage: 
+  Alias finds the delegate's alias name given the delegate's operator address
+  
+Request:
+  operatorAddress: delegate's operator address 
+
+Response:
+  exist: whether the operator address exists
+  aliasName: alias name associated with the given operator address
+```
+
+Demo:
+```
+Sample Request:
+
+account{
+    activeAccounts(count: 5)
+    operatorAddress(aliasName: "gamefantasy#"){
+      exist
+      operatorAddress
+    }
+    alias(operatorAddress: "io1456knehzn9qup8unxlf4q06empz8lqxtp6v5vh"){
+      exist
+      aliasName
+    }
+}
+
+Sample Response:
+
+"account": {
+      "activeAccounts": [
+        "io108h7sa5sap44e244hz649zyk5y4rqzsvnpzxh5",
+        "io1jafqlvntcxgyp6e0uxctt3tljzc3vyv5hg4ukh",
+        "io1gfq9el2gnguus64ex3hu8ajd6e4yzk3f9cz5vx",
+        "io1qnec80ark9shjc6uzk45dhm8s50dpc27sjuver",
+        "io12wc9ra4la98yay4cqdav5mwxxuzwpt6hk23n3z"
+      ],
+      "operatorAddress": {
+        "exist": true,
+        "operatorAddress": "io1qnec80ark9shjc6uzk45dhm8s50dpc27sjuver"
+      },
+      "alias": {
+        "exist": true,
+        "aliasName": "pubxpayments"
+      }
+}
+```
+
 ## Testnet
 
 
