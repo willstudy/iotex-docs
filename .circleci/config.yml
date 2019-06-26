@@ -26,6 +26,7 @@ jobs:
           git config --global user.email "puncsky@users.noreply.github.com"
           git config --global user.name "puncsky"
           #echo "machine github.com login puncsky password $GITHUB_TOKEN" > ~/.netrc
+          rm -rf .vuepress/dist
           npm run build
           sh ./deploy.sh
     - save_cache:
