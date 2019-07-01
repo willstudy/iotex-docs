@@ -26,7 +26,7 @@ jobs:
           git config --global user.email "puncsky@users.noreply.github.com"
           git config --global user.name "puncsky"
           #echo "machine github.com login puncsky password $GITHUB_TOKEN" > ~/.netrc
-          sh ./deploy.sh
+#          sh ./deploy.sh
     - save_cache:
         paths:
           - node_modules
