@@ -616,7 +616,7 @@ import { XRC20 } from "iotex-antenna/lib/token";
   // create VITA XRC20 contract instance
   // io1hy9w96v7gz7mqquyyacfhtqn6r0yasnsqrjk9h is contract address
   // io13zt8sznez2pf0q0hqdz2hyl938wak2fsjgdeml is callerAddress
-  const vita = new XRC20("io1hy9w96v7gz7mqquyyacfhtqn6r0yasnsqrjk9h", "io13zt8sznez2pf0q0hqdz2hyl938wak2fsjgdeml");
+  const vita = new XRC20(provider, "io1hy9w96v7gz7mqquyyacfhtqn6r0yasnsqrjk9h", "io13zt8sznez2pf0q0hqdz2hyl938wak2fsjgdeml");
 
   // token name: IoTeX Vitality
   const name = await vita.name();
