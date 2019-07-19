@@ -637,10 +637,10 @@ import { XRC20 } from "iotex-antenna/lib/token";
 
   // transfer token to io16acqxqlmaep6z96khs3ey2607sygnx3surn3ga
   const hash = await vita.transfer("io16acqxqlmaep6z96khs3ey2607sygnx3surn3ga", new BigNumber("1000000000000000000"), {
-		from: account1.address,
-		gasPrice: "1000000000000",
-		gasLimit: "50000"
-	});
+    from: account1.address,
+    gasPrice: "1000000000000",
+    gasLimit: "50000"
+  });
 
   // decode method invoke inputs
   const inputs = vita.decode(Buffer.from("a9059cbb0000000000000000000000008896780a7912829781f70344ab93e589dddb29300000000000000000000000000000000000000000000000001bc16d674ec80000", "hex"));
