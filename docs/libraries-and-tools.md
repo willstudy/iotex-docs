@@ -126,15 +126,14 @@ import {toRau} from "iotex-antenna/lib/account/utils";
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
-
 	"math/big"
-	"context"
 
+	"github.com/iotexproject/iotex-antenna-go/v2/account"
 	"github.com/iotexproject/iotex-antenna-go/v2/iotex"
 	"github.com/iotexproject/iotex-proto/golang/iotexapi"
-	"github.com/iotexproject/iotex-antenna-go/v2/account"
 )
 
 func main() {
@@ -275,17 +274,17 @@ import Antenna from "iotex-antenna";
 package main
 
 import (
+	"context"
+	"encoding/hex"
 	"fmt"
 	"log"
-	"context"
 	"math/big"
-	"encoding/hex"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 
-	"github.com/iotexproject/iotex-antenna-go/iotex"
 	"github.com/iotexproject/iotex-antenna-go/account"
+	"github.com/iotexproject/iotex-antenna-go/iotex"
 	"github.com/iotexproject/iotex-proto/golang/iotexapi"
 
 )
@@ -447,16 +446,17 @@ import {Contract} from "iotex-antenna/lib/contract/contract";
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
-	"context"
 	"math/big"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
+
 	"github.com/iotexproject/iotex-address/address"
-	"github.com/iotexproject/iotex-antenna-go/iotex"
 	"github.com/iotexproject/iotex-antenna-go/account"
+	"github.com/iotexproject/iotex-antenna-go/iotex"
 	"github.com/iotexproject/iotex-proto/golang/iotexapi"
 
 )
