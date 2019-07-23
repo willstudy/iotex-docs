@@ -69,22 +69,24 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/iotexproject/iotex-antenna-go/antenna"
+	"github.com/iotexproject/iotex-antenna-go/v2/account"
+
 )
 
 func main() {
+
 	// create a new wallet which contains a public key, a private key, and an address.
-	wallet, err := antenna.NewAntenna("api.testnet.iotex.one:80")
+	wallet, err := account.NewAccount();
 	if err != nil {
-		log.Fatalf("create antenna error: %v", err)
+		log.Fatal(err)
 	}
 
 	// recover the whole wallet from a single private key
-	account, err := wallet.Iotx.Accounts.PrivateKeyToAccount("69805ee813eadffa8fae53d0e6063e5fbf6a6e0fb9e90f6eaad7bc67f3d6c4bd")
+	acc, err := account.HexStringToAccount("69805ee813eadffa8fae53d0e6063e5fbf6a6e0fb9e90f6eaad7bc67f3d6c4bd")
 	if err != nil {
 		log.Fatalf("create account error: %v", err)
 	}
-	fmt.Println(account.Address)
+	fmt.Println(acc.Address)
 }
 ```
 :::
@@ -127,32 +129,42 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/iotexproject/iotex-antenna-go/iotx"
+	"math/big"
+	"context"
 
-	"github.com/iotexproject/iotex-antenna-go/antenna"
+	"github.com/iotexproject/iotex-antenna-go/v2/iotex"
+	"github.com/iotexproject/iotex-proto/golang/iotexapi"
+	"github.com/iotexproject/iotex-antenna-go/v2/account"
 )
 
 func main() {
-	wallet, err := antenna.NewAntenna("api.testnet.iotex.one:80")
+	conn, err := iotex.NewDefaultGRPCConn("api.testnet.iotex.one:80")
 	if err != nil {
-		log.Fatalf("create antenna error: %v", err)
+		log.Fatalf("connection error : %v", err)
 	}
+	defer conn.Close()
 
-	unlockedWallet, _ := wallet.Iotx.Accounts.PrivateKeyToAccount("73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426")
-	newWallet, _ := wallet.Iotx.Accounts.Create()
 
-	actionHash, err := wallet.Iotx.SendTransfer(&iotx.TransferRequest{
-		From:     unlockedWallet.Address,
-		To:       newWallet.Address,
-		Value:    antenna.ToRau("1", "iotx"),
-		GasLimit: "100000",
-		GasPrice: "1",
-	})
+	acc, err := account.HexStringToAccount("9cdf22c5caa8a4d99eb674da27756b438c05c6b1e8995f4a0586745e2071b115")
 	if err != nil {
-		log.Fatalf("transfer error: %v", err)
-	}
-	fmt.Println(actionHash)
+		log.Fatalf("create account from private key error : %v", err)
+	}	
+	c := iotex.NewAuthedClient(iotexapi.NewAPIServiceClient(conn), acc)
+
+	to, err := account.NewAccount()
+	if err != nil {
+		log.Fatalf("create new account error : %v", err)
+	}	
+
+	v := big.NewInt(1000000000000000000)
+	hash, err := c.Transfer(to.Address(), v).SetGasPrice(big.NewInt(1)).SetGasLimit(1000000).Call(context.Background())
+	if err != nil {
+		log.Fatalf("transfer error %v", err)
+	}	
+	fmt.Println(hash)
 }
+
+
 ```
 :::
 
@@ -265,33 +277,43 @@ package main
 import (
 	"fmt"
 	"log"
+	"context"
+	"math/big"
+	"encoding/hex"
+	"strings"
 
-	"github.com/iotexproject/iotex-antenna-go/iotx"
+	"github.com/ethereum/go-ethereum/accounts/abi"
 
-	"github.com/iotexproject/iotex-antenna-go/antenna"
+	"github.com/iotexproject/iotex-antenna-go/iotex"
+	"github.com/iotexproject/iotex-antenna-go/account"
+	"github.com/iotexproject/iotex-proto/golang/iotexapi"
+
 )
 
 func main() {
-	wallet, err := antenna.NewAntenna("api.testnet.iotex.one:80")
+	conn, err := iotex.NewDefaultGRPCConn("api.testnet.iotex.one:80")
 	if err != nil {
-		log.Fatalf("create antenna error: %v", err)
+		log.Fatalf("connection error : %v", err)
 	}
+	defer conn.Close()
 
+	creator, _ := account.HexStringToAccount("73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426")
+	c := iotex.NewAuthedClient(iotexapi.NewAPIServiceClient(conn), creator)
+
+	abi, err := abi.JSON(strings.NewReader(`[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_x","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]`))
+	if err != nil{
+		log.Fatalf("JSON error : %v", err)
+	}
 	bytecode := "608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582043be766a6a271867521090c3e12130ea8891a8f59d4833bc205a3e2e2c70b4730029"
-
-	creator, _ := wallet.Iotx.Accounts.PrivateKeyToAccount("73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426")
-
-	actionHash, err := wallet.Iotx.DeployContract(&iotx.ContractRequest{
-		From:     creator.Address,
-		Abi:      `[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_x","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]`,
-		Data:     bytecode,
-		GasLimit: "100000",
-		GasPrice: "1",
-	})
-	if err != nil {
-		log.Fatalf("transfer error: %v", err)
+	data, err := hex.DecodeString(bytecode)
+	if err != nil{
+		log.Fatalf("Hex Decoding error : %v", err)
 	}
 
+	actionHash, err := c.DeployContract(data).SetGasPrice(big.NewInt(1)).SetGasLimit(1000000).SetArgs(abi, big.NewInt(10)).Call(context.Background())
+	if err != nil {
+		log.Fatalf("deploy error: %v", err)
+	}
 	fmt.Println(actionHash)
 }
 ```
@@ -425,43 +447,51 @@ import {Contract} from "iotex-antenna/lib/contract/contract";
 package main
 
 import (
+	"fmt"
 	"log"
+	"context"
+	"math/big"
+	"strings"
 
-	"github.com/iotexproject/iotex-antenna-go/antenna"
-	"github.com/iotexproject/iotex-antenna-go/iotx"
+	"github.com/ethereum/go-ethereum/accounts/abi"
+	"github.com/iotexproject/iotex-address/address"
+	"github.com/iotexproject/iotex-antenna-go/iotex"
+	"github.com/iotexproject/iotex-antenna-go/account"
+	"github.com/iotexproject/iotex-proto/golang/iotexapi"
+
 )
 
 func main() {
-	wallet, err := antenna.NewAntenna("api.testnet.iotex.one:80")
+	conn, err := iotex.NewDefaultGRPCConn("api.testnet.iotex.one:80")
 	if err != nil {
-		log.Fatalf("create antenna error: %v", err)
+		log.Fatalf("connection error : %v", err)
 	}
+	defer conn.Close()
 
-	sender, _ := wallet.Iotx.Accounts.PrivateKeyToAccount("73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426")
+	creator, _ := account.HexStringToAccount("73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426")
+	c := iotex.NewAuthedClient(iotexapi.NewAPIServiceClient(conn), creator)
 
-	actionHash, err := wallet.Iotx.ExecuteContract(&iotx.ContractRequest{
-		From:     sender.Address,
-		Address:  "io186s45j3rgvhxh25ec6xk9wap0drtthk3jq4du7",
-		Abi:      `[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_x","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]`,
-		Method:   "set",
-		GasLimit: "100000",
-		GasPrice: "1",
-	}, 101)
+	abi, err := abi.JSON(strings.NewReader(`[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_x","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]`))
+	if err != nil{
+		log.Fatalf("JSON error : %v", err)
+	}
+	contract, err := address.FromString("io17sn486alutrnzlrdz9vv44g7qyc38hygf7s6h0")
+	if err != nil{
+		log.Fatalf("JSON error : %v", err)
+	}
+	//contract execution test 
+	actionHash, err := c.Contract(contract, abi).Execute("set", big.NewInt(8)).SetGasPrice(big.NewInt(1)).SetGasLimit(1000000).Call(context.Background())
+	if err != nil{
+		log.Fatalf("Execute error : %v", err)
+	}
+	fmt.Println(actionHash)
+
+	//contract read test 
+	result, err := c.ReadOnlyContract(contract, abi).Read("get").Call(context.Background())
 	if err != nil {
-		log.Fatalf("transfer error: %v", err)
+		log.Fatalf("Read error : %v", err)
 	}
-
-	result, err := wallet.Iotx.ReadContractByMethod(&iotx.ContractRequest{
-		From:     sender.Address,
-		Address:  "io186s45j3rgvhxh25ec6xk9wap0drtthk3jq4du7",
-		Abi:      `[{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_x","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]`,
-		Method:   "get",
-		GasLimit: "100000",
-		GasPrice: "1",
-	})
-	if err != nil {
-		log.Fatalf("transfer error: %v", err)
-	}
+	fmt.Println(result)
 }
 ```
 :::
