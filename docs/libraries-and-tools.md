@@ -621,7 +621,7 @@ import { XRC20 } from "iotex-antenna/lib/token";
 
   // create VITA XRC20 contract instance
   // io1hy9w96v7gz7mqquyyacfhtqn6r0yasnsqrjk9h is contract address
-  const vita = new XRC20(antenna, "io1hy9w96v7gz7mqquyyacfhtqn6r0yasnsqrjk9h");
+  const vita = new XRC20("io1hy9w96v7gz7mqquyyacfhtqn6r0yasnsqrjk9h", {provider: antenna.iotx});
 
   // token name: IoTeX Vitality
   const name = await vita.name();
@@ -637,7 +637,7 @@ import { XRC20 } from "iotex-antenna/lib/token";
 
   // transfer token to io16acqxqlmaep6z96khs3ey2607sygnx3surn3ga
   const hash = await vita.transfer("io16acqxqlmaep6z96khs3ey2607sygnx3surn3ga", new BigNumber("1000000000000000000"), {
-    from: account1.address,
+    from: antenna.iotx.accounts[0],
     gasPrice: "1000000000000",
     gasLimit: "50000"
   });
