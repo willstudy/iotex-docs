@@ -785,27 +785,31 @@ import { XRC20 } from "iotex-antenna/lib/token/xrc20";
 
 ## Working with Desktop Wallet
 
-In the client-side, use iotex-antenna@^0.19. Here is an example of setting up WsSignerPlugin to connect to the wallet. It is nothing more than applying the plugin when initializing Antenna instance, and NOT adding your private key to the SDK as before.
+In the client-side, use iotex-antenna@^0.19. Here is an example of setting up WsSignerPlugin to connect to the wallet. It is nothing more than applying the plugin when initializing Antenna instance, and NOT adding your private key to the SDK as specified in the earlier documenation.
+
+Before receiving the transfer or the contract call above, please open and unlock your wallet. Once the wallet is ready, you can run the script below in both the browser and the node environment and then you can see the message to sign. Please click "Yes, sign transaction" to continue.
 
 ### Client-side
 
 ```js
 import sleepPromise from "sleep-promise";
-import Antenna, { Contract } from "iotex-antenna";
+import Antenna from "iotex-antenna";
+
 import { WsSignerPlugin } from "iotex-antenna/lib/plugin/ws";
 import { toRau } from "iotex-antenna/lib/account/utils";
+import { Contract } from "iotex-antenna/lib/contract/contract";
 
 (async () => {
   const antenna = new Antenna("http://api.iotex.one:80", {
     signer: new WsSignerPlugin()
   });
 
-  await sleepPromise(200);
+  await sleepPromise(3000);
 
   // example for transfer
   let resp = await antenna.iotx.sendTransfer({
-    to: "io1dw36kqa7mxtjm9xpfrl9ah8drznq67lshfkwc5",
-    from: "",
+    to: "io1mwekae7qqwlr23220k5n9z3fmjxz72tuchra3m",
+    from: antenna.iotx.accounts[0].address,
     value: toRau("1", "Iotx"),
     gasLimit: "100000",
     gasPrice: toRau("1", "Qev")
@@ -824,7 +828,7 @@ import { toRau } from "iotex-antenna/lib/account/utils";
       method: "set",
       gasLimit: "100000",
       gasPrice: toRau("1", "Qev"),
-      from: ""
+      from: antenna.iotx.accounts[0].address
     },
     666
   );
@@ -856,21 +860,17 @@ import { toRau } from "iotex-antenna/lib/account/utils";
     "io1jmq0epcswzu7vyquxlr9j9jvplwpvtc4d50ze9",
     { provider: antenna.iotx, signer: antenna.iotx.signer }
   );
-  resp = await contract.methods.set(777, {
-    account: this.antenna.iotx.accounts[0],
+  resp = await contract.methods.set(999, {
+    account: antenna.iotx.accounts[0],
     gasLimit: "300000",
     gasPrice: "1000000000000",
     amount: toRau(0, "IOTX")
   });
   console.log(`contract.set() => ${resp}`);
 
-  await sleepPromise(200);
+  await sleepPromise(20000);
 
-  resp = await contract.methods.get();
+  resp = await contract.methods.get({ from: antenna.iotx.accounts[0].address });
   console.log(`contract.get() => ${resp}`);
 })();
 ```
-
-### Wallet-side
-
-Before receiving the transfer or the contract call above, please open and unlock your wallet. Once the wallet is ready, you can run the script in both the browser and the node environment and then you can see the message to sign. Please click "Confirm" to continue.
