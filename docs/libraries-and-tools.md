@@ -785,7 +785,7 @@ import { XRC20 } from "iotex-antenna/lib/token/xrc20";
 
 ## Working with Desktop Wallet
 
-In the client-side, use iotex-antenna@^0.19. Here is an example of setting up WsSignerPlugin to connect to the wallet. It is nothing more than applying the plugin when initializing Antenna instance, and NOT adding your private key to the SDK as specified in the earlier documenation.
+In the client-side, use iotex-antenna@^0.22.0. Here is an example of setting up WsSignerPlugin to connect to the wallet. It is nothing more than applying the plugin when initializing Antenna instance, and NOT adding your private key to the SDK as specified in the earlier documenation.
 
 Before receiving the transfer or the contract call above, please open and unlock your wallet. Once the wallet is ready, you can run the script below in both the browser and the node environment and then you can see the message to sign. Please click "Yes, sign transaction" to continue.
 
