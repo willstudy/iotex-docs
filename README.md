@@ -61,7 +61,7 @@ The simplest way to get started with  IoTeX software package is to run it in sta
 3. ```sudo docker run -d -p 30100:14004 --mount type=bind,source=$PWD/config_delegate.yaml,target=/etc/iotex/config_local_delegate.yaml iotex/iotex-core:testnet iotex-server -config-path=/etc/iotex/config_local_delegate.yaml```
 
 
-## CLI (command-line interface)
+## ioctl (command-line interface)
 ioctl is a command-line interface for interacting with IoTeX blockchains.
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -181,13 +181,18 @@ Please Keep your password, or your will lose your private key.
 
 #### Import An Account With Private Key
 `Usage:
-  ioctl account import ALIAS`
+  ioctl account import [key|keystore] ALIAS`
+Two options are available. If you use `key`,
 ```
-➜  ioctl account import whale
+➜  ioctl account import key whale
 #whale: Enter your private key, which will not be exposed on the screen.
 #whale: Set password
 #whale: Enter password again
 New account #whale is created. Keep your password, or your will lose your private key.
+```
+If you use `keystore`,
+```
+➜  ioctl account import keystore whale
 ```
 
 #### Export Private Key From An Account
