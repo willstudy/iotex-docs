@@ -44,7 +44,12 @@ module.exports = {
           "/": [
             {
               collapsable: false,
-              children: ["", "docs/libraries-and-tools", "docs/misc"]
+              children: [
+                "",
+                "docs/libraries-and-tools",
+                "docs/vita-bot",
+                "docs/misc"
+              ]
             }
           ]
         }
