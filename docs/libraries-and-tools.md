@@ -8,11 +8,15 @@ title: Libraries and Tools
 
 ### Installation
 
+#### JS Project
+
 In your JS project root, use `npm install` or `yarn add`.
 
 ```js
 npm install iotex-antenna
 ```
+
+#### Golang Project
 
 In your Golang project root, use `go dep` or `go mod`.
 
@@ -34,6 +38,10 @@ Using GraphQL
 
 1. [Documentation](https://iotexscan.io/doc/api-gateway/query.doc.html)
 2. [GraphQL Playground](https://iotexscan.io/api-gateway/)
+
+Reference Doc
+
+[iotex-antenna](https://iotexproject.github.io/iotex-antenna/)
 
 Having questions? Ask in [our gitter chat room](https://gitter.im/iotex-dev-community/Lobby).
 
@@ -58,6 +66,11 @@ import Antenna from "iotex-antenna";
   const unlockedWallet = antenna.iotx.accounts.privateKeyToAccount(
     "69805ee813eadffa8fae53d0e6063e5fbf6a6e0fb9e90f6eaad7bc67f3d6c4bd"
   );
+
+  // get the balance, nonce, number of actions, pendingNonce of the account
+  const accountDetails = await antenna.iotx.getAccount({
+    address: wallet.address
+  });
 })();
 ```
 
@@ -96,6 +109,8 @@ func main() {
 :::
 
 ::::
+
+For more APIs, please visit [iotex-antenna js reference](https://iotexproject.github.io/iotex-antenna/classes/_iotx_.iotx.html#getaccount).
 
 ## Transfer
 
