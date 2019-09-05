@@ -16,6 +16,13 @@ In your JS project root, use `npm install` or `yarn add`.
 npm install iotex-antenna
 ```
 
+or add the following line to your html.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/iotex-antenna@0.24.0/lib/iotex-antenna.browser.min.js"></script>
+```
+
+
 #### Golang Project
 
 In your Golang project root, use `go dep` or `go mod`.
