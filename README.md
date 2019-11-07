@@ -446,6 +446,70 @@ Wait for several seconds and query this action by hash:
 59a73e24a41385005519d1d1e7f164b36b98717f2c5649785b43c2588245502d
 ```
 
+## Native Staking
+
+#### Create Bucket for Voting
+`Usage:
+  ioctl stake create AMOUNT_IOTX CANDIDATE_NAME STAKE_DURATION [DATA] [--auto-restake] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+```
+➜   ioctl stake create 100 frank 35 VotingForFrank --auto-restake
+Enter password #ioxxx...xxx:
+...
+...
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:iotexscan.io/action/xxx...xxx
+```
+
+#### Add IOTX to Certain Bucket
+`Usage:
+  ioctl stake add IOTX_AMOUNT BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+```
+➜   ioctl stake add 100 1
+Enter password #ioxxx...xxx:
+...
+...
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:iotexscan.io/action/xxx...xxx
+```
+
+#### Renew a Bucket
+`Usage:
+  ioctl stake renew BUCKET_INDEX STAKE_DURATION [DATA] [--auto-restake] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+```
+➜   ioctl stake renew 1 14
+Enter password #ioxxx...xxx:
+...
+...
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:iotexscan.io/action/xxx...xxx
+```
+
+#### Release a Over-Time Bucket
+`Usage:
+  ioctl stake release BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+```
+➜   ioctl stake release 1
+Enter password #ioxxx...xxx:
+...
+...
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:iotexscan.io/action/xxx...xxx
+```
+
+#### Withdraw IOTX From a Released Bucket
+`Usage:
+  ioctl stake withdraw BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+```
+➜   ioctl stake withdraw 1
+Enter password #ioxxx...xxx:
+...
+...
+Action has been sent to blockchain.
+Wait for several seconds and query this action by hash:iotexscan.io/action/xxx...xxx
+```
+
+####
+
 ## XRC20
 
 #### Query Total Token Supply On Erc20 Contract
