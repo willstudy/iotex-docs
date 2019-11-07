@@ -66,7 +66,7 @@ ioctl is a command-line interface for interacting with IoTeX blockchains.
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab bash
-```bash
+```ioctl
 Usage:
   ioctl [command]
 
@@ -104,7 +104,29 @@ curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cl
 ## Usage and Examples
 Documentation of all ioctl commands with examples.
 
-## Config      
+## Config
+Get, set, or reset configuration for ioctl
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl config
+Usage:
+  ioctl config [command]
+
+Available Commands:
+  get         Get config fields from ioctl
+  reset       Reset config to default
+  set         Set config fields for ioctl
+
+Flags:
+  -h, --help   help for config
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
+
 `Variables: [endpoint, wallet, explorer, defaultacc]`\
 `Explorers: [iotexscan (default), iotxplorer, custom]`
 
@@ -134,6 +156,40 @@ Config reset to default values
 ```
 
 ## Account
+Manage accounts of IoTeX blockchain
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl account
+Usage:
+  ioctl account [command]
+
+Available Commands:
+  balance      Get balance of an account
+  create       Create N new accounts and print them
+  createadd    Create new account for ioctl
+  delete       Delete an IoTeX account/address from wallet/config
+  ethaddr      Translate address between IOTX and ETH
+  export       Export IoTeX private key from wallet
+  exportpublic Export IoTeX public key from wallet
+  getVotes     Get votes of this votee
+  import       Import IoTeX private key or keystore into wallet
+  list         List existing account for ioctl
+  nonce        Get nonce of an account
+  sign         Sign message with private key from wallet
+  update       Update password for IoTeX account
+  verify       Verify IoTeX public key and address by private key
+
+Flags:
+      --endpoint string   set endpoint for once (default "api.testnet.iotex.one:443")
+  -h, --help              help for account
+      --insecure          insecure connection for once
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
 
 #### Create Account(s)
 `Usage:
@@ -281,6 +337,29 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb
 Account #IOsenser has been updated.
 ```
 ## Alias
+Manage aliases of IoTeX addresses
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl alias
+Usage:
+  ioctl alias [command]
+
+Available Commands:
+  export      Export aliases to either json or yaml format
+  import      Import aliases
+  list        List aliases
+  remove      Remove alias
+  set         Set alias for address
+
+Flags:
+  -h, --help   help for alias
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
 
 #### Set Alias
 `Usage:
@@ -309,6 +388,34 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
 ```
 
 ## Action
+Manage actions of IoTeX blockchain
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl action
+Usage:
+  ioctl action [command]
+
+Available Commands:
+  claim       Claim rewards from rewarding fund
+  deploy      Deploy smart contract on IoTeX blockchain
+  deposit     Deposit rewards from rewarding fund
+  hash        Get action by hash
+  invoke      Invoke smart contract on IoTeX blockchain
+  read        read smart contract on IoTeX blockchain
+  sendraw     Send raw action on IoTeX blokchain
+  transfer    Transfer tokens on IoTeX blokchain
+
+Flags:
+      --endpoint string   set endpoint for once (default "api.testnet.iotex.one:443")
+  -h, --help              help for action
+      --insecure          insecure connection for once
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
 
 #### Transfer Tokens
 `Usage:
@@ -447,6 +554,32 @@ Wait for several seconds and query this action by hash:
 ```
 
 ## Native Staking
+Support native staking from ioctl
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl stake
+Usage:
+  ioctl stake [command]
+
+Available Commands:
+  add         Add IOTX to bucket on IoTeX blockchain
+  create      Create bucket on IoTeX blockchain
+  release     Release bucket on IoTeX blockchain
+  renew       Renew bucket on IoTeX blockchain
+  withdraw    Withdraw form bucket on IoTeX blockchain
+
+Flags:
+      --endpoint string                   set endpoint for once (default "api.testnet.iotex.one:443")
+  -h, --help                              help for stake
+      --insecure                          insecure connection for once (default false)
+  -c, --staking-contract-address string   set staking contract address (default "io1xpq62aw85uqzrccg9y5hnryv8ld2nkpycc3gza")
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
 
 #### Create Bucket for Voting
 `Usage:
@@ -511,6 +644,33 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ####
 
 ## XRC20
+Support ERC20 standard command-line from ioctl
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl xrc20
+Usage:
+  ioctl xrc20 [command]
+
+Available Commands:
+  allowance    the amount which spender is still allowed to withdraw from owner
+  approve      Allow spender to withdraw from your account, multiple times, up to the amount
+  balanceOf    Get account balance
+  totalSupply  Get total supply
+  transfer     Transfer token to the target address
+  transferFrom Send amount of tokens from owner address to target address
+
+Flags:
+  -c, --contract-address string   set contract address
+      --endpoint string           set endpoint for once (default "api.testnet.iotex.one:443")
+  -h, --help                      help for xrc20
+      --insecure                  insecure connection for once (default false)
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
 
 #### Query Total Token Supply On Erc20 Contract
 `Usage:
@@ -576,6 +736,28 @@ Output in decimal: 4
 ```
 
 ## Blockchain
+Deal with block chain of IoTeX blockchain
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl bc
+Usage:
+  ioctl bc [command]
+
+Available Commands:
+  block       Get block from block chain
+  info        Get current block chain information
+
+Flags:
+      --endpoint string   set endpoint for once (default "api.testnet.iotex.one:443")
+  -h, --help              help for bc
+      --insecure          insecure connection for once
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
 
 #### Query Blockchain Information
 `Usage:
@@ -627,6 +809,28 @@ Hash: c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
 ```
 
 ## Node
+Deal with nodes of IoTeX blockchain
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab bash
+```ioctl node
+Usage:
+  ioctl node [command]
+
+Available Commands:
+  delegate    Print consensus delegates information in certain epoch
+  reward      Query rewards
+
+Flags:
+      --endpoint string   set endpoint for once (default "api.testnet.iotex.one:443")
+  -h, --help              help for node
+      --insecure          insecure connection for once
+
+Global Flags:
+  -o, --output-format string   output format
+```
+:::
+::::
 
 #### Query Delegates
 `Usage:
