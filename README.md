@@ -71,16 +71,21 @@ Usage:
   ioctl [command]
 
 Available Commands:
-  account     Deal with accounts of IoTeX blockchain
-  action      Deal with actions of IoTeX blockchain
-  xrc20       Operate XRC20 contracts
+  account     Manage accounts of IoTeX blockchain
+  action      Manage actions of IoTeX blockchain
+  alias       Manage aliases of IoTeX addresses
   bc          Deal with block chain of IoTeX blockchain
+  config      Get, set, or reset configuration for ioctl
   help        Help about any command
   node        Deal with nodes of IoTeX blockchain
-  version     Print the version number of ioctl
+  stake       Support native staking from ioctl
+  update      Update ioctl with latest version
+  version     Print the version of ioctl and node
+  xrc20       Support ERC20 standard command-line from ioctl
 
 Flags:
-  -h, --help   help for ioctl
+  -h, --help                   help for ioctl
+  -o, --output-format string   output format
 ```
 :::
 ::::
