@@ -9,63 +9,66 @@ Founded as an open-source project in 2017, IoTeX is building the world's leading
 
 ### Grand Design
 
-The overall design of IoTeX Network employs Separation of Powers,a term coined by Charles-Louis de Secondat which states that democratic political authority should be divided into legislative, executive and judicial powers. Generally speaking, IoTeX Network is a decentralized trust fabric consisting of multiple blockchains to connect humans, machines, applications, arranged hierarchically and serving different purposes. 
+The overall design of IoTeX Network employs Separation of Powers,a term coined by Charles-Louis de Secondat which states that democratic political authority should be divided into legislative, executive and judicial powers. Generally speaking, IoTeX Network is a decentralized trust fabric consisting of multiple blockchains to connect humans, machines, applications, arranged hierarchically and serving different purposes.
 ![IoTeX Rootchain Architecture](https://cdn-images-1.medium.com/max/2600/1*D6GiPlh9TdikW82c8j1jrA.png)
 
-* Governance layer, instantiated by the Gravity Chain is the layer that acts as a decentralized government for the IoTeX network. It exclusively focuses on decentralization and security, a liveness-oriented consensus scheme (e.g., PoS variant) to facilitate tasks such as staking, voting, slashing, protocol-related proposals, and more. Before the launch of the gravity chain Q3/Q4 2019, Ethereum mainnet will be used as the governance layer.
-* Orchestration layer, instantiated by the Root Chain, is the general manager and coordinator for all subchains. It is powered by our safety-oriented Roll-DPoS consensus mechanism and aims for reasonable throughput, reliability and transparency. It is being launched in April 2019 (a.k.a, Mainnet Alpha) as the first blockchain within IoTeX Network.
-* Operational layer, instantiated by various layer2 subchains, is the concrete unit that handles business logic related to specific use cases/applications. Different subchains can interoperate with each other via cross-chain communication. The first IoTeX subchain is expected to be launched in Q2/Q3 2019 focusing on trusted computing.
-* Execution layer, is an optional layer to which specific subchains can offload concrete computation/storage tasks. The segregation of verification & ordering of states from generation of states is extremely helpful to improve scalability, functionality and usability of a decentralized system.
+- Governance layer, instantiated by the Gravity Chain is the layer that acts as a decentralized government for the IoTeX network. It exclusively focuses on decentralization and security, a liveness-oriented consensus scheme (e.g., PoS variant) to facilitate tasks such as staking, voting, slashing, protocol-related proposals, and more. Before the launch of the gravity chain Q3/Q4 2019, Ethereum mainnet will be used as the governance layer.
+- Orchestration layer, instantiated by the Root Chain, is the general manager and coordinator for all subchains. It is powered by our safety-oriented Roll-DPoS consensus mechanism and aims for reasonable throughput, reliability and transparency. It is being launched in April 2019 (a.k.a, Mainnet Alpha) as the first blockchain within IoTeX Network.
+- Operational layer, instantiated by various layer2 subchains, is the concrete unit that handles business logic related to specific use cases/applications. Different subchains can interoperate with each other via cross-chain communication. The first IoTeX subchain is expected to be launched in Q2/Q3 2019 focusing on trusted computing.
+- Execution layer, is an optional layer to which specific subchains can offload concrete computation/storage tasks. The segregation of verification & ordering of states from generation of states is extremely helpful to improve scalability, functionality and usability of a decentralized system.
 
 In our design, all blockchains share the same pool of delegate resource which produces consensus to secure the entire network and is the cornerstone of the collective trust. With the collective trusted being provided, one can easily spin up a subchain as effortlessly as spinning up an EC2 instance on AWS Cloud. Thanks to the abstraction of EDR, subchains running within IoTeX Network can have dramatically different state transition and execution layers as well as the underlying crypto economics.
 
 The reason why we separate duties across multiple blockchain layers we firmly believe in decentralized governance. Many DPoS blockchain manage governance tasks (i.e.,. staking/voting) on the core operational layer blockchain - IoTeX believes governance tasks should not be grouped with operational tasks on the same chain. For example, elected Delegates, as a vested interest group, may disregard staking/voting transactions in the block production process to mitigate being de-elected (i.e., conflict of interest). Furthermore, elected Delegates may enforce protocol upgrades (by upgrading their software without consent from other users) that are not favorable to the rest of the ecosystem.
 
-
 ### Root Chain
 
 The root chain will be launched in Q1 2019 (a.k.a, Mainnet Alpha), which is consisted of the four layered components:
-* Networking layer enables the peer-to-peer communication between IoTex nodes, and provide blockchain services (through [grpc](https://grpc.io/)) to other applications and users
-* Consensus layer runs Roll-DPoS to select the active block producers among a pool of block producer candidates (who are elected via staking and voting), using a decentralized randomized algorithm (DKG + BLS).
-* State transition layer is composed of five subprotocols and is responsible for transiting the states of the blockchain from one to the other.
-* Programing layer implements the business logics for state transition. Currently it supports Ethereum virtual machine (EVM) with smart contracts written in Solidity. Developers could seamlessly port existing DApps onto it.
+
+- Networking layer enables the peer-to-peer communication between IoTex nodes, and provide blockchain services (through [grpc](https://grpc.io/)) to other applications and users
+- Consensus layer runs Roll-DPoS to select the active block producers among a pool of block producer candidates (who are elected via staking and voting), using a decentralized randomized algorithm (DKG + BLS).
+- State transition layer is composed of five subprotocols and is responsible for transiting the states of the blockchain from one to the other.
+- Programing layer implements the business logics for state transition. Currently it supports Ethereum virtual machine (EVM) with smart contracts written in Solidity. Developers could seamlessly port existing DApps onto it.
 
 ![IoTeX Rootchain Architecture](https://cdn-images-1.medium.com/max/2000/0*cPrsvVa1wIE0cqnS)
 
 ### Subprotocols and Actions
 
 The state transition layer of IoTex root chain is flexible enough that any subprotocol can be plugged in without hustling.
-* Account subprotocol provides the functionality for bookkeeping balances of accounts living on this blockchain.
-* Execution subprotocol manages the execution of smart contracts and roll forward/back of the states.
-* Poll subprotocol syncs with our staking/voting contracts living on Ethereum (which plays the role of Gravity chain before its ready), and instructs the delegates promotion/demotion on IoTeX root chain.
-* Rewarding subprotocol is responsible for distributing block reward and epoch reward to eligible delegates and candidates.
-* Multichain subprotocol manages sub-chain management and cross-chain communication which is a work-in-progress.
+
+- Account subprotocol provides the functionality for bookkeeping balances of accounts living on this blockchain.
+- Execution subprotocol manages the execution of smart contracts and roll forward/back of the states.
+- Poll subprotocol syncs with our staking/voting contracts living on Ethereum (which plays the role of Gravity chain before its ready), and instructs the delegates promotion/demotion on IoTeX root chain.
+- Rewarding subprotocol is responsible for distributing block reward and epoch reward to eligible delegates and candidates.
+- Multichain subprotocol manages sub-chain management and cross-chain communication which is a work-in-progress.
 
 In the IoTeX network, transactions (the atomic operation unit to interact with the blockchain data) are referred to as "actions", and there are five types of actions corresponding to the five subprotocols as described. More information can be found [here](https://github.com/iotexproject/iotex-core/blob/master/proto/types/action.proto).
 
-
 ## Build and Run
 
-The simplest way to get started with  IoTeX software package is to run it in stand-alone mode for demonstration and testing purposes. "Stand-alone" indicates a single node comprises the entire blockchain by itself, which generates new block, validates the block, and adds the block to the blockchain. This simple mode allows user to quickly launch and test a blockchain with a single computer/node, without requiring much hardware resources.
+The simplest way to get started with IoTeX software package is to run it in stand-alone mode for demonstration and testing purposes. "Stand-alone" indicates a single node comprises the entire blockchain by itself, which generates new block, validates the block, and adds the block to the blockchain. This simple mode allows user to quickly launch and test a blockchain with a single computer/node, without requiring much hardware resources.
 
 ### From the source
+
 1. setup golang environment, e.g., [on Linux](https://medium.com/@RidhamTarpara/install-go-1-11-on-ubuntu-18-04-16-04-lts-8c098c503c5f), [on MacOS](https://medium.com/golang-learn/quick-go-setup-guide-on-mac-os-x-956b327222b8)
-2. ```git clone git@github.com:iotexproject/iotex-core.git```
-3. ```make run```
+2. `git clone git@github.com:iotexproject/iotex-core.git`
+3. `make run`
 
 ### Use docker image
+
 1. Install docker on your host machine at https://docs.docker.com/install/. Once docker is properly installed and started, download the IoTeX docker image: `docker pull iotex/iotex-core:latest`
 
 2. Download the config file config_delegate.yaml from [iotex-core](https://github.com/iotexproject/iotex-core). Open the file and change certain parameters of the stand-alone node as you need. For instance, blockCreationInterval specifies the amount of time it takes (in seconds) to produce next block. Change it to a larger value if you want block producing at a slower pace.
 
-3. ```sudo docker run -d -p 30100:14004 --mount type=bind,source=$PWD/config_delegate.yaml,target=/etc/iotex/config_local_delegate.yaml iotex/iotex-core:testnet iotex-server -config-path=/etc/iotex/config_local_delegate.yaml```
-
+3. `sudo docker run -d -p 30100:14004 --mount type=bind,source=$PWD/config_delegate.yaml,target=/etc/iotex/config_local_delegate.yaml iotex/iotex-core:testnet iotex-server -config-path=/etc/iotex/config_local_delegate.yaml`
 
 ## ioctl (command-line interface)
+
 ioctl is a command-line interface for interacting with IoTeX blockchains.
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab bash
+
 ```bash
 Usage:
   ioctl [command]
@@ -87,47 +90,53 @@ Flags:
   -h, --help                   help for ioctl
   -o, --output-format string   output format
 ```
+
 :::
 ::::
 
-
 ### Install Release Build
+
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh
 ```
 
 ### Install Latest/Unstable Build
+
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cli.sh | sh -s "unstable"
 ```
 
 ## Usage and Examples
+
 Documentation of all ioctl commands with examples.
 
-## Config      
+## Config
+
 `Variables: [endpoint, wallet, explorer, defaultacc]`\
 `Explorers: [iotexscan (default), iotxplorer, custom]`
 
 #### Set Config
-`
-Usage:
-  ioctl config set VARIABLE VALUE`
+
+`Usage: ioctl config set VARIABLE VALUE`
+
 ```
 ➜  ioctl config set endpoint api.iotex.one:443
 endpoint is set to api.iotex.one:443
 ```
 
 #### Get Config
-`Usage:
-  ioctl config get VARIABLE | all`
+
+`Usage: ioctl config get VARIABLE | all`
+
 ```
 ➜  ioctl config get wallet
 /Users/IoTeX/.config/ioctl/default
 ```
 
 #### Reset Config
-`Usage:
-  ioctl config reset`
+
+`Usage: ioctl config reset`
+
 ```
 ➜  ioctl config reset
 Config reset to default values
@@ -136,8 +145,9 @@ Config reset to default values
 ## Account
 
 #### Create Account(s)
-`Usage:
-  ioctl account create`
+
+`Usage: ioctl account create`
+
 ```
 ➜  ioctl account create
 {
@@ -150,6 +160,7 @@ Config reset to default values
   ]
 }
 ```
+
 ```
 ➜  ioctl account create -n 3
 {
@@ -174,8 +185,9 @@ Config reset to default values
 ```
 
 #### Create An Account Into Wallet
-`Usage:
-  ioctl account createadd ALIAS`
+
+`Usage: ioctl account createadd ALIAS`
+
 ```
 ➜  ioctl account createadd IOsenser
 #IOsenser: Set password
@@ -185,9 +197,10 @@ Please Keep your password, or your will lose your private key.
 ```
 
 #### Import An Account With Private Key
-`Usage:
-  ioctl account import [key|keystore] ALIAS`
+
+`Usage: ioctl account import [key|keystore] ALIAS`
 Two options are available. If you use `key`,
+
 ```
 ➜  ioctl account import key whale
 #whale: Enter your private key, which will not be exposed on the screen.
@@ -195,14 +208,17 @@ Two options are available. If you use `key`,
 #whale: Enter password again
 New account #whale is created. Keep your password, or your will lose your private key.
 ```
+
 If you use `keystore`,
+
 ```
 ➜  ioctl account import keystore whale
 ```
 
 #### Export Private Key From An Account
-`Usage:
-  ioctl account export (ALIAS|ADDRESS)`
+
+`Usage: ioctl account export (ALIAS|ADDRESS)`
+
 ```
 ➜  ioctl account export whale
 Enter password #whale:
@@ -210,8 +226,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 #### Delete An Account
-`Usage:
-  ioctl account delete (ALIAS|ADDRESS)`
+
+`Usage: ioctl account delete (ALIAS|ADDRESS)`
+
 ```
 ➜  ioctl account delete whale
 ** This is an irreversible action!
@@ -223,8 +240,9 @@ Account #io1t54nfdnpldaxkpm35f2gzh3rx6cakypmp5xfz5 has been deleted.
 ```
 
 #### List Accounts
-`Usage:
-  ioctl account list`
+
+`Usage: ioctl account list`
+
 ```
 ➜  ioctl account list
 io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt - IOsenser
@@ -234,20 +252,23 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 007
 ```
 
 #### Query Balance
-`Usage:
-  ioctl account balance (ALIAS|ADDRESS)`
+
+`Usage: ioctl account balance (ALIAS|ADDRESS)`
+
 ```
 ➜  ioctl account balance IOsenser
 io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt: 0.721 IOTX
 ```
+
 ```
 ➜  ioctl account balance io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
 io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg: 4689 IOTX
 ```
 
 #### Query Nonce
-`Usage:
-  ioctl account nonce (ALIAS|ADDRESS)`
+
+`Usage: ioctl account nonce (ALIAS|ADDRESS)`
+
 ```
 ➜  ioctl account nonce IOsenser
 io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt:
@@ -255,24 +276,28 @@ Nonce: 0, Pending Nonce: 1
 ```
 
 #### Translate Address
-`Usage:
-  ioctl account ethaddr (ALIAS|IOTEX_ADDRESS|ETH_ADDRESS)`
+
+`Usage: ioctl account ethaddr (ALIAS|IOTEX_ADDRESS|ETH_ADDRESS)`
+
 ```
 ➜  ioctl account ethaddr io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd
 io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
 ```
+
 ```
 ➜  ioctl account ethaddr 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
 io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
 ```
+
 ```
 ➜  ioctl account ethaddr 007
 io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb00dd34
 ```
 
 #### Update Password Of An Account
-`Usage:
-  ioctl account update (ALIAS|ADDRESS)`
+
+`Usage: ioctl account update (ALIAS|ADDRESS)`
+
 ```
 ➜  ioctl account update IOsenser
 #IOsenser: Enter current password
@@ -280,27 +305,31 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb
 #IOsenser: Enter new password again
 Account #IOsenser has been updated.
 ```
+
 ## Alias
 
 #### Set Alias
-`Usage:
-  ioctl alias set ALIAS ADDRESS`
+
+`Usage: ioctl alias set ALIAS ADDRESS`
+
 ```
 ➜  ioctl alias set test io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg
 set
 ```
 
 #### Remove Alias
-`Usage:
-  ioctl alias remove ALIAS`
+
+`Usage: ioctl alias remove ALIAS`
+
 ```
 ➜  ioctl alias remove frank
 frank is removed
 ```
 
 #### List Alias
-`Usage:
-  ioctl alias list`
+
+`Usage: ioctl alias list`
+
 ```
 ➜  ioctl alias list
 io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt - IOsenser
@@ -311,8 +340,9 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - whale
 ## Action
 
 #### Transfer Tokens
-`Usage:
-  ioctl action transfer (ALIAS|RECIPIENT_ADDRESS) AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GAS_PRICE]`
+
+`Usage: ioctl action transfer (ALIAS|RECIPIENT_ADDRESS) AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GAS_PRICE]`
+
 ```
 ➜  ioctl action transfer IOsenser 7 pad#3212 -s whale
 Enter password #whale:
@@ -336,8 +366,9 @@ iotexscan.io/action/aa56b8958d5030676876363ec054df4ac7044ea2fc09f51a1c238d22c941
 ```
 
 #### Query Action
-`Usage:
-  ioctl action hash ACTION_HASH`
+
+`Usage: ioctl action hash ACTION_HASH`
+
 ```
 →  ioctl action hash 690fb07fbb5ba3b762a7a16edea35ff1c3b02b43a6331aef88c4daa1bc933ad4
 
@@ -361,8 +392,9 @@ logs:0
 ```
 
 #### Deploy Contract
-`Usage:
-  ioctl action deploy -s SIGNER -b BYTE_CODE -l GAS_LIMIT [-p GAS_PRICE]`
+
+`Usage: ioctl action deploy -s SIGNER -b BYTE_CODE -l GAS_LIMIT [-p GAS_PRICE]`
+
 ```
 ➜  ioctl action deploy -b 608060405234801561001057600080fd5b5060df8061001f6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c146078575b600080fd5b348015605957600080fd5b5060766004803603810190808035906020019092919050505060a0565b005b348015608357600080fd5b50608a60aa565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a7230582009e6d7025fff5ff3ba4cf7ba6b842526416df976e012a516f37e397607c1f2360029 -l 50000 -p 1 -s whale
 Enter password #whale:
@@ -390,8 +422,9 @@ b49e5860c5b4154fdb6bcb808a60fbf8de2ac7807d99551ec5357d83ad2612e5
 ```
 
 #### Invoke Contract
-`Usage:
-  ioctl action invoke (ALIAS|CONTRACT_ADDRESS) [AMOUNT_IOTX] -s SIGNER -b BYTE_CODE -l GAS_LIMIT [-p GAS_PRICE]`
+
+`Usage: ioctl action invoke (ALIAS|CONTRACT_ADDRESS) [AMOUNT_IOTX] -s SIGNER -b BYTE_CODE -l GAS_LIMIT [-p GAS_PRICE]`
+
 ```
 ➜  ioctl action invoke io1vqzcl56vlfspyaadyxhqy07jrmalx73vdaklzn 122 -s boss -b 60fe47b10000000000000000000000000000000000000000000000000000000000000001 -l 90000 -p 3
 Enter password #boss:
@@ -419,8 +452,9 @@ Wait for several seconds and query this action by hash:
 ```
 
 #### Claim Reward
-`Usage:
-  ioctl action claim AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GASPRICE]`
+
+`Usage: ioctl action claim AMOUNT_IOTX [DATA] -s SIGNER [-l GAS_LIMIT] [-p GASPRICE]`
+
 ```
 ➜  ioctl action claim 321 happy -s whale
 Enter password #whale:
@@ -449,8 +483,9 @@ Wait for several seconds and query this action by hash:
 ## Native Staking
 
 #### Create Bucket for Voting
-`Usage:
-  ioctl stake create AMOUNT_IOTX CANDIDATE_NAME STAKE_DURATION [DATA] [--auto-restake] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
+`Usage: ioctl stake create AMOUNT_IOTX CANDIDATE_NAME STAKE_DURATION [DATA] [--auto-restake] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
 ```
 ➜   ioctl stake create 100 frank 35 VotingForFrank --auto-restake
 Enter password #ioxxx...xxx:
@@ -461,8 +496,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ```
 
 #### Add IOTX to Certain Bucket
-`Usage:
-  ioctl stake add IOTX_AMOUNT BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
+`Usage: ioctl stake add IOTX_AMOUNT BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
 ```
 ➜   ioctl stake add 100 1
 Enter password #ioxxx...xxx:
@@ -473,8 +509,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ```
 
 #### Renew a Bucket
-`Usage:
-  ioctl stake renew BUCKET_INDEX STAKE_DURATION [DATA] [--auto-restake] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
+`Usage: ioctl stake renew BUCKET_INDEX STAKE_DURATION [DATA] [--auto-restake] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
 ```
 ➜   ioctl stake renew 1 14
 Enter password #ioxxx...xxx:
@@ -485,8 +522,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ```
 
 #### Release a Over-Time Bucket
-`Usage:
-  ioctl stake release BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
+`Usage: ioctl stake release BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
 ```
 ➜   ioctl stake release 1
 Enter password #ioxxx...xxx:
@@ -497,8 +535,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ```
 
 #### Withdraw IOTX From a Released Bucket
-`Usage:
-  ioctl stake withdraw BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
+`Usage: ioctl stake withdraw BUCKET_INDEX [DATA] [-c ALIAS|CONTRACT_ADDRESS] [-s SIGNER] [-n NONCE] [-l GAS_LIMIT] [-p GASPRICE] [-P PASSWORD] [-y]`
+
 ```
 ➜   ioctl stake withdraw 1
 Enter password #ioxxx...xxx:
@@ -513,8 +552,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ## XRC20
 
 #### Query Total Token Supply On Erc20 Contract
-`Usage:
-  ioctl xrc20 totalSupply -c ALIAS|CONTRACT_ADDRESS`
+
+`Usage: ioctl xrc20 totalSupply -c ALIAS|CONTRACT_ADDRESS`
+
 ```
 ➜   ioctl xrc20 totalSupply -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
 Raw output: 0000000000000000000000000000000000000000010f73e141e95768f6bfacac
@@ -522,8 +562,9 @@ Output in decimal: 328166124527934490560933036
 ```
 
 #### Query Account Balance On Erc20 Contract
-`Usage:
-  ioctl xrc20 balanceOf ALIAS|ACCOUNT_ADDRESS -c ALIAS|CONTRACT_ADDRESS`
+
+`Usage: ioctl xrc20 balanceOf ALIAS|ACCOUNT_ADDRESS -c ALIAS|CONTRACT_ADDRESS`
+
 ```
 ➜   ioctl xrc20 balanceOf io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
 Raw output: 000000000000000000000000000000000000000000000000b469471f80170d33
@@ -531,8 +572,9 @@ Output in decimal: 13000000000000199987
 ```
 
 #### Transfer Token On Erc20 Contract
-`Usage:
-  ioctl xrc20 transfer ALIAS|TARGET_ADDRESS AMOUNT -c ALIAS|CONTRACT_ADDRESS [-l GAS_LIMIT] -s SIGNER [-p GAS_PRICE]`
+
+`Usage: ioctl xrc20 transfer ALIAS|TARGET_ADDRESS AMOUNT -c ALIAS|CONTRACT_ADDRESS [-l GAS_LIMIT] -s SIGNER [-p GAS_PRICE]`
+
 ```
 ➜   ioctl xrc20 transfer io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd 4 -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw -s ALIAS -l 50000
 Enter password #ioxxx...xxx:
@@ -543,8 +585,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ```
 
 #### Transfer Token From Another Address On Erc20 Contract
-`Usage:
-  ioctl xrc20 transferFrom ALIAS|OWNER_ADDRESS ALIAS|TARGET_ADDRESS AMOUNT -c ALIAS|CONTRACT_ADDRESS [-l GAS_LIMIT] -s SIGNER [-p GAS_PRICE]`
+
+`Usage: ioctl xrc20 transferFrom ALIAS|OWNER_ADDRESS ALIAS|TARGET_ADDRESS AMOUNT -c ALIAS|CONTRACT_ADDRESS [-l GAS_LIMIT] -s SIGNER [-p GAS_PRICE]`
+
 ```
 ➜   ioctl xrc20 transferFrom io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd 4 -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw -s ALIAS -l 50000
 Enter password #ioxxx...xxx:
@@ -555,8 +598,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ```
 
 #### Allow Spender Withdraw From Account With Limitation
-`Usage:
-  ioctl approve ALIAS|SPENDER_ADDRESS XRC20_AMOUNT -c ALIAS|CONTRACT_ADDRESS -s SIGNER [-l GAS_LIMIT] `
+
+`Usage: ioctl approve ALIAS|SPENDER_ADDRESS XRC20_AMOUNT -c ALIAS|CONTRACT_ADDRESS -s SIGNER [-l GAS_LIMIT]`
+
 ```
 ➜   ioctl xrc20 approve io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd 4 -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw -s ALIAS -l 50000
 Enter password #ioxxx...xxx:
@@ -567,8 +611,9 @@ Wait for several seconds and query this action by hash:iotexscan.io/action/xxx..
 ```
 
 #### Query Remaining Withdraw Amount For Spender
-`Usage:
-  ioctl allowance ALIAS|OWNER_ADDRESS ALIAS|SPENDER_ADDRESS -c ALIAS|CONTRACT_ADDRESS`
+
+`Usage: ioctl allowance ALIAS|OWNER_ADDRESS ALIAS|SPENDER_ADDRESS -c ALIAS|CONTRACT_ADDRESS`
+
 ```
 ➜   ioctl xrc20 allowance io1q4enhh0tp5pqpa6s4urhwrx32529pmyyzdgu3q io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd -c io1y9ndaezjrdlkw93hquqru7txh9jcsmtmrvt4yw
 Raw output: 0000000000000000000000000000000000000000000000000000000000000004
@@ -578,8 +623,9 @@ Output in decimal: 4
 ## Blockchain
 
 #### Query Blockchain Information
-`Usage:
-  ioctl bc info`
+
+`Usage: ioctl bc info`
+
 ```
 ➜  ioctl bc info
 height:50268  numActions:50852  tps:0
@@ -587,8 +633,9 @@ epochNum:140  epochStartHeight:50041  gravityChainStartHeight:7485100
 ```
 
 #### Query Block
-`Usage:
-  ioctl bc block [HEIGHT|HASH]`
+
+`Usage: ioctl bc block [HEIGHT|HASH]`
+
 ```
 ➜  ioctl bc block
 Transactions: 1
@@ -601,6 +648,7 @@ Receipt Root: e8e28a529d99a70b7dab8dd6d491bdb0c20818defac307780c919a610e552d6a
 Delta State Digest: 82286c69c59aaff815bb888b876eed7228ea51065027dc07ac1c04e5e082ea6b
 Hash: 87f73c3a6e3312075a9aae70660656a9209bb11fb4d5fb1a2f21e020e20d3365
 ```
+
 ```
 ➜  ioctl bc block 101
 Transactions: 1
@@ -613,6 +661,7 @@ Receipt Root: e8e28a529d99a70b7dab8dd6d491bdb0c20818defac307780c919a610e552d6a
 Delta State Digest: 999003ad9f4ea85f45a8a3ebafcb8ad03c43852fbe8cce14aaf86bed9aed8895
 Hash: c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
 ```
+
 ```
 ➜  ioctl bc block c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
 Transactions: 1
@@ -629,8 +678,9 @@ Hash: c9cac24ed4a782583526132cc266f3def121e34ad4c4244f8b045fdd2d82d4cc
 ## Node
 
 #### Query Delegates
-`Usage:
-  ioctl node delegate [-e epoch-num|-n]`
+
+`Usage: ioctl node delegate [-e epoch-num|-n]`
+
 ```
 ➜  ioctl node delegate
 Epoch: 140,  Start block height: 50041,  Total blocks in epoch: 238
@@ -645,6 +695,7 @@ io1qqaswtu7rcevahucpfxc0zxx088pylwtxnkrrl      6                             327
 io1nf0rvzgq3tqym6n3trttsrt7d4gqqsmqfzy0da      7                             29712098.816122003636349154
 ...
 ```
+
 ```
 ➜  ioctl node delegate -e 96
 Epoch: 96,  Start block height: 34201,  Total blocks in epoch: 360
@@ -661,8 +712,9 @@ io1nf0rvzgq3tqym6n3trttsrt7d4gqqsmqfzy0da      7           active   15       294
 ```
 
 #### Query Reward
-`Usage:
-  ioctl node reward (ALIAS|DELEGATE_ADDRESS)`
+
+`Usage: ioctl node reward (ALIAS|DELEGATE_ADDRESS)`
+
 ```
 ➜  ioctl node reward whale
 io1t54nfdnpldaxkpm35f2gzh3rx6cakypmp5xfz5: 45819 IOTX
@@ -671,8 +723,9 @@ io1t54nfdnpldaxkpm35f2gzh3rx6cakypmp5xfz5: 45819 IOTX
 ## Update tools
 
 #### Version
-`Usage:
-  ioctl version`
+
+`Usage: ioctl version`
+
 ```
 →  ioctl version
 Client:
@@ -683,14 +736,16 @@ packageVersion:"v0.5.0" packageCommitID:"a4308fc82bea22cfaa45addef679a09f41f3a99
 ```
 
 #### Update ioctl
-`Usage:
-  ioctl update [-t version-type]`
+
+`Usage: ioctl update [-t version-type]`
+
 ```
 ➜  ioctl update
 Downloading the latest stable version ...
 Password:
 ioctl is up-to-date now.
 ```
+
 ```
 ➜  ioctl update -t unstable
 Downloading the latest unstable version ...
@@ -699,13 +754,17 @@ ioctl is up-to-date now.
 ```
 
 ## Bookkeeping
+
 Bookkeeping is a GraphQL web interface for reward distributions, which collects voting status and calculates corresponding voters' reward for a given delegate within a certain epoch range.
 
 ### Get Voters' Rewards Given A Delegate Name
+
 Usage: Please refer to [Analytics Documentations](https://github.com/iotexproject/iotex-docs#bookkeeping).
 
 ### Send Out Voters' Rewards
+
 The generated bytecode can be used by `ioctl` to actually send out the voters' rewards, i.e.,
+
 ```
 ioctl action invoke io1sesxdghz93f4sadhu6a7242m22gphmc2aucz4g <total-amount> -l <gas-limit> -p <gas-price> -s <signer> -b <bytecode>`
 ```
@@ -714,7 +773,8 @@ Note that `io1sesxdghz93f4sadhu6a7242m22gphmc2aucz4g` is the pre-deployed contra
 
 ## Action Injector
 
-Actioninjector is a simulation tool to simulate action traffic by injecting random actions to gateway node.
+Action injector is a simulation tool to simulate action traffic by injecting random actions to gateway node.
+
 ```
 Usage:
    injector random [flags]
@@ -740,25 +800,28 @@ Available Flags:
 ```
 
 ### Install Release Build
+
 ```
 curl --silent https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-injector.sh | sh
 ```
 
 ### Install Latest/Unstable Build
+
 ```
 curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-injector.sh | sh -s "unstable"
 ```
 
 ## Explorer
 
-* [Github Repository](https://github.com/iotexproject/iotex-explorer)
-* Demo Sites:
-  * [Mainnnet](https://iotexscan.io)
-  * [Testnet](https://testnet.iotexscan.io)
-
+- [Github Repository](https://github.com/iotexproject/iotex-explorer)
+- Demo Sites:
+  - [Mainnnet](https://iotexscan.io)
+  - [Testnet](https://testnet.iotexscan.io)
 
 ## API
+
 ### GetAccount
+
 ```
 Usage:
   Get Account Details
@@ -767,7 +830,9 @@ Request:
 Response:
   AccountMeta: Account Metadata
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"address": "io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd"}' 127.0.0.1:14014 iotexapi.APIService.GetAccount
 
@@ -795,6 +860,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetActions
+
 ```
 Usage:
   Get Actions By Index
@@ -805,7 +871,9 @@ Request:
 Response:
   ActionInfo: List of Action Info
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"byIndex": {"start": 0, "count": 2}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
 
@@ -862,6 +930,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetActions
+
 ```
 Usage:
   Get Action By Action Hash
@@ -872,7 +941,9 @@ Request:
 Response:
   ActionInfo: Action Info
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"byHash": {"actionHash": "c6f41c716b5c328fc821bd388cb73717785af91abe91c593d821332a8192ff63", "checkPending": false}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
 
@@ -913,6 +984,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetActions
+
 ```
 Usage:
   Get Actions By Address
@@ -924,7 +996,9 @@ Request:
 Resposne:
   ActionInfo: List of Action Info
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"byAddr": {"address": "io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd", "start": 0, "count": 1}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
 
@@ -968,6 +1042,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetActions
+
 ```
 Usage:
   Get Unconfirmed Actions By Address
@@ -979,7 +1054,9 @@ Request:
 Resposne:
   ActionInfo: List of Action Info
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"unconfirmedByAddr": {"address": "io1juvx5g063eu4ts832nukp4vgcwk2gnc5cu9ayd", "start": 0, "count": 1}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
 
@@ -1003,6 +1080,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetActions
+
 ```
 Usage:
   Get Actions By Block
@@ -1014,7 +1092,9 @@ Request:
 Resposne:
   ActionInfo: List of ActionInfo
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"byBlk": {"blkHash": "6344115bcd43b7315ffdf5338d0f97b26caed7734efea034a27208f64670f5e9", "start": 0, "count": 1}}' 127.0.0.1:14014 iotexapi.APIService.GetActions
 
@@ -1058,6 +1138,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetBlockMetas
+
 ```
 Usage:
   Get Block Metadata By Index
@@ -1068,7 +1149,9 @@ Request:
 Response:
   BlkMetas: List of Block Metadata
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"byIndex": {"start": 1, "count": 2}}' 127.0.0.1:14014 iotexapi.APIService.GetBlockMetas
 
@@ -1115,6 +1198,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetBlockMetas
+
 ```
 Usage:
   Get Block Metadata By Block Hash
@@ -1124,7 +1208,9 @@ Request:
 Response:
   BlkMetas: Block Metadata
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"byHash": {"blkHash": "b7754977cae0f2a45a4ae2b7f0dfc20487e5acfa93594e5eaa1e93f5ec88800f"}}' 127.0.0.1:14014 iotexapi.APIService.GetBlockMetas
 
@@ -1160,6 +1246,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetChainMeta
+
 ```
 Usage:
   Get Blockchain Metadata
@@ -1168,7 +1255,9 @@ Request:
 Response:
   ChainMeta: Blockchain Metadata
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.GetChainMeta
 
@@ -1200,6 +1289,7 @@ Sent 0 requests and received 1 response
 ```
 
 ### GetServerMeta
+
 ```
 Usage:
   Get Server Metadata
@@ -1208,7 +1298,9 @@ Request:
 Reponse:
   ServerMeta: Server Metadata
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.GetServerMeta
 
@@ -1238,6 +1330,7 @@ Sent 0 requests and received 1 response
 ```
 
 ### SendAction
+
 ```
 Usage:
   Send Action
@@ -1246,7 +1339,9 @@ Request:
 Response:
   ActionHash: Hash of Action
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "transfer": {"amount": "100", "recipient": "io1sxm6zl56um2c3ntq5fwqjar4za5ka560x53muy"}}, "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=", "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="}}' 127.0.0.1:14014 iotexapi.APIService.SendAction
 
@@ -1268,7 +1363,9 @@ Response trailers received:
 (empty)
 Sent 1 request and received 1 response
 ```
+
 ### GetReceiptByAction
+
 ```
 Usage:
   Get Action Receipt By Action Hash
@@ -1277,7 +1374,9 @@ Request:
 Response:
   Receipt: Action Receipt
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"actionHash": "060a93a4784469f9e587da0c90ed20df58b0effb50d6b8ddcd9a4c65ad55fcbd"}' 127.0.0.1:14014 iotexapi.APIService.GetReceiptByAction
 
@@ -1310,6 +1409,7 @@ Sent 1 request and received 1 response
 ```
 
 ### ReadContract
+
 ```
 Usage:
   Read Contract State
@@ -1318,7 +1418,9 @@ Request:
 Response:
   Data: Return Value in Execution Receipt
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=", "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="}}' 127.0.0.1:14014 iotexapi.APIService.ReadContract
 
@@ -1345,9 +1447,10 @@ Response contents:
 Response trailers received:
 (empty)
 Sent 1 request and received 1 response
-```  
+```
 
 ### ReadState
+
 ```
 Usage:
   Read State on Blockchain
@@ -1358,7 +1461,9 @@ Request:
 Response:
   Data: State Result
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"protocolID": "cmV3YXJkaW5n", "methodName": "VW5jbGFpbWVkQmFsYW5jZQ==", "arguments": "aW8xanV2eDVnMDYzZXU0dHM4MzJudWtwNHZnY3drMmduYzVjdTlheWQ="}' 127.0.0.1:14014 iotexapi.APIService.ReadState
 
@@ -1382,6 +1487,7 @@ Sent 1 request and received 1 response
 ```
 
 ### SuggestGasPrice
+
 ```
 Usage:
   Get Suggested Gas Price
@@ -1390,7 +1496,9 @@ Request:
 Response:
   GasPrice: Gas Price
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.SuggestGasPrice
 
@@ -1414,6 +1522,7 @@ Sent 0 requests and received 1 response
 ```
 
 ### EstimateGasForAction
+
 ```
 Usage:
   Get Estimated Gas For Action
@@ -1422,7 +1531,9 @@ Request:
 Response:
   Gas: Gas
 ```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"action": {"core": {"version": 1, "nonce": 2, "gasLimit": 10000, "gasPrice": "10", "execution": {"amount": "0", "contract": ""}}, "senderPubKey": "BOk7WxyPumkmNlKkg61VMY5O7VtRIjFMt/2wd9jHKVCXzsku5QsRCNx0lalyDlkh5W0wSON6vmpnFtfJuRPp8uY=", "signature": "9mrqFBggiRocZhkRVUswxs83NaEFNdEYYczI8049vlovHEP4YMQz+3Isznc3CrYaJxAbc2PTIz7y2meerJ8bHAA="}}' 127.0.0.1:14014 iotexapi.APIService.EstimateGasForAction
 
@@ -1443,9 +1554,10 @@ Response contents:
 Response trailers received:
 (empty)
 Sent 1 request and received 1 response
-```  
+```
 
 ### GetEpochMeta
+
 ```
 Usage:
   Get Epoch Metadata Given an Epoch Number
@@ -1455,8 +1567,10 @@ Response:
   EpochData: Basic Epoch Information
   TotalBlocks: Number of Blocks in the Epoch
   BlockProducersInfo: List of Block Producer Information
-```  
+```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"epochNumber": 1}' api.iotex.one:80 iotexapi.APIService.GetEpochMeta
 
@@ -1634,6 +1748,7 @@ Sent 1 request and received 1 response
 ```
 
 ### GetRawBlocks
+
 ```
 Usage:
   Get A List of Raw Block Data
@@ -1643,8 +1758,10 @@ Request:
   WithReceipts: Whether to Include Action Receipts in Each Returned Block
 Response:
   Blocks: A List of Raw Block Data
-```  
+```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext -d '{"startHeight": 1, "count": 2, "withReceipts": true}' 127.0.0.1:14014 iotexapi.APIService.GetRawBlocks
 
@@ -1753,6 +1870,7 @@ Sent 1 request and received 1 response
 ```
 
 ### StreamBlocks
+
 ```
 Usage:
   Subscribe to Block Creations
@@ -1760,8 +1878,10 @@ Request:
   N/A
 Response:
   Block: Newly Created Block Data
-```  
+```
+
 Demo:
+
 ```
 ➜  ~ grpcurl -v -plaintext 127.0.0.1:14014 iotexapi.APIService.StreamBlocks
 
@@ -1822,12 +1942,15 @@ Response contents:
 ```
 
 ## Analytics
+
 Analytics is a GraphQL web interface for reading the analyzed blockchain data. You can try it [here](https://analytics.iotexscan.io).
 
 ### Delegate
+
 #### Bookkeeping
+
 ```
-Usage: 
+Usage:
   Bookkeeping gives delegates an overview of the reward distributions to their voters within a range of epochs
 
 Request:
@@ -1839,10 +1962,10 @@ Request:
   Pagination:
     skip: starting index of displaying reward distribution list
     first: number of reward distributions to display
-    
+
 Response:
   exist: whether the delegate has bookkeeping information within the specified epoch range
-  rewardDistribution: 
+  rewardDistribution:
     voterEthAddress: voter’s ERC20 address
     voterIotexAddress: voter’s IoTeX address
     amount: amount of reward distribution
@@ -1850,6 +1973,7 @@ Response:
 ```
 
 #### Productivity
+
 ```
 Usage:
   Productivity gives block productivity of producers within a range of epochs
@@ -1866,6 +1990,7 @@ Response:
 ```
 
 #### Reward
+
 ```
 Usage:
   Rewards provides reward detail information for candidates within a range of epochs
@@ -1883,6 +2008,7 @@ Response:
 ```
 
 #### BucketInfo
+
 ```
 Usage:
   BucketInfo provides voting bucket detail information for candidates within a range of epochs
@@ -1902,6 +2028,7 @@ Response:
 ```
 
 #### Staking
+
 ```
 Usage:
   Staking provides staking information for candidates within a range of epochs
@@ -1920,6 +2047,7 @@ Response:
 ```
 
 Demo:
+
 ```
 Sample Request:
 
@@ -2074,58 +2202,64 @@ Sample Response:
 ```
 
 ### Chain
+
 #### MostRecentEpoch
+
 ```
-Usage: 
+Usage:
   MostRecentEpoch gives the latest epoch number
 
 Request:
   N/A
-  
+
 Response:
   mostRecentEpoch: latest epoch number
 ```
 
 #### MostRecentBlockHeight
+
 ```
-Usage: 
+Usage:
   MostRecentBlockHeight gives the latest block height
 
 Request:
   N/A
-  
+
 Response:
   mostRecentBlockHeight: latest block height
-```  
+```
 
 #### MostRecentTPS
+
 ```
-Usage: 
+Usage:
   MostRecentTPS gives the latest transactions per second
 
 Request:
   blockWindow: number of last blocks that are backtracked to compute TPS
-  
+
 Response:
   mostRecentTPS: latest transactions per second
-```  
+```
 
 #### NumberOfActions
+
 ```
-Usage: 
+Usage:
   NumberOfActions gives the number of actions
 
 Request:
   pagination:
     startEpoch: starting epoch number
-    epochCount: epoch count 
-  
+    epochCount: epoch count
+
 Response:
   exist: whether the starting epoch number is less than the most recent epoch number
   count: number of actions
 ```
 
 Demo:
+
 ```
 Sample Request:
 
@@ -2155,10 +2289,11 @@ Sample Response:
       }
     }
   }
-} 
+}
 ```
 
 ### Voting
+
 ```
 Usage:
   Voting provides metadata of voting results
@@ -2168,7 +2303,7 @@ Request:
   epochCount: epoch count
 
 Reponse:
-  exist: whether the starting epoch number is less than the most recent epoch number 
+  exist: whether the starting epoch number is less than the most recent epoch number
   candidateMeta:
     epochNumber:  epoch number
     consensusDelegates: number of consensus delegates in the epoch
@@ -2178,6 +2313,7 @@ Reponse:
 ```
 
 Demo:
+
 ```
 Sample Request:
 
@@ -2193,7 +2329,7 @@ query{
     }
   }
 }
-  
+
 Sample Response:
 
 {
@@ -2225,29 +2361,32 @@ Sample Response:
       ]
     }
   }
-}  
+}
 ```
 
 ### Account
+
 #### ActiveAccounts
+
 ```
-Usage: 
+Usage:
   ActiveAccounts lists most recently active accounts
-  
+
 Request:
-  count: number of account addresses to be queried for active accounts 
+  count: number of account addresses to be queried for active accounts
 
 Response:
   activeAccounts: list of account addresses
 ```
 
 #### OperatorAddress
+
 ```
-Usage: 
+Usage:
   OperatorAddress finds the delegate's operator address given the delegate's alias name
-  
+
 Request:
-  aliasName: delegate's alias name 
+  aliasName: delegate's alias name
 
 Response:
   exist: whether the alias name exists
@@ -2255,12 +2394,13 @@ Response:
 ```
 
 #### Alias
+
 ```
-Usage: 
+Usage:
   Alias finds the delegate's alias name given the delegate's operator address
-  
+
 Request:
-  operatorAddress: delegate's operator address 
+  operatorAddress: delegate's operator address
 
 Response:
   exist: whether the operator address exists
@@ -2268,6 +2408,7 @@ Response:
 ```
 
 Demo:
+
 ```
 Sample Request:
 
@@ -2307,29 +2448,28 @@ Sample Response:
       }
     }
   }
-}  
+}
 ```
 
 ## Testnet
 
-
 The IoTeX Testnet is now fully open for community and developers! Join our Testnet and interact with IoTeX network today!
 
 ### Set up the node
+
 Our complete software is packaged in the form of a docker image plus a config file for the convenience of set-up and deployment. You can easily set up and run a node by following instructions at https://github.com/iotexproject/iotex-testnet.
 
 As of now, your node will be join as a fullnode to IoTeX network. Once we open the staking/voting on the testnet, you could promote your fullnode to a delegate and participate in block production. Expect that in the next few weeks.
 
 ### Talk to us
-If you encounter any technical problem when connect to the testnet, please do not hesitate to contact us via [gitter](https://gitter.im/iotex-dev-community/Lobby). In addition to this, please file issues under https://github.com/iotexproject/iotex-core/issues and we will investigate.
 
+If you encounter any technical problem when connecting to the testnet, please do not hesitate to contact us via [gitter](https://gitter.im/iotex-dev-community/Lobby). In addition to this, please file issues under https://github.com/iotexproject/iotex-core/issues and we will investigate.
 
 ## Write a Smart Contract
 
 TBD
 
 ## Glossary
-
 
 - Delegate: the blockchain node which is elected to propose and validate new blocks, a.k.a. block producer.
 
