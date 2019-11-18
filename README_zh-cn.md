@@ -8,12 +8,12 @@
 
 IoTeX 网络的总体设计采用了分权思想，这是 Charles-Louis de Secondat 创造的一个术语，它指出民主政治权力应该分为立法，行政和司法权力。总的来说，IoTeX 网络是一种由多个区块链组成的去中心化的信任结构，用于连接人，机器，应用程序，不同的分层等级用于服务不同目的。
 
-![I o T e X](.gitbook/assets/1_d6giplh9tdikw82c8j1jra.png)
+![I o T e X](https://cdn-images-1.medium.com/max/2600/1*D6GiPlh9TdikW82c8j1jrA.png)
 
-* 治理层，由重力链实例化的治理层是扮演 IoTeX 网络的去中心化政府。它专注于权力下放和安全，是一种以活跃度为导向的共识机制（例如，PoS variant），用以促进诸如权益质押、投票、罚没、与协议相关的提案等任务。在 2019 Q3 / Q4 重力链发布之前，以太坊主网将用作治理层。
-* 业务流程层，由根链实例化而来，是所有子链的管理者和协调员。它由我们以安全为导向的 Roll-DPoS 共识机制提供支持，旨在实现合理的吞吐量，可靠性和透明度。它将于 2019年  4 月推出（Mainnet Alpha），作为 IoTeX 网络中的第一个区块链。
-* 操作层，是各种 layer2 子链的实例化，操作层是处理与特定用例/应用程序相关的业务逻辑的具体单元。不同的子链可以通过跨链通信相互操作。第一个 IoTeX 子链预计将于 2019 年 Q2/Q3 推出，专注于可信计算。
-* 执行层，是一个可选层，特定子链可以卸载具体的计算/存储任务到该层上。状态生成过程中的分离验证和订购状态对于提高去中心化系统的可扩展性，功能性和可用性非常有帮助。
+- 治理层，由重力链实例化的治理层是扮演 IoTeX 网络的去中心化政府。它专注于权力下放和安全，是一种以活跃度为导向的共识机制（例如，PoS variant），用以促进诸如权益质押、投票、罚没、与协议相关的提案等任务。在 2019 Q3 / Q4 重力链发布之前，以太坊主网将用作治理层。
+- 业务流程层，由根链实例化而来，是所有子链的管理者和协调员。它由我们以安全为导向的 Roll-DPoS 共识机制提供支持，旨在实现合理的吞吐量，可靠性和透明度。它将于 2019 年 4 月推出（Mainnet Alpha），作为 IoTeX 网络中的第一个区块链。
+- 操作层，是各种 layer2 子链的实例化，操作层是处理与特定用例/应用程序相关的业务逻辑的具体单元。不同的子链可以通过跨链通信相互操作。第一个 IoTeX 子链预计将于 2019 年 Q2/Q3 推出，专注于可信计算。
+- 执行层，是一个可选层，特定子链可以卸载具体的计算/存储任务到该层上。状态生成过程中的分离验证和订购状态对于提高去中心化系统的可扩展性，功能性和可用性非常有帮助。
 
 在我们的设计中，所有区块链共享相同的投票资源池，以此产生共识是整个网络安全的保障，也是集体信任的基石。通过提供的集体信任，可以轻松地启动子链，就像在 AWS 云上启动 EC2 实例一样轻松。由于 EDR 的抽象化，在 IoTeX 网络中运行的子链具有截然不同的状态转换和执行层以及基础加密经济。
 
@@ -23,24 +23,24 @@ IoTeX 网络的总体设计采用了分权思想，这是 Charles-Louis de Secon
 
 ### 根链
 
-根链将在2019年第一季度推出（又名 Mainnet Alpha），它由四层组成：
+根链将在 2019 年第一季度推出（又名 Mainnet Alpha），它由四层组成：
 
-* 网络层支持 IoTex 节点之间的点对点通信，并为其他应用程序和用户提供区块链服务（通过[grpc](https://grpc.io/)）。
-* 共识层使用去中心化分散随机算法（DKG + BLS）运行 Roll-DPoS 在区块生产者候选池（通过质押或投票）中选择活动块的生产者。
-* 状态转换层由五个子协议组成，负责将区块链的状态从一个转换为另一个。
-* 编程层实现了业务逻辑的状态转换。目前仅支持使用 Solidity 编写的以太坊虚拟机（EVM）智能合约。开发人员可以无缝地将现有的DAPP移植到它上面。
+- 网络层支持 IoTex 节点之间的点对点通信，并为其他应用程序和用户提供区块链服务（通过[grpc](https://grpc.io/)）。
+- 共识层使用去中心化分散随机算法（DKG + BLS）运行 Roll-DPoS 在区块生产者候选池（通过质押或投票）中选择活动块的生产者。
+- 状态转换层由五个子协议组成，负责将区块链的状态从一个转换为另一个。
+- 编程层实现了业务逻辑的状态转换。目前仅支持使用 Solidity 编写的以太坊虚拟机（EVM）智能合约。开发人员可以无缝地将现有的 DAPP 移植到它上面。
 
-![root chain](.gitbook/assets/rootchain.png)
+![IoTeX Rootchain Architecture](https://cdn-images-1.medium.com/max/2000/0*cPrsvVa1wIE0cqnS)
 
 ### 子协议和动作
 
 IoTex 根链的状态转换层足够灵活，支持简易的插入任何子协议。
 
-* 帐户子协议为在此区块链上的帐户的提供记账功能。
-* 执行子协议管理智能合约的执行和前进/回退状态。
-* 轮询子协议与以太坊上的质押/投票的合约同步（在重力链准备好之前由以太坊扮演），并指导在 IoTeX 根链上升级/降级的投票。
-* 奖励子协议负责向合格的代表和候选人分发区块奖励和纪元奖励。
-* Multichain子协议管理子链管理和交叉链通信，这是一项正在进行的工作。
+- 帐户子协议为在此区块链上的帐户的提供记账功能。
+- 执行子协议管理智能合约的执行和前进/回退状态。
+- 轮询子协议与以太坊上的质押/投票的合约同步（在重力链准备好之前由以太坊扮演），并指导在 IoTeX 根链上升级/降级的投票。
+- 奖励子协议负责向合格的代表和候选人分发区块奖励和纪元奖励。
+- Multichain 子协议管理子链管理和交叉链通信，这是一项正在进行的工作。
 
 在 IoTeX 网络中，事务（与区块链数据交互的原子操作单元）被称为“动作”，存在与所描述的五个子协议相对应的五种类型的动作。更多信息可以在[这里](https://github.com/iotexproject/iotex-core/blob/master/proto/types/action.proto)找到。
 
@@ -54,11 +54,11 @@ IoTex 根链的状态转换层足够灵活，支持简易的插入任何子协�
 2. `git clone git@github.com:iotexproject/iotex-core.git`
 3. `make run`
 
-### 使用docker镜像
+### 使用 docker 镜像
 
 1. 通过 https://docs.docker.com/install/ 在本地主机上安装 docker。正确安装和启动 docker 后，下载 IoTeX docker 镜像：`docker pull iotex/iotex-core:latest`
-2. 从 [iotex-core](https://github.com/iotexproject/iotex-core) 下载配置文件 [config\_delegate.yaml](https://github.com/iotexproject/iotex-core)。打开文件并根据独立节点的需要修改某些参数。例如，blockCreationInterval 指定生成下一个块所花费的时间（以秒为单位）。如果您希望以较慢的速度生成块，请将其更改为更大的值。
-3. sudo docker run -d -p 30100:14004 --mount type=bind,source=$PWD/config\_delegate.yaml,target=/etc/iotex/config\_local\_delegate.yaml iotex/iotex-core:testnet iotex-server -config-path=/etc/iotex/config\_local\_delegate.yaml
+2. 从 [iotex-core](https://github.com/iotexproject/iotex-core) 下载配置文件 [config_delegate.yaml](https://github.com/iotexproject/iotex-core)。打开文件并根据独立节点的需要修改某些参数。例如，blockCreationInterval 指定生成下一个块所花费的时间（以秒为单位）。如果您希望以较慢的速度生成块，请将其更改为更大的值。
+3. sudo docker run -d -p 30100:14004 --mount type=bind,source=\$PWD/config_delegate.yaml,target=/etc/iotex/config_local_delegate.yaml iotex/iotex-core:testnet iotex-server -config-path=/etc/iotex/config_local_delegate.yaml
 
 ## ioctl \(command-line interface\)
 
@@ -95,7 +95,7 @@ curl https://raw.githubusercontent.com/iotexproject/iotex-core/master/install-cl
 
 ## 用法和示例
 
-所有ioctl命令的示例文档。
+所有 ioctl 命令的示例文档。
 
 ## 配置
 
@@ -185,9 +185,9 @@ Please Keep your password, or your will lose your private key.
 
 ### **使用**私钥导入账户
 
-`Usage: ioctl account import [key|keystore] ALIAS` 
+`Usage: ioctl account import [key|keystore] ALIAS`
 
-Two options are available. 
+Two options are available.
 
 If you use `key`,
 
@@ -255,7 +255,7 @@ io1r2r0um9dw35922tptkuphseq43hq2knk3fjrlt: 0.721 IOTX
 io1l3wc0smczyay8xq747e2hw63mzg3ctp6uf8wsg: 4689 IOTX
 ```
 
-### **查询Nonce**
+### **查询 Nonce**
 
 `Usage: ioctl account nonce (ALIAS|ADDRESS)`
 
@@ -296,11 +296,8 @@ io14gnqxf9dpkn05g337rl7eyt2nxasphf5m6n0rd - 0xAA260324ad0DA6FA2231f0FfEC916A99bb
 Account #IOsenser has been updated.
 ```
 
-###  
+###
 
-####   <a id="install-latest-unstable-build"></a>
+#### <a id="install-latest-unstable-build"></a>
 
-##  
-
-
-
+##
