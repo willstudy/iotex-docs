@@ -1959,7 +1959,7 @@ Request:
   delegateName: delegate name
   percentage: percentage of reward distribution
   includeFoundationBonus: whether include foundation bonus as part of the reward distribution
-  Pagination:
+  pagination:
     skip: starting index of displaying reward distribution list
     first: number of reward distributions to display
 
@@ -2020,11 +2020,19 @@ Request:
 
 Response:
   exist: whether the delegate has voting bucket information within the specified epoch range
-  epochNumber: epoch number
   bucketInfoList:
-    voterEthAddress: voter’s ERC20 address
-    weightedVotes: voter’s weighted votes
-  count: total number of buckets in the given epoch for the given delegate
+    epochNumber: epoch number
+    bucketInfo:
+      voterIotexAddress: voter's IoTeX address
+      voterEthAddress: voter’s ERC20 address
+      votes: voter's votes
+      weightedVotes: voter’s weighted votes
+      remainingDuration: bucket remaining duration
+      decay: whether the vote weight decays
+      pagination:
+        skip: starting index of displaying bucket list
+        first: number of buckets to display
+    count: total number of buckets in the given epoch for the given delegate
 ```
 
 #### Staking
@@ -2258,6 +2266,21 @@ Response:
   count: number of actions
 ```
 
+#### VotingResultMeta
+
+```
+Usage:
+  VotingResultMeta gives the latest metadata of voting result
+  
+Request:
+  N/A
+
+Response:
+  totalCandidates: total number of candidates
+  totalWeightedVotes: total weighted votes
+  votedTokens: total voted tokens
+```
+
 Demo:
 
 ```
@@ -2294,9 +2317,11 @@ Sample Response:
 
 ### Voting
 
+#### VotingMeta
+
 ```
 Usage:
-  Voting provides metadata of voting results
+  VotingMeta provides metadata of voting results
 
 Request:
   startEpoch: starting epoch number
@@ -2310,6 +2335,46 @@ Reponse:
     totalCandidates: number of total delegates in the epoch
     totalWeightedVotes: candidate total weighted votes in the epoch
     votedTokens: total voted tokens in the epoch
+```
+
+#### CandidateInfo
+
+```
+Usage:
+  CandidateInfo provides candidate information
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+
+Reponse:
+  candidateMeta:
+    epochNumber:  epoch number
+    candidates: 
+      name: candidate name
+      address: canddiate address
+      totalWeightedVotes: total weighted votes
+      selfStakingTokens: candidate self-staking tokens
+      operatorAddress: candidate operator address
+      rewardAddress: candidate reward address
+```
+
+#### RewardSources
+
+```
+Usage:
+  RewardSources provides reward sources for voters
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+  voterIotxAddress: voter IoTeX address
+
+Reponse:
+  exist: whether the voter has reward information within the specified epoch range
+  delegateDistributions: 
+    delegateName: delegate name
+    amount: amount of reward distribution
 ```
 
 Demo:
@@ -2446,6 +2511,90 @@ Sample Response:
         "exist": true,
         "aliasName": "pubxpayments"
       }
+    }
+  }
+}
+```
+
+#### Hermes
+
+```
+Usage:
+  Hermes gives delegates who register the service of automatic reward distribution an overview of the reward distributions to their voters within a range of epochs
+
+Request:
+  startEpoch: starting epoch number
+  epochCount: epoch count
+  rewardAddress: Hermes reward address
+  waiverThreshold: threshold for waiving service fee
+  
+Response:
+  exist: whether Hermes has bookkeeping information within the specified epoch range
+  hermesDistribution:
+    delegateName: delegate name
+    rewardDistribution:
+      voterEthAddress: voter’s ERC20 address
+      voterIotexAddress: voter’s IoTeX address
+      amount: amount of reward distribution
+    stakingIotexAddress: delegate IoTeX staking address
+    voterCont: number of voters
+    waiveServiceFee: whether the delegate is qualified for waiving the service fee
+    refund: amount of refund
+```
+
+Demo:
+
+```
+Sample Request:
+
+query{
+  hermes(startEpoch: 2600, epochCount: 2, rewardAddress: "io12mgttmfa2ffn9uqvn0yn37f4nz43d248l2ga85", waiverThreshold: 100) {
+    exist
+    hermesDistribution{
+      delegateName
+      rewardDistribution{
+        voterEthAddress
+        voterIotexAddress
+        amount
+      }
+      stakingIotexAddress
+      waiveServiceFee
+      refund
+    }
+  }
+}
+
+Sample Reponse:
+
+{
+  "data": {
+    "hermes": {
+      "exist": true,
+      "hermesDistribution": [
+        {
+          "delegateName": "coredev",
+          "rewardDistribution": [
+            {
+              "voterEthAddress": "0x2ed3767cfcbceb42ff5f3642d4df6f851b947073",
+              "voterIotexAddress": "io19mfhvl8uhn459l6lxepdfhm0s5degurn9p9ws7",
+              "amount": "196604399213276651"
+            },
+            {
+              "voterEthAddress": "0xd24687dc4512cd705a74cd5495745398f24278ad",
+              "voterIotexAddress": "io16frg0hz9ztxhqkn5e42f2aznnreyy79dmqlsn2",
+              "amount": "32631320141532384677"
+            },
+            {
+              "voterEthAddress": "0xfe7bcb3676aabe9a6b39cb23f3a5fa41eed7ad1b",
+              "voterIotexAddress": "io1leaukdnk42lf56eeev3l8f06g8hd0tgmep8z96",
+              "amount": "359747231878966643458"
+            }
+          ],
+          "stakingIotexAddress": "io16frg0hz9ztxhqkn5e42f2aznnreyy79dmqlsn2",
+          "waiveServiceFee": false,
+          "refund": "20661850337879594993"
+        }
+      ]
     }
   }
 }
