@@ -22,7 +22,6 @@ or add the following line to your html.
 <script src="https://cdn.jsdelivr.net/npm/iotex-antenna@0.24.0/lib/iotex-antenna.browser.min.js"></script>
 ```
 
-
 #### Golang Project
 
 In your Golang project root, use `go dep` or `go mod`.
@@ -200,7 +199,7 @@ func main() {
 
 ::::
 
-To see the result of the transfer action, you can ether go to `https://iotexscan.io/action/:actionHash` or query like
+To see the result of the transfer action, you can either go to `https://iotexscan.io/action/:actionHash` or query like
 
 :::: tabs
 
@@ -245,9 +244,9 @@ This allows you to interact with smart contracts as if they were JavaScript obje
 
 `iotex-antenna` does not compile solidity. However, you can use the following ways to get ABI and bytecode.
 
-1. option 1: use https://iotexscan.io/wallet/smart-contract/deploy
+option 1: use https://iotexscan.io/wallet/smart-contract/deploy
 
-2. option 2: in Node.js, use [`solc@0.4.25`](https://www.npmjs.com/package/solc)
+option 2: in Node.js, use [`solc@0.4.25`](https://www.npmjs.com/package/solc)
 
 ```js
 import solc from "solc";
@@ -807,9 +806,9 @@ import { XRC20 } from "iotex-antenna/lib/token/xrc20";
 
 ## Working with Desktop Wallet
 
-In the client-side, use iotex-antenna@^0.22.0. Here is an example of setting up WsSignerPlugin to connect to the wallet. It is nothing more than applying the plugin when initializing Antenna instance, and NOT adding your private key to the SDK as specified in the earlier documenation.
+In the client-side, use iotex-antenna@^0.22.0. Here is an example of setting up WsSignerPlugin to connect to the wallet. It is nothing more than applying the plugin when initializing Antenna instance, and NOT adding your private key to the SDK as specified in the earlier documentation.
 
-Before receiving the transfer or the contract call above, please open and unlock your wallet. Once the wallet is ready, you can run the script below in both the browser and the node environment and then you can see the message to sign. Please click "Yes, sign transaction" to continue.
+Before receiving the transfer or the contract call above, please open and unlock your wallet. Once the wallet is ready, you can run the script below in both the browser and the node environment, and then you can see the message to sign. Please click "Yes, sign transaction" to continue.
 
 ### Client-side
 
