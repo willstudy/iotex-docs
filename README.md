@@ -2025,8 +2025,10 @@ Response:
     bucketInfo:
       voterIotexAddress: voter's IoTeX address
       voterEthAddress: voter’s ERC20 address
+      isNative: whether the bucket is native
       votes: voter's votes
       weightedVotes: voter’s weighted votes
+      startTime: bucket start time
       remainingDuration: bucket remaining duration
       decay: whether the vote weight decays
       pagination:
