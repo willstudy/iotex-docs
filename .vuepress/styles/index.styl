@@ -33,7 +33,6 @@ html, body
     >li>a.sidebar-link
       padding 1rem 0
       font-size 1rem
-      font-weight bold
       border none
   .sidebar-sub-headers
     padding 0
@@ -41,7 +40,6 @@ html, body
       padding 0
       color #3C454E
       size 7rem
-      font-weight bold
       line-height 3em
       display inline
       border-bottom 2px solid transparent
@@ -50,7 +48,6 @@ html, body
       &.active
         padding-bottom 0.2rem
         border-bottom 3px solid rgb(0, 180, 160)
-        font-weight 600
         color #47525c
 .page
   margin-top 5rem
@@ -85,19 +82,22 @@ html, body
       color unset
   .page-nav
     padding-bottom 1rem
-    .next, .prev
+    .prev
+      padding 0 0.8rem
+      height 3rem
+      line-height 3rem
+      border-radius 4px
+    background #00b4a0
+      display inline-block
+    .next
       background #00b4a0
       padding 0 0.8rem
       height 3rem
       line-height 3rem
       border-radius 4px
       color #fff
-      font-weight bold
       a
-        font-weight bold
         color white
-    .prev
-      display inline-block
 .tabs-component
   div[class*='language-']
     margin 0
