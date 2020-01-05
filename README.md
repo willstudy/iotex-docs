@@ -2539,7 +2539,7 @@ Response:
       voterIotexAddress: voter’s IoTeX address
       amount: amount of reward distribution
     stakingIotexAddress: delegate IoTeX staking address
-    voterCont: number of voters
+    voterCount: number of voters
     waiveServiceFee: whether the delegate is qualified for waiving the service fee
     refund: amount of refund
 ```
