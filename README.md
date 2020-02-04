@@ -81,7 +81,7 @@ As of now, your node will be join as a fullnode to IoTeX network. Once we open t
 
 ### Talk to us
 
-If you encounter any technical problem when connecting to the testnet, please do not hesitate to contact us via [gitter](https://gitter.im/iotex-dev-community/Lobby). In addition to this, please file issues under https://github.com/iotexproject/iotex-core/issues and we will investigate.
+If you encounter any technical problem when connecting to the testnet, please do not hesitate to contact us via [forum](https://community.iotex.io/c/research-development/protocol). In addition to this, please file issues under https://github.com/iotexproject/iotex-core/issues and we will investigate.
 
 ## Write a Smart Contract
 
